@@ -12,10 +12,19 @@ export function getNamedCountries(d: Distributor): string[] {
 	return d.countries === 'region-wide' ? [] : [...d.countries];
 }
 
-/** Every country a distributor covers, expanding region-wide coverage. */
+/**
+ * Every country a distributor covers. A region-wide entry covers all of its
+ * regions; otherwise it covers the countries it names, plus the whole of any
+ * declared region none of those countries falls in — declaring a region
+ * without naming a country in it means "all of it".
+ */
 export function getCoverage(d: Distributor): string[] {
-	if (d.countries !== 'region-wide') return [...d.countries];
-	return Array.from(new Set(d.regions.flatMap((r) => REGION_MEMBERSHIP[r]))).sort();
+	const named = getNamedCountries(d);
+	const whole =
+		d.countries === 'region-wide'
+			? d.regions
+			: d.regions.filter((r) => !REGION_MEMBERSHIP[r].some((c) => named.includes(c)));
+	return Array.from(new Set([...named, ...whole.flatMap((r) => REGION_MEMBERSHIP[r])])).sort();
 }
 
 /** Regions the table files a country under. */
@@ -74,31 +83,10 @@ function findCoverageErrors(distributors: Distributor[], membership: Record<Regi
 	return errors;
 }
 
-/**
- * Declared regions that contain none of the entry's named countries. Such a
- * card shows under the region's "All countries" view but disappears as soon as
- * any country is picked, so this is worth a look — but whether the region is a
- * genuine claim or a leftover is a data-owner call, hence a warning, not an error.
- */
-function findDanglingRegions(distributors: Distributor[], membership: Record<Region, string[]>): string[] {
-	return distributors.flatMap((d) => {
-		const countries = getNamedCountries(d);
-		if (countries.length === 0) return [];
-		const dangling = d.regions.filter((r) => !countries.some((c) => membership[r].includes(c)));
-		return dangling.length > 0 ? [`${d.name} → ${dangling.join(', ')}`] : [];
-	});
-}
-
 /** Throws if the dataset and the region table disagree. Called by `distributors.ts`. */
 export function assertDistributorData(distributors: Distributor[], membership: Record<Region, string[]>): void {
 	const errors = findCoverageErrors(distributors, membership);
 	if (errors.length > 0) {
 		throw new Error(`[distributors] ${errors.join(' | ')}`);
-	}
-	const dangling = findDanglingRegions(distributors, membership);
-	if (dangling.length > 0) {
-		console.warn(
-			`[distributors] regions declared without any named country in them (card vanishes once a country is picked): ${dangling.join('; ')}`
-		);
 	}
 }
