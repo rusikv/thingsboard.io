@@ -236,7 +236,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "HADEX",
-		regions: ["Asia","Middle East"],
+		regions: ["Middle East"],
 		countries: ["Syria"],
 		email: "havalbajary@gmail.com",
 		website: "hadex.nicepage.io",
