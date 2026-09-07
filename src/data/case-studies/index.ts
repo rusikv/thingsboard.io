@@ -13,7 +13,7 @@ export const caseStudyCategories = [
 	'Telecom',
 ] as const;
 
-// ── Display order (newest first). ─────────────────────────────────────────────
+// ── Display order: page 1 is a curated lineup; later pages run newest first. ──
 // Adding a case study?
 //   1. Drop a {slug}.ts data file in this folder (export const data: CaseStudyData = …).
 //   2. Add the slug to this array in the position you want it displayed.
@@ -30,7 +30,8 @@ export const caseStudyOrder: string[] = [
 	'onedata',
 	'lumen',
 	'solandtec',
-	// Intentionally out of newest-first order: first card of catalog page 2.
+	// Not newest-first on purpose: the first catalog page is a curated lineup, so
+	// this study opens page 2 rather than displacing one of those cards.
 	'cuba-iot-platform',
 	'tjk-solutions',
 	'energenix',

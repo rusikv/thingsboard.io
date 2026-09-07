@@ -64,13 +64,13 @@ export const data: CaseStudyData = {
 				title: 'Unified asset model and dashboards',
 				text: 'ThingsBoard is configured around generator assets, sites, telemetry streams, alarms, and operator dashboards. Dispatchers can start from a fleet-level table, sort assets by status or alarm count, and drill down to a detailed generator page. The detailed panel consolidates engine state, generator electrical parameters, mains parameters, breaker states, runtime, and control mode.',
 				image: '/images/case-studies/cuba-iot-platform-2.webp',
-				imageAlt: 'CUBA RePort generator monitoring dashboard with engine, generator, and mains panels',
+				imageAlt: 'Generator and mains telemetry charts in a ThingsBoard dashboard',
 			},
 			{
 				title: 'Rule Engine alarms and operational notifications',
 				text: 'Rule chains process controller alarms, fuel level, battery voltage, coolant temperature, oil pressure, operating mode, and generator/mains state. Notifications are routed to responsible users through Telegram, SMS, and email. Each event can include the site, generator, source gateway, parameter, value, and timestamp, reducing the need for manual dashboard checks.',
 				image: '/images/case-studies/cuba-iot-platform-3.webp',
-				imageAlt: 'Generator and mains telemetry charts in a ThingsBoard dashboard',
+				imageAlt: 'CUBA RePort generator monitoring dashboard with engine, generator, and mains panels',
 			},
 			{
 				title: 'Historical analytics and service workflows',
