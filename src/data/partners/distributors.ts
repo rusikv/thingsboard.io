@@ -68,7 +68,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 		{
 		name: "Bridges of Advanced Technoligies",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["Iraq"],
 		email: "info@bridgescons.com",
 		website: "bridgescons.com",
@@ -117,7 +117,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "Clever Platform",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["Saudi Arabia"],
 		email: "fahad@cleverplatform.sa",
 		website: "",
@@ -236,7 +236,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "HADEX",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["Syria"],
 		email: "havalbajary@gmail.com",
 		website: "hadex.nicepage.io",
@@ -327,7 +327,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "LTS-Connecting Things",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["Saudi Arabia"],
 		email: "info@ltsrv.com",
 		website: "www.lts.sa",
@@ -418,7 +418,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "Quantova",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["United Arab Emirates"],
 		email: "info@quantova.com",
 		website: "quantova.com",
@@ -537,7 +537,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "Spectrum Smart Solutions Systems LLC",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["United Arab Emirates"],
 		email: "salem@spectrum.co.ae",
 		website: "spectrum.co.ae",
@@ -586,7 +586,7 @@ export const DISTRIBUTORS: Distributor[] = [
 	},
 	{
 		name: "IoT Experts",
-		regions: ["Middle East"],
+		regions: ["Middle East","Asia"],
 		countries: ["Israel"],
 		email: "",
 		website: "iot-experts.net",

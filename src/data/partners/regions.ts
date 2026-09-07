@@ -22,9 +22,8 @@ export type Region = (typeof REGIONS)[number];
  * distributor means classifying it here too, or the build fails.
  *
  * Conventions:
- * - "Middle East" is its own region, not a subset of Asia: its countries are
- *   filed here only, so a distributor declares Asia as well only when it
- *   names an Asian country.
+ * - Middle East countries are also filed under Asia (Turkey under Europe
+ *   instead), so a distributor naming one declares both regions.
  * - Transcontinental countries appear under every region they span, so Turkey
  *   counts as Europe and Middle East, and Georgia as Europe and Asia.
  * - Caribbean and Central American territories count as North America.
@@ -52,6 +51,8 @@ export const REGION_MEMBERSHIP: Record<Region, string[]> = {
 		"Hong Kong",
 		"India",
 		"Indonesia",
+		"Iraq",
+		"Israel",
 		"Japan",
 		"Kazakhstan",
 		"Kyrgyzstan",
@@ -59,13 +60,16 @@ export const REGION_MEMBERSHIP: Record<Region, string[]> = {
 		"Malaysia",
 		"Pakistan",
 		"Philippines",
+		"Saudi Arabia",
 		"Singapore",
 		"South Korea",
 		"Sri Lanka",
+		"Syria",
 		"Taiwan",
 		"Tajikistan",
 		"Thailand",
 		"Turkmenistan",
+		"United Arab Emirates",
 		"Uzbekistan",
 		"Vietnam",
 	],
