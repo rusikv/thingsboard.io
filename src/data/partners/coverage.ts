@@ -66,7 +66,7 @@ function findCoverageErrors(distributors: Distributor[], membership: Record<Regi
 		);
 	}
 
-	// Compares names, not coverage: a region-wide distributor covers these without naming them.
+	// Compares names, not coverage: a region-wide entry or a whole-region claim covers these without naming them.
 	const stray = [...classified].filter((c) => !named.has(c)).sort();
 	if (stray.length > 0) {
 		const strayed = new Set(stray);
