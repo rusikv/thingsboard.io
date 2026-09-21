@@ -43,7 +43,7 @@ export const data: CaseStudyData = {
 		],
 		results: [
 			'More than 1,000 devices on 170+ farms and about 6 million data points a day, on one PE tenant hosted and managed by the ThingsBoard team.',
-			'Fog control on a 70 ±2% target: mean 70.3% across the 65.7 hours the fog line ran in a seven-day trial, 90% of raw samples within ±3%, canopy dry throughout.',
+			'Fog control on a 70 ±2% target: mean 70.3% across the 65.7 hours of fogging in a seven-day trial, 90% of raw samples within ±3%, canopy dry whenever the fog ran.',
 			'20–40% less irrigation water across deployments; 40% validated on a national forestry organisation’s managed-forest sites.',
 			'Seven production screens and a GACP-grade audit trail, delivered as 55 custom widgets in the ThingsBoard widget library — no separate backend.',
 		],
@@ -60,7 +60,7 @@ export const data: CaseStudyData = {
 			},
 			{
 				title: 'Holding 70% humidity on a 30-second cycle',
-				text: 'In a Mediterranean greenhouse, a Seymour controller drives a high-pressure fogging line to a 70% humidity setpoint. The loop runs on the controller as a continuous duty cycle on a 30-second period. A leaf-wetness sensor in the canopy cuts the fog back whatever the humidity says. ThingsBoard is the SCADA layer: setpoints live as attributes; telemetry and device-side alarms in the dashboards. Over a seven-day trial the house held a mean of 70.3% across the 65.7 hours the fog line ran, with the leaves dry throughout.',
+				text: 'In a Mediterranean greenhouse, a Seymour controller drives a high-pressure fogging line to a 70% humidity setpoint. The loop runs on the controller as a continuous duty cycle on a 30-second period. A leaf-wetness sensor in the canopy cuts the fog back whatever the humidity says. ThingsBoard is the SCADA layer: setpoints live as attributes; telemetry and device-side alarms in the dashboards. Over a seven-day trial the house held a mean of 70.3% across the 65.7 hours the fog line ran, with the leaves dry throughout those hours.',
 				image: '/images/case-studies/seymour-ag-instruments-2.webp',
 				imageAlt: 'Seven-day chart of relative humidity, fog duty cycle and leaf wetness against a 70 ±2% target band',
 			},
