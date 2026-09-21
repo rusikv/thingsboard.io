@@ -1,10 +1,11 @@
 import type { CaseStudyData } from './types';
 
 export const data: CaseStudyData = {
-	title: 'Sense and Control on ThingsBoard PE: How Seymour Holds Greenhouses at 70% RH and Cuts Irrigation Water 40%',
+	title:
+		'Sense and Control on ThingsBoard PE: How Seymour Holds Greenhouses at 70% RH and Cuts Irrigation Water by 40%',
 	pageTitle: 'How Seymour Runs Greenhouses and Farms on ThingsBoard PE',
 	description:
-		'Seymour Ag Instruments runs greenhouses, fields and indoor farms on ThingsBoard PE: 1,000+ devices, 170+ farms, 70 ±2% humidity, 20–40% less irrigation water.',
+		'Seymour Ag Instruments runs greenhouses, fields and indoor farms on ThingsBoard PE: 1,000+ devices, 170+ farms, a 70 ±2% humidity target, 20–40% less water.',
 	pageSlug: 'seymour-ag-instruments',
 	breadcrumb: 'Seymour Ag Instruments — Smart Agriculture',
 	categories: ['Smart agriculture'],
@@ -12,7 +13,7 @@ export const data: CaseStudyData = {
 	hero: {
 		category: 'SMART AGRICULTURE',
 		heading:
-			'Sense and Control on ThingsBoard PE: How Seymour Holds Greenhouses at 70% RH and Cuts Irrigation Water 40%',
+			'Sense and Control on ThingsBoard PE: How Seymour Holds Greenhouses at 70% RH and Cuts Irrigation Water by 40%',
 		paragraphs: [
 			'Seymour Ag Instruments builds sensing and control for agriculture. Founded in 2021, the four-person company makes a full hardware line: sensors for every environmental parameter a grower needs, plus controllers for climate, irrigation and fertilisation. Its farm-management software is built entirely on ThingsBoard Professional Edition. One application follows a crop from transplant to harvest, across greenhouses, open fields and indoor plant factories, in the grower’s own language.',
 		],
@@ -42,7 +43,7 @@ export const data: CaseStudyData = {
 		],
 		results: [
 			'More than 1,000 devices on 170+ farms and about 6 million data points a day, on one PE tenant hosted and managed by the ThingsBoard team.',
-			'Fog control at a 70% setpoint: mean 70.3% over 65.7 hours, 90% of raw samples within ±3%, canopy dry throughout.',
+			'Fog control on a 70 ±2% target: mean 70.3% across the 65.7 hours the fog line ran in a seven-day trial, 90% of raw samples within ±3%, canopy dry throughout.',
 			'20–40% less irrigation water across deployments; 40% validated on a national forestry organisation’s managed-forest sites.',
 			'Seven production screens and a GACP-grade audit trail, delivered as 55 custom widgets in the ThingsBoard widget library — no separate backend.',
 		],
@@ -59,9 +60,9 @@ export const data: CaseStudyData = {
 			},
 			{
 				title: 'Holding 70% humidity on a 30-second cycle',
-				text: 'In a Mediterranean greenhouse, a Seymour controller drives a high-pressure fogging line to a 70% humidity setpoint. The loop runs on the controller as a continuous duty cycle on a 30-second period. A leaf-wetness sensor in the canopy cuts the fog back whatever the humidity says. ThingsBoard is the SCADA layer: setpoints live as attributes; telemetry and device-side alarms in the dashboards. Over a seven-day trial the house held a mean of 70.3% with the leaves dry throughout.',
+				text: 'In a Mediterranean greenhouse, a Seymour controller drives a high-pressure fogging line to a 70% humidity setpoint. The loop runs on the controller as a continuous duty cycle on a 30-second period. A leaf-wetness sensor in the canopy cuts the fog back whatever the humidity says. ThingsBoard is the SCADA layer: setpoints live as attributes; telemetry and device-side alarms in the dashboards. Over a seven-day trial the house held a mean of 70.3% across the 65.7 hours the fog line ran, with the leaves dry throughout.',
 				image: '/images/case-studies/seymour-ag-instruments-2.webp',
-				imageAlt: 'Seven-day chart of relative humidity, fog duty cycle and leaf wetness around a 70% setpoint',
+				imageAlt: 'Seven-day chart of relative humidity, fog duty cycle and leaf wetness against a 70 ±2% target band',
 			},
 			{
 				title: 'Irrigation on demand, 20–40% less water',
