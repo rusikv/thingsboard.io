@@ -16,7 +16,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
 				answer: `<ul>
                                 <li>On-premises deployments live on infrastructure you operate; you gain total control and customisation, yet you also own every patch, backup and compliance task.</li>
                                 <li>ThingsBoard Cloud is the quickest way to try ThingsBoard: a SaaS environment that we maintain for you, but shared with other tenants.</li>
-                                <li>Private Cloud is a fully managed, isolated cluster run by the ThingsBoard team, with a contractual 99.9%–99.99% uptime SLA and your choice of region—ideal when you need zero DevOps and hard uptime guarantees.</li>
+                                <li>Private Cloud is a fully managed, isolated cluster run by the ThingsBoard team, with a contractual 99.9%–99.99% uptime SLA and your choice of region—ideal when you need zero DevOps and firm availability commitments.</li>
                             </ul>`,
 			},
 			{
@@ -39,7 +39,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
                             <p>We measure Downtime from incident detection to full service restoration. <br><br></p>
                             <p>Excluded from Downtime: <br></p>
                             <ul>
-                                <li>Scheduled maintenance announced ≥ 48 h in advance</li>
+                                <li>Scheduled maintenance announced at least 48 hours in advance</li>
                                 <li>Emergency security patches</li>
                                 <li>Force-majeure events or upstream cloud failures (e.g., cloud provider region outage)</li>
                                 <li>Issues caused by customer-side logic (mis-configured Rule Chains, custom JS, connector errors, abusive API use, edge gateways, etc.)</li>
@@ -431,7 +431,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
 			{
 				id: 'tb-private-cloud-can-i-get-a-custom-sla',
 				question: 'Can I get a custom SLA?',
-				answer: `<p>The Enterprise plan includes a default SLA with a guaranteed uptime of 99.95%, which already meets the needs of most mission-critical applications. While fully custom SLAs are typically not required, we are open to discussing specific availability or support requirements on a case-by-case basis to ensure alignment with your business expectations.</p>`,
+				answer: `<p>The Enterprise plan includes a default uptime SLA of 99.95%, which already meets the needs of most mission-critical applications. While fully custom SLAs are typically not required, we are open to discussing specific availability or support requirements on a case-by-case basis to ensure alignment with your business expectations.</p>`,
 			},
 			{
 				id: 'tb-private-cloud-how-is-the-pricing-determined-for-the-enterprise-plan',
