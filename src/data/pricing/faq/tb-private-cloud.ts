@@ -122,7 +122,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
 			{
 				id: 'tb-private-cloud-will-i-have-a-sysadmin-user',
 				question: 'Will I have a sysadmin user?',
-				answer: `<p>For security and SLA integrity we do not expose Sysadmin by default. If your workflow truly needs low-level access, we can provide read-only credentials to metrics/Kubernetes dashboards under an additional NDA.</p>`,
+				answer: `<p>For security and SLA compliance we do not expose Sysadmin by default. If your workflow truly needs low-level access, we can provide read-only credentials to metrics/Kubernetes dashboards under an additional NDA.</p>`,
 			},
 			{
 				id: 'tb-private-cloud-what-kind-of-security-measurements-do-you-provide',
