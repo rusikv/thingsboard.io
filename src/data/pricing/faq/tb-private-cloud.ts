@@ -112,7 +112,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
 				id: 'tb-private-cloud-how-can-i-get-my-data-in-line-with-gdpr-requirements',
 				question: 'How can I get my data in line with GDPR requirements?',
 				answer: `<p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all tenant-level tables (entities, telemetry, audit logs, custom metadata) and transfer it to you over a secure channel (SFTP or your own cloud bucket). <br><br></p>
-                            <p>Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>`,
+                            <p>Because the export is a raw DB dump, you retain 100% data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all tenant data within 30 days of your erase request.</p>`,
 			},
 			{
 				id: 'tb-private-cloud-is-your-private-cloud-service-gdpr-compliant',
@@ -197,7 +197,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
                                     </ul>
                                 </li>
                             </ul>
-                            <p>There are no data point rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20 % over the dp/minute ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>`,
+                            <p>There are no data point rate overage fees—sustained traffic above plan limits requires an upgrade. Short-term bursts up to 20% over the dp/minute ceiling for up to 15 minutes are tolerated. Sustained overages require a plan upgrade.</p>`,
 			},
 			{
 				id: 'tb-private-cloud-are-there-any-payment-processing-fees',
@@ -300,7 +300,7 @@ export const tbPrivateCloudFaq: FaqCategory[] = [
 			{
 				id: 'tb-private-cloud-how-long-is-telemetry-retained',
 				question: 'How long is telemetry retained?',
-				answer: `<p>Retention is 100 % customer-controlled through the built-in TTL settings or Rule Engine logic. Keep data for days or years—just remember that longer retention consumes more storage and may raise your bill.</p>`,
+				answer: `<p>Retention is 100% customer-controlled through the built-in TTL settings or Rule Engine logic. Keep data for days or years—just remember that longer retention consumes more storage and may raise your bill.</p>`,
 			},
 			{
 				id: 'tb-private-cloud-what-are-custom-data-retention-policies',
