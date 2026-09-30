@@ -329,4 +329,43 @@ const columns: DataTableColumn[] = [
 			}
 		}
 	}
+
+	@media print {
+		.edge-matrix {
+			padding: 24px 0;
+
+			h2 {
+				font-size: 26px;
+				line-height: 1.3;
+				margin-bottom: 20px;
+			}
+
+			thead th {
+				padding: 10px 8px;
+				font-size: 15px;
+				-webkit-print-color-adjust: exact;
+				print-color-adjust: exact;
+
+				&.gateway,
+				&.edge,
+				&.server {
+					box-shadow: none;
+				}
+			}
+
+			tbody th {
+				padding: 8px 8px 8px 0;
+				font-size: 14px;
+
+				a {
+					font-size: inherit;
+				}
+			}
+
+			tbody td {
+				padding: 8px 6px;
+				font-size: 14px;
+			}
+		}
+	}
 </style>

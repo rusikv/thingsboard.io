@@ -75,4 +75,27 @@ import { homeProducts } from '@data/homeProducts';
 			grid-template-columns: 1fr;
 		}
 	}
+
+	@media print {
+		.products {
+			padding-block: $spacing-8;
+			background: none;
+			color: var(--color-text);
+			break-inside: avoid;
+		}
+
+		.products__head {
+			margin-bottom: $spacing-6;
+			break-inside: avoid;
+			break-after: avoid;
+		}
+
+		.products__lede {
+			color: var(--color-text-secondary);
+		}
+
+		.products__list {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 </style>

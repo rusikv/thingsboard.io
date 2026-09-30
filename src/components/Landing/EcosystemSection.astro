@@ -74,4 +74,28 @@ import { homeEcosystem } from '@data/homeEcosystem';
 			}
 		}
 	}
+
+	@media print {
+		.ecosystem {
+			padding-block: $spacing-8;
+		}
+
+		.ecosystem__head {
+			margin-bottom: $spacing-6;
+			break-inside: avoid;
+			break-after: avoid;
+		}
+
+		.ecosystem__list {
+			grid-template-columns: repeat(2, 1fr);
+
+			> :global(.eco--wide) {
+				grid-column: span 2;
+			}
+
+			@media (min-width: 1000px) {
+				grid-template-columns: repeat(3, 1fr);
+			}
+		}
+	}
 </style>

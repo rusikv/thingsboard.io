@@ -43,4 +43,12 @@ const { title, titleLead, subtitle } = Astro.props;
 		line-height: 1.5;
 		text-wrap: pretty;
 	}
+
+	@media print {
+		.section-header__subtitle {
+			margin-bottom: $spacing-6;
+			break-inside: avoid;
+			break-after: avoid;
+		}
+	}
 </style>
