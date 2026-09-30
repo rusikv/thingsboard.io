@@ -124,4 +124,12 @@ const { category, heading, paragraphs, logo, logoAlt, backgroundImage } = Astro.
 			display: none;
 		}
 	}
+
+	@media print {
+		.cs-hero-image-inner,
+		.cs-hero-image-large {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+	}
 </style>
