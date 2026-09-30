@@ -589,4 +589,16 @@ const tbVersionMetaLabel = [tbVersionLabel, isBuiltIn ? IOT_HUB_STRINGS.builtIn.
 	.iot-hub-detail-hero__icon-glyph {
 		line-height: 1;
 	}
+
+	@media print {
+		.iot-hub-detail-hero__icon,
+		.iot-hub-detail-hero__meta-badge {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
+		.iot-hub-detail-hero__preview:has(> .iot-hub-detail-hero__preview-fallback) {
+			display: none;
+		}
+	}
 </style>

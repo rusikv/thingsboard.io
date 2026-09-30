@@ -435,6 +435,31 @@ const placeholderIcon = getPlaceholderIcon(item);
 		}
 	}
 
+	@media print {
+		:global(.iot-hub-card) {
+			break-inside: avoid;
+		}
+
+		:global(.iot-hub-card__title),
+		:global(.iot-hub-card__author-name) {
+			white-space: normal;
+			overflow: visible;
+		}
+
+		:global(.iot-hub-card__icon),
+		:global(.iot-hub-card__preview--tile) {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
+		:global(.iot-hub-card:has(> .iot-hub-card__preview > .iot-hub-card__preview-fallback:not([hidden]))) {
+			align-self: start;
+		}
+
+		:global(.iot-hub-card__preview:has(> .iot-hub-card__preview-fallback:not([hidden]))) {
+			display: none;
+		}
+	}
 </style>
 
 <script>

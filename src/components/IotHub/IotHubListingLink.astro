@@ -429,4 +429,20 @@ const thumbClasses = [
 	.iot-hub-listing-link__author-icon--verified {
 		color: var(--color-primary);
 	}
+
+	@media print {
+		.iot-hub-listing-link {
+			break-inside: avoid;
+		}
+
+		.iot-hub-listing-link__thumb--compact {
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact;
+		}
+
+		.iot-hub-listing-link__name {
+			white-space: normal;
+			overflow: visible;
+		}
+	}
 </style>
