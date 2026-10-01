@@ -48,7 +48,7 @@ const isPixels = (value: string | number) => /^\d+$/.test(String(value));
 {
 	poster && (
 		<img
-			class="lazy-gif-video__print"
+			class="lazy-gif-video__print print:only"
 			src={poster}
 			alt={alt ?? ''}
 			width={isPixels(width) ? width : undefined}
@@ -58,12 +58,6 @@ const isPixels = (value: string | number) => /^\d+$/.test(String(value));
 }
 
 <style>
-	@media not print {
-		.lazy-gif-video__print {
-			display: none !important;
-		}
-	}
-
 	@media print {
 		.lazy-gif-video__print {
 			display: block;

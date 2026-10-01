@@ -144,6 +144,7 @@ const linkVariant = dark ? 'light' : 'default';
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	// ── Mobile phone frame ────────────────────────────────────────
 	.mobile-frame {
@@ -424,8 +425,7 @@ const linkVariant = dark ? 'light' : 'default';
 			width: 16vh;
 
 			&::after {
-				print-color-adjust: exact;
-				-webkit-print-color-adjust: exact;
+				@include print-exact;
 			}
 
 			.phone-bg.web {

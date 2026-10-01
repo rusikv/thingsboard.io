@@ -100,7 +100,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 							<div class="expansion-content">
 								<p>An interactive map with current status of the sensor and detailed view.</p>
 							</div>
-							<img class="print-panel-image" src="/images/usecases/smart-farming/real-time-monitoring.webp" alt="Real-time monitoring dashboard" loading="lazy" />
+							<img class="print-panel-image print:only" src="/images/usecases/smart-farming/real-time-monitoring.webp" alt="Real-time monitoring dashboard" loading="lazy" />
 						</div>
 						<div class="expansion-panel">
 							<div class="expansion-header">
@@ -109,7 +109,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 							<div class="expansion-content">
 								<p>Specially developed logic will help to take into account all the parameters for the most detailed and correct monitoring</p>
 							</div>
-							<img class="print-panel-image" src="/images/usecases/smart-farming/customizable-dashboard.webp" alt="Customizable dashboard" loading="lazy" />
+							<img class="print-panel-image print:only" src="/images/usecases/smart-farming/customizable-dashboard.webp" alt="Customizable dashboard" loading="lazy" />
 						</div>
 						<div class="expansion-panel">
 							<div class="expansion-header">
@@ -118,7 +118,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 							<div class="expansion-content">
 								<p>Conveniently manage and configure parameters for your Silo</p>
 							</div>
-							<img class="print-panel-image" src="/images/usecases/smart-farming/smart-valve.webp" alt="Smart valve settings" loading="lazy" />
+							<img class="print-panel-image print:only" src="/images/usecases/smart-farming/smart-valve.webp" alt="Smart valve settings" loading="lazy" />
 						</div>
 						<div class="expansion-panel">
 							<div class="expansion-header">
@@ -127,7 +127,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 							<div class="expansion-content">
 								<p>Using data storage, you can always check historical data, make reports even <a href="/products/trendz/" class="link-text">forecasts</a>. The platform supports flexible customization of the required data visualization.</p>
 							</div>
-							<img class="print-panel-image" src="/images/usecases/smart-farming/data-analysis-visualization.webp" alt="Data analysis and visualization dashboard" loading="lazy" />
+							<img class="print-panel-image print:only" src="/images/usecases/smart-farming/data-analysis-visualization.webp" alt="Data analysis and visualization dashboard" loading="lazy" />
 						</div>
 						<div class="expansion-panel last">
 							<div class="expansion-header">
@@ -136,7 +136,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 							<div class="expansion-content">
 								<p>Receive alerts based on customized rules. Get an email or sms, set details for the notifications.</p>
 							</div>
-							<img class="print-panel-image" src="/images/usecases/smart-farming/alert-management.webp" alt="Alert management dashboard" loading="lazy" />
+							<img class="print-panel-image print:only" src="/images/usecases/smart-farming/alert-management.webp" alt="Alert management dashboard" loading="lazy" />
 						</div>
 						<a target="_blank" class="try-demo-button print:hidden" href="https://demo.thingsboard.io/dashboard/1f9828d0-058e-11e7-87f7-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" rel="noopener noreferrer">View live demo</a>
 					</div>
@@ -1437,12 +1437,6 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 
 	:global([data-theme='dark']) #first-screen #background {
 		display: none;
-	}
-
-	@media not print {
-		.print-panel-image {
-			display: none !important;
-		}
 	}
 
 	@media print {

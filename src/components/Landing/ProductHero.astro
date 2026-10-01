@@ -41,6 +41,7 @@ const { title, subtitle, buttons, caption } = Astro.props;
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.product-hero {
 		background-color: var(--page-hero-ground);
@@ -171,9 +172,7 @@ const { title, subtitle, buttons, caption } = Astro.props;
 
 	@media print {
 		.product-hero {
-			padding-block: $spacing-6;
-			background: none;
-			color: var(--color-text);
+			@include print-section($spacing-6);
 		}
 
 		.product-hero__mark {

@@ -131,6 +131,8 @@ const tabs = [
 </script>
 
 <style lang="scss">
+	@use '../../styles/print-mixins' as *;
+
 	#product {
 		max-width: 1400px;
 		margin: 0 auto;
@@ -453,11 +455,10 @@ const tabs = [
 		}
 
 		.scenario-tab {
+			@include print-section-head;
 			padding: 0;
 			font-size: 16px;
 			font-weight: 400;
-			break-inside: avoid;
-			break-after: avoid;
 
 			.tab-tags {
 				display: flex;

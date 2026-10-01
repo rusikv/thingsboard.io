@@ -26,6 +26,7 @@ import { homeProducts } from '@data/homeProducts';
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.products {
 		// Holds the wave field: without a stacking context its `z-index: -1` drops behind the
@@ -78,16 +79,13 @@ import { homeProducts } from '@data/homeProducts';
 
 	@media print {
 		.products {
-			padding-block: $spacing-8;
-			background: none;
-			color: var(--color-text);
+			@include print-section($spacing-8);
 			break-inside: avoid;
 		}
 
 		.products__head {
+			@include print-section-head;
 			margin-bottom: $spacing-6;
-			break-inside: avoid;
-			break-after: avoid;
 		}
 
 		.products__lede {

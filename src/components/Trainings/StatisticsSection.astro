@@ -21,7 +21,7 @@
 				</div>
 				<div class="stat-number-wrap">
 					<span class="stat-number"
-						><span class="animated-num print:hidden" data-target="1200">0</span><span class="final-num">1200</span>+</span
+						><span class="animated-num print:hidden" data-target="1200">0</span><span class="print:only">1200</span>+</span
 					>
 					<span class="stat-label">Participants</span>
 				</div>
@@ -44,7 +44,7 @@
 				</div>
 				<div class="stat-number-wrap">
 					<span class="stat-number"
-						><span class="animated-num print:hidden" data-target="200">0</span><span class="final-num">200</span>+</span
+						><span class="animated-num print:hidden" data-target="200">0</span><span class="print:only">200</span>+</span
 					>
 					<span class="stat-label">Sessions</span>
 				</div>
@@ -207,12 +207,6 @@
 
 		.stats-cards {
 			flex-direction: column;
-		}
-	}
-
-	@media not print {
-		.final-num {
-			display: none !important;
 		}
 	}
 

@@ -24,6 +24,7 @@ import { homeEcosystem } from '@data/homeEcosystem';
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.ecosystem {
 		padding-block: $spacing-16;
@@ -81,9 +82,8 @@ import { homeEcosystem } from '@data/homeEcosystem';
 		}
 
 		.ecosystem__head {
+			@include print-section-head;
 			margin-bottom: $spacing-6;
-			break-inside: avoid;
-			break-after: avoid;
 		}
 
 		.ecosystem__list {

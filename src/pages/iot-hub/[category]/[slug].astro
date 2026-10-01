@@ -78,6 +78,7 @@ recordSitemapLastmod(Astro.url.pathname, detail.updatedTime);
 <style lang="scss">
 	@use '../../../styles/_variables.scss' as *;
 	@use '../../../styles/_iot-hub.scss' as *;
+	@use '../../../styles/_print-mixins.scss' as *;
 
 	.iot-hub-detail {
 		@include iot-hub-hairline-token;
@@ -110,14 +111,7 @@ recordSitemapLastmod(Astro.url.pathname, detail.updatedTime);
 				margin-bottom: 0;
 			}
 
-			$tail: '> :nth-last-child(1 of :not(script, style, template))';
-
-			:global(.sl-markdown-content #{$tail}),
-			:global(.sl-markdown-content #{$tail} #{$tail}),
-			:global(.sl-markdown-content #{$tail} #{$tail} #{$tail}),
-			:global(.sl-markdown-content #{$tail} #{$tail} #{$tail} #{$tail}) {
-				margin-bottom: 0;
-			}
+			@include strip-trailing-margin('.sl-markdown-content', 4, $global: true);
 
 			:global(p:has(+ .iot-hub-listing-link, + .sl-link-button)) {
 				break-after: avoid;

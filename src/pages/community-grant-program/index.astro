@@ -439,6 +439,7 @@ const fmt = (n: number) => n.toLocaleString('en-US');
 
 <style lang="scss" is:global>
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	// The artwork has transparent rounded corners; the gradient repeats its edge colours to hide them.
 	// Wide screens crop its dark top and bottom margins so it stays shorter than the hero below.
@@ -954,8 +955,7 @@ const fmt = (n: number) => n.toLocaleString('en-US');
 			.cg-bar,
 			.cg-legend__swatch,
 			.cg-list {
-				-webkit-print-color-adjust: exact;
-				print-color-adjust: exact;
+				@include print-exact;
 			}
 
 			.cg-table--capacity {

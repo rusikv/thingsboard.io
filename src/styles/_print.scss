@@ -8,7 +8,13 @@
 // `!important` throughout: these have to beat Astro's component-scoped
 // selectors (`.main-frame:where(.astro-…)`), which are unlayered and load later.
 
-@use 'sass:list';
+@use 'print-mixins' as *;
+
+@media not print {
+	.print\:only {
+		display: none !important;
+	}
+}
 
 @media print {
 	@page {
@@ -57,31 +63,8 @@
 		margin-bottom: 0 !important;
 	}
 
-	$tail: '> :nth-last-child(1 of :not(script, style, template))';
-	$chain: '';
-	$docs-tail: ();
-	$site-tail: ();
-
-	@for $depth from 1 through 6 {
-		$chain: '#{$chain} #{$tail}';
-		$docs-tail: list.append($docs-tail, '.sl-container > .sl-markdown-content:not(.doc-footer) #{$chain}', comma);
-
-		@if $depth <= 4 {
-			$site-tail: list.append(
-				$site-tail,
-				'main > :nth-last-child(1 of :not(footer, script, style, template)):has(~ footer) #{$chain}',
-				comma
-			);
-		}
-	}
-
-	#{$docs-tail} {
-		margin-bottom: 0 !important;
-	}
-
-	#{$site-tail} {
-		margin-bottom: 0 !important;
-	}
+	@include strip-trailing-margin('.sl-container > .sl-markdown-content:not(.doc-footer)', 6);
+	@include strip-trailing-margin('main > :nth-last-child(1 of :not(footer, script, style, template)):has(~ footer)', 4);
 
 	.page.sl-flex {
 		display: block !important;
@@ -170,6 +153,10 @@
 			overflow-wrap: anywhere;
 		}
 
+		// A width floor per header cell: the column's share of the printable width (82vw, the sheet less its
+		// margins; the first column counts 1.5 shares) minus 18px of cell padding, capped at 11ch (16ch for the
+		// first column, 26ch when it holds code). vw follows paper size and print scale, so no floor can push
+		// a table past the sheet.
 		@for $columns from 2 through 12 {
 			$shares: $columns + 0.5;
 			$header: '> thead > tr:first-child > th';

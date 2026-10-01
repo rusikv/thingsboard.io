@@ -49,13 +49,13 @@ const moreIndustries = industry.slice(2);
 	<div class="partner-content">
 		<h3 class="partner-name">{name}</h3>
 		<p class:list={['partner-description', truncated && 'print:hidden']}>{snippet}</p>
-		{truncated && <p class="partner-description partner-description--print">{description}</p>}
+		{truncated && <p class="partner-description print:only">{description}</p>}
 		<div class="partner-chips">
 			{industry.slice(0, 2).map((ind) => <FilterChip label={ind} />)}
 			{moreIndustries.length > 0 && (
 				<>
 					<span class="partner-chips-count print:hidden"><FilterChip label={`+${moreIndustries.length}`} /></span>
-					<span class="partner-chips-more">{moreIndustries.map((ind) => <FilterChip label={ind} />)}</span>
+					<span class="partner-chips-more print:only">{moreIndustries.map((ind) => <FilterChip label={ind} />)}</span>
 				</>
 			)}
 		</div>
@@ -141,13 +141,6 @@ const moreIndustries = industry.slice(2);
 
 	.partner-chips-count {
 		display: contents;
-	}
-
-	@media not print {
-		.partner-description--print,
-		.partner-chips-more {
-			display: none !important;
-		}
 	}
 
 	@media print {

@@ -36,6 +36,7 @@ const { title, body, link, badge, mediaFirst = false, tinted = false, bleed = tr
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.feature-row {
 		.main-div {
@@ -210,7 +211,7 @@ const { title, body, link, badge, mediaFirst = false, tinted = false, bleed = tr
 
 			&__badge,
 			&__media {
-				print-color-adjust: exact;
+				@include print-exact;
 			}
 		}
 	}

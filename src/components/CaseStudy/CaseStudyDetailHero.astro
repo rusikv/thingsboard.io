@@ -33,6 +33,7 @@ const { category, heading, paragraphs, logo, logoAlt, backgroundImage } = Astro.
 
 <style lang="scss" is:global>
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.cs-hero {
 		margin-bottom: $spacing-12;
@@ -128,8 +129,7 @@ const { category, heading, paragraphs, logo, logoAlt, backgroundImage } = Astro.
 	@media print {
 		.cs-hero-image-inner,
 		.cs-hero-image-large {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 	}
 </style>

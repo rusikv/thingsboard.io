@@ -52,6 +52,7 @@ const before = name.slice(0, at);
 <style lang="scss">
 	@use '../../styles/variables' as *;
 	@use '../../styles/home-card' as *;
+	@use '../../styles/print-mixins' as *;
 
 	$muted: #6e7481;
 
@@ -132,8 +133,8 @@ const before = name.slice(0, at);
 		}
 
 		.choice__badge {
+			@include print-exact;
 			box-shadow: none;
-			print-color-adjust: exact;
 		}
 
 		.choice__description:last-of-type {

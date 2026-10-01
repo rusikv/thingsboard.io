@@ -36,7 +36,7 @@ const overlayCaption = overlayImageTitle || Astro.props.overlayImageAlt;
 		height={1080}
 		ariaDescribedby={baseImageTitle ? 'uc-img-desc-base' : undefined}
 	/>
-	{baseCaption && <p class="uc-img-caption">{baseCaption}</p>}
+	{baseCaption && <p class="uc-img-caption print:only">{baseCaption}</p>}
 	<div class="uc-img-overlay">
 		<SmartImage
 			src={overlayImage}
@@ -45,7 +45,7 @@ const overlayCaption = overlayImageTitle || Astro.props.overlayImageAlt;
 			height={1080}
 			ariaDescribedby={overlayImageTitle ? 'uc-img-desc-overlay' : undefined}
 		/>
-		{overlayCaption && <p class="uc-img-caption">{overlayCaption}</p>}
+		{overlayCaption && <p class="uc-img-caption print:only">{overlayCaption}</p>}
 	</div>
 	<div class="uc-img-slider print:hidden"></div>
 	{baseImageTitle && <p id="uc-img-desc-base" class="uc-img-desc">{baseImageTitle}</p>}
@@ -160,12 +160,6 @@ const overlayCaption = overlayImageTitle || Astro.props.overlayImageAlt;
 			text-align: center;
 			color: var(--color-text);
 			break-before: avoid;
-		}
-	}
-
-	@media not print {
-		.uc-img-caption {
-			display: none !important;
 		}
 	}
 </style>

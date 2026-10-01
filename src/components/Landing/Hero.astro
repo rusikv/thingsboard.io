@@ -53,6 +53,7 @@ const { title, subtitle, buttons = [], poster, video } = Astro.props;
 	@use 'sass:math';
 	@use 'sass:string';
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	// The footage's size; must match the SmartImage width/height above.
 	$footage-w: 1920;
@@ -337,9 +338,8 @@ const { title, subtitle, buttons = [], poster, video } = Astro.props;
 
 	@media print {
 		.hero {
+			@include print-section;
 			grid-template-columns: 1fr;
-			background: none;
-			color: var(--color-text);
 		}
 
 		.hero__content {

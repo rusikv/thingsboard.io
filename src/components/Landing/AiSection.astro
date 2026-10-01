@@ -128,6 +128,7 @@ const sectionStyle = [AI_COPY.badge.color, ...AI_BADGE_CYCLE].map((hue, i) => `-
 <style lang="scss">
 	@use 'sass:math';
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	// `AI_BADGE_CYCLE`'s length: one keyframe stop each, after the mark's own colour at 0.
 	$hue-count: 5;
@@ -509,8 +510,8 @@ const sectionStyle = [AI_COPY.badge.color, ...AI_BADGE_CYCLE].map((hue, i) => `-
 		}
 
 		.ai__badge {
+			@include print-exact;
 			background-color: var(--ai-hue-0) !important;
-			print-color-adjust: exact;
 			break-after: avoid;
 		}
 

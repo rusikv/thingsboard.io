@@ -13,7 +13,7 @@ import ContactsSection from '@components/Company/ContactsSection.astro';
 >
 	<div class="contact-us-page">
 		<ContactForm mode="page" />
-		<div class="print-contacts">
+		<div class="print-contacts print:only">
 			<ContactsSection />
 		</div>
 	</div>
@@ -33,12 +33,6 @@ import ContactsSection from '@components/Company/ContactsSection.astro';
 		// switch to a dark tone so the form card has contrast.
 		:global([data-theme='dark']) & {
 			background-color: var(--color-bg);
-		}
-	}
-
-	@media not print {
-		.print-contacts {
-			display: none !important;
 		}
 	}
 

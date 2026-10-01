@@ -65,6 +65,7 @@ const { title, lead, options, note } = Astro.props;
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.choice {
 		overflow: hidden;
@@ -249,16 +250,13 @@ const { title, lead, options, note } = Astro.props;
 
 	@media print {
 		.choice {
-			padding-block: $spacing-6;
-			background: none;
-			color: var(--color-text);
+			@include print-section($spacing-6);
 		}
 
 		.choice__lead {
+			@include print-section-head;
 			margin-bottom: $spacing-6;
 			color: var(--color-text-secondary);
-			break-inside: avoid;
-			break-after: avoid;
 		}
 
 		.choice-grid {

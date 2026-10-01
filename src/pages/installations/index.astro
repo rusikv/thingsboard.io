@@ -151,6 +151,7 @@ import { cloudRegionGtmId, cloudRegionHref } from '@util/cloud-regions';
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.install {
 		padding-bottom: $spacing-20;
@@ -552,8 +553,7 @@ import { cloudRegionGtmId, cloudRegionHref } from '@util/cloud-regions';
 		}
 
 		.is-platform .install__mark {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 
 		.install__region {

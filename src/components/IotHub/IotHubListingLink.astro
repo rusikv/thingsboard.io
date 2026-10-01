@@ -178,6 +178,7 @@ const thumbClasses = [
 
 <style lang="scss">
 	@use '../../styles/_variables.scss' as *;
+	@use '../../styles/_print-mixins.scss' as *;
 
 	// --- Card surface --------------------------------------------------------
 
@@ -436,8 +437,7 @@ const thumbClasses = [
 		}
 
 		.iot-hub-listing-link__thumb--compact {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 
 		.iot-hub-listing-link__name {

@@ -25,7 +25,7 @@ const currentYear = new Date().getFullYear();
 
 <div class="logo-burger" data-header-variant={variant}>
 	<a href="/" class="logo" aria-label="Link to homepage"></a>
-	<span class="header-copyright">&copy; {currentYear} The ThingsBoard Authors</span>
+	<span class="header-copyright print:only">&copy; {currentYear} The ThingsBoard Authors</span>
 </div>
 
 {/* Before <Navigation> on purpose: its ~125 KiB of markup shifted the centred nav (≈0.012 CLS); `order` restores the visual order. */}
@@ -743,12 +743,6 @@ const currentYear = new Date().getFullYear();
 		}
 		.head-menu .indicator .line {
 			background-color: var(--color-primary) !important;
-		}
-	}
-
-	@media not print {
-		.header-copyright {
-			display: none !important;
 		}
 	}
 

@@ -290,6 +290,12 @@ const ogImage = ogImageProp ?? getOgImageUrl(Astro.url.pathname);
 		}
 	}
 
+	@media not print {
+		.print\:only {
+			display: none !important;
+		}
+	}
+
 	@media print {
 		.print\:hidden {
 			display: none !important;

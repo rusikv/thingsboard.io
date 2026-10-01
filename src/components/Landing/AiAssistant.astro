@@ -42,7 +42,7 @@ const { titled } = Astro.props;
 		</div>
 	</div>
 
-	<div class="assistant__log assistant__log--final is-running" aria-hidden="true">
+	<div class="assistant__log assistant__log--final is-running print:only" aria-hidden="true">
 		{AI_ASSISTANT_DEMO.exchanges.map(({ prompt, actions, reply }) => (
 			<Fragment>
 				<p class="assistant__msg assistant__msg--user">{prompt}</p>
@@ -463,12 +463,6 @@ const { titled } = Astro.props;
 
 	.assistant__send.is-busy :global(svg) {
 		color: #b5c0bc;
-	}
-
-	@media not print {
-		.assistant__log--final {
-			display: none !important;
-		}
 	}
 
 	@media print {

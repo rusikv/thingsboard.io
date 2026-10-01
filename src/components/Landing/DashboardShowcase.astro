@@ -120,6 +120,7 @@ const widthsOf = (item: (typeof homeCarouselItems)[number]) => {
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.dashboards {
 		// Shared by the board and the glow centred on it.
@@ -460,13 +461,12 @@ const widthsOf = (item: (typeof homeCarouselItems)[number]) => {
 		}
 
 		.dashboards__head {
+			@include print-section-head;
 			margin-bottom: $spacing-6;
-			break-inside: avoid;
-			break-after: avoid;
 		}
 
 		.dashboards__badge {
-			print-color-adjust: exact;
+			@include print-exact;
 			break-after: avoid;
 		}
 

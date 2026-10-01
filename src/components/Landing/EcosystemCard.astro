@@ -96,6 +96,7 @@ const isGlyph = !icon.startsWith('/');
 <style lang="scss">
 	@use '../../styles/variables' as *;
 	@use '../../styles/home-card' as *;
+	@use '../../styles/print-mixins' as *;
 
 	.eco {
 		@include home-card;
@@ -339,7 +340,7 @@ const isGlyph = !icon.startsWith('/');
 
 		.eco__relay,
 		.eco__phone {
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 
 		.eco--wide:has(.eco__mockup):not(:has(source[src])) {

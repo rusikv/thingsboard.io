@@ -74,6 +74,7 @@ const columns: DataTableColumn[] = [
 
 <style lang="scss" is:global>
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	/* Global, not scoped: the table shell comes from DataTable and Astro hashes
 	   every compound, so scoped rules would stop matching. Everything nests under
@@ -341,10 +342,9 @@ const columns: DataTableColumn[] = [
 			}
 
 			thead th {
+				@include print-exact;
 				padding: 10px 8px;
 				font-size: 15px;
-				-webkit-print-color-adjust: exact;
-				print-color-adjust: exact;
 
 				&.gateway,
 				&.edge,

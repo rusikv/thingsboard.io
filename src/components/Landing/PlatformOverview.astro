@@ -310,6 +310,7 @@ const varStyle = Object.entries(vars)
 
 <style lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/print-mixins' as *;
 
 	/** The stage accents' wash: the icon tiles' fill, and the rule above them. One number, one colour. */
 	$stage-wash: 10%;
@@ -1092,7 +1093,7 @@ const varStyle = Object.entries(vars)
 
 	@media print {
 		.plat {
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 
 		.plat__core,

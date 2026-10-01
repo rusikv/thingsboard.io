@@ -28,6 +28,8 @@
 </div>
 
 <style lang="scss">
+	@use '../../styles/print-mixins' as *;
+
 	.thingsboard-colors {
 		max-width: min(1400px, calc(100% - 40px));
 		padding: 46px;
@@ -199,8 +201,7 @@
 		}
 
 		.color {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 	}
 </style>

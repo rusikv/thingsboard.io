@@ -396,6 +396,7 @@ const tbVersionMetaLabel = [tbVersionLabel, isBuiltIn ? IOT_HUB_STRINGS.builtIn.
 
 <style lang="scss">
 	@use '../../styles/_variables.scss' as *;
+	@use '../../styles/_print-mixins.scss' as *;
 
 	.iot-hub-detail-hero {
 		display: flex;
@@ -593,8 +594,7 @@ const tbVersionMetaLabel = [tbVersionLabel, isBuiltIn ? IOT_HUB_STRINGS.builtIn.
 	@media print {
 		.iot-hub-detail-hero__icon,
 		.iot-hub-detail-hero__meta-badge {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
+			@include print-exact;
 		}
 
 		.iot-hub-detail-hero__preview:has(> .iot-hub-detail-hero__preview-fallback) {

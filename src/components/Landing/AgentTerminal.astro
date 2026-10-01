@@ -30,7 +30,7 @@ const turnCls = (i: number) => (gapBefore(i) ? 'agent__row agent__row--gap' : 'a
 
 	<div class="agent__scroll">
 		{[false, true].map((final) => (
-			<div class:list={['agent__body', final && 'agent__body--final']} aria-hidden="true">
+			<div class:list={['agent__body', final && 'agent__body--final print:only']} aria-hidden="true">
 				{
 					/* The `.agent__text` spans stay on one line: the column is `pre-wrap`, so a template
 					   newline would render. */
@@ -376,12 +376,6 @@ const turnCls = (i: number) => (gapBefore(i) ? 'agent__row agent__row--gap' : 'a
 	@media (prefers-reduced-motion: reduce) {
 		.agent :global(.agent__caret--idle) {
 			animation: none;
-		}
-	}
-
-	@media not print {
-		.agent__body--final {
-			display: none !important;
 		}
 	}
 
