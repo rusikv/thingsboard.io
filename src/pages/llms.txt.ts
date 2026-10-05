@@ -12,7 +12,7 @@ const HEADER = `# ThingsBoard
 - The platform provides a powerful rule engine for real-time data processing, transformation, and automated actions on IoT telemetry.
 - ThingsBoard dashboards offer rich interactive widgets for data visualization, alarm management, and device control.
 - Multi-tenancy architecture supports isolated customer and tenant hierarchies with role-based access control.
-- ThingsBoard is one all-in-one platform: white-labeling, solution templates, reporting, advanced RBAC, and integrations with third-party platforms and cloud services are built in.
+- ThingsBoard is an all-in-one platform: white-labeling, solution templates, reporting, advanced RBAC, and integrations with third-party platforms and cloud services are built in.
 - ThingsBoard Cloud (PaaS) is a fully managed cloud offering; ThingsBoard Edge extends the platform to on-premises edge nodes.
 - Additional products: IoT Gateway (protocol bridge for industrial devices), Trendz Analytics (AI-driven analytics), Mobile SDK, License Server. The TBMQ MQTT broker is documented separately at https://tbmq.io.`;
 
@@ -87,12 +87,12 @@ const KEY_PAGES: KeyPage[] = [
 	},
 	{
 		slug: 'docs/edge/pe',
-		title: 'ThingsBoard Edge',
+		title: 'ThingsBoard Edge PE',
 		description: 'On-premises edge nodes that synchronize with a central ThingsBoard server.',
 	},
 	{
 		slug: 'docs/mobile/pe',
-		title: 'ThingsBoard Mobile',
+		title: 'ThingsBoard Mobile PE',
 		description: 'Customizable mobile application for end-user IoT solutions.',
 	},
 	{

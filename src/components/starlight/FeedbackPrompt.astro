@@ -142,7 +142,6 @@ const successText = {
 
 	const MESSAGES = {
 		error: "Couldn't send your feedback. Please try again.",
-		commentHint: 'A comment is required when you choose Other.',
 		commentMissing: 'Please add a comment before submitting.',
 		requiredPlaceholder: 'Tell us more (required).',
 		sending: 'Sending…',
@@ -266,6 +265,7 @@ const successText = {
 		hint.id = `feedback-${++instanceCount}-hint`;
 		const submitLabel = submit.textContent ?? 'Submit';
 		const optionalPlaceholder = comment.placeholder;
+		const commentHint = hint.textContent ?? '';
 		let chosen: FeedbackOption | null = null;
 
 		// Only the visible list counts, never a radio the browser restored in the other one.
@@ -284,7 +284,7 @@ const successText = {
 		};
 
 		const setCommentInvalid = (invalid: boolean) => {
-			hint.textContent = invalid ? MESSAGES.commentMissing : MESSAGES.commentHint;
+			hint.textContent = invalid ? MESSAGES.commentMissing : commentHint;
 			hint.classList.toggle('is-error', invalid);
 			if (invalid) comment.setAttribute('aria-invalid', 'true');
 			else comment.removeAttribute('aria-invalid');
@@ -297,7 +297,7 @@ const successText = {
 			errorText.textContent = visible ? MESSAGES.error : '';
 		};
 
-		// Renders the send lock shared by every copy of the prompt.
+		// `sending` is module-wide: one in-flight send locks every copy of the prompt.
 		const sync = () => {
 			submit.textContent = sending ? MESSAGES.sending : submitLabel;
 			if (sending) submit.setAttribute('aria-busy', 'true');
