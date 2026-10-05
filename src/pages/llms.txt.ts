@@ -87,12 +87,12 @@ const KEY_PAGES: KeyPage[] = [
 	},
 	{
 		slug: 'docs/edge/pe',
-		title: 'ThingsBoard Edge PE',
+		title: 'ThingsBoard Edge',
 		description: 'On-premises edge nodes that synchronize with a central ThingsBoard server.',
 	},
 	{
 		slug: 'docs/mobile/pe',
-		title: 'ThingsBoard Mobile PE',
+		title: 'ThingsBoard Mobile',
 		description: 'Customizable mobile application for end-user IoT solutions.',
 	},
 	{
