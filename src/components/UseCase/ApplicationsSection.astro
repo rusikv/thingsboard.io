@@ -2,6 +2,7 @@
 import SmartImage from '../SmartImage.astro';
 import SectionBadge from '../SectionBadge.astro';
 import type { ApplicationItem } from '@data/use-cases/types.ts';
+import { ICON_RING_GEOMETRY } from './icon-ring-geometry.ts';
 
 interface Props {
 	title: string;
@@ -15,6 +16,38 @@ const { title, badge, subtitle, applications } = Astro.props;
 // Zigzag: odd-indexed items (0, 2, 4) text on top, even-indexed (1, 3) text on bottom
 const topApps = applications.filter((_, i) => i % 2 === 0);
 const bottomApps = applications.filter((_, i) => i % 2 !== 0);
+
+// Accent icons that ship a localized `-dark.svg` get a true dark-mode recolor
+// (brand indigo → brand-dark #b3c7ff) via a light/dark swap. Neutral (navy)
+// icons have no variant and fall back to the dark-mode filter in the styles.
+const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
+	query: '?url',
+	import: 'default',
+	eager: true,
+});
+const darkSrcFor = (src: string) => {
+	const dark = src.replace(/\.svg$/, '-dark.svg');
+	return dark in darkVariants ? dark : null;
+};
+
+// Mobile "just circles": the desktop node SVG bakes in timeline connectors that
+// extend outside the ring. Instead of the (rotated) mobile variants, we reuse the
+// desktop icon and crop to the ring via a circular viewport — scaling so the ring
+// fills the viewport and translating so it centers (ring geometry differs per node
+// because of the zigzag). Returns the inline metrics, or null to render plainly.
+const MOBILE_D = 120; // circular viewport diameter (px)
+const MOBILE_FILL = 0.94; // ring fills 94% of the viewport, leaving a small margin
+const mobileCrop = (src: string) => {
+	const g = ICON_RING_GEOMETRY[src];
+	if (!g) return null;
+	const imgW = (MOBILE_FILL * MOBILE_D) / (2 * g.r);
+	const imgH = imgW * g.aspect;
+	return {
+		width: Math.round(imgW),
+		height: Math.round(imgH),
+		style: `width:${imgW.toFixed(1)}px;height:${imgH.toFixed(1)}px;transform:translate(${(MOBILE_D / 2 - g.cx * imgW).toFixed(1)}px,${(MOBILE_D / 2 - g.cy * imgH).toFixed(1)}px)`,
+	};
+};
 ---
 
 <section class="uc-applications uc-section-padding">
@@ -43,16 +76,23 @@ const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 
 		<div class="uc-images-row">
 			{
-				applications.map((app) => (
-					<div class="uc-app-image">
-						<SmartImage
-							src={app.desktopImage}
-							alt={app.imageAlt}
-							width={180}
-							height={180}
-						/>
-					</div>
-				))
+				applications.map((app) => {
+					const darkSrc = darkSrcFor(app.desktopImage);
+					return (
+						<div class="uc-app-image">
+							<SmartImage
+								src={app.desktopImage}
+								alt={app.imageAlt}
+								width={180}
+								height={180}
+								class={darkSrc ? 'uc-ic uc-ic--light' : undefined}
+							/>
+							{darkSrc && (
+								<SmartImage src={darkSrc} alt={app.imageAlt} width={180} height={180} class="uc-ic uc-ic--dark" />
+							)}
+						</div>
+					);
+				})
 			}
 		</div>
 
@@ -71,22 +111,45 @@ const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 	{/* Mobile: alternating image-text blocks */}
 	<div class="uc-applications-small">
 		{
-			applications.map((app) => (
-				<div class="uc-app-block">
-					<div class="uc-app-block-image">
-						<SmartImage
-							src={app.mobileImage}
-							alt={app.imageAlt}
-							width={120}
-							height={120}
-						/>
+			applications.map((app) => {
+				// Mobile reuses the DESKTOP icon, cropped to the ring (no rotated variant).
+				const crop = mobileCrop(app.desktopImage);
+				const darkSrc = darkSrcFor(app.desktopImage);
+				return (
+					<div class="uc-app-block">
+						<div class:list={['uc-app-block-image', { 'uc-app-block-image--crop': crop }]}>
+							{crop ? (
+								<div class="uc-circle-crop">
+									<SmartImage
+										src={app.desktopImage}
+										alt={app.imageAlt}
+										width={crop.width}
+										height={crop.height}
+										style={crop.style}
+										class={`uc-crop-img${darkSrc ? ' uc-ic uc-ic--light' : ''}`}
+									/>
+									{darkSrc && (
+										<SmartImage
+											src={darkSrc}
+											alt={app.imageAlt}
+											width={crop.width}
+											height={crop.height}
+											style={crop.style}
+											class="uc-crop-img uc-ic uc-ic--dark"
+										/>
+									)}
+								</div>
+							) : (
+								<SmartImage src={app.desktopImage} alt={app.imageAlt} width={120} height={120} />
+							)}
+						</div>
+						<div class="uc-app-block-text">
+							<h3>{app.title}</h3>
+							<p>{app.description}</p>
+						</div>
 					</div>
-					<div class="uc-app-block-text">
-						<h3>{app.title}</h3>
-						<p>{app.description}</p>
-					</div>
-				</div>
-			))
+				);
+			})
 		}
 	</div>
 </section>
@@ -190,9 +253,31 @@ const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 		gap: $spacing-3;
 
 		.uc-app-block-image {
+			// Plain fallback (icon without ring geometry)
 			img {
 				width: 120px;
 				height: auto;
+			}
+
+			// Cropped "just circles": circular viewport over the desktop icon.
+			&--crop {
+				width: 120px;
+				height: 120px;
+			}
+
+			.uc-circle-crop {
+				position: relative;
+				width: 120px;
+				height: 120px;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+
+			.uc-crop-img {
+				position: absolute;
+				top: 0;
+				left: 0;
+				max-width: none; // width/transform come from the inline style
 			}
 		}
 
@@ -209,6 +294,31 @@ const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 				@include text-card;
 				margin: 0;
 			}
+		}
+	}
+
+	// ── Dark mode ──────────────────────────────────
+	// Every application icon ships a `-dark.svg` sibling, recoloured to the dark
+	// token for its family (brand indigo → #b3c7ff, CE navy → #78b4f5); swap to it
+	// in dark mode.
+	.uc-ic--dark {
+		display: none;
+	}
+
+	[data-theme='dark'] {
+		.uc-ic--light {
+			display: none;
+		}
+		.uc-ic--dark {
+			display: block;
+		}
+
+		// Safety net for an icon added later without a `-dark.svg`: it renders as a
+		// lone <img> with no swap class, and this lifts its line-art off the dark
+		// background. No icon takes this path today.
+		.uc-images-row .uc-app-image img:not(.uc-ic),
+		.uc-app-block-image img:not(.uc-ic) {
+			filter: invert(1) hue-rotate(180deg);
 		}
 	}
 
