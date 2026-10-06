@@ -99,6 +99,15 @@ const hasBothModes = traditional.length > 0;
 			@include media-down(md) {
 				max-width: 200px;
 			}
+
+			// Equipment illustrations carrying their own white fills and green/orange
+			// state colours. Recolouring them would change what those states read as,
+			// so dark mode keeps the artwork and sits it on a fixed light plate.
+			[data-theme='dark'] & {
+				background: $color-white;
+				border-radius: 8px;
+				padding: $spacing-3;
+			}
 		}
 	}
 
