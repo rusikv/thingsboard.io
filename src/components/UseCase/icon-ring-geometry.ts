@@ -1,11 +1,13 @@
 // Ring geometry for the mobile "just circles" crop of use-case application icons.
 // Each node SVG is a circle+icon with timeline connectors that extend outside the
 // ring; on mobile we clip to the ring via a circular viewport.
-// Values are fractions of the icon box, measured from the ring <circle> in the SVG
-// against its root width/height: cx (of width), cy (of height), r (radius of width),
-// aspect (height/width). Keyed by the data desktopImage path. Add an entry with
-// every new application icon: without one, mobile shows the uncropped icon and
-// dark mode falls back to the filter instead of the `-dark.svg`.
+// Values are fractions of the icon box, measured from the ring against the SVG's
+// root width/height: cx (of width), cy (of height), r (radius of width), aspect
+// (height/width). The ring is the 186.5 x 186.5 `<rect rx="93.25">` (a closed stroke
+// `<path>` in a few icons), not the small timeline-dot `<circle>`s. Keyed by the
+// data desktopImage path. Add an entry with every new application icon: without
+// one, mobile shows the uncropped light icon under the dark-mode filter rather
+// than its `-dark.svg`.
 export interface RingGeometry {
 	cx: number;
 	cy: number;
