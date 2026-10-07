@@ -19,7 +19,6 @@
 					alt="ThingsBoard dashboards and menus"
 					width="1319"
 					height="488"
-					loading="lazy"
 				/>
 				<img
 					src="/images/trainings/thingsboard-tenant-list.webp"
@@ -145,18 +144,23 @@
 	}
 
 	// The composite has two pale decorative chips baked in that only disappear on a
-	// white page; the dark copy has them recoloured to the dark surface.
+	// white page; the dark copy has them recoloured to the dark surface. The copies
+	// are stacked and swapped with visibility, not display, so a theme switch does
+	// not restart the entrance animation. Both load eagerly: either can be the LCP.
 	.hero-img--dark {
-		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		visibility: hidden;
 
 		:global([data-theme='dark']) & {
-			display: inline;
+			visibility: visible;
 		}
 	}
 
 	.hero-img--light {
 		:global([data-theme='dark']) & {
-			display: none;
+			visibility: hidden;
 		}
 	}
 
