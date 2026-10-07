@@ -2,7 +2,7 @@
 import SmartImage from '../SmartImage.astro';
 import SectionBadge from '../SectionBadge.astro';
 import type { ApplicationItem } from '@data/use-cases/types.ts';
-import { ICON_RING_GEOMETRY } from './icon-ring-geometry.ts';
+import { ICON_RING_GEOMETRY } from '@components/UseCase/icon-ring-geometry.ts';
 
 interface Props {
 	title: string;
@@ -17,9 +17,9 @@ const { title, badge, subtitle, applications } = Astro.props;
 const topApps = applications.filter((_, i) => i % 2 === 0);
 const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 
-// Accent icons that ship a localized `-dark.svg` get a true dark-mode recolor
-// (brand indigo → brand-dark #b3c7ff) via a light/dark swap. Neutral (navy)
-// icons have no variant and fall back to the dark-mode filter in the styles.
+// Every application icon ships a `-dark.svg` sibling recoloured for dark mode
+// (brand indigo → #b3c7ff, CE navy → #78b4f5); the styles swap to it. An icon
+// added without one falls back to the dark-mode filter in the styles.
 const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
 	query: '?url',
 	import: 'default',

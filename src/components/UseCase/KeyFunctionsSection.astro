@@ -104,8 +104,8 @@ const hasBothModes = traditional.length > 0;
 			// state colours. Recolouring them would change what those states read as,
 			// so dark mode keeps the artwork and sits it on a fixed light plate.
 			[data-theme='dark'] & {
-				background: $color-white;
-				border-radius: 8px;
+				background: var(--color-white);
+				border-radius: $radius-lg;
 				padding: $spacing-3;
 			}
 		}
