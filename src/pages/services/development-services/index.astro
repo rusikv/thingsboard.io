@@ -266,7 +266,6 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 <BaseLayout
 	headerVariant="solid-shadow"
-	forceLightTheme
 	title="Custom IoT Development | 3X Faster Delivery & Fixed Cost"
 	description="ThingsBoard IoT development services — 3× faster delivery, 2× lower TCO, and high-quality scalable solutions backed by deep IoT expertise."
 >
@@ -2718,6 +2717,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		overflow: hidden;
 		margin-bottom: 100px;
 		background-color: #f4f8fe;
+
+		:global([data-theme='dark']) & {
+			background-color: var(--color-bg);
+		}
 	}
 
 	.hero-container {
@@ -2750,6 +2753,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		line-height: 72px;
 		letter-spacing: -0.14px;
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text);
+		}
 	}
 
 	.cdu-sub-title {
@@ -2760,13 +2767,17 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		line-height: 32px;
 		letter-spacing: 0.15px;
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	.cdu-button {
 		display: inline-block;
 		padding: 15px;
 		border-radius: 6px;
-		color: #fff;
+		color: var(--color-brand-contrast);
 		background-color: var(--color-brand);
 		border: 1px solid var(--color-brand);
 		font-weight: 600;
@@ -2787,6 +2798,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			// box dimensions don't shift on hover.
 			filter: none;
 			border: 1px solid var(--color-brand);
+
+			// Outlined in dark; a white fill would flash on the dark page.
+			:global([data-theme='dark']) & {
+				background-color: transparent;
+			}
 		}
 	}
 
@@ -2794,7 +2810,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		display: inline-block;
 		padding: 16px 24px;
 		background-color: var(--color-brand);
-		color: #fff;
+		color: var(--color-brand-contrast);
 		border: none;
 		border-radius: 5px;
 		font-size: 20px;
@@ -2805,6 +2821,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 		&:hover {
 			background-color: #1557bb;
+
+			// White holds 4.5:1 on the saturated dark accent; navy would not.
+			:global([data-theme='dark']) & {
+				background-color: var(--color-primary-hover);
+				color: var(--color-white);
+			}
 		}
 	}
 
@@ -2956,6 +2978,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		&.expanded {
 			background: #f4f8fe;
 
+			:global([data-theme='dark']) & {
+				background: var(--color-bg-surface);
+			}
+
 			.expansion-header::after {
 				transform: rotate(225deg);
 				margin-top: 2px;
@@ -2964,6 +2990,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			.expansion-title {
 				color: #000;
 				font-weight: 500;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			.expansion-content {
@@ -3003,6 +3033,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		font-weight: 400;
 		line-height: 44px;
 		color: #3d3d3d;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	.expansion-content {
@@ -3082,7 +3116,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 	}
 	:global(.buttons-block .contact-us) {
 		background-color: var(--color-brand);
-		color: #fff;
+		color: var(--color-brand-contrast);
 		border: 1px solid var(--color-brand);
 		cursor: pointer;
 	}
@@ -3094,6 +3128,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		font-weight: 500;
 		line-height: 44px;
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text);
+		}
 	}
 
 	:global(.client-feedback-cards) {
@@ -3141,11 +3179,19 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		padding-left: 12px;
 		font-style: italic;
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	:global(.client-info .client-feedback a.read-more-link) {
 		color: #3d3d3d;
 		text-decoration: underline;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	:global(.client-info > div:last-child) {
@@ -3242,11 +3288,20 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			background: none;
 			padding: 16px;
 
+			// The base dark panel fill outranks `none`; here only the header is filled.
+			:global([data-theme='dark']) & {
+				background: none;
+			}
+
 			.expansion-header {
 				background: #f4f8fe;
 				padding: 20px;
 				border-radius: 15px;
 				margin-bottom: 16px;
+
+				:global([data-theme='dark']) & {
+					background: var(--color-bg-surface);
+				}
 
 				&::after {
 					top: 35px;
@@ -3540,6 +3595,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.vision-wrapper {
@@ -3549,7 +3608,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			justify-content: space-between;
 			align-items: center;
 			z-index: 0;
-			background-color: var(--color-bg);
+			background-color: var(--color-bg-surface);
 			padding: 46px;
 			border-radius: 24px;
 			border: 1px solid #2a7dec;
@@ -3586,6 +3645,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				font-size: 24px;
 				font-weight: 500;
 				line-height: 36px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			.vision-title-text {
@@ -3593,6 +3656,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				font-size: 18px;
 				font-weight: 400;
 				line-height: 30px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 		}
 
@@ -3609,6 +3676,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					font-weight: 400;
 					line-height: 28px;
 
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
+
 					&:first-child {
 						margin-bottom: 12px;
 					}
@@ -3623,11 +3694,19 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			border-top: 1px solid #e5effc;
 			padding-top: 32px;
 
+			:global([data-theme='dark']) & {
+				border-top-color: var(--color-border-light);
+			}
+
 			.vision-footer-text {
 				color: #212121;
 				font-size: 36px;
 				font-weight: 500;
 				line-height: 48px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			.cdu-button {
@@ -3747,6 +3826,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			font-weight: 500;
 			color: #212121;
 			margin-bottom: 56px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.wrap {
@@ -3976,6 +4059,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.services-container {
@@ -3999,6 +4086,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			margin-bottom: 56px;
 			color: #424242;
 			text-align: center;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text-secondary);
+			}
 		}
 
 		.cards {
@@ -4014,7 +4105,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			padding: 24px;
 			border-radius: 24px;
 			box-shadow: 0 10px 25px -15px rgba(0, 0, 0, 0.08);
-			background: white;
+			background: var(--color-bg-surface);
 			transition: max-height 0.4s ease-in-out;
 			overflow: hidden;
 			cursor: pointer;
@@ -4052,6 +4143,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						color: #212121;
 						font-weight: 500;
 						line-height: 1.4;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
 					}
 
 					.header-icon {
@@ -4067,6 +4162,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 				.expansion-header {
 					border-bottom: 1px solid #bdbdbd;
+
+					:global([data-theme='dark']) & {
+						border-bottom-color: var(--color-border-light);
+					}
 
 					&::after {
 						transform: rotate(-135deg);
@@ -4104,6 +4203,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						line-height: 24px;
 						color: #424242;
 
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
+
 						&::marker {
 							color: #2a7dec;
 						}
@@ -4116,7 +4219,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			background: transparent;
 
 			.get-in-touch-container {
-				background: white;
+				background: var(--color-bg-surface);
 				overflow: hidden;
 				position: relative;
 				display: flex;
@@ -4132,6 +4235,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					font-weight: 500;
 					line-height: 48px;
 					text-align: left;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 
 				.create-perfect-solution {
@@ -4219,6 +4326,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			line-height: 48px;
 			color: #212121;
 			margin-bottom: 20px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.industries-subtitle {
@@ -4229,6 +4340,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			max-width: 900px;
 			text-align: center;
 			line-height: 30px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text-secondary);
+			}
 		}
 
 		.content-container {
@@ -4255,14 +4370,26 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 				&:hover .menu-item-header h3 {
 					color: #000;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 
 				&.active {
 					border-radius: 24px;
 					background: #f4f8fe;
 
+					:global([data-theme='dark']) & {
+						background: var(--color-bg-surface);
+					}
+
 					.menu-item-header h3 {
 						color: #000;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
 					}
 				}
 
@@ -4279,6 +4406,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						font-weight: 400;
 						line-height: 36px;
 						color: #3d3d3d;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
 					}
 				}
 			}
@@ -4312,6 +4443,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		font-weight: 400;
 		line-height: 28px;
 		color: #212121;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text);
+		}
 	}
 
 	:global(.industries-card .card-descr) {
@@ -4331,6 +4466,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		font-size: 16px;
 		font-weight: 400;
 		line-height: 28px;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	:global(.industries-card ul li::marker) {
@@ -4443,6 +4582,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.trusted-partner-title {
@@ -4458,6 +4601,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			flex-direction: column;
 			gap: 40px;
 			color: #212529;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.trusted-partner-header {
@@ -4483,6 +4630,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			font-weight: 500;
 			line-height: 36px;
 
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
+
 			&::before {
 				content: '✓';
 				color: #fafbfc;
@@ -4504,6 +4655,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			font-size: 24px;
 			font-weight: 500;
 			line-height: 36px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.trusted-partner-footer {
@@ -4531,6 +4686,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				color: #202021;
 				font-weight: 400;
 				text-align: start;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 		}
 
@@ -4554,11 +4713,19 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					font-weight: 500;
 					line-height: 36px;
 					color: #212529;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 				.tp-title {
 					font-size: 18px;
 					font-weight: 400;
 					color: #212529;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 			}
 		}
@@ -4668,6 +4835,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.fast-delivery-title {
@@ -4677,6 +4848,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			margin-bottom: 40px;
 			padding: 0 80px;
 			color: #212121;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.visually-hidden {
@@ -4707,6 +4882,13 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				background: #fff;
 				color: #3d3d3d;
 				height: 75px;
+
+				// Cell gaps take the band colour, as in light.
+				:global([data-theme='dark']) & {
+					border-color: var(--color-bg);
+					background: var(--color-bg-surface);
+					color: var(--color-text-secondary);
+				}
 			}
 
 			thead th {
@@ -4717,12 +4899,21 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				text-align: center;
 				padding: 24px 20px;
 				background: #fff;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+					background: var(--color-bg-surface);
+				}
 			}
 
 			thead th:first-child {
 				width: 30%;
 				background-color: #f4f8fe;
 				border-radius: 0;
+
+				:global([data-theme='dark']) & {
+					background-color: var(--color-bg);
+				}
 			}
 
 			thead th:not(:first-child) {
@@ -4738,6 +4929,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				background-color: #f4f8fe;
 				border-radius: 0;
 				text-align: left;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+					background-color: var(--color-bg);
+				}
 			}
 
 			tbody td:not(:first-child) {
@@ -4792,6 +4988,13 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						color: #3d3d3d;
 						text-align: left;
 						box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08);
+
+						// The blue glow would show as a haze on the dark band.
+						:global([data-theme='dark']) & {
+							background: var(--color-bg-surface);
+							color: var(--color-text-secondary);
+							box-shadow: none;
+						}
 					}
 
 					&:first-child .content {
@@ -4800,6 +5003,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						line-height: 36px;
 						color: #212121;
 						text-align: center;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
 					}
 				}
 
@@ -4809,6 +5016,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					font-weight: 500;
 					line-height: 28px;
 					color: #1f2021;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 			}
 		}
@@ -4852,10 +5063,18 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				letter-spacing: 0.249px;
 				margin-bottom: 32px;
 
+				:global([data-theme='dark']) & {
+					color: var(--color-text-secondary);
+				}
+
 				a.read-more-link {
 					color: #3d3d3d;
 					font-style: normal;
 					text-decoration: underline;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text-secondary);
+					}
 				}
 			}
 
@@ -4866,6 +5085,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				line-height: 44px;
 				letter-spacing: 0.249px;
 				margin-bottom: 0;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 		}
 	}
@@ -4897,6 +5120,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.more-feature-title {
@@ -4906,6 +5133,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			line-height: 48px;
 			color: #212121;
 			margin-bottom: 40px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.cards {
@@ -4919,9 +5150,14 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			padding: 46px;
 			border-radius: 24px;
 			box-shadow: -2.933px 11px 36.667px -14.667px rgba(0, 0, 0, 0.15);
-			background: #fff;
+			background: var(--color-bg-surface);
 			flex: 1 1 0px;
 			margin-bottom: 80px;
+
+			// The shadow does not show on a dark band, so the card gets an edge there.
+			:global([data-theme='dark']) & {
+				border: 1px solid var(--color-border);
+			}
 
 			.card-title {
 				font-size: 28px;
@@ -4929,6 +5165,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				line-height: 44px;
 				color: #212529;
 				margin-bottom: 16px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			.card-descr {
@@ -4936,6 +5176,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				font-size: 16px;
 				font-weight: 400;
 				line-height: 28px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text-secondary);
+				}
 			}
 		}
 	}
@@ -5005,6 +5249,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			line-height: 48px;
 			font-weight: 500;
 			margin-bottom: 20px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.pt-subtitle {
@@ -5015,6 +5263,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			line-height: 28px;
 			font-weight: 400;
 			margin: 0 auto 42px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.table-container {
@@ -5040,6 +5292,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					text-align: center;
 					border-bottom: 1px solid #9e9e9e;
 
+					:global([data-theme='dark']) & {
+						border-bottom-color: var(--color-text-light);
+					}
+
 					&:first-child {
 						text-align: left;
 						padding-left: 8px;
@@ -5049,6 +5305,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				th:not(:last-child),
 				td:not(:last-child) {
 					border-right: 1px dashed #9e9e9e;
+
+					:global([data-theme='dark']) & {
+						border-right-color: var(--color-text-light);
+					}
 				}
 
 				th:first-child,
@@ -5064,9 +5324,17 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					tr {
 						&:nth-child(4).highlight-row {
 							background-color: #f2f7fe;
+
+							:global([data-theme='dark']) & {
+								background-color: var(--color-bg-surface);
+							}
 						}
 						&:hover {
 							background-color: #f2f7fe;
+
+							:global([data-theme='dark']) & {
+								background-color: var(--color-bg-surface);
+							}
 						}
 						&:hover :is(td, th):first-child {
 							font-weight: 500;
@@ -5087,6 +5355,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						text-align: start;
 						vertical-align: top;
 						letter-spacing: 0.15px;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
 					}
 
 					.expansion-cell {
@@ -5104,10 +5376,18 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							text-align 0.3s;
 						cursor: default;
 
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
+
 						p {
 							font-size: 14px;
 							line-height: 24px;
 							color: rgb(33, 37, 41);
+
+							:global([data-theme='dark']) & {
+								color: var(--color-text);
+							}
 
 							&:first-child {
 								font-weight: 500;
@@ -5124,6 +5404,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							border: 1px solid #b5c0ce;
 							background: linear-gradient(90deg, #fff 0%, #b5c0ce 100%);
 							width: 150%;
+
+							:global([data-theme='dark']) & {
+								border-color: var(--color-text-light);
+								background: linear-gradient(90deg, var(--color-bg) 0%, var(--sl-color-gray-5) 100%);
+							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5144,6 +5429,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							width: 100%;
 							margin-left: 50%;
 
+							:global([data-theme='dark']) & {
+								border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
+								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
+							}
+
 							&:hover {
 								padding-left: 8px;
 								width: 424px;
@@ -5163,6 +5453,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							margin-left: 50%;
 							padding: 6px 2px;
 
+							:global([data-theme='dark']) & {
+								border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
+								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
+							}
+
 							&:hover {
 								padding-left: 8px;
 								width: 370px;
@@ -5179,13 +5474,17 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							border: 1px solid #2670d4;
 							background: var(--color-brand);
 							width: 100%;
-							color: white;
+							color: var(--color-brand-contrast);
 							height: 80px;
 							padding: 4px 1px;
 							text-align: center;
 
+							:global([data-theme='dark']) & {
+								border-color: var(--color-brand);
+							}
+
 							p {
-								color: white;
+								color: var(--color-brand-contrast);
 							}
 
 							&:hover {
@@ -5207,6 +5506,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							width: 200%;
 							height: 54px;
 
+							:global([data-theme='dark']) & {
+								border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
+								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
+							}
+
 							&:hover {
 								padding-left: 8px;
 								width: 440px;
@@ -5224,6 +5528,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							background: #d9ebff;
 							width: 50%;
 							padding: 6px 2px;
+
+							:global([data-theme='dark']) & {
+								border-color: var(--color-primary);
+								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
+							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5243,6 +5552,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							background: linear-gradient(90deg, #b5c0ce 0%, #fff 100%);
 							width: 150%;
 							margin-left: 50%;
+
+							:global([data-theme='dark']) & {
+								border-color: var(--color-text-light);
+								background: linear-gradient(90deg, var(--sl-color-gray-5) 0%, var(--color-bg) 100%);
+							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5291,6 +5605,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						color: #3d3d3d;
 						border-bottom: 1px dashed #757575;
 
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+							border-bottom-color: var(--color-text-light);
+						}
+
 						&:last-child {
 							border-bottom: none;
 						}
@@ -5314,6 +5633,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							font-weight: 500;
 							line-height: 36px;
 							letter-spacing: 0.15px;
+
+							:global([data-theme='dark']) & {
+								color: var(--color-text);
+							}
 						}
 
 						p {
@@ -5322,6 +5645,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							line-height: 30px;
 							letter-spacing: 0.15px;
 							color: #3d3d3d;
+
+							// The secondary grey is only 3.1:1 on the stronger tint, so dark uses the main text colour.
+							:global([data-theme='dark']) & {
+								color: var(--color-text);
+							}
 						}
 
 						p:last-child {
@@ -5357,18 +5685,30 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							padding: 51.5px 16px;
 							background: linear-gradient(180deg, #fff 0%, #b5c0ce 100%);
 							min-height: 167px;
+
+							:global([data-theme='dark']) & {
+								background: linear-gradient(180deg, var(--color-bg) 0%, var(--sl-color-gray-5) 100%);
+							}
 						}
 
 						&:nth-child(2) {
 							padding: 34px 16px;
 							background: #d4e5fb;
 							min-height: 132px;
+
+							:global([data-theme='dark']) & {
+								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
+							}
 						}
 
 						&:nth-child(3) {
 							padding: 4px 16px;
 							background: #bbd5f9;
 							min-height: 72px;
+
+							:global([data-theme='dark']) & {
+								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
+							}
 						}
 
 						&:nth-child(4) {
@@ -5378,7 +5718,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 							p,
 							h3 {
-								color: white;
+								color: var(--color-brand-contrast);
 							}
 						}
 
@@ -5386,18 +5726,30 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							padding: 100px 16px;
 							background: #bbd5f9;
 							min-height: 264px;
+
+							:global([data-theme='dark']) & {
+								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
+							}
 						}
 
 						&:nth-child(6) {
 							padding: 4px 16px;
 							background: #d4e5fb;
 							min-height: 72px;
+
+							:global([data-theme='dark']) & {
+								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
+							}
 						}
 
 						&:nth-child(7) {
 							padding: 51.5px 16px;
 							background: linear-gradient(180deg, #b5c0ce 0%, #fff 100%);
 							min-height: 167px;
+
+							:global([data-theme='dark']) & {
+								background: linear-gradient(180deg, var(--sl-color-gray-5) 0%, var(--color-bg) 100%);
+							}
 						}
 					}
 				}
@@ -5452,6 +5804,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			height: 100%;
 			background-color: #f4f8fe;
 			z-index: -1;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.engagement-model-container {
@@ -5470,6 +5826,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			color: #212121;
 			margin-bottom: 16px;
 			text-align: center;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.engagement-model-descr {
@@ -5480,6 +5840,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			color: #424242;
 			margin-bottom: 40px;
 			line-height: 30px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text-secondary);
+			}
 		}
 
 		.em-container {
@@ -5496,7 +5860,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			border: 1px solid #ddeafc;
 			border-radius: 24px;
 			box-shadow: 0 26px 40px 0 rgba(0, 0, 0, 0.08);
-			background-color: #fff;
+			background-color: var(--color-bg-surface);
+
+			:global([data-theme='dark']) & {
+				border-color: var(--color-border);
+			}
 
 			& > img:first-child {
 				margin: 0 auto 16px;
@@ -5509,6 +5877,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				text-align: center;
 				margin-bottom: 8px;
 				color: #212121;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			.em-subtitle {
@@ -5519,6 +5891,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				text-align: center;
 				margin-bottom: 40px;
 				white-space: normal;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text-secondary);
+				}
 			}
 
 			.em-btn {
@@ -5533,6 +5909,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				line-height: 30px;
 				color: #212121;
 				margin-bottom: 16px;
+
+				:global([data-theme='dark']) & {
+					color: var(--color-text);
+				}
 			}
 
 			ul:first-of-type {
@@ -5552,6 +5932,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					font-weight: 400;
 					line-height: 24px;
 					color: #212121;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 			}
 		}
@@ -5616,6 +6000,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			text-align: center;
 			color: #212121;
 			margin-bottom: 40px;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.reviews-grid {
@@ -5663,6 +6051,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			color: #212529;
 			white-space: normal;
 			padding: 0;
+
+			:global([data-theme='dark']) & {
+				color: var(--color-text);
+			}
 		}
 
 		.faq-section-content {
@@ -5691,13 +6083,26 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				color: #757575;
 				white-space: nowrap;
 
+				:global([data-theme='dark']) & {
+					color: var(--color-text-muted);
+				}
+
 				&:hover {
 					color: #2a2e33;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
 				}
 
 				&.active {
 					color: #202021;
 					background: #f4f8fe;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+						background: var(--color-bg-light);
+					}
 				}
 			}
 		}
@@ -5718,6 +6123,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				overflow: visible;
 				position: relative;
 
+				:global([data-theme='dark']) & {
+					border-bottom-color: var(--color-border-light);
+				}
+
 				&:not(:last-of-type) {
 					margin-bottom: 7px;
 				}
@@ -5733,8 +6142,16 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					position: relative;
 					white-space: normal;
 
+					:global([data-theme='dark']) & {
+						color: var(--color-text);
+					}
+
 					&:hover {
 						color: rgba(33, 33, 33, 0.78);
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
 					}
 
 					// CSS chevron
@@ -5750,6 +6167,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						border-bottom: 2px solid rgba(0, 0, 0, 0.38);
 						transform: translateY(-70%) rotate(45deg);
 						transition: transform 0.3s;
+
+						:global([data-theme='dark']) & {
+							border-color: var(--color-text-muted);
+						}
 					}
 				}
 
@@ -5788,6 +6209,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						font-weight: 400;
 						color: #3d3d3d;
 						line-height: 24px;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
 					}
 
 					span {
@@ -5797,6 +6222,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						color: #3d3d3d;
 						line-height: 24px;
 						padding-bottom: 16px;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
 					}
 				}
 
@@ -5895,11 +6324,17 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					line-height: 30px;
 					font-size: 16px;
 					vertical-align: middle;
-					border: 1px solid #e0e1e2;
+					border: 1px solid var(--color-border-light);
 					background-color: transparent;
 					border-radius: 6px;
 					color: #212529;
 					box-shadow: none;
+
+					// --color-border-light is under 3:1 on the dark card, too faint for a field outline.
+					:global([data-theme='dark']) & {
+						border-color: var(--color-text-light);
+						color: var(--color-text);
+					}
 
 					&::placeholder {
 						color: #9e9e9e;
@@ -5921,6 +6356,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						border-color: #2a7dec;
 						box-shadow: 0 0 0 1px #2a7dec;
 						color: #212529;
+
+						:global([data-theme='dark']) & {
+							color: var(--color-text);
+						}
+
 						&::placeholder {
 							opacity: 0.2;
 						}
@@ -5962,6 +6402,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						transform: scale(1) translate(-10px, -86px);
 						pointer-events: none;
 
+						:global([data-theme='dark']) & {
+							color: var(--color-text-secondary);
+						}
+
 						&.text-area-label {
 							position: absolute;
 							top: 68px;
@@ -5986,6 +6430,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					width: 100%;
 					display: block;
 					box-sizing: border-box;
+
+					:global([data-theme='dark']) & {
+						color: var(--color-danger);
+					}
 				}
 			}
 
@@ -6012,6 +6460,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			left: 49.4%;
 			transform: translateX(-50%);
 			top: 0;
+
+			:global([data-theme='dark']) & {
+				background-color: var(--color-bg);
+			}
 		}
 
 		.contact-us-section-content {
@@ -6021,7 +6473,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 			.contact-us-container {
 				position: relative;
-				background: white;
+				background: var(--color-bg-surface);
 				border-radius: 24px;
 				display: flex;
 				padding: 8px;
@@ -6029,6 +6481,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				box-shadow:
 					-4px 15px 50px -20px rgba(0, 0, 0, 0.15),
 					0 0 8px 0 rgba(0, 0, 0, 0.08);
+
+				// The soft shadow disappears on a dark page, so a hairline marks the card edge.
+				:global([data-theme='dark']) & {
+					box-shadow: 0 0 0 1px var(--color-border);
+				}
 			}
 		}
 
@@ -6049,6 +6506,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			background: #2a7dec;
 			border-radius: 16px;
 			position: relative;
+
+			// White on this blue is 4:1, under AA for the 16-18px text, so dark mode uses a deeper blue.
+			:global([data-theme='dark']) & {
+				background: var(--color-primary-dark);
+			}
 
 			.contact-us-descr-container {
 				display: flex;
@@ -6246,6 +6708,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						width: 28px;
 						height: 28px;
 						display: block;
+
+						// Flat dark glyph, so inverting it makes it light on the dark card.
+						:global([data-theme='dark']) & {
+							filter: invert(1);
+						}
 					}
 				}
 			}
