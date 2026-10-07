@@ -165,13 +165,13 @@ const { title, rows } = Astro.props;
 			color: $color-white;
 			background: $color-text-primary;
 			border-radius: $radius-lg;
+			padding: 10px $spacing-4;
+			text-align: center;
 
 			// Same lift as the desktop header band.
 			[data-theme='dark'] & {
 				background: var(--sl-color-gray-5);
 			}
-			padding: 10px $spacing-4;
-			text-align: center;
 		}
 	}
 

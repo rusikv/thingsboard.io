@@ -1,6 +1,6 @@
 ---
-import SmartImage from '../SmartImage.astro';
-import SectionBadge from '../SectionBadge.astro';
+import SmartImage from '@components/SmartImage.astro';
+import SectionBadge from '@components/SectionBadge.astro';
 import type { ApplicationItem } from '@data/use-cases/types.ts';
 import { ICON_RING_GEOMETRY } from '@components/UseCase/icon-ring-geometry.ts';
 
@@ -20,10 +20,11 @@ const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 // Every application icon ships a `-dark.svg` sibling recoloured for dark mode
 // (brand indigo → #b3c7ff, CE navy → #78b4f5); the styles swap to it. An icon
 // added without one falls back to the dark-mode filter in the styles.
+// Only the keys are read (SmartImage resolves the URL), so the glob stays lazy and
+// shares SmartImage's own `?url` loaders instead of importing every icon up front.
 const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
 	query: '?url',
 	import: 'default',
-	eager: true,
 });
 const darkSrcFor = (src: string) => {
 	const dark = src.replace(/\.svg$/, '-dark.svg');

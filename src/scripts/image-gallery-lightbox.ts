@@ -221,8 +221,9 @@ function init() {
 		if (el.dataset.pswpCdn === 'true') {
 			const img = getVisibleImg(el);
 			if (img?.naturalWidth && img.naturalHeight) {
-				itemData.width = img.naturalWidth;
-				itemData.height = img.naturalHeight;
+				// w/h too: PhotoSwipe reads the legacy pair first (see the dark size above).
+				itemData.width = itemData.w = img.naturalWidth;
+				itemData.height = itemData.h = img.naturalHeight;
 			}
 		}
 
