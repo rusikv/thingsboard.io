@@ -64,16 +64,21 @@ const TitleTag = titleTag;
 	/>
 </div>
 
-<style>
+<style lang="scss">
 	.services-banner-wrap {
 		position: relative;
 		z-index: 1;
 		padding: 46px;
-		background: #fff;
+		background: var(--color-bg-surface);
 		border-radius: 24px;
 		box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0 0 8px 0 rgba(0, 0, 0, 0.08);
 		width: 100%;
 		overflow: hidden;
+
+		// The soft shadow disappears on a dark page, so a hairline marks the card edge.
+		:global([data-theme='dark']) & {
+			box-shadow: 0 0 0 1px var(--color-border);
+		}
 	}
 
 	.banner-img {
@@ -94,6 +99,10 @@ const TitleTag = titleTag;
 		padding: 0;
 		white-space: normal;
 		color: #212121;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text);
+		}
 	}
 
 	.banner-btn {
@@ -118,6 +127,18 @@ const TitleTag = titleTag;
 			color: #1e67d4;
 			text-decoration: none;
 			filter: none;
+		}
+
+		// The site's dark CTA: lavender fill with a navy label, outlined on hover.
+		:global([data-theme='dark']) & {
+			color: var(--color-brand-contrast);
+			background-color: var(--color-brand);
+			border-color: var(--color-brand);
+
+			&:hover {
+				color: var(--color-brand);
+				background-color: transparent;
+			}
 		}
 	}
 
