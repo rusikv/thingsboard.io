@@ -90,10 +90,14 @@
 	document.querySelectorAll('.stats-cards').forEach((el) => observer.observe(el));
 </script>
 
-<style>
+<style lang="scss">
 	.stats-section {
 		padding: 100px 0;
 		background: #f7f9fc;
+
+		:global([data-theme='dark']) & {
+			background: var(--color-bg-muted);
+		}
 	}
 
 	.trainings-wrapper {
@@ -116,10 +120,15 @@
 		display: flex;
 		flex-direction: column;
 		gap: 32px;
-		background: #fff;
+		background: var(--color-bg-surface);
 		box-shadow: 0px 10px 25px -15px rgba(0, 0, 0, 0.08);
 		border-radius: 24px;
 		padding: 46px;
+
+		// The shadow is lost on a dark page, so the border marks the card edge.
+		:global([data-theme='dark']) & {
+			border: 1px solid var(--color-border);
+		}
 	}
 
 	.stat-icon {
@@ -148,6 +157,10 @@
 		font-weight: 500;
 		line-height: normal;
 		color: rgba(0, 0, 0, 0.54);
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	.stat-text {
@@ -157,6 +170,10 @@
 		line-height: normal;
 		letter-spacing: 0.15px;
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text-secondary);
+		}
 	}
 
 	.stats-cta {
@@ -172,6 +189,10 @@
 		font-size: 24px;
 		color: rgba(0, 0, 0, 0.76);
 		margin: 0;
+
+		:global([data-theme='dark']) & {
+			color: var(--color-text);
+		}
 	}
 
 	.cta-btn {
