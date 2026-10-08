@@ -17,7 +17,7 @@ chat launcher, so the launcher does not wait on the webfont.
 `development-services/` holds the development services page's icons and industry drawings,
 referenced as `<Icon name="development-services/<file>" />`. They are drawn in `currentColor`,
 pale tints as `currentColor` at reduced opacity, so the page colours them from the accent token
-in both themes.
+in both themes. `trainings/` holds the trainings page's icons, drawn the same way.
 
 The directory must exist even when empty — astro-icon aborts its whole setup step without it,
 including the icon type definitions it generates, and warns on every dev server start.
