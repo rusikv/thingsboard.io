@@ -227,9 +227,7 @@ const processedItems: ProcessedItem[] = await Promise.all(
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		/* A 7.5% ink tint of the page: #eeeeee in light, a matching low-contrast panel in dark.
-		   The plain value is for browsers without color-mix(). */
-		background-color: #eeeeee;
+		/* A 7.5% ink tint of the page: #eeeeee in light, a matching low-contrast panel in dark. */
 		background-color: color-mix(in srgb, var(--color-text) 7.5%, var(--color-bg));
 		background-image:
 			linear-gradient(to right, var(--sl-color-gray-5) 1px, transparent 1px),
