@@ -143,10 +143,9 @@
 		animation: fadeoutCenter 750ms cubic-bezier(0.07, 0.43, 0.17, 0.81) forwards;
 	}
 
-	// The composite has two pale decorative chips baked in that only disappear on a
-	// white page; the dark copy has them recoloured to the dark surface. The copies
-	// are stacked and swapped with visibility, not display, so a theme switch does
-	// not restart the entrance animation. Both load eagerly: either can be the LCP.
+	// The dark copy recolours the pale chips and white stand that vanish only on a white
+	// page. Swapped by visibility so the entrance animation does not replay; both load
+	// eagerly, as either can be the LCP.
 	.hero-img--dark {
 		position: absolute;
 		top: 0;
