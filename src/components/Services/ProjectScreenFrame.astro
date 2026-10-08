@@ -130,7 +130,7 @@ const hasSlot = Astro.slots.has('default');
 			inset: var(--psf-middle-inset);
 			z-index: -2;
 			border-radius: 24px;
-			border: 1.5px solid var(--psf-muted, #d1e9ff);
+			border: 1.5px solid var(--psf-muted, color-mix(in srgb, var(--color-primary) 20%, var(--color-bg-surface)));
 
 			// Pale blue would glare on a dark page. Dark mode only swaps the fallback,
 			// so a page that sets --psf-muted keeps its own value.

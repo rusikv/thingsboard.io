@@ -2825,7 +2825,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		transition: background-color 0.15s;
 
 		&:hover {
-			background-color: #1557bb;
+			background-color: color-mix(in srgb, var(--color-brand) 80%, #000);
 
 			// White holds 4.5:1 on the saturated dark accent; navy would not.
 			:global([data-theme='dark']) & {
@@ -3696,7 +3696,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
-			border-top: 1px solid #e5effc;
+			border-top: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
 			padding-top: 32px;
 
 			:global([data-theme='dark']) & {
@@ -4992,7 +4992,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						font-weight: 400;
 						color: #3d3d3d;
 						text-align: left;
-						box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08);
+						box-shadow: 0 26px 40px 0 color-mix(in srgb, var(--color-primary) 8%, transparent);
 
 						// The blue glow would show as a haze on the dark band.
 						:global([data-theme='dark']) & {
@@ -5429,15 +5429,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&.second {
-							border: 1px solid rgba(42, 125, 236, 0.4);
-							background: #d9ebff;
+							border: 1px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+							background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
 							width: 100%;
 							margin-left: 50%;
-
-							:global([data-theme='dark']) & {
-								border-color: color-mix(in srgb, var(--color-primary) 40%, transparent);
-								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
-							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5452,16 +5447,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&.third {
-							border: 1px solid rgba(42, 125, 236, 0.6);
-							background: #bbd5f9;
+							border: 1px solid color-mix(in srgb, var(--color-primary) 60%, transparent);
+							background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
 							width: 50%;
 							margin-left: 50%;
 							padding: 6px 2px;
-
-							:global([data-theme='dark']) & {
-								border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
-								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
-							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5476,17 +5466,13 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&.fourth {
-							border: 1px solid #2670d4;
+							border: 1px solid var(--color-brand);
 							background: var(--color-brand);
 							width: 100%;
 							color: var(--color-brand-contrast);
 							height: 80px;
 							padding: 4px 1px;
 							text-align: center;
-
-							:global([data-theme='dark']) & {
-								border-color: var(--color-brand);
-							}
 
 							p {
 								color: var(--color-brand-contrast);
@@ -5506,15 +5492,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&.fifth {
-							border: 1px solid rgba(42, 125, 236, 0.6);
-							background: #bbd5f9;
+							border: 1px solid color-mix(in srgb, var(--color-primary) 60%, transparent);
+							background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
 							width: 200%;
 							height: 54px;
-
-							:global([data-theme='dark']) & {
-								border-color: color-mix(in srgb, var(--color-primary) 60%, transparent);
-								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
-							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5529,15 +5510,10 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&.sixth {
-							border: 1px solid #2670d4;
-							background: #d9ebff;
+							border: 1px solid var(--color-primary);
+							background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
 							width: 50%;
 							padding: 6px 2px;
-
-							:global([data-theme='dark']) & {
-								border-color: var(--color-primary);
-								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
-							}
 
 							&:hover {
 								padding-left: 8px;
@@ -5698,22 +5674,14 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 						&:nth-child(2) {
 							padding: 34px 16px;
-							background: #d4e5fb;
+							background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
 							min-height: 132px;
-
-							:global([data-theme='dark']) & {
-								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
-							}
 						}
 
 						&:nth-child(3) {
 							padding: 4px 16px;
-							background: #bbd5f9;
+							background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
 							min-height: 72px;
-
-							:global([data-theme='dark']) & {
-								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
-							}
 						}
 
 						&:nth-child(4) {
@@ -5729,22 +5697,14 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 						&:nth-child(5) {
 							padding: 100px 16px;
-							background: #bbd5f9;
+							background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
 							min-height: 264px;
-
-							:global([data-theme='dark']) & {
-								background: color-mix(in srgb, var(--color-primary) 30%, var(--color-bg-surface));
-							}
 						}
 
 						&:nth-child(6) {
 							padding: 4px 16px;
-							background: #d4e5fb;
+							background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
 							min-height: 72px;
-
-							:global([data-theme='dark']) & {
-								background: color-mix(in srgb, var(--color-primary) 16%, var(--color-bg-surface));
-							}
 						}
 
 						&:nth-child(7) {
@@ -5862,7 +5822,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			padding: 46px;
 			display: flex;
 			flex-direction: column;
-			border: 1px solid #ddeafc;
+			border: 1px solid color-mix(in srgb, var(--color-primary) 12%, transparent);
 			border-radius: 24px;
 			box-shadow: 0 26px 40px 0 rgba(0, 0, 0, 0.08);
 			background-color: var(--color-bg-surface);
@@ -6509,11 +6469,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			flex-direction: column;
 			justify-content: space-between;
 			padding: 60px 38px;
-			background: #2a7dec;
+			background: var(--color-brand);
 			border-radius: 16px;
 			position: relative;
 
-			// White on this blue is 4:1, under AA for the 16-18px text, so dark mode uses a deeper blue.
+			// White text: the brand indigo holds 5.7:1. The dark accent is a light lavender, so dark
+			// mode uses a deeper blue instead.
 			:global([data-theme='dark']) & {
 				background: var(--color-primary-dark);
 			}

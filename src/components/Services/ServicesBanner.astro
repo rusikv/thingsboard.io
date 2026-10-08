@@ -112,30 +112,19 @@ const TitleTag = titleTag;
 		border-radius: 6px;
 		text-align: center;
 		white-space: normal;
-		color: #fff;
-		background-color: #1e67d4;
-		border: 1px solid #1e67d4;
+		// The brand pair, outlined on hover: indigo and white in light, lavender and navy in dark.
+		color: var(--color-brand-contrast);
+		background-color: var(--color-brand);
+		border: 1px solid var(--color-brand);
 		cursor: pointer;
 		text-decoration: none;
 		transition: background-color 0.15s, color 0.15s;
 
 		&:hover {
-			background-color: #fff;
-			color: #1e67d4;
+			background-color: transparent;
+			color: var(--color-brand);
 			text-decoration: none;
 			filter: none;
-		}
-
-		// The site's dark CTA: lavender fill with a navy label, outlined on hover.
-		:global([data-theme='dark']) & {
-			color: var(--color-brand-contrast);
-			background-color: var(--color-brand);
-			border-color: var(--color-brand);
-
-			&:hover {
-				color: var(--color-brand);
-				background-color: transparent;
-			}
 		}
 	}
 
