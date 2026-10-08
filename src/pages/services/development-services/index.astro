@@ -1470,8 +1470,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						buttonOnClick="onContactUsClick()"
 						buttonId="Serv_DevServ_GetInTouch_MoreFeature"
 						buttonWidth="538px"
-						imageSrc="/images/usecases/services-icon.svg"
-						imageAlt="Letter icon"
+						icon="development-services/services"
 						imageTop={6}
 					/>
 				</section>
@@ -1872,8 +1871,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						buttonOnClick="onContactUsClick()"
 						buttonId="Serv_DevServ_Contact_CTA"
 						buttonWidth="376px"
-						imageSrc="/images/usecases/email-icon.svg"
-						imageAlt="Letter icon"
+						icon="development-services/email"
 						imageTop={35}
 					/>
 				</section>
@@ -3182,7 +3180,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		font-weight: 400;
 		line-height: 24px;
 		text-align: start;
-		border-left: 1px solid #2a7dec;
+		border-left: 1px solid var(--color-primary);
 		padding-left: 12px;
 		font-style: italic;
 		margin: 0;
@@ -3618,8 +3616,8 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			background-color: var(--color-bg-surface);
 			padding: 46px;
 			border-radius: 24px;
-			border: 1px solid #2a7dec;
-			box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08);
+			border: 1px solid var(--color-primary);
+			box-shadow: 0 26px 40px 0 color-mix(in srgb, var(--color-primary) 8%, transparent);
 		}
 
 		.vision-info {
@@ -3674,7 +3672,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			.text-wrap {
 				height: fit-content;
 				padding-left: 17px;
-				border-left: 3px solid #2a7dec;
+				border-left: 3px solid var(--color-primary);
 				margin-bottom: 16px;
 
 				p {
@@ -4215,7 +4213,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						}
 
 						&::marker {
-							color: #2a7dec;
+							color: var(--color-primary);
 						}
 					}
 				}
@@ -4643,8 +4641,8 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 			&::before {
 				content: '✓';
-				color: #fafbfc;
-				background-color: #2a7dec;
+				color: var(--color-brand-contrast);
+				background-color: var(--color-primary);
 				border-radius: 50%;
 				font-size: 25px;
 				font-weight: 600;
@@ -4683,7 +4681,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
-			border-left: 3px solid #2a7dec;
+			border-left: 3px solid var(--color-primary);
 			padding-left: 17px;
 			margin-bottom: 32px;
 
@@ -6361,8 +6359,8 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					// outside the layout box, so dimensions stay stable.
 					&:focus {
 						outline: none;
-						border-color: #2a7dec;
-						box-shadow: 0 0 0 1px #2a7dec;
+						border-color: var(--color-primary);
+						box-shadow: 0 0 0 1px var(--color-primary);
 						color: #212529;
 
 						:global([data-theme='dark']) & {

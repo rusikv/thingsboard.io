@@ -1,4 +1,8 @@
 ---
+import { Icon } from 'astro-icon/components';
+
+type IconName = Parameters<typeof Icon>[0]['name'];
+
 interface Props {
 	title: string;
 	titleTag?: 'h2' | 'h3';
@@ -7,10 +11,10 @@ interface Props {
 	buttonOnClick?: string;
 	buttonId?: string;
 	buttonWidth?: string;
-	imageSrc: string;
+	/** A local icon drawn in currentColor; the banner colours it with the accent. */
+	icon: IconName;
 	imageWidth?: number;
 	imageHeight?: number;
-	imageAlt: string;
 	imageTop?: number;
 	imageHideAt?: number;
 }
@@ -23,10 +27,9 @@ const {
 	buttonOnClick,
 	buttonId,
 	buttonWidth = '376px',
-	imageSrc,
+	icon,
 	imageWidth = 380,
 	imageHeight = 267,
-	imageAlt,
 	imageTop = 35,
 	imageHideAt = 1150,
 } = Astro.props;
@@ -54,14 +57,7 @@ const TitleTag = titleTag;
 			>{buttonText}</a>
 		)}
 	</div>
-	<img
-		src={imageSrc}
-		width={imageWidth}
-		height={imageHeight}
-		alt={imageAlt}
-		loading="lazy"
-		class="banner-img"
-	/>
+	<Icon name={icon} width={imageWidth} height={imageHeight} class="banner-img" aria-hidden="true" />
 </div>
 
 <style lang="scss">
@@ -82,6 +78,7 @@ const TitleTag = titleTag;
 	}
 
 	.banner-img {
+		color: var(--color-primary);
 		position: absolute;
 		right: 46px;
 		top: var(--img-top);
