@@ -30,20 +30,7 @@ const carouselId = 'courses-carousel';
 									<div class="card-header">
 										<ul class="card-meta">
 											<li>
-												<svg
-													class="meta-icon"
-													xmlns="http://www.w3.org/2000/svg"
-													viewBox="0 0 24 24"
-													width="20"
-													height="20"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													aria-hidden="true"
-												>
-													<circle cx="12" cy="12" r="10" />
-													<polyline points="12 6 12 12 16 14" />
-												</svg>
+												<Icon name="tabler:clock" class="meta-icon" width={20} height={20} aria-hidden="true" />
 												<span>{totalHours(course)} hours</span>
 											</li>
 											<li>
@@ -62,16 +49,7 @@ const carouselId = 'courses-carousel';
 									<p class="card-desc">{course.carouselCourseDescription}</p>
 									<a class="card-link" href="#course-panels">
 										<span>More about the course below</span>
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											width="18"
-											height="18"
-											fill="currentColor"
-											aria-hidden="true"
-										>
-											<path d="M7 10l5 5 5-5z" />
-										</svg>
+										<Icon name="tabler:caret-down-filled" class="link-caret" width={18} height={18} aria-hidden="true" />
 									</a>
 								</div>
 							</div>
@@ -81,14 +59,10 @@ const carouselId = 'courses-carousel';
 			</div>
 
 			<button class="arrow arrow-prev" type="button" aria-label="Previous">
-				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-					<path d="M15 18l-6-6 6-6" />
-				</svg>
+				<Icon name="tabler:chevron-left" class="arrow-icon" is:inline aria-hidden="true" />
 			</button>
 			<button class="arrow arrow-next" type="button" aria-label="Next">
-				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-					<path d="M9 18l6-6-6-6" />
-				</svg>
+				<Icon name="tabler:chevron-right" class="arrow-icon" is:inline aria-hidden="true" />
 			</button>
 
 			<div class="carousel-dots">
@@ -124,16 +98,7 @@ const carouselId = 'courses-carousel';
 								<p class="course-description">{course.courseDescription}</p>
 								{course.warningMessage && (
 									<p class="warning-message">
-										<svg
-											xmlns="http://www.w3.org/2000/svg"
-											viewBox="0 0 24 24"
-											width="18"
-											height="18"
-											fill="#F36500"
-											aria-hidden="true"
-										>
-											<path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-										</svg>
+										<Icon name="tabler:alert-triangle-filled" class="warning-icon" width={18} height={18} aria-hidden="true" />
 										{course.warningMessage}
 									</p>
 								)}
@@ -150,60 +115,19 @@ const carouselId = 'courses-carousel';
 										<h4 class="session-name">{session.sessionName}</h4>
 										<div class="session-meta">
 											<div class="session-duration">
-												<svg
-													class="duration-icon"
-													xmlns="http://www.w3.org/2000/svg"
-													viewBox="0 0 24 24"
-													width="24"
-													height="24"
-													fill="none"
-													stroke="currentColor"
-													stroke-width="2"
-													aria-hidden="true"
-												>
-													<circle cx="12" cy="12" r="10" />
-													<polyline points="12 6 12 12 16 14" />
-												</svg>
+												<Icon name="tabler:clock" class="duration-icon" width={24} height={24} aria-hidden="true" />
 												<span>{session.sessionLengthInHours} hours</span>
 											</div>
-											<svg
-												class="chevron print:hidden"
-												xmlns="http://www.w3.org/2000/svg"
-												viewBox="0 0 24 24"
-												width="24"
-												height="24"
-												fill="currentColor"
-												aria-hidden="true"
-											>
-												<path d="M7 10l5 5 5-5z" />
-											</svg>
+											<Icon name="tabler:caret-down-filled" class="chevron print:hidden" width={24} height={24} aria-hidden="true" />
 										</div>
 									</summary>
 									<ul class="topics-list">
 										{session.sessionTopics.map((topic) => (
 											<li class="topic-item">
 												{topic.warning ? (
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														viewBox="0 0 24 24"
-														width="18"
-														height="18"
-														fill="#F36500"
-														aria-hidden="true"
-													>
-														<path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" />
-													</svg>
+													<Icon name="tabler:alert-triangle-filled" class="warning-icon" width={18} height={18} aria-hidden="true" />
 												) : (
-													<svg
-														xmlns="http://www.w3.org/2000/svg"
-														viewBox="0 0 24 24"
-														width="18"
-														height="18"
-														fill="currentColor"
-														aria-hidden="true"
-													>
-														<path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-													</svg>
+													<Icon name="tabler:check" class="topic-check" width={18} height={18} aria-hidden="true" />
 												)}
 												<p>{topic.textContent}</p>
 											</li>
@@ -519,9 +443,13 @@ const carouselId = 'courses-carousel';
 		z-index: 2;
 	}
 
-	.arrow svg {
+	.arrow-icon {
 		width: 24px;
 		height: 30px;
+
+		:global(path) {
+			stroke-width: 3;
+		}
 	}
 
 	.arrow:hover {
@@ -721,7 +649,7 @@ const carouselId = 'courses-carousel';
 		}
 	}
 
-	.warning-message svg {
+	.warning-message .warning-icon {
 		flex-shrink: 0;
 	}
 
@@ -844,8 +772,12 @@ const carouselId = 'courses-carousel';
 	.meta-icon,
 	.duration-icon,
 	.chevron,
-	.topic-item svg {
+	.topic-check {
 		color: var(--color-primary);
+	}
+
+	.warning-icon {
+		color: #f36500;
 	}
 
 	.meta-icon {
@@ -876,7 +808,8 @@ const carouselId = 'courses-carousel';
 		padding: 0 1px;
 	}
 
-	.topic-item svg {
+	.topic-check,
+	.topic-item .warning-icon {
 		flex-shrink: 0;
 	}
 
