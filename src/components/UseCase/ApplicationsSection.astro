@@ -31,6 +31,14 @@ const darkSrcFor = (src: string) => {
 	return dark in darkVariants ? dark : null;
 };
 
+// Desktop icons are taller than wide; the real height keeps a not-yet-loaded copy
+// (e.g. the other theme's, fetched on a switch) at its final size.
+const DESKTOP_W = 180;
+const desktopHeight = (src: string) => {
+	const g = ICON_RING_GEOMETRY[src];
+	return g ? Math.round(DESKTOP_W * g.aspect) : DESKTOP_W;
+};
+
 // Mobile "just circles": the desktop node SVG bakes in timeline connectors that
 // extend outside the ring. Instead of the (rotated) mobile variants, we reuse the
 // desktop icon and crop to the ring via a circular viewport — scaling so the ring
@@ -79,17 +87,24 @@ const mobileCrop = (src: string) => {
 			{
 				applications.map((app) => {
 					const darkSrc = darkSrcFor(app.desktopImage);
+					const height = desktopHeight(app.desktopImage);
 					return (
 						<div class="uc-app-image">
 							<SmartImage
 								src={app.desktopImage}
 								alt={app.imageAlt}
-								width={180}
-								height={180}
+								width={DESKTOP_W}
+								height={height}
 								class={darkSrc ? 'uc-ic uc-ic--light' : undefined}
 							/>
 							{darkSrc && (
-								<SmartImage src={darkSrc} alt={app.imageAlt} width={180} height={180} class="uc-ic uc-ic--dark" />
+								<SmartImage
+									src={darkSrc}
+									alt={app.imageAlt}
+									width={DESKTOP_W}
+									height={height}
+									class="uc-ic uc-ic--dark"
+								/>
 							)}
 						</div>
 					);
@@ -310,8 +325,9 @@ const mobileCrop = (src: string) => {
 		.uc-ic--light {
 			display: none;
 		}
+		// Inline like the light copy, so the row keeps its height.
 		.uc-ic--dark {
-			display: block;
+			display: inline;
 		}
 
 		// Safety net for an icon added later without a `-dark.svg`: it renders as a
