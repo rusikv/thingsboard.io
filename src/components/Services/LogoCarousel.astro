@@ -66,6 +66,12 @@ const items = [...logos, ...logos];
 		width: 90vw;
 		overflow: hidden;
 
+		// Room above the logos for the dark plates; the negative margin keeps the layout.
+		:global([data-theme='dark']) & {
+			padding-top: 6px;
+			margin-top: -6px;
+		}
+
 		&::before,
 		&::after {
 			position: absolute;
@@ -117,11 +123,35 @@ const items = [...logos, ...logos];
 			opacity: unset;
 		}
 
-		// Several marks are black or navy on a transparent background, so they sit on a light plate.
+		// Several marks are black or navy on a transparent background, so they sit on a white
+		// plate. The plate is drawn around the mark so the box keeps its size, and the dimming
+		// moves to the mark so the plate stays white.
 		:global([data-theme='dark']) & {
-			padding: 6px 10px;
-			border-radius: var(--radius-md);
-			background: var(--color-white);
+			position: relative;
+			filter: none;
+			opacity: 1;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: -6px;
+				left: -10px;
+				right: -10px;
+				height: calc(44px + 12px);
+				z-index: -1;
+				border-radius: var(--radius-md);
+				background: var(--color-white);
+			}
+
+			img {
+				filter: grayscale(100%);
+				opacity: 0.6;
+			}
+
+			&:hover img {
+				filter: none;
+				opacity: 1;
+			}
 		}
 	}
 
