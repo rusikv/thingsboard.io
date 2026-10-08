@@ -5,6 +5,7 @@ import ServicesBanner from '../../../components/Services/ServicesBanner.astro';
 import ProjectScreenFrame from '../../../components/Services/ProjectScreenFrame.astro';
 import FeedbackCard from '../../../components/Feedback/FeedbackCard.astro';
 import SmartImage from '@components/SmartImage.astro';
+import { Icon } from 'astro-icon/components';
 import { devServicesFeedback } from '@data/clients-feedback';
 
 // Mirrors the hero styles below: `.hero-container` pads `0 32px` under 1279px and
@@ -26,14 +27,24 @@ const customerLogos = [
 	{ src: '/images/development-services/logo-asl.svg', alt: 'ASL', width: 170, height: 91 },
 ];
 
-const industries = [
+type IconName = Parameters<typeof Icon>[0]['name'];
+
+interface Industry {
+	name: string;
+	descr: string;
+	items: string[];
+	icon: IconName;
+	size: [number, number];
+}
+
+const industries: Industry[] = [
 	{
 		name: 'Energy & utilities',
 		descr:
 			'We help energy, water and gas operators see every meter, substation and pipeline in one view, act on live data, and keep networks stable, safe and efficient - even out at remote micro-grids and renewable sites.',
 		items: ['Smart metering', 'Grid operations', 'Microgrid management', 'Renewable asset O&M', 'Water management'],
-		img: '/images/development-services/industries-1.svg',
-		alt: 'IoT Energy Management icon',
+		icon: 'development-services/industries-1',
+		size: [488, 488],
 	},
 	{
 		name: 'Manufacturing & industrial Automation',
@@ -46,8 +57,8 @@ const industries = [
 			'Production energy monitoring',
 			'Supply chain traceability',
 		],
-		img: '/images/development-services/industries-2.svg',
-		alt: 'IoT Manufacturing icon',
+		icon: 'development-services/industries-2',
+		size: [486, 482],
 	},
 	{
 		name: 'Smart buildings & facilities',
@@ -60,8 +71,8 @@ const industries = [
 			'Predictive maintenance',
 			'ESG reporting',
 		],
-		img: '/images/development-services/industries-3.svg',
-		alt: 'Smart Building IoT icon',
+		icon: 'development-services/industries-3',
+		size: [486, 486],
 	},
 	{
 		name: 'Transportation & mobility',
@@ -74,16 +85,16 @@ const industries = [
 			'Predictive vehicle maintenance',
 			'Route optimization',
 		],
-		img: '/images/development-services/industries-4.svg',
-		alt: 'Connected Mobility IoT icon',
+		icon: 'development-services/industries-4',
+		size: [486, 354],
 	},
 	{
 		name: 'Logistics & supply-chain services',
 		descr:
 			'Bring full visibility to warehouses, ports and last-mile deliveries - monitor location, temperature and shocks for every pallet or container, predict delays and automate workflows that keep goods moving on schedule.',
 		items: ['Smart warehouse', 'Cold chain monitoring', 'Asset tracking', 'Yard management', 'Shipment visibility'],
-		img: '/images/development-services/industries-5.svg',
-		alt: 'IoT Supply Chain icon',
+		icon: 'development-services/industries-5',
+		size: [486, 486],
 	},
 	{
 		name: 'Retail & consumer services',
@@ -96,8 +107,8 @@ const industries = [
 			'Vending machine monitoring',
 			'Loss prevention',
 		],
-		img: '/images/development-services/industries-6.svg',
-		alt: 'Smart Retail IoT icon',
+		icon: 'development-services/industries-6',
+		size: [486, 486],
 	},
 	{
 		name: 'Healthcare',
@@ -110,8 +121,8 @@ const industries = [
 			'Patient monitoring',
 			'Lab equipment management',
 		],
-		img: '/images/development-services/industries-7.svg',
-		alt: 'IoT Healthcare icon',
+		icon: 'development-services/industries-7',
+		size: [486, 486],
 	},
 	{
 		name: 'Agriculture & agritech',
@@ -124,8 +135,8 @@ const industries = [
 			'Equipment telematics',
 			'Weather & environment sensing',
 		],
-		img: '/images/development-services/industries-8.svg',
-		alt: 'Precision Agriculture IoT icon',
+		icon: 'development-services/industries-8',
+		size: [524, 540],
 	},
 	{
 		name: 'Construction & heavy equipment',
@@ -138,8 +149,8 @@ const industries = [
 			'Fuel & utilization tracking',
 			'Predictive maintenance',
 		],
-		img: '/images/development-services/industries-9.svg',
-		alt: 'Connected Construction IoT icon',
+		icon: 'development-services/industries-9',
+		size: [474, 474],
 	},
 	{
 		name: 'Smart cities & public infrastructure',
@@ -153,8 +164,8 @@ const industries = [
 			'Traffic management',
 			'Public safety alerts',
 		],
-		img: '/images/development-services/industries-10.svg',
-		alt: 'Smart City IoT icon',
+		icon: 'development-services/industries-10',
+		size: [480, 480],
 	},
 ];
 
@@ -833,13 +844,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/consulting-solution"
 											class="header-icon"
-											src="/images/development-services/consulting&solution.svg"
-											alt="IoT Consulting & Solution Architecture icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT Consulting &amp; Solution Architecture</h3>
 									</div>
 								</div>
@@ -854,13 +864,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/prototyping"
 											class="header-icon"
-											src="/images/development-services/prototyping.svg"
-											alt="Prototyping (PoC, MVP) icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>Prototyping (PoC, MVP)</h3>
 									</div>
 								</div>
@@ -875,13 +884,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/integration-services"
 											class="header-icon"
-											src="/images/development-services/integration-services.svg"
-											alt="IoT Integration services icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT integration services</h3>
 									</div>
 								</div>
@@ -896,13 +904,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/edge-computing-solutions"
 											class="header-icon"
-											src="/images/development-services/edge-computing-solutions.svg"
-											alt="Edge Computing Solutions icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>Edge Computing Solutions</h3>
 									</div>
 								</div>
@@ -917,13 +924,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/application-development"
 											class="header-icon"
-											src="/images/development-services/application-development.svg"
-											alt="IoT Application Development icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT Application Development</h3>
 									</div>
 								</div>
@@ -938,13 +944,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/mobile-app"
 											class="header-icon"
-											src="/images/development-services/mobile-app.svg"
-											alt="IoT Mobile App icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT Mobile App</h3>
 									</div>
 								</div>
@@ -959,13 +964,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/data-visualization"
 											class="header-icon"
-											src="/images/development-services/data-visualization.svg"
-											alt="IoT Data Visualization icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT Data Visualization</h3>
 									</div>
 								</div>
@@ -980,13 +984,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/iot-analytics"
 											class="header-icon"
-											src="/images/development-services/iot-analytics.svg"
-											alt="IoT analytics icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT analytics</h3>
 									</div>
 								</div>
@@ -1001,13 +1004,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/remote-monitoring-control-apps"
 											class="header-icon"
-											src="/images/development-services/remote-monitoring-cotrol-apps.svg"
-											alt="Remote Monitoring & Control Apps icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Remote Monitoring &amp; Control Apps</h3>
 									</div>
 								</div>
@@ -1022,13 +1024,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/device-integration"
 											class="header-icon"
-											src="/images/development-services/device-integration.svg"
-											alt="Device Integration icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>Device integration</h3>
 									</div>
 								</div>
@@ -1045,13 +1046,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/predictive-maintenance"
 											class="header-icon"
-											src="/images/development-services/predictive-maintenance.svg"
-											alt="Predictive Maintenance icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Predictive Maintenance</h3>
 									</div>
 								</div>
@@ -1066,13 +1066,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/digital-twin"
 											class="header-icon"
-											src="/images/development-services/digital-twin.svg"
-											alt="Digital Twin icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Digital Twin</h3>
 									</div>
 								</div>
@@ -1087,13 +1086,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/compliance-management"
 											class="header-icon"
-											src="/images/development-services/compliance-management.svg"
-											alt="IoT Compliance management icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT Compliance management</h3>
 									</div>
 								</div>
@@ -1108,13 +1106,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/migration-services"
 											class="header-icon"
-											src="/images/development-services/migration-services.svg"
-											alt="Migration Services icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Migration Services</h3>
 									</div>
 								</div>
@@ -1129,13 +1126,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/device-management"
 											class="header-icon"
-											src="/images/development-services/device-management.svg"
-											alt="Device management icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Device management</h3>
 									</div>
 								</div>
@@ -1150,13 +1146,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/ai-agents-copilots"
 											class="header-icon"
-											src="/images/development-services/ai-agents-copilots.svg"
-											alt="AI Agents & Copilots icon"
-											loading="lazy"
-											width="48"
-											height="49"
+											width={48}
+											height={49}
+											aria-hidden="true"
 										/><h3>AI Agents &amp; Copilots</h3>
 									</div>
 								</div>
@@ -1171,13 +1166,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/security"
 											class="header-icon"
-											src="/images/development-services/security.svg"
-											alt="Security icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>Security</h3>
 									</div>
 								</div>
@@ -1194,13 +1188,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 							<div class="expansion-card">
 								<div class="expansion-header">
 									<div class="expansion-title">
-										<img
+										<Icon
+											name="development-services/devops-services"
 											class="header-icon"
-											src="/images/development-services/devops-services.svg"
-											alt="IoT DevOps services icon"
-											loading="lazy"
-											width="49"
-											height="49"
+											width={49}
+											height={49}
+											aria-hidden="true"
 										/><h3>IoT DevOps services</h3>
 									</div>
 								</div>
@@ -1239,7 +1232,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						</div>
 						<div class="content-container">
 							<div class="menu">
-								{industries.map(({ name, descr, items, img, alt }) => (
+								{industries.map(({ name, descr, items, icon, size }) => (
 									<div class="menu-item">
 										<div class="menu-item-header"><h3>{name}</h3></div>
 										<div class="industries-card inline">
@@ -1253,7 +1246,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 													</ul>
 												</div>
 											</div>
-											<img class="card-img" src={img} alt={alt} loading="lazy" />
+											<Icon name={icon} class="card-img" width={size[0]} height={size[1]} aria-hidden="true" />
 										</div>
 									</div>
 								))}
@@ -1417,13 +1410,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 				<!-- 10. QUOTE WITH MARK -->
 				<section class="quote-with-mark">
-					<img
-						src="/images/case-studies/quote.svg"
-						title="Quote mark"
-						alt="Quote mark"
-						width="96"
-						height="90"
-						loading="lazy"
+					<Icon
+						name="development-services/quote"
+						class="quote-mark"
+						width={96}
+						height={90}
+						aria-hidden="true"
 					/>
 					<div class="quote-text">
 						<p>
@@ -1693,12 +1685,12 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 						</div>
 						<div class="em-container">
 							<div class="em-card">
-								<img
-									width="96"
-									height="96"
-									src="/images/development-services/end-to-end.svg"
-									alt="Recycling icon symbolizing End to end"
-									loading="lazy"
+								<Icon
+									name="development-services/end-to-end"
+									class="em-icon"
+									width={96}
+									height={96}
+									aria-hidden="true"
 								/>
 								<h3>End-to-end development</h3>
 								<p class="em-subtitle">
@@ -1710,32 +1702,32 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 								<h4>Choose this when you want to</h4>
 								<ul>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>Analyze business processes to define effective IoT strategy</p>
 									</li>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>Design system architecture and identify areas for improvement</p>
 									</li>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>Develop detailed roadmap for successful IoT solution implementation</p>
 									</li>
@@ -1743,44 +1735,44 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 								<h4>What you get</h4>
 								<ul>
 									<li>
-										<img
-											src="/images/development-services/dedicated-team.svg"
-											alt="Team icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/dedicated-team"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Dedicated cross-functional team</p>
 									</li>
 									<li>
-										<img
-											src="/images/development-services/expert.svg"
-											alt="Human icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/expert"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>A single, expert point of contact managing the entire project</p>
 									</li>
 									<li>
-										<img
-											src="/images/development-services/development-speed.svg"
-											alt="Speedometer icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/development-speed"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Maximum development speed by leveraging our pre-built components</p>
 									</li>
 								</ul>
 							</div>
 							<div class="em-card">
-								<img
-									width="96"
-									height="96"
-									src="/images/development-services/co-development.svg"
-									alt="Team augmentation and co-development"
-									loading="lazy"
+								<Icon
+									name="development-services/co-development"
+									class="em-icon"
+									width={96}
+									height={96}
+									aria-hidden="true"
 								/>
 								<h3>Team augmentation &amp; co-development</h3>
 								<p class="em-subtitle">
@@ -1792,34 +1784,34 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 								<h4>Choose this when you want to</h4>
 								<ul>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>
 											Fill a specific skill gap (e.g., in architecture, edge, or data science) in your in-house team
 										</p>
 									</li>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>Accelerate a project that is already in progress and needs a boost</p>
 									</li>
 									<li>
-										<img
-											src="/images/pricing/pricing-checkmark-icon.svg"
-											alt="Checkmark"
-											loading="lazy"
-											width="18"
-											height="18"
+										<Icon
+											name="development-services/checkmark"
+											class="em-list-icon"
+											width={18}
+											height={18}
+											aria-hidden="true"
 										/>
 										<p>Upskill your team by having them work alongside leading IoT experts</p>
 									</li>
@@ -1827,42 +1819,42 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 								<h4>What you get</h4>
 								<ul>
 									<li>
-										<img
-											src="/images/development-services/target.svg"
-											alt="Target icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/target"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Targeted expertise to solve your most complex challenges</p>
 									</li>
 									<li>
-										<img
-											src="/images/development-services/elite-engineer.svg"
-											alt="Human icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/elite-engineer"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Flexible access to elite engineering talent</p>
 									</li>
 									<li>
-										<img
-											src="/images/development-services/integraion.svg"
-											alt="Diagram icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/integration"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Seamless integration with your existing Agile/Scrum workflows</p>
 									</li>
 									<li>
-										<img
-											src="/images/development-services/knowledge.svg"
-											alt="Book icon"
-											loading="lazy"
-											width="24"
-											height="25"
+										<Icon
+											name="development-services/knowledge"
+											class="em-list-icon"
+											width={24}
+											height={25}
+											aria-hidden="true"
 										/>
 										<p>Valuable knowledge transfer that strengthens your internal team for future projects</p>
 									</li>
@@ -2464,7 +2456,11 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 
 	// Industries menu
 	const industryMenuItems = Array.from(document.querySelectorAll<HTMLElement>('.industries .menu-item'));
-	const industryCards = industryMenuItems.map((item) => item.querySelector('.industries-card')?.innerHTML ?? '');
+	// The art is inline SVG: suffix its ids in the copy so its gradients and clip paths
+	// resolve to the copy, not to the hidden original.
+	const industryCards = industryMenuItems.map((item) =>
+		(item.querySelector('.industries-card')?.innerHTML ?? '').replace(/(id="|href="#|url\(#)([^"')]+)/g, '$1$2-global')
+	);
 	const globalCard = document.querySelector<HTMLElement>('.industries-card.global');
 	let activeIndustryIndex = -1;
 
@@ -2675,6 +2671,16 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 <style lang="scss">
 	@use '../../../styles/_variables.scss' as v;
 	@use '../../../styles/form-modal' as *;
+
+	// ── Icons ─────────────────────────────────────────────────────────────────
+	// Inline SVG drawn in currentColor, so the icons follow the accent in both themes.
+	.header-icon,
+	.em-icon,
+	.em-list-icon,
+	.quote-mark,
+	:global(.industries-card .card-img) {
+		color: var(--color-primary);
+	}
 
 	// ── Scroll animations ─────────────────────────────────────────────────────
 	:global(.animation-prepare) {
@@ -5050,7 +5056,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 		gap: 64px;
 		align-items: flex-start;
 
-		img {
+		.quote-mark {
 			flex-shrink: 0;
 		}
 
@@ -5100,7 +5106,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			flex-direction: column;
 			padding: 40px 0;
 
-			img {
+			.quote-mark {
 				display: none;
 			}
 		}
@@ -5867,7 +5873,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				border-color: var(--color-border);
 			}
 
-			& > img:first-child {
+			& > .em-icon {
 				margin: 0 auto 16px;
 			}
 
@@ -5924,7 +5930,8 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 				display: flex;
 				margin-bottom: 12px;
 
-				img {
+				.em-list-icon {
+					flex-shrink: 0;
 					margin-right: 12px;
 				}
 
@@ -5978,7 +5985,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 					line-height: 36px;
 				}
 
-				ul:first-of-type li img {
+				ul:first-of-type li .em-list-icon {
 					margin-top: 3px;
 				}
 				li {
@@ -7217,7 +7224,7 @@ function clientInfoHtml(c: (typeof clientData)[number]) {
 			.em-card {
 				box-shadow: none;
 
-				> img:first-child {
+				> .em-icon {
 					display: block;
 					break-after: avoid;
 				}
