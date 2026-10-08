@@ -106,10 +106,15 @@ const hasBothModes = traditional.length > 0;
 		// equipment whose green/orange shows state, so recolouring it would change what
 		// the states read as. Dark mode sits it on a fixed light plate instead.
 		> img {
+			// A spread shadow, not padding, so the symbol keeps its light-mode size.
 			[data-theme='dark'] & {
 				background: var(--color-white);
 				border-radius: $radius-lg;
-				padding: $spacing-3;
+				box-shadow: 0 0 0 $spacing-3 var(--color-white);
+
+				@include media-down(md) {
+					box-shadow: 0 0 0 $spacing-2 var(--color-white);
+				}
 			}
 		}
 	}
