@@ -181,27 +181,18 @@ import { Icon } from 'astro-icon/components';
 		font-weight: 500;
 		padding: 12px 49px;
 		border-radius: 6px;
-		background: #1e67d4;
-		color: #fff;
+		// The brand pair: indigo with a white label in light, lavender with a navy label in dark.
+		background: var(--color-brand);
+		color: var(--color-brand-contrast);
 		text-decoration: none;
 		transition: opacity 0.2s ease-in-out;
 		width: fit-content;
-
-		// The site's dark CTA: lavender fill with a navy label.
-		:global([data-theme='dark']) & {
-			background: var(--color-brand);
-			color: var(--color-brand-contrast);
-		}
 	}
 
 	.cta-btn:hover {
 		opacity: 0.7;
-		color: #fff;
+		color: var(--color-brand-contrast);
 		text-decoration: none;
-
-		:global([data-theme='dark']) & {
-			color: var(--color-brand-contrast);
-		}
 	}
 
 	@media (max-width: 1279px) {
