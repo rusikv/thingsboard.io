@@ -5,9 +5,8 @@
 // root width/height: cx (of width), cy (of height), r (radius of width), aspect
 // (height/width). The ring is the 186.5 x 186.5 `<rect rx="93.25">` (a closed stroke
 // `<path>` in a few icons), not the small timeline-dot `<circle>`s. Keyed by the
-// data desktopImage path. Add an entry with every new application icon: without
-// one, mobile shows the uncropped light icon under the dark-mode filter rather
-// than its `-dark.svg`.
+// data desktopImage path. Add an entry with every new application icon:
+// ApplicationsSection fails the build for an icon without one.
 export interface RingGeometry {
 	cx: number;
 	cy: number;

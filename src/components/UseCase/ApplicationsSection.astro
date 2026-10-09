@@ -18,37 +18,49 @@ const topApps = applications.filter((_, i) => i % 2 === 0);
 const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 
 // Every application icon ships a `-dark.svg` sibling recoloured for dark mode
-// (brand indigo → #b3c7ff, CE navy → #78b4f5); the styles swap to it. An icon
-// added without one falls back to the dark-mode filter in the styles.
+// (brand indigo → #b3c7ff, CE navy → #78b4f5); the styles swap to it.
 // Only the keys are read (SmartImage resolves the URL), so the glob stays lazy and
 // shares SmartImage's own `?url` loaders instead of importing every icon up front.
 const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
 	query: '?url',
 	import: 'default',
 });
-const darkSrcFor = (src: string) => {
-	const dark = src.replace(/\.svg$/, '-dark.svg');
-	return dark in darkVariants ? dark : null;
-};
+const darkSrcFor = (src: string) => src.replace(/\.svg$/, '-dark.svg');
+
+// Every icon needs a ring-geometry entry (the desktop height and the mobile crop read it)
+// and a local `-dark.svg`. Name any that lack one, rather than failing on an undefined
+// entry or pointing the dark copy at a CDN fallback URL that does not exist.
+const noGeometry = applications.filter((app) => !ICON_RING_GEOMETRY[app.desktopImage]);
+const noDark = applications.filter((app) => !(darkSrcFor(app.desktopImage) in darkVariants));
+if (noGeometry.length > 0 || noDark.length > 0) {
+	const errors: string[] = [];
+	if (noGeometry.length > 0) {
+		errors.push(
+			`no ring geometry — add an entry to src/components/UseCase/icon-ring-geometry.ts: ${noGeometry.map((app) => app.desktopImage).join(', ')}`
+		);
+	}
+	if (noDark.length > 0) {
+		errors.push(
+			`no dark variant — add these files: ${noDark.map((app) => darkSrcFor(app.desktopImage)).join(', ')}`
+		);
+	}
+	throw new Error(`[use-cases] "${title}" application icons: ${errors.join(' | ')}`);
+}
 
 // Desktop icons are taller than wide; the real height keeps a not-yet-loaded copy
 // (e.g. the other theme's, fetched on a switch) at its final size.
 const DESKTOP_W = 180;
-const desktopHeight = (src: string) => {
-	const g = ICON_RING_GEOMETRY[src];
-	return g ? Math.round(DESKTOP_W * g.aspect) : DESKTOP_W;
-};
+const desktopHeight = (src: string) => Math.round(DESKTOP_W * ICON_RING_GEOMETRY[src].aspect);
 
 // Mobile "just circles": the desktop node SVG bakes in timeline connectors that
 // extend outside the ring. Instead of the (rotated) mobile variants, we reuse the
 // desktop icon and crop to the ring via a circular viewport — scaling so the ring
 // fills the viewport and translating so it centers (ring geometry differs per node
-// because of the zigzag). Returns the inline metrics, or null to render plainly.
+// because of the zigzag). Returns the inline metrics.
 const MOBILE_D = 120; // circular viewport diameter (px)
 const MOBILE_FILL = 0.94; // ring fills 94% of the viewport, leaving a small margin
 const mobileCrop = (src: string) => {
 	const g = ICON_RING_GEOMETRY[src];
-	if (!g) return null;
 	const imgW = (MOBILE_FILL * MOBILE_D) / (2 * g.r);
 	const imgH = imgW * g.aspect;
 	return {
@@ -95,17 +107,15 @@ const mobileCrop = (src: string) => {
 								alt={app.imageAlt}
 								width={DESKTOP_W}
 								height={height}
-								class={darkSrc ? 'uc-ic uc-ic--light' : undefined}
+								class="uc-ic uc-ic--light"
 							/>
-							{darkSrc && (
-								<SmartImage
-									src={darkSrc}
-									alt={app.imageAlt}
-									width={DESKTOP_W}
-									height={height}
-									class="uc-ic uc-ic--dark"
-								/>
-							)}
+							<SmartImage
+								src={darkSrc}
+								alt={app.imageAlt}
+								width={DESKTOP_W}
+								height={height}
+								class="uc-ic uc-ic--dark"
+							/>
 						</div>
 					);
 				})
@@ -133,31 +143,25 @@ const mobileCrop = (src: string) => {
 				const darkSrc = darkSrcFor(app.desktopImage);
 				return (
 					<div class="uc-app-block">
-						<div class:list={['uc-app-block-image', { 'uc-app-block-image--crop': crop }]}>
-							{crop ? (
-								<div class="uc-circle-crop">
-									<SmartImage
-										src={app.desktopImage}
-										alt={app.imageAlt}
-										width={crop.width}
-										height={crop.height}
-										style={crop.style}
-										class={`uc-crop-img${darkSrc ? ' uc-ic uc-ic--light' : ''}`}
-									/>
-									{darkSrc && (
-										<SmartImage
-											src={darkSrc}
-											alt={app.imageAlt}
-											width={crop.width}
-											height={crop.height}
-											style={crop.style}
-											class="uc-crop-img uc-ic uc-ic--dark"
-										/>
-									)}
-								</div>
-							) : (
-								<SmartImage src={app.desktopImage} alt={app.imageAlt} width={120} height={120} />
-							)}
+						<div class="uc-app-block-image">
+							<div class="uc-circle-crop">
+								<SmartImage
+									src={app.desktopImage}
+									alt={app.imageAlt}
+									width={crop.width}
+									height={crop.height}
+									style={crop.style}
+									class="uc-crop-img uc-ic uc-ic--light"
+								/>
+								<SmartImage
+									src={darkSrc}
+									alt={app.imageAlt}
+									width={crop.width}
+									height={crop.height}
+									style={crop.style}
+									class="uc-crop-img uc-ic uc-ic--dark"
+								/>
+							</div>
 						</div>
 						<div class="uc-app-block-text">
 							<h3>{app.title}</h3>
@@ -268,18 +272,10 @@ const mobileCrop = (src: string) => {
 		text-align: center;
 		gap: $spacing-3;
 
+		// Cropped "just circles": circular viewport over the desktop icon.
 		.uc-app-block-image {
-			// Plain fallback (icon without ring geometry)
-			img {
-				width: 120px;
-				height: auto;
-			}
-
-			// Cropped "just circles": circular viewport over the desktop icon.
-			&--crop {
-				width: 120px;
-				height: 120px;
-			}
+			width: 120px;
+			height: 120px;
 
 			.uc-circle-crop {
 				position: relative;
@@ -328,14 +324,6 @@ const mobileCrop = (src: string) => {
 		// Inline like the light copy, so the row keeps its height.
 		.uc-ic--dark {
 			display: inline;
-		}
-
-		// Safety net for an icon added later without a `-dark.svg`: it renders as a
-		// lone <img> with no swap class, and this lifts its line-art off the dark
-		// background. No icon takes this path today.
-		.uc-images-row .uc-app-image img:not(.uc-ic),
-		.uc-app-block-image img:not(.uc-ic) {
-			filter: invert(1) hue-rotate(180deg);
 		}
 	}
 
