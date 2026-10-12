@@ -94,12 +94,16 @@ const searchRoutes: [string, string][] = [
 		let modal: HTMLElement | null = null;
 		let loaderBar: HTMLElement | null = null;
 		let status: HTMLElement | null = null;
+		let opener: HTMLElement | null = null;
 
 		const close = () => {
 			if (!modal) return;
 			modal.classList.remove('open');
 			document.documentElement.classList.remove('tb-search-open');
 			stopFocusRetention();
+			// Back to the button that opened search, so keyboard users keep their place.
+			opener?.focus();
+			opener = null;
 		};
 
 		const buildModal = (): HTMLElement => {
@@ -264,13 +268,14 @@ const searchRoutes: [string, string][] = [
 		const suggestionsOpen = () =>
 			[...document.querySelectorAll('.gssb_c')].some((el) => getComputedStyle(el).display !== 'none');
 
-		// Esc to close, in the capture phase: CSE's input stops it bubbling.
-		// Open suggestions and the cookie dialog close first.
+		// Esc to close, in the capture phase: CSE's input stops it bubbling. Not an Esc
+		// that ends IME input, closes an open dialog or closes CSE's suggestions.
 		document.addEventListener(
 			'keydown',
 			(e) => {
-				if (e.key !== 'Escape' || !modal?.classList.contains('open')) return;
-				if ((e.target as Element).closest?.('dialog') || suggestionsOpen()) return;
+				if (e.key !== 'Escape' || e.isComposing || !modal?.classList.contains('open')) return;
+				if (document.querySelector('dialog[open]')) return;
+				if ((e.target as Element).matches?.('input.gsc-input') && suggestionsOpen()) return;
 				close();
 			},
 			true
@@ -278,7 +283,10 @@ const searchRoutes: [string, string][] = [
 
 		// Attach to all search buttons via delegation
 		document.addEventListener('click', (e) => {
-			if ((e.target as Element).closest('search-button')) open();
+			const trigger = (e.target as Element).closest('search-button');
+			if (!trigger) return;
+			opener = trigger.querySelector('button');
+			open();
 		});
 	}
 </script>
@@ -301,7 +309,7 @@ const searchRoutes: [string, string][] = [
 		transition: opacity $transition-base;
 
 		&:hover { opacity: 0.7; }
-		&:focus { outline: none; }
+		&:focus:not(:focus-visible) { outline: none; }
 
 		svg { width: 20px; height: 20px; }
 	}
