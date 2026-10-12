@@ -297,7 +297,9 @@ const searchRoutes: [string, string][] = [
 	}
 </style>
 
-<style is:global>
+<style is:global lang="scss">
+	@use '../styles/google-cse' as *;
+
 	html.tb-search-open {
 		overflow: hidden;
 		scrollbar-gutter: stable;
@@ -379,6 +381,10 @@ const searchRoutes: [string, string][] = [
 		background: var(--sl-color-bg) !important;
 		border: 1px solid var(--sl-color-hairline) !important;
 	}
+	/* Drop CSE's light-grey inner frame. */
+	[data-theme='dark'] .gssb_c .gsc-completion-container {
+		border-color: transparent !important;
+	}
 	[data-theme='dark'] .gssb_c table,
 	[data-theme='dark'] .gssb_c tbody,
 	[data-theme='dark'] .gssb_c tr,
@@ -447,6 +453,10 @@ const searchRoutes: [string, string][] = [
 		padding: 0 !important;
 	}
 	.tb-search-box .gsc-input-box { border-radius: 6px !important; }
+	/* Dark input: shared with the docs search pages. */
+	.tb-search-box {
+		@include google-cse-dark-input;
+	}
 	.tb-search-box 	.gsc-webResult.gsc-result {
 		border-radius: 6px !important;
 		padding: 8px !important;
