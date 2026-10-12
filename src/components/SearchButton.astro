@@ -260,11 +260,20 @@ const searchRoutes: [string, string][] = [
 			if (modal.classList.contains('open')) showContent(modal);
 		});
 
-		// Esc to close — no-op when modal isn't built yet. Not from inside the cookie
-		// preferences dialog: that Esc closes the dialog and returns to the notice.
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape' && !(e.target as Element).closest?.('dialog')) close();
-		});
+		const suggestionsOpen = () =>
+			[...document.querySelectorAll('.gssb_c')].some((el) => getComputedStyle(el).display !== 'none');
+
+		// Esc to close, in the capture phase: CSE's input stops it bubbling.
+		// Open suggestions and the cookie dialog close first.
+		document.addEventListener(
+			'keydown',
+			(e) => {
+				if (e.key !== 'Escape' || !modal?.classList.contains('open')) return;
+				if ((e.target as Element).closest?.('dialog') || suggestionsOpen()) return;
+				close();
+			},
+			true
+		);
 
 		// Attach to all search buttons via delegation
 		document.addEventListener('click', (e) => {
