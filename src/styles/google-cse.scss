@@ -12,7 +12,7 @@ $-clear-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' wi
 		.gsc-input-box-focus,
 		.gsc-input-box-hover {
 			background: var(--sl-color-bg) !important;
-			border-color: var(--sl-color-hairline) !important;
+			border-color: var(--sl-color-hairline-light) !important;
 		}
 		// Longhand keeps CSE's watermark.
 		input.gsc-input {
@@ -31,7 +31,7 @@ $-clear-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' wi
 	// Suggestions: CSE appends them to <body>, outside both widgets.
 	.gssb_c {
 		background: var(--sl-color-bg) !important;
-		border: 1px solid var(--sl-color-hairline) !important;
+		border: 1px solid var(--sl-color-hairline-light) !important;
 	}
 	// Drop CSE's light-grey inner frame.
 	.gssb_c .gsc-completion-container {
