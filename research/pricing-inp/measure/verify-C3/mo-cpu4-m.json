@@ -1,0 +1,230 @@
+{
+ "0": [
+  {
+   "label": "subtab→PrivateCloud",
+   "urlChanged": true,
+   "taskMs": 145.8,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 192,
+    "proc": 0.6,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "subtab→PE",
+   "urlChanged": true,
+   "taskMs": 134.8,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 168,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "billing toggle (PE)",
+   "urlChanged": true,
+   "taskMs": 138.2,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 208,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 2
+  },
+  {
+   "label": "billing toggle back",
+   "urlChanged": true,
+   "taskMs": 173.1,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 208,
+    "proc": 0.1,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 2
+  },
+  {
+   "label": "re-click active subtab (same URL)",
+   "urlChanged": false,
+   "taskMs": 45.9,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 88,
+    "proc": 0.2,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "subtab→Cloud",
+   "urlChanged": true,
+   "taskMs": 113.3,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 152,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "region toggle",
+   "urlChanged": true,
+   "taskMs": 119,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 144,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "region toggle back",
+   "urlChanged": true,
+   "taskMs": 188.9,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 248,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  }
+ ],
+ "900": [
+  {
+   "label": "subtab→PrivateCloud",
+   "urlChanged": true,
+   "taskMs": 183.8,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 248,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "subtab→PE",
+   "urlChanged": true,
+   "taskMs": 121.9,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 184,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "billing toggle (PE)",
+   "urlChanged": true,
+   "taskMs": 109.6,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 152,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 900,
+   "childListRecs": 2
+  },
+  {
+   "label": "billing toggle back",
+   "urlChanged": true,
+   "taskMs": 142.8,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 176,
+    "proc": 0.7,
+    "name": "pointerup"
+   },
+   "uCalls": 900,
+   "childListRecs": 2
+  },
+  {
+   "label": "re-click active subtab (same URL)",
+   "urlChanged": false,
+   "taskMs": 41.7,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 64,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "subtab→Cloud",
+   "urlChanged": true,
+   "taskMs": 121.1,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 160,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "region toggle",
+   "urlChanged": true,
+   "taskMs": 114.5,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 152,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  },
+  {
+   "label": "region toggle back",
+   "urlChanged": true,
+   "taskMs": 127.6,
+   "rafMs": null,
+   "mutsInTask": null,
+   "inp": {
+    "d": 168,
+    "proc": 0,
+    "name": "pointerup"
+   },
+   "uCalls": 0,
+   "childListRecs": 0
+  }
+ ]
+}

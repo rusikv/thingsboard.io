@@ -1,0 +1,30 @@
+[desktop-1x/gtm] GTM boot {"gtm":true,"ga4":true,"keys":["GTM-TGBNQXN","G-PMZCBFYH5Y"],"dlLen":10} {"scriptMs":287.7,"taskMs":1023.5} {"longestTasks":[140.3,72.6,60.9,16.3,14.2,7.7,6.8,5.3],"tasksOver50":3,"evalScripts":[{"n":"EvaluateScript","ms":60.8,"url":"https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN"},{"n":"v8.compile","ms":0,"url":"https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN"},{"n":"EvaluateScript","ms":140,"url":"https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"},{"n":"v8.compile","ms":0.1,"url":"https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"}]}
+[desktop-1x/gtm] wrap {"wrapped":true,"gtmPresent":true}
+[desktop-1x/gtm] background click                     72ms d3.1 p0.9 (all 6.5) pres68 clickSync 5.5 dl gtm.click:4.40 L70/2.3 S140/33.9 js6.5 
+[desktop-1x/gtm] sub-tab -> Private Cloud             104ms d0.7 p0 (all 45.7) pres103.3 clickSync 45.6 dl gtm.click:23.50 args:event:PriceOpen:1.90 L85/16.9 S169/77.5 js28 gtmLoAF [{"ms":23.6,"forced":0.2,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] PC billing -> Annual                 80ms d0.8 p0 (all 33.5) pres79.2 clickSync 33.5 dl gtm.click:19.90 L90/6.1 S180/67.9 js34.4 gtmLoAF [{"ms":20.1,"forced":0,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] PC billing -> Monthly                64ms d0.7 p0 (all 18.9) pres63.3 clickSync 18.8 dl gtm.click:17.30 L95/5.9 S186/67.3 js19.8 
+[desktop-1x/gtm] sub-tab -> On-premises               80ms d1 p0 (all 27.3) pres79 clickSync 27.2 dl gtm.click:13.70 args:event:PriceOpen:3.60 L98/9.4 S189/66.6 js19.3 gtmLoAF [{"ms":13.9,"forced":0.3,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] sub-tab -> Cloud                     72ms d1 p0.1 (all 25.8) pres70.9 clickSync 25.7 dl gtm.click:12.70 args:event:PriceOpen:1.40 L96/9.9 S190/71.5 js16.5 
+[desktop-1x/gtm] region label toggle                  80ms d0.4 p0.1 (all 17) pres79.5 clickSync 16.9 dl gtm.click:15.50 L94/6.9 S185/83 js17.4 gtmLoAF [{"ms":15.7,"forced":0,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] top-up accordion                     64ms d0.5 p0 (all 3.5) pres63.5 clickSync 3.5 dl gtm.scrollDepth:16.70 gtm.click:3.30 L106/12.5 S180/71.1 js21.3 
+[desktop-1x/gtm] FAQ item toggle                      72ms d1.6 p0 (all 12.2) pres70.4 clickSync 12.2 dl gtm.scrollDepth:1.40 gtm.scrollDepth:15.20 gtm.click:2.80 faq_node_interaction:8.70 L92/9.7 S165/79.2 js29.4 
+[desktop-1x/gtm] background click                     80ms d1.4 p0 (all 4.7) pres78.6 clickSync 4.6 dl gtm.click:4.50 L64/2.9 S129/40.7 js4.9 
+[desktop-1x/gtm] sub-tab -> Private Cloud             80ms d0.4 p0.1 (all 32) pres79.5 clickSync 31.9 dl gtm.click:14.70 args:event:PriceOpen:2.30 L92/12.8 S177/95.9 js20 gtmLoAF [{"ms":14.9,"forced":0.1,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] PC billing -> Annual                 64ms d2.4 p0 (all 15.4) pres61.6 clickSync 15.2 dl gtm.click:13.30 L87/5.3 S175/64 js16.1 
+[desktop-1x/gtm] PC billing -> Monthly                72ms d0.6 p0 (all 20.9) pres71.4 clickSync 20.8 dl gtm.click:17.10 L92/6.3 S181/66.4 js21.6 
+[desktop-1x/gtm] sub-tab -> On-premises               80ms d2 p0 (all 30.5) pres78 clickSync 30.4 dl gtm.click:14.70 args:event:PriceOpen:1.90 L87/8.6 S172/75.3 js20.8 gtmLoAF [{"ms":14.9,"forced":0.2,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] sub-tab -> Cloud                     104ms d4.6 p0 (all 46.4) pres99.4 clickSync 46.3 dl gtm.click:26.40 args:event:PriceOpen:1.60 L81/11.1 S162/82.8 js34.9 gtmLoAF [{"ms":26.6,"forced":0.1,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] region label toggle                  64ms d1 p0.1 (all 14.4) pres62.9 clickSync 14.2 dl gtm.click:11.90 L86/7.1 S173/70.8 js14.7 gtmLoAF [{"ms":11.9,"forced":0,"type":"event-listener","inv":"#document.onclick"}]
+[desktop-1x/gtm] top-up accordion                     72ms d1.6 p0 (all 3.8) pres70.4 clickSync 3.6 dl gtm.click:3.40 L96/11.7 S163/73.6 js4.4 
+[desktop-1x/gtm] FAQ item toggle                      64ms d1.8 p0 (all 4.4) pres62.2 clickSync 4.3 dl gtm.click:4.00 L89/7.7 S160/80.2 js4.7 
+[desktop-1x/gtm] background click                     72ms d0.9 p0 (all 4.8) pres71.1 clickSync 4.6 dl gtm.click:4.50 L69/3.2 S139/38.7 js4.9 
+[desktop-1x/gtm] sub-tab -> Private Cloud             80ms d2.1 p0.1 (all 27.2) pres77.8 clickSync 27.1 dl gtm.click:11.50 args:event:PriceOpen:2.50 L95/12.2 S185/91.5 js16.6 
+[desktop-1x/gtm] PC billing -> Annual                 56ms d1.1 p0.1 (all 13.5) pres54.8 clickSync 13.3 dl gtm.click:11.30 L91/5.9 S181/67.3 js14.2 
+[desktop-1x/gtm] PC billing -> Monthly                72ms d1.1 p0.1 (all 17.7) pres70.8 clickSync 17.6 dl gtm.click:15.20 L92/7.6 S180/67.9 js18.5 
+[desktop-1x/gtm] sub-tab -> On-premises               56ms d0.6 p0 (all 22.3) pres55.4 clickSync 22.3 dl gtm.click:11.00 args:event:PriceOpen:1.30 L92/8.3 S181/80.2 js15.3 
+[desktop-1x/gtm] sub-tab -> Cloud                     80ms d2.8 p0 (all 25.8) pres77.2 clickSync 25.7 dl gtm.click:13.40 args:event:PriceOpen:1.30 L92/11.5 S182/81.8 js17.2 
+[desktop-1x/gtm] region label toggle                  56ms d0.6 p0 (all 12) pres55.4 clickSync 11.7 dl gtm.click:10.10 L92/6 S182/67.1 js12.1 
+[desktop-1x/gtm] top-up accordion                     56ms d0.6 p0 (all 2.4) pres55.4 clickSync 2.2 dl gtm.click:2.00 L109/10.6 S184/63.7 js2.6 
+[desktop-1x/gtm] FAQ item toggle                      48ms d0.8 p0.1 (all 7.6) pres47.1 clickSync 7.3 dl gtm.click:2.50 faq_node_interaction:4.50 L106/10.3 S186/92.5 js7.8 
+[desktop-1x/gtm] net {"blockedCount":2,"blockedHosts":["api.github.com/repos/thingsboard/t","www.google.com.ua/ads/ga-audiences"],"allowed3p":["https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN","https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"],"responses3p":[]}

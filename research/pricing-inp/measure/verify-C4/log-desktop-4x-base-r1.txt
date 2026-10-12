@@ -1,0 +1,41 @@
+[desktop-4x-base-63734] subtab Cloud->PC                         192ms d7/p0/r185 style 428.9ms x174 layout 88.6ms x95 forced 74.4 pointerdown:112 pointerup:192 click:192
+[desktop-4x-base-63734] subtab PC->Cloud                         184ms d7/p0/r177 style 444.1ms x186 layout 67.7ms x92 forced 63.5 pointerdown:88 pointerup:184 click:184
+[desktop-4x-base-63734] subtab Cloud->PC                         184ms d14/p0/r170 style 464.6ms x206 layout 68.9ms x103 forced 65.2 pointerdown:48 pointerup:184 click:184
+[desktop-4x-base-63734] subtab PC->Cloud                         160ms d8/p0/r152 style 370.9ms x222 layout 58.6ms x112 forced 38.5 pointerdown:80 pointerup:160 click:160
+[desktop-4x-base-63734] subtab Cloud->PC                         168ms d4/p0/r164 style 440ms x215 layout 66.6ms x108 forced 64.7 pointerdown:56 pointerup:168 click:168
+[desktop-4x-base-63734] subtab PC->Cloud                         160ms d17/p0/r143 style 374.8ms x247 layout 49.4ms x124 forced 38.2 pointerdown:72 pointerup:160 click:160
+[desktop-4x-base-63734] subtab Cloud->PC                         120ms d8/p0/r112 style 307ms x263 layout 38ms x133 forced 42.1 pointerdown:40 pointerup:120 click:120
+[desktop-4x-base-63734] subtab PC->Cloud                         144ms d11/p0/r133 style 358.6ms x263 layout 54.8ms x133 forced 40.3 pointerdown:48 pointerup:144 click:144
+[desktop-4x-base-63734] (setup) tab thingsboard-private-cloud    144ms d5/p0/r139 style 388ms x261 layout 56.8ms x132 forced 49.8 pointerdown:32 pointerup:144 click:144
+[desktop-4x-base-63734] (setup) PC open cold                     88ms d9/p1/r79 style 596.8ms x205 layout 92.2ms x115 forced 223.5 pointerdown:40 pointerup:88 click:88
+[desktop-4x-base-63734] PC add-on switch                         208ms d1/p0/r207 style 363.2ms x262 layout 31.2ms x132 forced 112.6 pointerdown:48 pointerup:208 click:208
+[desktop-4x-base-63734] PC add-on switch                         168ms d3/p0/r166 style 310.7ms x260 layout 32.1ms x132 forced 83.5 pointerdown:40 pointerup:168 click:168
+[desktop-4x-base-63734] PC add-on switch                         264ms d9/p5/r250 style 430.2ms x258 layout 46.8ms x130 forced 143.3 pointerdown:64 pointerup:264 click:264
+[desktop-4x-base-63734] PC add-on switch                         264ms d3/p0/r261 style 401.7ms x258 layout 43.9ms x131 forced 147.7 pointerdown:48 pointerup:264 click:264
+[desktop-4x-base-63734] PC stepper +                             152ms d7/p0/r145 style 311.5ms x261 layout 51.6ms x131 forced 54.6 pointerdown:40 pointerup:152 click:152
+[desktop-4x-base-63734] PC stepper +                             144ms d2/p1/r142 style 324.4ms x261 layout 41.3ms x132 forced 52.7 pointerdown:40 pointerup:144 click:144
+[desktop-4x-base-63734] PC stepper +                             160ms d7/p0/r153 style 335.5ms x259 layout 44.5ms x131 forced 57.2 pointerdown:40 pointerup:160 click:160
+[desktop-4x-base-63734] (setup) close                            56ms d0/p0/r56 style 260.1ms x252 layout 72.2ms x140 forced 0 pointerdown:40 pointerup:56 click:56
+[desktop-4x-base-63734] PC calc reopen                           240ms d4/p0/r236 style 480.2ms x256 layout 100.5ms x144 forced 120.3 pointerdown:48 pointerup:240 click:240
+[desktop-4x-base-63734] (setup) close                            64ms d4/p1/r60 style 279.3ms x250 layout 49.1ms x141 forced 0 pointerdown:48 pointerup:64 click:64
+[desktop-4x-base-63734] PC calc reopen                           200ms d7/p0/r193 style 363ms x256 layout 77.8ms x144 forced 89.6 pointerdown:64 pointerup:200 click:200
+[desktop-4x-base-63734] (setup) close                            56ms d3/p0/r53 style 317.1ms x242 layout 59.2ms x135 forced 0 pointerdown:48 pointerup:56 click:56
+[desktop-4x-base-63734] (setup) tab thingsboard-pe               120ms d2/p0/r118 style 487.3ms x240 layout 44.4ms x124 forced 44.5 pointerdown:40 pointerup:120 click:120
+[desktop-4x-base-63734] (setup) PAYG open cold                   88ms d9/p0/r79 style 572.4ms x227 layout 49.6ms x113 forced 215.4 pointerdown:32 pointerup:88 click:88
+[desktop-4x-base-63734] PAYG Edge switch (no blur)               208ms d1/p0/r207 style 436.8ms x245 layout 31.1ms x123 forced 111 pointerdown:40 pointerup:208 click:208
+[desktop-4x-base-63734] PAYG Edge switch (no blur)               224ms d8/p0/r216 style 499.7ms x256 layout 33.1ms x130 forced 116 pointerdown:56 pointerup:224 click:224
+[desktop-4x-base-63734] PAYG Edge switch (no blur)               200ms d3/p0/r197 style 386.3ms x260 layout 31.5ms x131 forced 93.6 pointerdown:48 pointerup:200 click:200
+[desktop-4x-base-63734] PAYG Edge switch (no blur)               192ms d1/p0/r191 style 385.2ms x263 layout 34.4ms x133 forced 100.2 pointerdown:48 pointerup:192 click:192
+[desktop-4x-base-63734] PAYG slider ArrowRight                   312ms d1/p104/r208 style 427.7ms x196 layout 27.9ms x101 forced 179.1 keydown:312 keyup:168
+[desktop-4x-base-63734] PAYG slider ArrowRight                   320ms d1/p103/r216 style 471.8ms x196 layout 29.3ms x101 forced 176.8 keydown:320 keyup:176
+[desktop-4x-base-63734] PAYG slider ArrowRight                   376ms d3/p122/r251 style 499.2ms x185 layout 32.5ms x94 forced 212 keydown:376 keyup:208
+[desktop-4x-base-63734] PAYG slider ArrowRight                   392ms d1/p130/r261 style 503.1ms x172 layout 36.9ms x89 forced 222.1 keydown:392 keyup:208
+[desktop-4x-base-63734] PAYG Edge switch after typing (blur)     240ms d7/p0/r233 style 591.2ms x248 layout 47.1ms x127 forced 225.3 pointerdown:240 pointerup:224 click:224
+[desktop-4x-base-63734] PAYG Edge switch after typing (blur)     272ms d15/p0/r257 style 665.1ms x233 layout 50.3ms x119 forced 228.1 pointerdown:272 pointerup:240 click:240
+[desktop-4x-base-63734] PAYG Edge switch after typing (blur)     232ms d2/p0/r230 style 632.3ms x237 layout 46.5ms x121 forced 229.8 pointerdown:216 pointerup:232 click:232
+[desktop-4x-base-63734] (setup) close                            88ms d4/p0/r85 style 321.6ms x241 layout 35.3ms x120 forced 0 pointerdown:48 pointerup:88 click:88
+[desktop-4x-base-63734] PAYG calc reopen                         248ms d5/p0/r243 style 534.1ms x263 layout 44.1ms x131 forced 131.1 pointerdown:64 pointerup:248 click:248
+[desktop-4x-base-63734] (setup) close                            80ms d12/p0/r68 style 354.4ms x252 layout 33.6ms x124 forced 0 pointerdown:56 pointerup:80 click:80
+[desktop-4x-base-63734] PAYG calc reopen                         304ms d3/p0/r301 style 594.5ms x256 layout 46.4ms x127 forced 166.2 pointerdown:48 pointerup:304 click:304
+[desktop-4x-base-63734] (setup) close                            64ms d2/p0/r62 style 310.5ms x252 layout 28.8ms x126 forced 0 pointerdown:56 pointerup:64 click:64
+[desktop-4x-base-63734] patched [] fetchErr -

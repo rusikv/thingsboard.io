@@ -1,0 +1,66 @@
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] loaded in 866 ms
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"none","observerErrs":[],"droppedRules":1,"smilPaused":0,"smilElems":4,"bgSvgVisible":false} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] DOM 5995 elements, depth 22 invisible 5145 rules 1992 :has 93
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] idle {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.48} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":0,"ms":0},"layout":{"n":0,"ms":0},"paint":{"n":0,"ms":0},"prePaint":{"n":0,"ms":0},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":0,"drawFrames":0,"updateLayoutTreeElementCounts":[]}
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] baseline: click empty background                           16ms  delay 6.9 proc 0.4 pres 8.7 [click:16(d7/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] sub-tab: Cloud -> Private Cloud                            120ms  delay 17.1 proc 37.8 pres 65.1 [pointerdown:16(d15/p0) click:120(d17/p38)] LoAF 88.8/37.7s/11.3sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] sub-tab: Private Cloud -> On-premises                      80ms  delay 18.7 proc 19.6 pres 41.7 [pointerdown:16(d16/p0) click:80(d19/p20)] LoAF 63/19.6s/8.2sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] sub-tab: On-premises -> Cloud                              104ms  delay 12.6 proc 0.1 pres 91.3 [pointerdown:32(d16/p0) pointerup:104(d13/p0) click:104(d37/p25)] LoAF 75.3/30.9s/2.1sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] region: label -> North America                             48ms  delay 10.3 proc 2.6 pres 35.1 [pointerdown:16(d14/p0) click:48(d10/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] region: label -> Europe                                    48ms  delay 6 proc 3.1 pres 38.9 [pointerdown:16(d16/p0) click:48(d6/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] region: switch (checkbox)                                  48ms  delay 7.9 proc 2.5 pres 37.6 [pointerdown:16(d15/p0) click:48(d8/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] upsell: See Private Cloud Options (switch tab)             88ms  delay 8.6 proc 30.3 pres 49.1 [pointerdown:16(d15/p0) click:88(d9/p30)] LoAF 66.3/30.3s/10.4sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 21.9 proc 19.3 pres 38.8 [pointerdown:16(d16/p0) click:80(d22/p19)] LoAF 62.3/24.8s/2.1sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] top-up accordion toggle                                    16ms  delay 14.8 proc 0 pres 1.2 [pointerdown:16(d15/p0) click:16(d10/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-private-cloud               88ms  delay 15 proc 27 pres 46 [pointerdown:16(d15/p0) click:88(d15/p27)] LoAF 72.3/27s/10.8sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC billing: -> Annual                                      48ms  delay 14.2 proc 4.1 pres 29.7 [pointerdown:16(d16/p0) click:48(d14/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC billing: -> Monthly                                     40ms  delay 7.3 proc 3.6 pres 29.1 [pointerdown:16(d15/p0) click:40(d7/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calculator: open #1 (cold chunk)                        32ms  delay 12 proc 4.4 pres 15.6 [pointerdown:16(d15/p0) click:32(d12/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: click slider track @0.35                          80ms  delay 13.5 proc 0 pres 66.5 [pointerdown:80(d14/p0)] LoAF 56.3/28.4s/11.9sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: click slider track @0.7                           80ms  delay 13.3 proc 0.1 pres 66.6 [pointerdown:80(d13/p0)] LoAF 57.4/27.9s/13.4sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: click slider track @0.15                          80ms  delay 13.8 proc 0 pres 66.2 [pointerdown:80(d14/p0)] LoAF 56.3/27.4s/12.6sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: slider ArrowRight                                 48ms  delay 0.4 proc 0.9 pres 46.7 [keydown:48(d0/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: type digit into devices                           56ms  delay 0.2 proc 0.8 pres 55 [keydown:56(d0/p1) keypress:56(d1/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: type digit into devices                           40ms  delay 0.2 proc 0.1 pres 39.7 [keydown:40(d0/p0) keypress:40(d0/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: type digit into devices                           40ms  delay 0.6 proc 0.1 pres 39.3 [keydown:40(d1/p0) keypress:40(d1/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: stepper +                                         88ms  delay 48.8 proc 17.9 pres 21.3 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:88(d49/p18)] LoAF 63.2/36.4s/0.2sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calc: add-on switch                                     72ms  delay 9.9 proc 34.6 pres 27.5 [pointerdown:16(d14/p0) click:72(d10/p35)] LoAF 53.8/33.9s/0.1sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PC calculator: close #1                                    16ms  delay 14.1 proc 0 pres 1.9 [pointerdown:16(d14/p0) click:16(d7/p2)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-pe                          80ms  delay 21 proc 28.9 pres 30.1 [pointerdown:16(d15/p1) click:80(d21/p29)] LoAF 61.9/28.8s/7.5sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] On-prem billing: -> Perpetual                              48ms  delay 8.7 proc 3.7 pres 35.6 [pointerdown:16(d15/p0) click:48(d9/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] On-prem billing: -> Subscription                           48ms  delay 5.2 proc 2.9 pres 39.9 [pointerdown:16(d17/p0) click:48(d5/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calculator: open #1 (cold chunk)                      24ms  delay 9 proc 2.8 pres 12.2 [pointerdown:16(d15/p0) click:24(d9/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: click slider track @0.4                         72ms  delay 14.6 proc 0 pres 57.4 [pointerdown:72(d15/p0) pointerup:40(d2/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: click slider track @0.75                        72ms  delay 16.2 proc 0 pres 55.8 [pointerdown:72(d16/p0) pointerup:40(d1/p0)] LoAF 52.2/25.6s/11sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: click slider track @0.1                         72ms  delay 15.4 proc 0 pres 56.6 [pointerdown:72(d15/p0) pointerup:48(d2/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: slider ArrowRight                               64ms  delay 0.4 proc 24.8 pres 38.8 [keydown:64(d0/p25)] LoAF 61.6/42.6s/8.3sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: type digit into devices                         40ms  delay 0.7 proc 0 pres 39.3 [keydown:40(d1/p0) keypress:40(d1/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: type digit into devices                         48ms  delay 0.5 proc 0.1 pres 47.4 [keydown:48(d1/p0) keypress:48(d1/p2)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: type digit into devices                         40ms  delay 0.8 proc 0.1 pres 39.1 [keydown:40(d1/p0) keypress:40(d1/p3)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calc: Edge add-on switch                              96ms  delay 52.4 proc 25.4 pres 18.2 [pointerdown:16(d15/p0) pointerup:16(d14/p0) click:96(d52/p25)] LoAF 71.6/47.9s/0sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] PAYG calculator: close #1                                  16ms  delay 15.6 proc 0.1 pres 0.3 [pointerdown:16(d16/p0) click:16(d7/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-cloud                       96ms  delay 22.7 proc 38.2 pres 35.1 [pointerdown:16(d15/p0) click:96(d23/p38)] LoAF 78.7/44.4s/4.2sl
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] FAQ: category tab -> 2nd                                   40ms  delay 13.4 proc 0.7 pres 25.9 [pointerdown:16(d12/p0) click:40(d13/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] FAQ: category tab -> 1st                                   32ms  delay 8.5 proc 0.6 pres 22.9 [pointerdown:16(d16/p0) click:32(d9/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] FAQ: expand/collapse item                                  32ms  delay 9.1 proc 0.5 pres 22.4 [pointerdown:16(d14/p0) click:32(d9/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] FAQ: category tab -> #1                                    24ms  delay 8 proc 0.1 pres 15.9 [pointerdown:16(d15/p0) click:24(d8/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] FAQ: Load more                                             40ms  delay 11.7 proc 0.1 pres 28.2 [pointerdown:16(d15/p0) click:40(d12/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] feature (i) click -> jump to FAQ                           48ms  delay 13.6 proc 3.7 pres 30.7 [pointerdown:16(d15/p0) click:48(d14/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] header: burger open                                        40ms  delay 12 proc 4.4 pres 23.6 [pointerdown:16(d13/p0) click:40(d12/p4)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] header: expand "Products" in drawer                        32ms  delay 8.3 proc 0.9 pres 22.8 [pointerdown:16(d15/p0) click:32(d8/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] header: burger close                                       40ms  delay 8.1 proc 0.9 pres 31 [pointerdown:16(d15/p0) click:40(d8/p1)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] theme toggle                                               64ms  delay 8.4 proc 1.5 pres 54.1 [pointerdown:16(d15/p0) click:64(d8/p2)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] idleAfter {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":1.44}
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] consent end {"hidden":false,"visible":true,"cookie":false}
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(plain): click button                           16ms  delay 3.8 proc 0 pres 12.2 [click:16(d4/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(plain): click button                           16ms  delay 2.8 proc 0 pres 13.2 [click:16(d3/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(plain): click button                           16ms  delay 2.8 proc 0 pres 13.2 [click:16(d3/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(plain): click button                           16ms  delay 3.5 proc 0 pres 12.5 [click:16(d4/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(plain): click button                           16ms  delay 2.2 proc 0.1 pres 13.7 [click:16(d2/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(anim): click button                            32ms  delay 14.2 proc 0.4 pres 17.4 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(anim): click button                            32ms  delay 15.5 proc 0 pres 16.5 [click:32(d16/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(anim): click button                            32ms  delay 14.2 proc 0 pres 17.8 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(anim): click button                            32ms  delay 14.5 proc 0 pres 17.5 [click:32(d15/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration(anim): click button                            32ms  delay 14 proc 0 pres 18 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-quick-reducedmotion-dropscriptrule-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-mobile-4x-quick-reducedmotion-dropscriptrule-gpu.json

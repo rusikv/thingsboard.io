@@ -1,0 +1,167 @@
+{
+ "tag": "desktop-1x-fix-27485",
+ "variant": "fix",
+ "profile": "desktop-1x",
+ "chrome": "Chrome/155.0.8059.39",
+ "keep3p": false,
+ "patched": [
+  {
+   "file": "index.astro_astro_type_script_index_0_lang",
+   "n": 1,
+   "from": "(n.offsetWidth,requestAnimationFrame(()=>n.classLi"
+  },
+  {
+   "file": "calc-tb-payg.",
+   "n": 1,
+   "from": "let h=x.parentElement?.scrollTop||0;x.innerHTML=m,"
+  },
+  {
+   "file": "calc-tb-payg.",
+   "n": 1,
+   "from": "let t=x.parentElement?.scrollTop||0;x.innerHTML=e,"
+  },
+  {
+   "file": "calc-tb-payg.",
+   "n": 1,
+   "from": "_.value=String(k.devices),z(),G()}})"
+  },
+  {
+   "file": "calc-tb-payg.",
+   "n": 1,
+   "from": "v.value=String(R(e)),z(),G()});function Y("
+  },
+  {
+   "file": "calc-tb-payg.",
+   "n": 1,
+   "from": "e===`edge`&&!D[e].checked&&(k.addons.edge.count=1)"
+  },
+  {
+   "file": "calc-tb-pc.",
+   "n": 1,
+   "from": "let c=g.parentElement?.scrollTop||0;if(g.innerHTML"
+  },
+  {
+   "file": "calc-tb-pc.",
+   "n": 1,
+   "from": "let r=g.parentElement?.scrollTop||0;g.innerHTML=n,"
+  }
+ ],
+ "results": [
+  {
+   "check": "slider",
+   "fx": 0.72,
+   "mid": {
+    "v": "2.19",
+    "d": "29310"
+   },
+   "fin": {
+    "v": "2",
+    "d": "1000",
+    "plan": "Business"
+   }
+  },
+  {
+   "check": "slider",
+   "fx": 0.8,
+   "mid": {
+    "v": "2.44",
+    "d": "66560"
+   },
+   "fin": {
+    "v": "2",
+    "d": "1000",
+    "plan": "Business"
+   }
+  },
+  {
+   "check": "slider",
+   "fx": 0.9,
+   "mid": {
+    "v": "2.75",
+    "d": "112750"
+   },
+   "fin": {
+    "v": "3",
+    "d": "150000",
+    "plan": "Deployment Summary"
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 9,
+    "sh": 565,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 9,
+   "after": {
+    "st": 9,
+    "sh": 681
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 681,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 120,
+    "sh": 797
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 797,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 120,
+    "sh": 681
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 681,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 9,
+    "sh": 565
+   }
+  },
+  {
+   "check": "fade",
+   "samples": [
+    "0",
+    "0.171245",
+    "0.485082",
+    "0.777896",
+    "0.924929",
+    "0.978093",
+    "1",
+    "1"
+   ]
+  }
+ ],
+ "state0": {
+  "tab": "thingsboard-cloud",
+  "consent": true
+ }
+}

@@ -1,0 +1,135 @@
+== mobile-4x--touchtap: main-thread aggregates over 5.87s (ms/s, count/s)
+    888.9 ms/s    323/s  RunTask
+    875.2 ms/s    323/s  ThreadControllerImpl::RunTask
+    834.1 ms/s     60/s  ProxyMain::BeginMainFrame
+    679.3 ms/s    223/s  LocalFrameView::UpdateStyleAndLayout
+    664.3 ms/s     88/s  Blink.Style.UpdateTime
+    650.5 ms/s     88/s  UpdateLayoutTree
+    644.6 ms/s     88/s  Document::updateStyle
+    640.5 ms/s     88/s  Document::recalcStyle
+    493.4 ms/s     60/s  WebFrameWidgetImpl::UpdateLifecycle
+    395.2 ms/s     66/s  LocalFrameView::RunStyleAndLayoutLifecyclePhases
+    393.7 ms/s     66/s  LocalFrameView::updateStyleAndLayoutIfNeededRecursive
+    290.0 ms/s    157/s  Document::UpdateStyleAndLayout
+    288.5 ms/s    157/s  Blink.ForcedStyleAndLayout.UpdateTime
+     67.1 ms/s     60/s  LocalFrameView::RunPaintLifecyclePhase
+     55.8 ms/s     60/s  LocalFrameView::pushPaintArtifactToCompositor
+     55.1 ms/s     60/s  Blink.CompositingCommit.UpdateTime
+     55.0 ms/s     60/s  Layerize
+     54.0 ms/s     60/s  PaintArtifactCompositor::Update
+     27.9 ms/s     66/s  PrePaint
+     24.9 ms/s     60/s  Commit
+     17.5 ms/s     60/s  WebFrameWidgetImpl::BeginMainFrame
+     17.2 ms/s     66/s  LocalFrameView::RunPrePaintLifecyclePhase
+     16.7 ms/s     66/s  Blink.PrePaint.UpdateTime
+     16.1 ms/s     60/s  Blink.Animate.UpdateTime
+     14.9 ms/s     60/s  PageAnimator::serviceScriptedAnimations
+     11.9 ms/s     60/s  Blink.Layout.UpdateTime
+     11.7 ms/s     88/s  SelectorStats
+      9.6 ms/s      3/s  WidgetBaseInputHandler::OnHandleInputEvent
+      9.5 ms/s      5/s  LatencyInfo.Flow
+      9.1 ms/s     60/s  LocalFrameView::layout
+      9.1 ms/s     66/s  LocalFrameView::RunCompositingInputsLifecyclePhase
+      8.7 ms/s     60/s  Layout
+      8.7 ms/s      1/s  MajorGC
+      8.7 ms/s      1/s  V8.GC_MARK_COMPACTOR
+      8.6 ms/s      3/s  WebFrameWidgetImpl::HandleInputEvent
+      8.0 ms/s     66/s  Blink.CompositingInputs.UpdateTime
+      7.5 ms/s     60/s  LocalFrameView::performLayout
+      6.8 ms/s      1/s  V8.GC_MC_MARK
+      6.8 ms/s     60/s  Blink.Paint.UpdateTime
+      6.8 ms/s      1/s  V8.GC_MC_MARK_FULL_CLOSURE_PARALLEL
+      6.6 ms/s      2/s  V8.GC_MC_MARK_WEAK_CLOSURE_EPHEMERON_MARKING
+      6.0 ms/s      3/s  V8.GC_MC_MARK_EMBEDDER_TRACING
+      5.7 ms/s     60/s  LayerTreeHost::DoUpdateLayers
+      5.7 ms/s      4/s  LayoutView::HitTest
+      5.4 ms/s    321/s  BlinkScheduler_OnTaskCompleted
+UpdateLayoutTree elementCounts sample: [
+  18, 18, 18, 18, 18,
+  18, 18, 18, 18, 18,
+  18, 18
+]
+longest UpdateLayoutTree 17.37ms children:
+   +0.01 17.36ms Document::updateStyle 
+   +0.01 17.34ms Document::recalcStyle 
+invalidation reasons:
+   1400x StyleRecalcInvalidationTracking:Attribute::g class='astro-x4tg6t5i'
+   1400x LayoutInvalidationTracking:Style changed::g class='astro-x4tg6t5i'
+   357x StyleRecalcInvalidationTracking:Animation::BUTTON id='chat-launcher' class='chat-launcher print:hidden 
+EventDispatch: pointerover@3073 pointerdown@3073 touchstart@3074 gesturetapdown@3076 gotpointercapture@3154 pointerup@3154 lostpointercapture@3154 pointerout@3154 touchend@3154 gestureshowpress@3172 gesturetap@3172 mouseover@3173 mousemove@3173 mousedown@3174 selectstart@3175 mouseup@3178 click@3178 DOMActivate@3179 selectionchange@3244 pointerover@4022 pointerdown@4022 touchstart@4022 gesturetapdown@4023 gotpointercapture@4118 pointerup@4118 lostpointercapture@4118 pointerout@4118 touchend@4118 gestureshowpress@4134 gesturetap@4135 mousemove@4135 mousedown@4136 selectstart@4137 mouseup@4137 click@4137 DOMActivate@4138 pointerover@4972 pointerdown@4972 touchstart@4972 gesturetapdown@4973 gotpointercapture@5067 pointerup@5067 lostpointercapture@5067 pointerout@5067 touchend@5067 gestureshowpress@5073 gesturetap@5073 mousemove@5073 mousedown@5074 selectstart@5075 mouseup@5075 click@5075 DOMActivate@5076
+   InputHandlerProxy::HandleTouchStart 0.0,0.0,0.0
+   InputHandlerProxy::HitTestTouchEvent 0.0,0.0,0.0
+   WidgetInputHandlerManager::DidHandleInputEventSentToCompositor 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+   MainThreadEventQueue::HandleEvent 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+   WidgetInputHandlerManager::DidHandleInputEventSentToMain 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+   MainThreadSchedulerImpl::DidHandleInputEventOnCompositorThread 0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+   WidgetBaseInputHandler::OnHandleInputEvent 5.4,0.5,1.1,12.9,7.1,3.8,0.2,0.5,12.0,3.3,3.0,0.6
+   WebFrameWidgetImpl::HandleInputEvent 3.9,0.5,0.1,12.9,7.0,2.9,0.2,0.1,11.3,3.2,1.9,0.6
+   MainThreadSchedulerImpl::DidHandleInputEventOnMainThread 0.0,0.0,0.0,0.0,0.0,0.0,0.7,0.0,0.0,0.0,0.0,0.0
+   InputHandlerProxy::HandleTouchEnd 0.0,0.0,0.0
+== desktop-4x--touchtap: main-thread aggregates over 5.66s (ms/s, count/s)
+    657.7 ms/s    319/s  RunTask
+    642.5 ms/s    319/s  ThreadControllerImpl::RunTask
+    603.3 ms/s     60/s  ProxyMain::BeginMainFrame
+    368.2 ms/s    246/s  LocalFrameView::UpdateStyleAndLayout
+    366.1 ms/s     60/s  WebFrameWidgetImpl::UpdateLifecycle
+    350.8 ms/s     88/s  Blink.Style.UpdateTime
+    335.4 ms/s     88/s  UpdateLayoutTree
+    330.4 ms/s     88/s  Document::updateStyle
+    326.2 ms/s     88/s  Document::recalcStyle
+    243.2 ms/s     91/s  LocalFrameView::RunStyleAndLayoutLifecyclePhases
+    240.6 ms/s     91/s  LocalFrameView::updateStyleAndLayoutIfNeededRecursive
+    133.6 ms/s    154/s  Document::UpdateStyleAndLayout
+    131.5 ms/s    154/s  Blink.ForcedStyleAndLayout.UpdateTime
+     93.7 ms/s     60/s  LocalFrameView::RunPaintLifecyclePhase
+     65.4 ms/s     60/s  LocalFrameView::pushPaintArtifactToCompositor
+     64.8 ms/s     60/s  Blink.CompositingCommit.UpdateTime
+     64.4 ms/s     60/s  Layerize
+     63.8 ms/s     60/s  WebFrameWidgetImpl::BeginMainFrame
+     63.5 ms/s     60/s  PaintArtifactCompositor::Update
+     45.5 ms/s     28/s  EventHandler::handleMouseMoveEvent
+     43.7 ms/s     30/s  LayoutView::HitTest
+     35.3 ms/s     91/s  PrePaint
+     32.0 ms/s     60/s  Commit
+     30.4 ms/s     32/s  HitTest
+     24.5 ms/s     91/s  LocalFrameView::RunPrePaintLifecyclePhase
+     23.3 ms/s     91/s  Blink.PrePaint.UpdateTime
+     22.0 ms/s     60/s  Blink.Paint.UpdateTime
+     21.5 ms/s     79/s  Paint
+     16.1 ms/s     60/s  Blink.Animate.UpdateTime
+     15.3 ms/s     60/s  PageAnimator::serviceScriptedAnimations
+     13.7 ms/s     60/s  Blink.Layout.UpdateTime
+     13.5 ms/s     60/s  LayerTreeHost::DoUpdateLayers
+     13.1 ms/s     88/s  SelectorStats
+     10.4 ms/s     60/s  LocalFrameView::layout
+      9.8 ms/s     60/s  Layout
+      9.0 ms/s     91/s  LocalFrameView::RunCompositingInputsLifecyclePhase
+      8.4 ms/s     91/s  Blink.CompositingInputs.UpdateTime
+      8.3 ms/s     60/s  LocalFrameView::performLayout
+      7.0 ms/s      1/s  MajorGC
+      6.8 ms/s      1/s  V8.GC_MARK_COMPACTOR
+      6.2 ms/s    317/s  BlinkScheduler_OnTaskCompleted
+      5.7 ms/s    898/s  UpdateLayer
+      4.5 ms/s      2/s  LatencyInfo.Flow
+      4.3 ms/s      1/s  WidgetBaseInputHandler::OnHandleInputEvent
+      4.2 ms/s     60/s  CullRectUpdate
+UpdateLayoutTree elementCounts sample: [
+  18, 18, 18, 18, 18,
+  18, 18, 18, 18, 18,
+  18, 18
+]
+longest UpdateLayoutTree 14.85ms children:
+   +0.01 14.83ms Document::updateStyle 
+   +0.02 14.81ms Document::recalcStyle 
+invalidation reasons:
+   1356x StyleRecalcInvalidationTracking:Attribute::g class='astro-x4tg6t5i'
+   1356x LayoutInvalidationTracking:Style changed::g class='astro-x4tg6t5i'
+   344x StyleRecalcInvalidationTracking:Animation::BUTTON id='chat-launcher' class='chat-launcher print:hidden 
+EventDispatch: pointerover@3010 mouseover@3011 pointerdown@3012 mousedown@3012 selectstart@3014 selectionchange@3042 pointerup@3090 mouseup@3090 click@3090 DOMActivate@3091 pointerdown@3901 mousedown@3901 selectstart@3902 pointerup@3975 mouseup@3976 click@3976 DOMActivate@3976 pointerdown@4784 mousedown@4784 selectstart@4786 pointerup@4859 mouseup@4859 click@4859 DOMActivate@4860
+   WidgetInputHandlerManager::DidHandleInputEventSentToCompositor 0.0,0.0,0.0,0.0,0.0,0.0
+   MainThreadSchedulerImpl::DidHandleInputEventOnCompositorThread 0.0,0.0,0.0,0.0,0.0,0.0
+   MainThreadEventQueue::HandleEvent 0.0,0.0,0.0,0.0,0.0,0.0
+   WidgetBaseInputHandler::OnHandleInputEvent 7.2,2.4,5.4,1.9,4.8,2.5
+   WebFrameWidgetImpl::HandleInputEvent 6.5,2.3,4.6,1.8,4.7,2.1
+   WidgetInputHandlerManager::DidHandleInputEventSentToMain 0.7,0.0,0.7,0.0,0.0,0.3
+   MainThreadSchedulerImpl::DidHandleInputEventOnMainThread 0.0,0.0,0.0,0.0,0.0,0.0

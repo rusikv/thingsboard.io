@@ -1,0 +1,4 @@
+DONE mobile-4x --gpu 0
+DONE mobile-4x --gpu --noanim --nosmil 0
+DONE mobile-4x --gpu --block3p 0
+DONE mobile-4x --gpu --quick --reducedmotion 0

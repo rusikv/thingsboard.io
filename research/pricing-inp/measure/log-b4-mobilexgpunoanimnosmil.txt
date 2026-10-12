@@ -1,0 +1,132 @@
+[mobile-4x-noanim-nosmil-gpu] loaded in 777 ms
+[mobile-4x-noanim-nosmil-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"none","chatAnim":"none","observerErrs":[],"smilPaused":333,"smilElems":4,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-noanim-nosmil-gpu] DOM 5996 elements, depth 22 invisible 5131 rules 1994 :has 94
+[mobile-4x-noanim-nosmil-gpu] idle {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":1} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":0,"ms":0},"layout":{"n":0,"ms":0},"paint":{"n":0,"ms":0},"prePaint":{"n":0,"ms":0},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":0,"drawFrames":0,"updateLayoutTreeElementCounts":[]}
+[mobile-4x-noanim-nosmil-gpu] baseline: click empty background                           <16ms 
+[mobile-4x-noanim-nosmil-gpu] baseline: click empty background                           <16ms 
+[mobile-4x-noanim-nosmil-gpu] baseline: click empty background                           <16ms 
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Cloud -> Private Cloud                            120ms  delay 10.6 proc 37.9 pres 71.5 [pointerdown:16(d16/p0) click:120(d11/p38)] LoAF 78.2/37.8s/7.6sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Private Cloud -> On-premises                      80ms  delay 13.6 proc 21.9 pres 44.5 [pointerdown:16(d15/p0) click:80(d14/p22)] LoAF 59.8/21.8s/5.2sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: On-premises -> Cloud                              72ms  delay 19.2 proc 23.3 pres 29.5 [pointerdown:16(d16/p0) click:72(d19/p23)] LoAF 59.7/23.2s/2.6sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Cloud -> Private Cloud                            88ms  delay 11.1 proc 29.5 pres 47.4 [pointerdown:16(d15/p0) click:88(d11/p30)] LoAF 70.1/29.5s/7.4sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Private Cloud -> On-premises                      72ms  delay 13.9 proc 20.1 pres 38 [pointerdown:16(d15/p0) click:72(d14/p20)] LoAF 55.1/20.1s/4.9sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: On-premises -> Cloud                              72ms  delay 18.7 proc 20.9 pres 32.4 [pointerdown:16(d15/p0) click:72(d19/p21)] LoAF 55.2/20.9s/2.5sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Cloud -> Private Cloud                            88ms  delay 11.1 proc 30.2 pres 46.7 [pointerdown:16(d14/p0) click:88(d11/p30)] LoAF 67.9/30.2s/7.2sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: Private Cloud -> On-premises                      72ms  delay 14.4 proc 20.3 pres 37.3 [pointerdown:16(d15/p0) click:72(d14/p20)] LoAF 55.2/20.3s/4.7sl
+[mobile-4x-noanim-nosmil-gpu] sub-tab: On-premises -> Cloud                              64ms  delay 18.2 proc 20.9 pres 24.9 [pointerdown:16(d16/p0) click:64(d18/p21)] LoAF 54.2/20.9s/2sl
+[mobile-4x-noanim-nosmil-gpu] region: label -> North America                             72ms  delay 11.4 proc 2.9 pres 57.7 [pointerdown:16(d15/p0) click:72(d11/p3)] LoAF 54.5/0s/0sl
+[mobile-4x-noanim-nosmil-gpu] region: label -> Europe                                    64ms  delay 6.3 proc 3 pres 54.7 [pointerdown:16(d15/p0) click:64(d6/p3)] 
+[mobile-4x-noanim-nosmil-gpu] region: label -> North America                             64ms  delay 6.4 proc 2.8 pres 54.8 [pointerdown:16(d16/p0) click:64(d6/p3)] 
+[mobile-4x-noanim-nosmil-gpu] region: label -> Europe                                    64ms  delay 7.2 proc 3.3 pres 53.5 [pointerdown:16(d16/p0) click:64(d7/p3)] 
+[mobile-4x-noanim-nosmil-gpu] region: label -> North America                             56ms  delay 7.4 proc 3.2 pres 45.4 [pointerdown:16(d16/p0) click:56(d7/p3)] 
+[mobile-4x-noanim-nosmil-gpu] region: label -> Europe                                    64ms  delay 7 proc 2.9 pres 54.1 [pointerdown:16(d15/p0) click:64(d7/p3)] 
+[mobile-4x-noanim-nosmil-gpu] region: switch (checkbox)                                  64ms  delay 8.3 proc 4 pres 51.7 [pointerdown:16(d14/p0) click:64(d8/p4)] 
+[mobile-4x-noanim-nosmil-gpu] region: switch (checkbox)                                  64ms  delay 6.9 proc 3.5 pres 53.6 [pointerdown:16(d15/p0) click:64(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] region: switch (checkbox)                                  64ms  delay 6.8 proc 2.9 pres 54.3 [pointerdown:16(d15/p0) click:64(d7/p3)] 
+[mobile-4x-noanim-nosmil-gpu] upsell: See Private Cloud Options (switch tab)             88ms  delay 9.7 proc 31.2 pres 47.1 [pointerdown:16(d16/p0) click:88(d10/p31)] LoAF 66.7/31.2s/7.3sl
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 16.6 proc 21.9 pres 41.5 [pointerdown:16(d16/p0) click:80(d17/p22)] LoAF 58.7/21.9s/2.6sl
+[mobile-4x-noanim-nosmil-gpu] upsell: See Private Cloud Options (switch tab)             88ms  delay 10.5 proc 28.8 pres 48.7 [pointerdown:16(d16/p0) click:88(d11/p29)] LoAF 65.1/28.7s/7.8sl
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 18 proc 20.3 pres 41.7 [pointerdown:16(d15/p0) click:80(d18/p20)] LoAF 57.2/20.3s/2sl
+[mobile-4x-noanim-nosmil-gpu] upsell: See Private Cloud Options (switch tab)             88ms  delay 12.2 proc 28.1 pres 47.7 [pointerdown:16(d14/p0) click:88(d12/p28)] LoAF 65.5/28s/6.9sl
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 18.9 proc 22.6 pres 38.5 [pointerdown:16(d16/p0) click:80(d19/p23)] LoAF 60.9/22.6s/2.2sl
+[mobile-4x-noanim-nosmil-gpu] top-up accordion toggle                                    24ms  delay 11.6 proc 0.3 pres 12.1 [pointerdown:16(d16/p0) click:24(d12/p0)] 
+[mobile-4x-noanim-nosmil-gpu] top-up accordion toggle                                    16ms  delay 15.5 proc 0 pres 0.5 [pointerdown:16(d16/p0) click:16(d4/p0)] 
+[mobile-4x-noanim-nosmil-gpu] top-up accordion toggle                                    16ms  delay 15 proc 0.1 pres 0.9 [pointerdown:16(d15/p0) click:16(d4/p0)] 
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-private-cloud               88ms  delay 8.7 proc 29 pres 50.3 [pointerdown:16(d17/p0) click:88(d9/p29)] LoAF 64.4/29s/8.8sl
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Annual                                      64ms  delay 14.6 proc 4.1 pres 45.3 [pointerdown:16(d15/p0) click:64(d15/p4)] LoAF 51.1/0s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Monthly                                     56ms  delay 7 proc 4 pres 45 [pointerdown:16(d15/p0) click:56(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Annual                                      56ms  delay 7.1 proc 4.4 pres 44.5 [pointerdown:16(d15/p0) click:56(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Monthly                                     56ms  delay 7.4 proc 4.1 pres 44.5 [pointerdown:16(d15/p0) click:56(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Annual                                      64ms  delay 7.2 proc 3.8 pres 53 [pointerdown:16(d16/p0) click:64(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] PC billing: -> Monthly                                     56ms  delay 6.3 proc 3.7 pres 46 [pointerdown:16(d16/p0) click:56(d6/p4)] 
+[mobile-4x-noanim-nosmil-gpu] PC calculator: open #1 (cold chunk)                        72ms  delay 14.5 proc 3.1 pres 54.4 [pointerdown:16(d15/p0) click:72(d15/p3)] LoAF 56.2/0s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: click slider track @0.35                          144ms  delay 13.2 proc 0 pres 130.8 [pointerdown:144(d13/p0) pointerup:48(d50/p0)] LoAF 114.5/62.9s/35.5sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: click slider track @0.7                           144ms  delay 12.6 proc 0 pres 131.4 [pointerdown:144(d13/p0) pointerup:56(d57/p1)] LoAF 119.2/70.1s/33.3sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: click slider track @0.15                          144ms  delay 12.7 proc 0 pres 131.3 [pointerdown:144(d13/p0) pointerup:56(d53/p0)] LoAF 117.6/68.3s/33.5sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: slider ArrowRight                                 88ms  delay 0.6 proc 0.8 pres 86.6 [keydown:88(d1/p1) keyup:24(d21/p0)] LoAF 78.8/34.6s/39.1sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: slider ArrowRight                                 88ms  delay 0.7 proc 0.9 pres 86.4 [keydown:88(d1/p1) keyup:16(d14/p0)] LoAF 71.8/34s/32.1sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: slider ArrowRight                                 80ms  delay 0.2 proc 0.6 pres 79.2 [keydown:80(d0/p1) keyup:16(d15/p0)] LoAF 71.2/34.1s/31.9sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: type digit into devices                           128ms  delay 0.4 proc 0 pres 127.6 [keydown:128(d0/p0) keypress:128(d0/p4) keyup:48(d45/p0)] LoAF 105/67.7s/32.5sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: type digit into devices                           88ms  delay 0.7 proc 0.1 pres 87.2 [keydown:88(d1/p0) keypress:88(d1/p2) keyup:16(d18/p0)] LoAF 76/38.1s/35sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: type digit into devices                           88ms  delay 0.5 proc 0.1 pres 87.4 [keydown:88(d1/p0) keypress:88(d1/p4) keyup:16(d18/p0)] LoAF 78.8/39.3s/35sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: stepper +                                         160ms  delay 74.9 proc 37.3 pres 47.8 [pointerdown:16(d15/p0) click:160(d75/p37)] LoAF 140.1/73.1s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: stepper +                                         88ms  delay 6.1 proc 39.6 pres 42.3 [pointerdown:16(d15/p0) click:88(d6/p40)] LoAF 73.7/39.6s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: stepper +                                         88ms  delay 6 proc 36.6 pres 45.4 [pointerdown:16(d14/p0) click:88(d6/p37)] LoAF 72.4/36s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: add-on switch                                     136ms  delay 8.9 proc 73.2 pres 53.9 [pointerdown:16(d14/p0) click:136(d9/p73)] LoAF 115.1/72.5s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: add-on switch                                     128ms  delay 5.5 proc 69.3 pres 53.2 [pointerdown:16(d15/p0) click:128(d6/p69)] LoAF 106.8/68.3s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calc: add-on switch                                     128ms  delay 6.3 proc 71.1 pres 50.6 [pointerdown:16(d15/p0) click:128(d6/p71)] LoAF 107.7/71s/0sl
+[mobile-4x-noanim-nosmil-gpu] PC calculator: close #1                                    16ms  delay 15.3 proc 0 pres 0.7 [pointerdown:16(d15/p0) click:16(d7/p2)] 
+[mobile-4x-noanim-nosmil-gpu] PC calculator: open #2                                     144ms  delay 10.1 proc 76.9 pres 57 [pointerdown:16(d17/p0) click:144(d10/p77)] LoAF 125.6/76.7s/0.9sl
+[mobile-4x-noanim-nosmil-gpu] PC calculator: close #2                                    16ms  delay 14.6 proc 0 pres 1.4 [pointerdown:16(d15/p0) click:16(d8/p1)] 
+[mobile-4x-noanim-nosmil-gpu] PC calculator: open #3                                     136ms  delay 9.8 proc 69.1 pres 57.1 [pointerdown:16(d16/p0) click:136(d10/p69)] LoAF 122/69s/1.3sl
+[mobile-4x-noanim-nosmil-gpu] PC calculator: close #3                                    24ms  delay 8.2 proc 0.7 pres 15.1 [pointerdown:16(d15/p0) click:24(d8/p1)] 
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-pe                          72ms  delay 11.5 proc 29.8 pres 30.7 [pointerdown:16(d16/p0) click:72(d12/p30)] 
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Perpetual                              64ms  delay 9.3 proc 4.3 pres 50.4 [pointerdown:16(d15/p0) click:64(d9/p4)] 
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Subscription                           80ms  delay 8.3 proc 7.6 pres 64.1 [pointerdown:16(d15/p0) click:80(d8/p8)] LoAF 60.6/7.5s/0.1sl
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Perpetual                              56ms  delay 6 proc 5.4 pres 44.6 [pointerdown:16(d16/p0) click:56(d6/p5)] 
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Subscription                           64ms  delay 5.4 proc 3.2 pres 55.4 [pointerdown:16(d15/p0) click:64(d5/p3)] 
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Perpetual                              56ms  delay 5.8 proc 3.5 pres 46.7 [pointerdown:16(d14/p0) click:56(d6/p4)] 
+[mobile-4x-noanim-nosmil-gpu] On-prem billing: -> Subscription                           72ms  delay 4.4 proc 3.4 pres 64.2 [pointerdown:16(d15/p0) click:72(d4/p3)] LoAF 54.1/0s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: open #1 (cold chunk)                      48ms  delay 8.1 proc 3.2 pres 36.7 [pointerdown:16(d14/p0) click:48(d8/p3)] 
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: click slider track @0.4                         112ms  delay 15.6 proc 0 pres 96.4 [pointerdown:112(d16/p0) pointerup:104(d19/p0)] LoAF 83.8/46.1s/22.3sl,72.8/50.9s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: click slider track @0.75                        120ms  delay 16.5 proc 0 pres 103.5 [pointerdown:120(d17/p0) pointerup:112(d29/p0)] LoAF 89.8/49.3s/25.2sl,74.4/50.7s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: click slider track @0.1                         144ms  delay 47.1 proc 0 pres 96.9 [pointerdown:128(d15/p0) pointerup:144(d47/p0)] LoAF 97.1/56.1s/24.9sl,84.5/52.8s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: slider ArrowRight                               152ms  delay 0.6 proc 47.4 pres 104 [keydown:152(d1/p47) keyup:40(d37/p0)] LoAF 141.4/95.8s/22.7sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: slider ArrowRight                               152ms  delay 0.1 proc 53.5 pres 98.4 [keydown:152(d0/p54) keyup:32(d33/p0)] LoAF 144.3/101.9s/21.7sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: slider ArrowRight                               160ms  delay 0.5 proc 47.1 pres 112.4 [keydown:160(d1/p47) keyup:48(d44/p1)] LoAF 148.5/99.8s/27.2sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: type digit into devices                         88ms  delay 0.4 proc 0.1 pres 87.5 [keydown:88(d0/p0) keypress:88(d1/p2) keyup:16(d16/p0)] LoAF 75.1/49.3s/22.7sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: type digit into devices                         80ms  delay 0.7 proc 0 pres 79.3 [keydown:80(d1/p0) keypress:80(d1/p1) keyup:16(d12/p1)] LoAF 70.6/47.3s/20.9sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: type digit into devices                         88ms  delay 0.6 proc 0 pres 87.4 [keydown:88(d1/p0) keypress:88(d1/p3) keyup:16(d14/p0)] LoAF 73/49.2s/20.3sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: Edge add-on switch                              176ms  delay 79.5 proc 54.1 pres 42.4 [pointerdown:16(d15/p0) click:176(d80/p54)] LoAF 155.2/102.4s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: Edge add-on switch                              136ms  delay 8.5 proc 80.5 pres 47 [pointerdown:16(d15/p0) click:136(d9/p81)] LoAF 116.4/79.7s/0.6sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calc: Edge add-on switch                              104ms  delay 4.9 proc 56.6 pres 42.5 [pointerdown:16(d16/p0) click:104(d5/p57)] LoAF 85/56.5s/0sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: close #1                                  24ms  delay 11.1 proc 2.2 pres 10.7 [pointerdown:16(d16/p0) click:24(d11/p2)] 
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: open #2                                   112ms  delay 9.6 proc 62.6 pres 39.8 [pointerdown:16(d15/p0) click:112(d10/p63)] LoAF 97/61.8s/1.1sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: close #2                                  24ms  delay 7.5 proc 1 pres 15.5 [pointerdown:16(d15/p0) click:24(d8/p1)] 
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: open #3                                   112ms  delay 10.3 proc 61.1 pres 40.6 [pointerdown:16(d14/p0) click:112(d10/p61)] LoAF 97.6/61s/0.8sl
+[mobile-4x-noanim-nosmil-gpu] PAYG calculator: close #3                                  24ms  delay 7.2 proc 1 pres 15.8 [pointerdown:16(d15/p0) click:24(d7/p1)] 
+[mobile-4x-noanim-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 14.6 proc 34.4 pres 31 [pointerdown:16(d15/p0) click:80(d15/p34)] LoAF 61.4/34.4s/4.8sl
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 2nd                                   32ms  delay 13.3 proc 0.8 pres 17.9 [pointerdown:16(d16/p0) click:32(d13/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 1st                                   32ms  delay 7.7 proc 0 pres 24.3 [pointerdown:16(d16/p0) click:32(d8/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 2nd                                   32ms  delay 11.7 proc 0.2 pres 20.1 [pointerdown:16(d17/p0) click:32(d12/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 1st                                   24ms  delay 7 proc 0.6 pres 16.4 [pointerdown:16(d16/p0) click:24(d7/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 2nd                                   24ms  delay 6.4 proc 0.9 pres 16.7 [pointerdown:16(d15/p0) click:24(d6/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> 1st                                   24ms  delay 7.5 proc 0.1 pres 16.4 [pointerdown:16(d15/p0) click:24(d8/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: expand/collapse item                                  32ms  delay 9.3 proc 0.5 pres 22.2 [pointerdown:16(d14/p0) click:32(d9/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: expand/collapse item                                  24ms  delay 6.2 proc 0.1 pres 17.7 [pointerdown:16(d15/p0) click:24(d6/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: expand/collapse item                                  24ms  delay 6.4 proc 0.1 pres 17.5 [pointerdown:16(d14/p0) click:24(d6/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> #1                                    24ms  delay 10.9 proc 0.1 pres 13 [click:24(d11/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: Load more                                             40ms  delay 12.5 proc 0.5 pres 27 [pointerdown:16(d15/p0) click:40(d13/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> #2                                    32ms  delay 8.6 proc 0.1 pres 23.3 [pointerdown:16(d15/p0) click:32(d9/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: Load more                                             32ms  delay 12.2 proc 0.2 pres 19.6 [pointerdown:16(d15/p0) click:32(d12/p0)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: category tab -> #3                                    32ms  delay 6.4 proc 0.9 pres 24.7 [pointerdown:16(d15/p0) click:32(d6/p1)] 
+[mobile-4x-noanim-nosmil-gpu] FAQ: Load more                                             32ms  delay 10.8 proc 0.2 pres 21 [pointerdown:16(d15/p0) click:32(d11/p0)] 
+[mobile-4x-noanim-nosmil-gpu] feature (i) click -> jump to FAQ                           40ms  delay 15.7 proc 3.2 pres 21.1 [pointerdown:16(d13/p0) click:40(d16/p3)] 
+[mobile-4x-noanim-nosmil-gpu] feature (i) click -> jump to FAQ                           40ms  delay 12.9 proc 3.8 pres 23.3 [pointerdown:16(d16/p0) click:40(d13/p4)] 
+[mobile-4x-noanim-nosmil-gpu] feature (i) click -> jump to FAQ                           48ms  delay 11.7 proc 4.2 pres 32.1 [pointerdown:16(d17/p0) click:48(d12/p4)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger open                                        48ms  delay 14.3 proc 6.7 pres 27 [pointerdown:16(d15/p0) click:48(d14/p7)] 
+[mobile-4x-noanim-nosmil-gpu] header: expand "Products" in drawer                        56ms  delay 8.5 proc 1 pres 46.5 [pointerdown:16(d15/p0) click:56(d9/p1)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger close                                       56ms  delay 7.8 proc 0.9 pres 47.3 [pointerdown:16(d16/p0) click:56(d8/p1)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger open                                        32ms  delay 6.6 proc 3.7 pres 21.7 [pointerdown:16(d15/p0) click:32(d7/p4)] 
+[mobile-4x-noanim-nosmil-gpu] header: expand "Products" in drawer                        48ms  delay 5.8 proc 0.8 pres 41.4 [pointerdown:16(d15/p0) click:48(d6/p1)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger close                                       56ms  delay 6.8 proc 0.2 pres 49 [pointerdown:16(d16/p0) click:56(d7/p0)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger open                                        32ms  delay 6.1 proc 4.2 pres 21.7 [pointerdown:16(d14/p0) click:32(d6/p4)] 
+[mobile-4x-noanim-nosmil-gpu] header: expand "Products" in drawer                        40ms  delay 5.3 proc 0.2 pres 34.5 [pointerdown:16(d14/p0) click:40(d5/p0)] 
+[mobile-4x-noanim-nosmil-gpu] header: burger close                                       56ms  delay 7.2 proc 1.2 pres 47.6 [pointerdown:16(d14/p0) click:56(d7/p1)] 
+[mobile-4x-noanim-nosmil-gpu] theme toggle                                               80ms  delay 8.1 proc 2.1 pres 69.8 [pointerdown:16(d14/p0) click:80(d8/p2)] 
+[mobile-4x-noanim-nosmil-gpu] theme toggle                                               64ms  delay 4.9 proc 1 pres 58.1 [pointerdown:16(d16/p0) click:64(d5/p1)] 
+[mobile-4x-noanim-nosmil-gpu] theme toggle                                               16ms  delay 14.5 proc 0 pres 1.5 [pointerdown:16(d15/p0) click:16(d5/p1)] 
+[mobile-4x-noanim-nosmil-gpu] idleAfter {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.66}
+[mobile-4x-noanim-nosmil-gpu] consent end {"hidden":false,"visible":true,"cookie":false}
+[mobile-4x-noanim-nosmil-gpu] calibration(plain): click button                           16ms  delay 4.5 proc 0 pres 11.5 [click:16(d5/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.1 proc 0 pres 12.9 [click:16(d3/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.1 proc 0 pres 12.9 [click:16(d3/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(plain): click button                           16ms  delay 2.7 proc 0 pres 13.3 [click:16(d3/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.2 proc 0.1 pres 12.7 [click:16(d3/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(anim): click button                            32ms  delay 14 proc 0 pres 18 [click:32(d14/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(anim): click button                            32ms  delay 15.3 proc 0 pres 16.7 [click:32(d15/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(anim): click button                            32ms  delay 14.2 proc 0.5 pres 17.3 [click:32(d14/p1)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.9 proc 0 pres 18.1 [click:32(d14/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.6 proc 0 pres 18.4 [click:32(d14/p0)] 
+[mobile-4x-noanim-nosmil-gpu] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-noanim-nosmil-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-mobile-4x-noanim-nosmil-gpu.json

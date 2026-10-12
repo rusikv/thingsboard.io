@@ -1,0 +1,874 @@
+{
+ "profile": "mobile-4x",
+ "mode": "nogtm",
+ "reps": 3,
+ "chrome": "Chrome/155.0.8059.39",
+ "startedAt": "2026-10-12T16:29:18.165Z",
+ "blocked": [
+  "https://api.github.com/repos/thingsboard/thingsboard"
+ ],
+ "allowed3p": [],
+ "responses3p": [],
+ "wrap": {
+  "wrapped": true,
+  "gtmPresent": false
+ },
+ "interactions": [
+  {
+   "label": "background click",
+   "hit": "div.pricing-page",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "duration": 88,
+    "inputDelay": 48.3,
+    "processing": 0.3,
+    "procAllEvents": 4.7,
+    "presentation": 39.4,
+    "events": "pointerdown:72p3 pointerup:88p0 click:88p2"
+   },
+   "clickSyncMs": [
+    1.1
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 208,
+    "styleMs": 1266,
+    "layoutN": 108,
+    "layoutMs": 26.4,
+    "scriptMs": 8.3,
+    "taskMs": 1630
+   }
+  },
+  {
+   "label": "sub-tab -> Private Cloud",
+   "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+   "duration": 256,
+   "under16": false,
+   "best": {
+    "duration": 256,
+    "inputDelay": 84.2,
+    "processing": 54.9,
+    "procAllEvents": 55,
+    "presentation": 116.9,
+    "events": "pointerdown:48p0 pointerup:48p0 click:256p55"
+   },
+   "clickSyncMs": [
+    54.7
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    169
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 212,
+    "styleMs": 1249,
+    "layoutN": 107,
+    "layoutMs": 64.8,
+    "scriptMs": 8.7,
+    "taskMs": 2245.2
+   }
+  },
+  {
+   "label": "PC billing -> Annual",
+   "hit": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+   "duration": 208,
+   "under16": false,
+   "best": {
+    "duration": 208,
+    "inputDelay": 90,
+    "processing": 31.5,
+    "procAllEvents": 31.5,
+    "presentation": 86.5,
+    "events": "pointerdown:80p0 pointerup:72p0 click:208p32"
+   },
+   "clickSyncMs": [
+    31.4
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    127
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 206,
+    "styleMs": 1239.2,
+    "layoutN": 101,
+    "layoutMs": 25.6,
+    "scriptMs": 33.1,
+    "taskMs": 2370.1
+   }
+  },
+  {
+   "label": "PC billing -> Monthly",
+   "hit": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+   "duration": 176,
+   "under16": false,
+   "best": {
+    "duration": 176,
+    "inputDelay": 45.3,
+    "processing": 0,
+    "procAllEvents": 8.1,
+    "presentation": 130.7,
+    "events": "pointerdown:88p0 pointerup:176p0 click:176p8"
+   },
+   "clickSyncMs": [
+    8
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    115
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 214,
+    "styleMs": 1173,
+    "layoutN": 107,
+    "layoutMs": 32.6,
+    "scriptMs": 11.5,
+    "taskMs": 2298.2
+   }
+  },
+  {
+   "label": "sub-tab -> On-premises",
+   "hit": "button#Pricing_PE_SM.sub-tab.segment-tab",
+   "duration": 200,
+   "under16": false,
+   "best": {
+    "duration": 200,
+    "inputDelay": 87.5,
+    "processing": 39.1,
+    "procAllEvents": 39.1,
+    "presentation": 73.4,
+    "events": "pointerdown:72p0 pointerup:56p0 click:200p39"
+   },
+   "clickSyncMs": [
+    39
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    128
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 205,
+    "styleMs": 1072.2,
+    "layoutN": 104,
+    "layoutMs": 31.5,
+    "scriptMs": 12.8,
+    "taskMs": 2314.3
+   }
+  },
+  {
+   "label": "sub-tab -> Cloud",
+   "hit": "svg.sub-tab-info-icon",
+   "duration": 208,
+   "under16": false,
+   "best": {
+    "duration": 208,
+    "inputDelay": 89.7,
+    "processing": 42.2,
+    "procAllEvents": 42.3,
+    "presentation": 76.1,
+    "events": "pointerdown:80p0 pointerup:64p0 click:208p42"
+   },
+   "clickSyncMs": [],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00",
+    "faq_node_interaction:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    133,
+    73,
+    75
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 221,
+    "styleMs": 1344,
+    "layoutN": 115,
+    "layoutMs": 61,
+    "scriptMs": 45.8,
+    "taskMs": 2173
+   }
+  },
+  {
+   "label": "region label toggle",
+   "hit": "span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button",
+   "duration": 192,
+   "under16": false,
+   "best": {
+    "duration": 192,
+    "inputDelay": 77.1,
+    "processing": 5,
+    "procAllEvents": 5.1,
+    "presentation": 109.9,
+    "events": "pointerdown:72p0 pointerup:64p0 click:192p5"
+   },
+   "clickSyncMs": [
+    5
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    114
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 243,
+    "styleMs": 1340.1,
+    "layoutN": 123,
+    "layoutMs": 42.2,
+    "scriptMs": 8.2,
+    "taskMs": 1912.3
+   }
+  },
+  {
+   "label": "top-up accordion",
+   "hit": "button.topup-header",
+   "duration": 96,
+   "under16": false,
+   "best": {
+    "duration": 96,
+    "inputDelay": 63.4,
+    "processing": 0.5,
+    "procAllEvents": 0.5,
+    "presentation": 32.1,
+    "events": "pointerdown:56p0 pointerup:56p0 click:96p1"
+   },
+   "clickSyncMs": [
+    0.4
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 235,
+    "styleMs": 1304.6,
+    "layoutN": 129,
+    "layoutMs": 45.5,
+    "scriptMs": 4.4,
+    "taskMs": 1827.9
+   }
+  },
+  {
+   "label": "FAQ item toggle",
+   "hit": "button.faq-question-toggle",
+   "duration": 112,
+   "under16": false,
+   "best": {
+    "duration": 112,
+    "inputDelay": 65.7,
+    "processing": 0.1,
+    "procAllEvents": 0.1,
+    "presentation": 46.2,
+    "events": "pointerdown:56p0 pointerup:56p0 click:112p0"
+   },
+   "clickSyncMs": [
+    0
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 240,
+    "styleMs": 1267.6,
+    "layoutN": 126,
+    "layoutMs": 29.9,
+    "scriptMs": 3.1,
+    "taskMs": 1822
+   }
+  },
+  {
+   "label": "background click",
+   "hit": "div.pricing-page",
+   "duration": 96,
+   "under16": false,
+   "best": {
+    "duration": 96,
+    "inputDelay": 66.5,
+    "processing": 0.8,
+    "procAllEvents": 0.8,
+    "presentation": 28.7,
+    "events": "pointerdown:48p0 pointerup:56p0 click:96p1"
+   },
+   "clickSyncMs": [
+    0.1
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 213,
+    "styleMs": 1003.4,
+    "layoutN": 105,
+    "layoutMs": 20.2,
+    "scriptMs": 3.4,
+    "taskMs": 1439.7
+   }
+  },
+  {
+   "label": "sub-tab -> Private Cloud",
+   "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+   "duration": 192,
+   "under16": false,
+   "best": {
+    "duration": 192,
+    "inputDelay": 62.2,
+    "processing": 42.9,
+    "procAllEvents": 43.5,
+    "presentation": 86.9,
+    "events": "pointerdown:56p1 pointerup:48p0 click:192p43"
+   },
+   "clickSyncMs": [
+    42.8
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    65,
+    128
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 206,
+    "styleMs": 1218.1,
+    "layoutN": 107,
+    "layoutMs": 58,
+    "scriptMs": 6.9,
+    "taskMs": 2146.6
+   }
+  },
+  {
+   "label": "PC billing -> Annual",
+   "hit": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+   "duration": 216,
+   "under16": false,
+   "best": {
+    "duration": 216,
+    "inputDelay": 89.4,
+    "processing": 9.2,
+    "procAllEvents": 9.8,
+    "presentation": 117.4,
+    "events": "pointerdown:72p0 pointerup:64p1 click:216p9"
+   },
+   "clickSyncMs": [
+    8.9
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    141
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 194,
+    "styleMs": 1256,
+    "layoutN": 95,
+    "layoutMs": 24.5,
+    "scriptMs": 11.2,
+    "taskMs": 2362.8
+   }
+  },
+  {
+   "label": "PC billing -> Monthly",
+   "hit": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+   "duration": 224,
+   "under16": false,
+   "best": {
+    "duration": 224,
+    "inputDelay": 100.8,
+    "processing": 4.5,
+    "procAllEvents": 4.5,
+    "presentation": 118.7,
+    "events": "pointerdown:96p0 pointerup:88p0 click:224p5"
+   },
+   "clickSyncMs": [
+    4.4
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    51,
+    117
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 190,
+    "styleMs": 1258.9,
+    "layoutN": 95,
+    "layoutMs": 39.1,
+    "scriptMs": 7.1,
+    "taskMs": 2374.9
+   }
+  },
+  {
+   "label": "sub-tab -> On-premises",
+   "hit": "button#Pricing_PE_SM.sub-tab.segment-tab",
+   "duration": 224,
+   "under16": false,
+   "best": {
+    "duration": 224,
+    "inputDelay": 116.5,
+    "processing": 34.5,
+    "procAllEvents": 34.6,
+    "presentation": 73,
+    "events": "pointerdown:72p0 pointerup:80p0 click:224p35"
+   },
+   "clickSyncMs": [
+    34.5
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    124
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 186,
+    "styleMs": 1182.5,
+    "layoutN": 95,
+    "layoutMs": 28.4,
+    "scriptMs": 9.5,
+    "taskMs": 2353.5
+   }
+  },
+  {
+   "label": "sub-tab -> Cloud",
+   "hit": "svg.sub-tab-info-icon",
+   "duration": 224,
+   "under16": false,
+   "best": {
+    "duration": 224,
+    "inputDelay": 97.9,
+    "processing": 40.6,
+    "procAllEvents": 40.6,
+    "presentation": 85.5,
+    "events": "pointerdown:96p0 pointerup:64p0 click:224p41"
+   },
+   "clickSyncMs": [],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00",
+    "faq_node_interaction:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    138,
+    69,
+    90
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 210,
+    "styleMs": 1393.8,
+    "layoutN": 106,
+    "layoutMs": 54.3,
+    "scriptMs": 24.2,
+    "taskMs": 2234.2
+   }
+  },
+  {
+   "label": "region label toggle",
+   "hit": "span#Pricing_PE_Cloud_Europe.region-toggle-label.gtm_button",
+   "duration": 248,
+   "under16": false,
+   "best": {
+    "duration": 248,
+    "inputDelay": 36.5,
+    "processing": 0,
+    "procAllEvents": 6,
+    "presentation": 211.5,
+    "events": "pointerdown:80p0 pointerup:248p0 click:248p6"
+   },
+   "clickSyncMs": [
+    6
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    191
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 222,
+    "styleMs": 1564.6,
+    "layoutN": 109,
+    "layoutMs": 48.2,
+    "scriptMs": 7.3,
+    "taskMs": 2347.7
+   }
+  },
+  {
+   "label": "top-up accordion",
+   "hit": "button.topup-header",
+   "duration": 120,
+   "under16": false,
+   "best": {
+    "duration": 120,
+    "inputDelay": 77.3,
+    "processing": 1.1,
+    "procAllEvents": 1.1,
+    "presentation": 41.6,
+    "events": "pointerdown:96p0 pointerup:56p0 click:120p1"
+   },
+   "clickSyncMs": [
+    0.8
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    58
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 221,
+    "styleMs": 1405.9,
+    "layoutN": 120,
+    "layoutMs": 42.9,
+    "scriptMs": 2.8,
+    "taskMs": 2137.6
+   }
+  },
+  {
+   "label": "FAQ item toggle",
+   "hit": "button.faq-question-toggle",
+   "duration": 120,
+   "under16": false,
+   "best": {
+    "duration": 120,
+    "inputDelay": 47.5,
+    "processing": 0,
+    "procAllEvents": 0.9,
+    "presentation": 72.5,
+    "events": "pointerdown:72p0 pointerup:120p0 click:120p1"
+   },
+   "clickSyncMs": [
+    0.8
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 214,
+    "styleMs": 1496.3,
+    "layoutN": 111,
+    "layoutMs": 26.7,
+    "scriptMs": 2.5,
+    "taskMs": 2180.2
+   }
+  },
+  {
+   "label": "background click",
+   "hit": "div.pricing-page",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "duration": 88,
+    "inputDelay": 50.6,
+    "processing": 0,
+    "procAllEvents": 0.1,
+    "presentation": 37.4,
+    "events": "pointerdown:72p0 pointerup:88p0 click:88p0"
+   },
+   "clickSyncMs": [
+    0.1
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 208,
+    "styleMs": 1286.5,
+    "layoutN": 101,
+    "layoutMs": 20.9,
+    "scriptMs": 12.3,
+    "taskMs": 1780.4
+   }
+  },
+  {
+   "label": "sub-tab -> Private Cloud",
+   "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+   "duration": 272,
+   "under16": false,
+   "best": {
+    "duration": 272,
+    "inputDelay": 54.6,
+    "processing": 0,
+    "procAllEvents": 67.3,
+    "presentation": 217.4,
+    "events": "pointerdown:96p0 pointerup:272p0 click:272p67"
+   },
+   "clickSyncMs": [
+    66.5
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    95,
+    176
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 168,
+    "styleMs": 1273.6,
+    "layoutN": 87,
+    "layoutMs": 71.6,
+    "scriptMs": 11.4,
+    "taskMs": 2359.1
+   }
+  },
+  {
+   "label": "PC billing -> Annual",
+   "hit": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+   "duration": 248,
+   "under16": false,
+   "best": {
+    "duration": 248,
+    "inputDelay": 117.6,
+    "processing": 12.2,
+    "procAllEvents": 12.3,
+    "presentation": 118.2,
+    "events": "pointerdown:128p0 pointerup:96p0 click:248p12"
+   },
+   "clickSyncMs": [
+    12.1
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    55,
+    62,
+    136
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 172,
+    "styleMs": 1251.2,
+    "layoutN": 83,
+    "layoutMs": 23.1,
+    "scriptMs": 15.9,
+    "taskMs": 2370.7
+   }
+  },
+  {
+   "label": "PC billing -> Monthly",
+   "hit": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+   "duration": 208,
+   "under16": false,
+   "best": {
+    "duration": 208,
+    "inputDelay": 78.7,
+    "processing": 10.9,
+    "procAllEvents": 10.9,
+    "presentation": 118.4,
+    "events": "pointerdown:96p0 pointerup:64p0 click:208p11"
+   },
+   "clickSyncMs": [
+    9.4
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    138
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 182,
+    "styleMs": 1250,
+    "layoutN": 91,
+    "layoutMs": 22.6,
+    "scriptMs": 13.4,
+    "taskMs": 2335.8
+   }
+  },
+  {
+   "label": "sub-tab -> On-premises",
+   "hit": "button#Pricing_PE_SM.sub-tab.segment-tab",
+   "duration": 248,
+   "under16": false,
+   "best": {
+    "duration": 248,
+    "inputDelay": 120.4,
+    "processing": 48.4,
+    "procAllEvents": 48.4,
+    "presentation": 79.2,
+    "events": "pointerdown:72p0 pointerup:80p0 click:248p48"
+   },
+   "clickSyncMs": [
+    48.4
+   ],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00"
+   ],
+   "dlPushMs": 0,
+   "loafs": [
+    55,
+    157
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 187,
+    "styleMs": 1166,
+    "layoutN": 95,
+    "layoutMs": 45.5,
+    "scriptMs": 10.2,
+    "taskMs": 2370.4
+   }
+  },
+  {
+   "label": "sub-tab -> Cloud",
+   "hit": "svg.sub-tab-info-icon",
+   "duration": 232,
+   "under16": false,
+   "best": {
+    "duration": 232,
+    "inputDelay": 114.7,
+    "processing": 34.9,
+    "procAllEvents": 34.9,
+    "presentation": 82.4,
+    "events": "pointerdown:80p0 pointerup:72p0 click:232p35"
+   },
+   "clickSyncMs": [],
+   "dlPushes": [
+    "args:event:PriceOpen:0.00",
+    "faq_node_interaction:0.10"
+   ],
+   "dlPushMs": 0.1,
+   "loafs": [
+    150,
+    100,
+    112
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 202,
+    "styleMs": 1443.6,
+    "layoutN": 103,
+    "layoutMs": 51.1,
+    "scriptMs": 29.6,
+    "taskMs": 2296.5
+   }
+  },
+  {
+   "label": "region label toggle",
+   "hit": "span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button",
+   "duration": 216,
+   "under16": false,
+   "best": {
+    "duration": 216,
+    "inputDelay": 60.3,
+    "processing": 0.1,
+    "procAllEvents": 5.6,
+    "presentation": 155.6,
+    "events": "pointerdown:40p0 pointerup:216p0 click:216p6"
+   },
+   "clickSyncMs": [
+    4.7
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [
+    134
+   ],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 230,
+    "styleMs": 1550.3,
+    "layoutN": 114,
+    "layoutMs": 48.3,
+    "scriptMs": 10,
+    "taskMs": 2224.5
+   }
+  },
+  {
+   "label": "top-up accordion",
+   "hit": "button.topup-header",
+   "duration": 72,
+   "under16": false,
+   "best": {
+    "duration": 72,
+    "inputDelay": 56.2,
+    "processing": 0,
+    "procAllEvents": 0.3,
+    "presentation": 15.8,
+    "events": "pointerdown:72p0 pointerup:40p0 click:72p0"
+   },
+   "clickSyncMs": [
+    0.2
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 231,
+    "styleMs": 1395.5,
+    "layoutN": 125,
+    "layoutMs": 35,
+    "scriptMs": 3.9,
+    "taskMs": 2078.6
+   }
+  },
+  {
+   "label": "FAQ item toggle",
+   "hit": "button.faq-question-toggle",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "duration": 88,
+    "inputDelay": 31.3,
+    "processing": 0.1,
+    "procAllEvents": 0.3,
+    "presentation": 56.6,
+    "events": "pointerdown:56p0 pointerup:88p0 click:88p0"
+   },
+   "clickSyncMs": [
+    0
+   ],
+   "dlPushes": [],
+   "dlPushMs": 0,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 234,
+    "styleMs": 1391.7,
+    "layoutN": 123,
+    "layoutMs": 27.7,
+    "scriptMs": 1.7,
+    "taskMs": 1934.7
+   }
+  }
+ ],
+ "netCheck": {
+  "blockedCount": 1,
+  "blockedHosts": [
+   "api.github.com/repos/thingsboard/t"
+  ],
+  "allowed3p": [],
+  "responses3p": []
+ }
+}

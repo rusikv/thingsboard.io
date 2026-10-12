@@ -1,0 +1,41 @@
+[mobile-4x-base-96313] subtab Cloud->PC                         312ms d70/p1/r241 style 1606.2ms x129 layout 90.9ms x121 forced 76.2 pointerdown:72 pointerup:312 click:312
+[mobile-4x-base-96313] subtab PC->Cloud                         248ms d116/p41/r91 style 1634.3ms x127 layout 61.7ms x117 forced 48.6 pointerdown:72 pointerup:72 click:248
+[mobile-4x-base-96313] subtab Cloud->PC                         272ms d130/p65/r77 style 1635.9ms x126 layout 78.2ms x117 forced 59.7 pointerdown:64 pointerup:72 click:272
+[mobile-4x-base-96313] subtab PC->Cloud                         288ms d122/p69/r97 style 1688.3ms x135 layout 67.8ms x124 forced 58.5 pointerdown:48 pointerup:88 click:288
+[mobile-4x-base-96313] subtab Cloud->PC                         248ms d122/p52/r74 style 1639ms x129 layout 53.3ms x120 forced 47.5 pointerdown:64 pointerup:88 click:248
+[mobile-4x-base-96313] subtab PC->Cloud                         192ms d45/p0/r147 style 1632.2ms x129 layout 57.3ms x120 forced 42.4 pointerdown:72 pointerup:192 click:192
+[mobile-4x-base-96313] subtab Cloud->PC                         192ms d41/p0/r151 style 1535ms x131 layout 55.8ms x126 forced 38.3 pointerdown:64 pointerup:192 click:192
+[mobile-4x-base-96313] subtab PC->Cloud                         232ms d111/p39/r83 style 1600.3ms x130 layout 61.5ms x122 forced 31 pointerdown:80 pointerup:72 click:232
+[mobile-4x-base-96313] (setup) tab thingsboard-private-cloud    208ms d43/p0/r165 style 1576.7ms x129 layout 59ms x121 forced 37.9 pointerdown:64 pointerup:208 click:208
+[mobile-4x-base-96313] (setup) PC open cold                     136ms d39/p0/r97 style 1534.1ms x99 layout 114.5ms x86 forced 355.2 pointerdown:88 pointerup:136 click:136
+[mobile-4x-base-96313] PC add-on switch                         392ms d92/p161/r139 style 1885.9ms x218 layout 49.3ms x121 forced 145 pointerdown:88 pointerup:80 click:392
+[mobile-4x-base-96313] PC add-on switch                         408ms d101/p184/r124 style 1942.9ms x233 layout 47.1ms x116 forced 159 pointerdown:96 pointerup:88 click:408
+[mobile-4x-base-96313] PC add-on switch                         344ms d74/p146/r124 style 1835.9ms x234 layout 38.9ms x117 forced 133.7 pointerdown:64 pointerup:64 click:344
+[mobile-4x-base-96313] PC add-on switch                         328ms d67/p148/r113 style 1816.3ms x251 layout 53.8ms x127 forced 139 pointerdown:72 pointerup:48 click:328
+[mobile-4x-base-96313] PC stepper +                             272ms d74/p90/r108 style 1771.4ms x251 layout 39.2ms x125 forced 80.3 pointerdown:56 pointerup:64 click:272
+[mobile-4x-base-96313] PC stepper +                             240ms d46/p0/r194 style 1763ms x253 layout 49.6ms x126 forced 81.1 pointerdown:80 pointerup:240 click:240
+[mobile-4x-base-96313] PC stepper +                             256ms d73/p76/r108 style 1791ms x244 layout 46.2ms x122 forced 65.3 pointerdown:80 pointerup:56 click:256
+[mobile-4x-base-96313] (setup) close                            112ms d72/p3/r37 style 1499.9ms x201 layout 55.4ms x108 forced 0 pointerdown:72 pointerup:56 click:112
+[mobile-4x-base-96313] PC calc reopen                           376ms d86/p155/r135 style 1772.9ms x226 layout 91.9ms x121 forced 149.9 pointerdown:80 pointerup:72 click:376
+[mobile-4x-base-96313] (setup) close                            136ms d87/p1/r47 style 1574.9ms x209 layout 59.5ms x114 forced 0 pointerdown:72 pointerup:72 click:136
+[mobile-4x-base-96313] PC calc reopen                           384ms d93/p1/r290 style 1761ms x233 layout 78.7ms x125 forced 145 pointerdown:72 pointerup:384 click:384
+[mobile-4x-base-96313] (setup) close                            96ms d70/p2/r25 style 1436.3ms x235 layout 51.8ms x130 forced 0 pointerdown:72 pointerup:56 click:96
+[mobile-4x-base-96313] (setup) tab thingsboard-pe               264ms d154/p50/r61 style 1595.1ms x234 layout 31.7ms x119 forced 37.6 pointerdown:88 pointerup:120 click:264
+[mobile-4x-base-96313] (setup) PAYG open cold                   152ms d85/p4/r64 style 1579.8ms x215 layout 25.3ms x107 forced 183.1 pointerdown:56 pointerup:72 click:152
+[mobile-4x-base-96313] PAYG Edge switch (no blur)               304ms d76/p134/r94 style 1745.6ms x255 layout 26.9ms x126 forced 123.6 pointerdown:64 pointerup:56 click:304
+[mobile-4x-base-96313] PAYG Edge switch (no blur)               256ms d67/p103/r86 style 1665.7ms x259 layout 24.5ms x129 forced 95.7 pointerdown:56 pointerup:64 click:256
+[mobile-4x-base-96313] PAYG Edge switch (no blur)               248ms d47/p110/r91 style 1465.9ms x252 layout 28.8ms x127 forced 101.1 pointerdown:56 pointerup:56 click:248
+[mobile-4x-base-96313] PAYG Edge switch (no blur)               232ms d33/p0/r199 style 1518ms x249 layout 30.3ms x126 forced 102.2 pointerdown:64 pointerup:232 click:232
+[mobile-4x-base-96313] PAYG slider ArrowRight                   280ms d12/p88/r180 style 1236.3ms x197 layout 29.2ms x101 forced 160.7 keydown:280 keyup:128
+[mobile-4x-base-96313] PAYG slider ArrowRight                   288ms d1/p97/r191 style 1220.7ms x197 layout 29.4ms x101 forced 168.8 keydown:288 keyup:160
+[mobile-4x-base-96313] PAYG slider ArrowRight                   288ms d1/p105/r182 style 1305.7ms x198 layout 24.4ms x102 forced 173.3 keydown:288 keyup:128
+[mobile-4x-base-96313] PAYG slider ArrowRight                   272ms d14/p77/r181 style 1319ms x198 layout 25.7ms x101 forced 151.5 keydown:272 keyup:144
+[mobile-4x-base-96313] PAYG Edge switch after typing (blur)     376ms d207/p90/r80 style 1592.1ms x254 layout 32ms x129 forced 168 pointerdown:72 pointerup:64 click:376
+[mobile-4x-base-96313] PAYG Edge switch after typing (blur)     400ms d216/p99/r86 style 1880.3ms x254 layout 39.4ms x129 forced 174.3 pointerdown:80 pointerup:64 click:400
+[mobile-4x-base-96313] PAYG Edge switch after typing (blur)     472ms d223/p157/r92 style 1813.7ms x247 layout 32ms x124 forced 245.7 pointerdown:72 pointerup:56 click:472
+[mobile-4x-base-96313] (setup) close                            96ms d66/p1/r29 style 1417.3ms x218 layout 17.4ms x107 forced 0 pointerdown:64 pointerup:56 click:96
+[mobile-4x-base-96313] PAYG calc reopen                         328ms d44/p0/r284 style 1668.3ms x223 layout 36.6ms x112 forced 151.2 pointerdown:72 pointerup:328 click:328
+[mobile-4x-base-96313] (setup) close                            128ms d85/p3/r40 style 1418ms x182 layout 16.7ms x89 forced 0 pointerdown:64 pointerup:80 click:128
+[mobile-4x-base-96313] PAYG calc reopen                         360ms d97/p170/r93 style 1737.2ms x233 layout 36.5ms x115 forced 155.9 pointerdown:96 pointerup:80 click:360
+[mobile-4x-base-96313] (setup) close                            136ms d88/p1/r47 style 1430.2ms x212 layout 16.8ms x104 forced 0 pointerdown:72 pointerup:80 click:136
+[mobile-4x-base-96313] patched [] fetchErr -

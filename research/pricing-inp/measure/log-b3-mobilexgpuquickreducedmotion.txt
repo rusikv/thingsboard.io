@@ -1,0 +1,65 @@
+[mobile-4x-quick-reducedmotion-gpu] loaded in 771 ms
+[mobile-4x-quick-reducedmotion-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"none","observerErrs":[],"smilPaused":0,"smilElems":4,"bgSvgVisible":false} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-quick-reducedmotion-gpu] DOM 5995 elements, depth 22 invisible 5145 rules 1993 :has 94
+[mobile-4x-quick-reducedmotion-gpu] idle {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.7} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":0,"ms":0},"layout":{"n":0,"ms":0},"paint":{"n":0,"ms":0},"prePaint":{"n":0,"ms":0},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":0,"drawFrames":0,"updateLayoutTreeElementCounts":[]}
+[mobile-4x-quick-reducedmotion-gpu] baseline: click empty background                           16ms  delay 4.7 proc 1.1 pres 10.2 [pointerdown:16(d5/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] sub-tab: Cloud -> Private Cloud                            120ms  delay 17.4 proc 38.5 pres 64.1 [pointerdown:16(d15/p0) click:120(d17/p39)] LoAF 87.6/38.4s/11.1sl
+[mobile-4x-quick-reducedmotion-gpu] sub-tab: Private Cloud -> On-premises                      80ms  delay 20.1 proc 20.8 pres 39.1 [pointerdown:16(d17/p0) click:80(d20/p21)] LoAF 66.9/20.7s/11sl
+[mobile-4x-quick-reducedmotion-gpu] sub-tab: On-premises -> Cloud                              96ms  delay 13.5 proc 0 pres 82.5 [pointerdown:32(d16/p0) pointerup:96(d14/p0) click:96(d36/p23)] LoAF 71.7/28.9s/3.2sl
+[mobile-4x-quick-reducedmotion-gpu] region: label -> North America                             64ms  delay 11.6 proc 2.9 pres 49.5 [pointerdown:16(d17/p0) click:64(d12/p3)] 
+[mobile-4x-quick-reducedmotion-gpu] region: label -> Europe                                    56ms  delay 6.6 proc 2.9 pres 46.5 [pointerdown:16(d15/p0) click:56(d7/p3)] 
+[mobile-4x-quick-reducedmotion-gpu] region: switch (checkbox)                                  56ms  delay 6.9 proc 3.5 pres 45.6 [pointerdown:16(d16/p0) click:56(d7/p4)] 
+[mobile-4x-quick-reducedmotion-gpu] upsell: See Private Cloud Options (switch tab)             80ms  delay 7.5 proc 30.2 pres 42.3 [pointerdown:16(d15/p0) click:80(d8/p30)] LoAF 65.9/30.2s/11.4sl
+[mobile-4x-quick-reducedmotion-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 23 proc 21.3 pres 35.7 [pointerdown:16(d16/p0) click:80(d23/p21)] LoAF 66.6/26.3s/2.2sl
+[mobile-4x-quick-reducedmotion-gpu] top-up accordion toggle                                    16ms  delay 14.9 proc 0 pres 1.1 [pointerdown:16(d15/p0) click:16(d12/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] (setup) sub-tab -> thingsboard-private-cloud               88ms  delay 15.4 proc 30.1 pres 42.5 [pointerdown:16(d16/p0) click:88(d15/p30)] LoAF 75.5/30.1s/11.7sl
+[mobile-4x-quick-reducedmotion-gpu] PC billing: -> Annual                                      24ms  delay 17.7 proc 0.1 pres 6.2 [pointerdown:16(d16/p0) click:24(d18/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] PC billing: -> Monthly                                     16ms  delay 14.8 proc 0 pres 1.2 [pointerdown:16(d15/p0) click:16(d4/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] PC calculator: open #1 (cold chunk)                        16ms  delay 16.1 proc 0 pres -0.1 [pointerdown:16(d16/p0) click:16(d5/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: click slider track @0.35 not found
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: click slider track @0.7 not found
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: click slider track @0.15 not found
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: slider ArrowRight focus failed
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: type digit into devices focus failed
+[mobile-4x-quick-reducedmotion-gpu] PC calc: type digit into devices                           <16ms 
+[mobile-4x-quick-reducedmotion-gpu] PC calc: type digit into devices                           <16ms 
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: stepper + not found
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calc: add-on switch not found
+[mobile-4x-quick-reducedmotion-gpu] SKIP PC calculator: close #1 not found
+[mobile-4x-quick-reducedmotion-gpu] (setup) sub-tab -> thingsboard-pe                          72ms  delay 19.5 proc 19.8 pres 32.7 [pointerdown:16(d16/p0) click:72(d20/p20)] LoAF 55.5/19.8s/6.3sl
+[mobile-4x-quick-reducedmotion-gpu] On-prem billing: -> Perpetual                              48ms  delay 6.7 proc 4.2 pres 37.1 [pointerdown:16(d15/p0) click:48(d7/p4)] 
+[mobile-4x-quick-reducedmotion-gpu] On-prem billing: -> Subscription                           48ms  delay 4.5 proc 3.3 pres 40.2 [pointerdown:16(d16/p0) click:48(d5/p3)] 
+[mobile-4x-quick-reducedmotion-gpu] PAYG calculator: open #1 (cold chunk)                      32ms  delay 6.7 proc 4.4 pres 20.9 [pointerdown:16(d15/p0) click:32(d7/p4)] 
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: click slider track @0.4                         120ms  delay 15.6 proc 0 pres 104.4 [pointerdown:120(d16/p0) pointerup:96(d16/p0)] LoAF 80.6/45.5s/19.8sl,72.7/50.8s/0sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: click slider track @0.75                        112ms  delay 16.4 proc 0 pres 95.6 [pointerdown:112(d16/p0) pointerup:112(d30/p0)] LoAF 89.4/50.7s/22.8sl,73.3/51s/0sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: click slider track @0.1                         120ms  delay 15.4 proc 0 pres 104.6 [pointerdown:120(d15/p0) pointerup:104(d30/p0)] LoAF 93.2/54s/23.2sl,66.9/45.8s/0sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: slider ArrowRight                               152ms  delay 0.2 proc 54 pres 97.8 [keydown:152(d0/p54) keyup:32(d34/p0)] LoAF 145.4/98.7s/22.6sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: type digit into devices                         80ms  delay 0.7 proc 0 pres 79.3 [keydown:80(d1/p0) keypress:80(d1/p3)] LoAF 71.3/46.2s/21.3sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: type digit into devices                         80ms  delay 0.6 proc 0 pres 79.4 [keydown:80(d1/p0) keypress:80(d1/p2) keyup:16(d16/p0)] LoAF 75.7/51.4s/21.7sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: type digit into devices                         80ms  delay 0.4 proc 0.1 pres 79.5 [keydown:80(d0/p0) keypress:80(d1/p3) keyup:16(d13/p0)] LoAF 72.9/48.8s/21.3sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calc: Edge add-on switch                              160ms  delay 74.7 proc 53.1 pres 32.2 [pointerdown:16(d15/p0) click:160(d75/p53)] LoAF 150.2/97.1s/0.3sl
+[mobile-4x-quick-reducedmotion-gpu] PAYG calculator: close #1                                  16ms  delay 15.3 proc 0 pres 0.7 [pointerdown:16(d15/p0) click:16(d7/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 18.7 proc 32.5 pres 28.8 [pointerdown:16(d16/p0) click:80(d19/p33)] LoAF 67.5/38.2s/3.5sl
+[mobile-4x-quick-reducedmotion-gpu] FAQ: category tab -> 2nd                                   32ms  delay 12.1 proc 0.8 pres 19.1 [pointerdown:16(d16/p0) click:32(d12/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] FAQ: category tab -> 1st                                   32ms  delay 6.4 proc 0.4 pres 25.2 [pointerdown:16(d15/p0) click:32(d6/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] FAQ: expand/collapse item                                  32ms  delay 8.2 proc 0 pres 23.8 [pointerdown:16(d15/p0) click:32(d8/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] FAQ: category tab -> #1                                    16ms  delay 16.7 proc 0 pres -0.7 [pointerdown:16(d17/p0) click:16(d8/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] FAQ: Load more                                             40ms  delay 12.3 proc 0.7 pres 27 [pointerdown:16(d15/p0) click:40(d12/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] feature (i) click -> jump to FAQ                           48ms  delay 12.6 proc 2.8 pres 32.6 [pointerdown:16(d16/p0) click:48(d13/p3)] 
+[mobile-4x-quick-reducedmotion-gpu] header: burger open                                        40ms  delay 13.4 proc 4.6 pres 22 [pointerdown:16(d16/p1) click:40(d13/p5)] 
+[mobile-4x-quick-reducedmotion-gpu] header: expand "Products" in drawer                        40ms  delay 8.7 proc 0.5 pres 30.8 [pointerdown:16(d15/p0) click:40(d9/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] header: burger close                                       56ms  delay 8.4 proc 0.7 pres 46.9 [pointerdown:16(d16/p0) click:56(d8/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] theme toggle                                               64ms  delay 9.5 proc 0.9 pres 53.6 [pointerdown:16(d16/p0) click:64(d10/p1)] 
+[mobile-4x-quick-reducedmotion-gpu] idleAfter {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.86}
+[mobile-4x-quick-reducedmotion-gpu] calibration(plain): click button                           16ms  delay 3.2 proc 0.1 pres 12.7 [click:16(d3/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(plain): click button                           16ms  delay 2.2 proc 0 pres 13.8 [click:16(d2/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(plain): click button                           16ms  delay 2.8 proc 0 pres 13.2 [click:16(d3/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(plain): click button                           16ms  delay 3.5 proc 0 pres 12.5 [click:16(d4/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(plain): click button                           16ms  delay 3.2 proc 0 pres 12.8 [click:16(d3/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(anim): click button                            32ms  delay 13.7 proc 0 pres 18.3 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(anim): click button                            32ms  delay 14.3 proc 0 pres 17.7 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(anim): click button                            32ms  delay 14 proc 0 pres 18 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(anim): click button                            32ms  delay 14.1 proc 0 pres 17.9 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration(anim): click button                            32ms  delay 13.5 proc 0 pres 18.5 [click:32(d14/p0)] 
+[mobile-4x-quick-reducedmotion-gpu] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-quick-reducedmotion-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-mobile-4x-quick-reducedmotion-gpu.json

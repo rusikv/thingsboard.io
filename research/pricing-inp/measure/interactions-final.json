@@ -1,0 +1,1029 @@
+[
+{
+"label": "baseline: click empty background",
+"profile": "desktop-1x (GPU raster on)",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+40,
+40,
+40
+],
+"input_delay_ms": 2,
+"processing_ms": 0,
+"presentation_ms": 38,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "desktop-1x (GPU raster on)",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+48,
+48,
+48
+],
+"input_delay_ms": 0,
+"processing_ms": 14,
+"presentation_ms": 34,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "region: label -> Europe",
+"profile": "desktop-1x (GPU raster on)",
+"selector": ".region-toggle-label[data-region=eu]",
+"duration_ms": [
+48,
+48,
+48
+],
+"input_delay_ms": 1,
+"processing_ms": 0,
+"presentation_ms": 47,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PC calc: click slider track @0.35",
+"profile": "desktop-1x (GPU raster on)",
+"selector": "#tb-pc-calc .calc-slider",
+"duration_ms": [
+56
+],
+"input_delay_ms": 0,
+"processing_ms": 0,
+"presentation_ms": 56,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PAYG calc: slider ArrowRight",
+"profile": "desktop-1x (GPU raster on)",
+"selector": "#sm-slider (keyboard ArrowRight)",
+"duration_ms": [
+56,
+56,
+64
+],
+"input_delay_ms": 0,
+"processing_ms": 16,
+"presentation_ms": 48,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PAYG calc: type digit into devices",
+"profile": "desktop-1x (GPU raster on)",
+"selector": "#sm-devices (keydown digit)",
+"duration_ms": [
+48,
+48,
+48
+],
+"input_delay_ms": 0,
+"processing_ms": 1,
+"presentation_ms": 47,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "FAQ: category tab -> 2nd",
+"profile": "desktop-1x (GPU raster on)",
+"selector": ".faq-cat-tab",
+"duration_ms": [
+32,
+40,
+40
+],
+"input_delay_ms": 0,
+"processing_ms": 0,
+"presentation_ms": 40,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "hover: plan feature (i) tooltip",
+"profile": "desktop-1x (GPU raster on)",
+"selector": ".plan-feature-info (mouse hover only)",
+"duration_ms": [
+0,
+0,
+0
+],
+"top_scripts": "<16ms (below Event Timing threshold)"
+},
+{
+"label": "theme toggle",
+"profile": "desktop-1x (GPU raster on)",
+"selector": ".theme-toggle-btn",
+"duration_ms": [
+40,
+40,
+40
+],
+"input_delay_ms": 0,
+"processing_ms": 0,
+"presentation_ms": 40,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "baseline: click empty background",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+40,
+32,
+32
+],
+"input_delay_ms": 6,
+"processing_ms": 1,
+"presentation_ms": 33,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+104,
+104,
+112
+],
+"input_delay_ms": 1,
+"processing_ms": 43,
+"presentation_ms": 68,
+"style_layout_ms": 50.2,
+"top_scripts": "LoAF 97.1 (script 42.5, rAF 1.6, S/L/P 12.3): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 42.5ms (forced S/L 37.9)"
+},
+{
+"label": "sub-tab: Private Cloud -> On-premises",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".sub-tab[data-subtab=thingsboard-pe]",
+"duration_ms": [
+72,
+80,
+96
+],
+"input_delay_ms": 5,
+"processing_ms": 28,
+"presentation_ms": 63,
+"style_layout_ms": 35.6,
+"top_scripts": "LoAF 68.5 (script 27.2, rAF 1.6, S/L/P 12.4): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 27.2ms (forced S/L 23.2)"
+},
+{
+"label": "region: label -> Europe",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".region-toggle-label[data-region=eu]",
+"duration_ms": [
+80,
+72,
+80
+],
+"input_delay_ms": 1,
+"processing_ms": 4,
+"presentation_ms": 75,
+"style_layout_ms": 4.8,
+"top_scripts": "LoAF 68 (script 0, rAF 1.2, S/L/P 4.8); no script >5ms"
+},
+{
+"label": "top-up accordion toggle",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".topup-header",
+"duration_ms": [
+32,
+32,
+32
+],
+"input_delay_ms": 2,
+"processing_ms": 0,
+"presentation_ms": 30,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PC billing: -> Annual",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".billing-toggle[data-toggle-id=tb-pc-billing] .billing-toggle-label[data-value=annual]",
+"duration_ms": [
+64,
+64,
+64
+],
+"input_delay_ms": 2,
+"processing_ms": 7,
+"presentation_ms": 55,
+"style_layout_ms": 2.4,
+"top_scripts": "LoAF 58.8 (script 6.4, rAF 2, S/L/P 2.4): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 6.4ms (forced S/L 0)"
+},
+{
+"label": "On-prem billing: -> Perpetual",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".billing-toggle[data-toggle-id=tb-sm-billing] .billing-toggle-label[data-value=perpetual]",
+"duration_ms": [
+72,
+64,
+72
+],
+"input_delay_ms": 2,
+"processing_ms": 4,
+"presentation_ms": 66,
+"style_layout_ms": 6.9,
+"top_scripts": "LoAF 60.2 (script 0, rAF 1.4, S/L/P 6.9); no script >5ms"
+},
+{
+"label": "PC calculator: open #2",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "PC .upsell-card-btn[onclick=openTbPcCalc] (chunk cached)",
+"duration_ms": [
+136
+],
+"input_delay_ms": 3,
+"processing_ms": 76,
+"presentation_ms": 57,
+"style_layout_ms": 67.5,
+"top_scripts": "LoAF 130.1 (script 75.6, rAF 2.4, S/L/P 1.6): BUTTON.onclick @:0 75.6ms (forced S/L 65.9)"
+},
+{
+"label": "PC calc: click slider track @0.35",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#tb-pc-calc .calc-slider",
+"duration_ms": [
+160
+],
+"input_delay_ms": 1,
+"processing_ms": 0,
+"presentation_ms": 159,
+"style_layout_ms": 116.7,
+"top_scripts": "LoAF 137.7 (script 86.1, rAF 86.3, S/L/P 38.3): FrameRequestCallback @calc-tb-pc.g0w2FatQ.js:15948 86.1ms (forced S/L 78.4)"
+},
+{
+"label": "PC calc: type digit into devices",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#tb-pc-calc .calc-number-input (keydown digit)",
+"duration_ms": [
+160,
+112,
+120
+],
+"input_delay_ms": 1,
+"processing_ms": 5,
+"presentation_ms": 154,
+"style_layout_ms": 114.0,
+"top_scripts": "LoAF 135.4 (script 85.5, rAF 86.8, S/L/P 34.7): FrameRequestCallback @calc-tb-pc.g0w2FatQ.js:15948 85.5ms (forced S/L 79.3)"
+},
+{
+"label": "PC calc: add-on switch",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#tb-pc-calc .calc-toggle (Edge)",
+"duration_ms": [
+160,
+152,
+160
+],
+"input_delay_ms": 2,
+"processing_ms": 92,
+"presentation_ms": 66,
+"style_layout_ms": 85.4,
+"top_scripts": "LoAF 146.1 (script 90.7, rAF 0.8, S/L/P 2): INPUT#pc-edge-toggle.onchange @calc-tb-pc.g0w2FatQ.js:14419 90.7ms (forced S/L 83.4)"
+},
+{
+"label": "PAYG calculator: open #2",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "On-prem .upsell-card-btn[onclick=openTbPaygCalc] (chunk cached)",
+"duration_ms": [
+120
+],
+"input_delay_ms": 2,
+"processing_ms": 75,
+"presentation_ms": 43,
+"style_layout_ms": 69.5,
+"top_scripts": "LoAF 119 (script 75.4, rAF 2.3, S/L/P 1.6): BUTTON.onclick @:0 75.4ms (forced S/L 67.9)"
+},
+{
+"label": "PAYG calc: click slider track @0.75",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#sm-slider (pointer on track)",
+"duration_ms": [
+136
+],
+"input_delay_ms": 29,
+"processing_ms": 1,
+"presentation_ms": 106,
+"style_layout_ms": 77.7,
+"top_scripts": "LoAF 96.1 (script 58, rAF 58.5, S/L/P 25.5): FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 58ms (forced S/L 52.2)"
+},
+{
+"label": "PAYG calc: slider ArrowRight",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#sm-slider (keyboard ArrowRight)",
+"duration_ms": [
+176,
+184,
+184
+],
+"input_delay_ms": 1,
+"processing_ms": 63,
+"presentation_ms": 120,
+"style_layout_ms": 127.1,
+"top_scripts": "LoAF 170.5 (script 113.8, rAF 53.6, S/L/P 25): INPUT#sm-slider.onchange @calc-tb-payg.CZh4zRfq.js:11369 62.8ms (forced S/L 57.7); FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 51ms (forced S/L 44.4)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+112,
+104,
+112
+],
+"input_delay_ms": 2,
+"processing_ms": 0,
+"presentation_ms": 110,
+"style_layout_ms": 58.3,
+"top_scripts": "LoAF 97.3 (script 62.9, rAF 1, S/L/P 0.5): INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 62.9ms (forced S/L 57.8)"
+},
+{
+"label": "FAQ: Load more",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".faq-load-more",
+"duration_ms": [
+48,
+56,
+48
+],
+"input_delay_ms": 7,
+"processing_ms": 0,
+"presentation_ms": 49,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "feature (i) click -> jump to FAQ",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".plan-card .plan-feature-info (scrolls to FAQ)",
+"duration_ms": [
+48,
+56,
+56
+],
+"input_delay_ms": 2,
+"processing_ms": 5,
+"presentation_ms": 49,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "hover: plan feature (i) tooltip",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".plan-feature-info (mouse hover only)",
+"duration_ms": [
+0,
+0,
+0
+],
+"top_scripts": "<16ms (below Event Timing threshold)"
+},
+{
+"label": "header: hover \"Products\" (mega-menu open)",
+"profile": "desktop-4x (GPU raster on)",
+"selector": "nav.head-menu > ul > li[data-submenu-id] (hover)",
+"duration_ms": [
+0,
+0,
+0
+],
+"top_scripts": "<16ms (below Event Timing threshold)"
+},
+{
+"label": "theme toggle",
+"profile": "desktop-4x (GPU raster on)",
+"selector": ".theme-toggle-btn",
+"duration_ms": [
+88,
+80,
+32
+],
+"input_delay_ms": 1,
+"processing_ms": 2,
+"presentation_ms": 85,
+"style_layout_ms": 0.4,
+"top_scripts": "LoAF 61.7 (script 0, rAF 1.2, S/L/P 0.4); no script >5ms"
+},
+{
+"label": "baseline: click empty background",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+64,
+64,
+64
+],
+"input_delay_ms": 37,
+"processing_ms": 1,
+"presentation_ms": 26,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+168,
+136,
+136
+],
+"input_delay_ms": 52,
+"processing_ms": 37,
+"presentation_ms": 79,
+"style_layout_ms": 44.6,
+"top_scripts": "LoAF 93.1 (script 36.7, rAF 0.8, S/L/P 11.9): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 36.7ms (forced S/L 32.7)"
+},
+{
+"label": "sub-tab: Private Cloud -> On-premises",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".sub-tab[data-subtab=thingsboard-pe]",
+"duration_ms": [
+136,
+144,
+144
+],
+"input_delay_ms": 73,
+"processing_ms": 22,
+"presentation_ms": 49,
+"style_layout_ms": 27.7,
+"top_scripts": "LoAF 79.4 (script 21.6, rAF 0.1, S/L/P 10.1): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 21.6ms (forced S/L 17.6)"
+},
+{
+"label": "region: label -> Europe",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".region-toggle-label[data-region=eu]",
+"duration_ms": [
+104,
+104,
+104
+],
+"input_delay_ms": 43,
+"processing_ms": 3,
+"presentation_ms": 58,
+"style_layout_ms": 0.7,
+"top_scripts": "LoAF 53.3 (script 0, rAF 0, S/L/P 0.7); no script >5ms"
+},
+{
+"label": "top-up accordion toggle",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".topup-header",
+"duration_ms": [
+72,
+72,
+72
+],
+"input_delay_ms": 35,
+"processing_ms": 0,
+"presentation_ms": 37,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PC billing: -> Annual",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".billing-toggle[data-toggle-id=tb-pc-billing] .billing-toggle-label[data-value=annual]",
+"duration_ms": [
+120,
+112,
+144
+],
+"input_delay_ms": 57,
+"processing_ms": 4,
+"presentation_ms": 83,
+"style_layout_ms": 3.6,
+"top_scripts": "LoAF 87 (script 0, rAF 0.2, S/L/P 3.6); no script >5ms"
+},
+{
+"label": "On-prem billing: -> Perpetual",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".billing-toggle[data-toggle-id=tb-sm-billing] .billing-toggle-label[data-value=perpetual]",
+"duration_ms": [
+104,
+88,
+120
+],
+"input_delay_ms": 58,
+"processing_ms": 4,
+"presentation_ms": 58,
+"style_layout_ms": 6,
+"top_scripts": "LoAF 62 (script 0, rAF 0.8, S/L/P 6); no script >5ms"
+},
+{
+"label": "PC calculator: open #2",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "PC .upsell-card-btn[onclick=openTbPcCalc] (chunk cached)",
+"duration_ms": [
+192
+],
+"input_delay_ms": 47,
+"processing_ms": 80,
+"presentation_ms": 65,
+"style_layout_ms": 72.2,
+"top_scripts": "LoAF 143.8 (script 80.2, rAF 4.6, S/L/P 1.7): BUTTON.onclick @:0 80.2ms (forced S/L 70.5)"
+},
+{
+"label": "PC calc: click slider track @0.35",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#tb-pc-calc .calc-slider",
+"duration_ms": [
+136
+],
+"input_delay_ms": 30,
+"processing_ms": 0,
+"presentation_ms": 106,
+"style_layout_ms": 81.1,
+"top_scripts": "LoAF 108 (script 59.6, rAF 60, S/L/P 28.2): FrameRequestCallback @calc-tb-pc.g0w2FatQ.js:15948 59.6ms (forced S/L 52.9)"
+},
+{
+"label": "PC calc: add-on switch",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#tb-pc-calc .calc-toggle (Edge)",
+"duration_ms": [
+168,
+152,
+200
+],
+"input_delay_ms": 46,
+"processing_ms": 84,
+"presentation_ms": 70,
+"style_layout_ms": 76.8,
+"top_scripts": "LoAF 135.8 (script 82.8, rAF 0.4, S/L/P 0.1): INPUT#pc-edge-toggle.onchange @calc-tb-pc.g0w2FatQ.js:14419 82.8ms (forced S/L 76.7)"
+},
+{
+"label": "PC calc: stepper +",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#tb-pc-calc .calc-stepper-btn[data-action=increment]",
+"duration_ms": [
+176,
+144,
+136
+],
+"input_delay_ms": 11,
+"processing_ms": 41,
+"presentation_ms": 124,
+"style_layout_ms": 65.5,
+"top_scripts": "LoAF 154.5 (script 75.3, rAF 0, S/L/P 0.8): BUTTON.onclick @calc-tb-pc.g0w2FatQ.js:10996 40.1ms (forced S/L 34.6); INPUT.onblur @calc-tb-pc.g0w2FatQ.js:10406 35.2ms (forced S/L 30.1)"
+},
+{
+"label": "PAYG calculator: open #2",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "On-prem .upsell-card-btn[onclick=openTbPaygCalc] (chunk cached)",
+"duration_ms": [
+168
+],
+"input_delay_ms": 53,
+"processing_ms": 71,
+"presentation_ms": 44,
+"style_layout_ms": 65.3,
+"top_scripts": "LoAF 115.4 (script 70.5, rAF 1.9, S/L/P 1.3): BUTTON.onclick @:0 70.5ms (forced S/L 64)"
+},
+{
+"label": "PAYG calc: click slider track @0.75",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#sm-slider (pointer on track)",
+"duration_ms": [
+128
+],
+"input_delay_ms": 30,
+"processing_ms": 0,
+"presentation_ms": 98,
+"style_layout_ms": 76.5,
+"top_scripts": "LoAF 95.9 (script 59.8, rAF 59.9, S/L/P 23.1): FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 59.8ms (forced S/L 53.4)"
+},
+{
+"label": "PAYG calc: slider ArrowRight",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#sm-slider (keyboard ArrowRight)",
+"duration_ms": [
+176,
+216,
+168
+],
+"input_delay_ms": 0,
+"processing_ms": 78,
+"presentation_ms": 138,
+"style_layout_ms": 159.1,
+"top_scripts": "LoAF 209.5 (script 141.1, rAF 64.2, S/L/P 27.5): INPUT#sm-slider.onchange @calc-tb-payg.CZh4zRfq.js:11369 77ms (forced S/L 71.4); FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 64.1ms (forced S/L 60.2)"
+},
+{
+"label": "PAYG calc: type digit into devices",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#sm-devices (keydown digit)",
+"duration_ms": [
+104,
+96,
+104
+],
+"input_delay_ms": 3,
+"processing_ms": 2,
+"presentation_ms": 99,
+"style_layout_ms": 83.7,
+"top_scripts": "LoAF 107.3 (script 62.5, rAF 63.2, S/L/P 26.4): FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 62.5ms (forced S/L 57.3)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+216,
+152,
+152
+],
+"input_delay_ms": 13,
+"processing_ms": 60,
+"presentation_ms": 143,
+"style_layout_ms": 109.1,
+"top_scripts": "LoAF 186.4 (script 119.5, rAF 0.1, S/L/P 0.7): INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 60.9ms (forced S/L 55.2); INPUT#sm-edge-toggle.onchange @calc-tb-payg.CZh4zRfq.js:12803 58.6ms (forced S/L 53.2)"
+},
+{
+"label": "FAQ: category tab -> 2nd",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".faq-cat-tab",
+"duration_ms": [
+96,
+88,
+80
+],
+"input_delay_ms": 54,
+"processing_ms": 1,
+"presentation_ms": 41,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "FAQ: expand/collapse item",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".faq-question-toggle",
+"duration_ms": [
+80,
+72,
+72
+],
+"input_delay_ms": 46,
+"processing_ms": 1,
+"presentation_ms": 33,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "feature (i) click -> jump to FAQ",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".plan-card .plan-feature-info (scrolls to FAQ)",
+"duration_ms": [
+88,
+96,
+112
+],
+"input_delay_ms": 62,
+"processing_ms": 3,
+"presentation_ms": 47,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "header: burger open",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": "header .burger",
+"duration_ms": [
+88,
+80,
+88
+],
+"input_delay_ms": 48,
+"processing_ms": 5,
+"presentation_ms": 35,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "theme toggle",
+"profile": "mobile-4x (412x823 dpr1.75, touch, GPU raster on)",
+"selector": ".theme-toggle-btn",
+"duration_ms": [
+128,
+120,
+72
+],
+"input_delay_ms": 46,
+"processing_ms": 1,
+"presentation_ms": 81,
+"style_layout_ms": 1.2,
+"top_scripts": "LoAF 59.3 (script 0, rAF 0.8, S/L/P 1.2); no script >5ms"
+},
+{
+"label": "baseline: click empty background",
+"profile": "mobile-4x-3p-blocked",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+64,
+72,
+72
+],
+"input_delay_ms": 41,
+"processing_ms": 0,
+"presentation_ms": 31,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "mobile-4x-3p-blocked",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+192,
+168,
+136
+],
+"input_delay_ms": 56,
+"processing_ms": 46,
+"presentation_ms": 90,
+"style_layout_ms": 54.5,
+"top_scripts": "LoAF 114.6 (script 46.1, rAF 1.2, S/L/P 14): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 46.1ms (forced S/L 40.5)"
+},
+{
+"label": "region: label -> Europe",
+"profile": "mobile-4x-3p-blocked",
+"selector": ".region-toggle-label[data-region=eu]",
+"duration_ms": [
+112,
+88,
+112
+],
+"input_delay_ms": 40,
+"processing_ms": 3,
+"presentation_ms": 69,
+"style_layout_ms": 0.7,
+"top_scripts": "LoAF 58.2 (script 0, rAF 0.1, S/L/P 0.7); no script >5ms"
+},
+{
+"label": "PC calc: stepper +",
+"profile": "mobile-4x-3p-blocked",
+"selector": "#tb-pc-calc .calc-stepper-btn[data-action=increment]",
+"duration_ms": [
+224,
+136,
+144
+],
+"input_delay_ms": 128,
+"processing_ms": 39,
+"presentation_ms": 57,
+"style_layout_ms": 73.7,
+"top_scripts": "LoAF 165.4 (script 86, rAF 0.6, S/L/P 0.2): INPUT.onblur @calc-tb-pc.g0w2FatQ.js:10406 47.5ms (forced S/L 40.2); BUTTON.onclick @calc-tb-pc.g0w2FatQ.js:10996 38.5ms (forced S/L 33.3)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "mobile-4x-3p-blocked",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+224,
+152,
+152
+],
+"input_delay_ms": 123,
+"processing_ms": 53,
+"presentation_ms": 48,
+"style_layout_ms": 100.5,
+"top_scripts": "LoAF 167.6 (script 109.8, rAF 0.1, S/L/P 0.9): INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 57.1ms (forced S/L 52); INPUT#sm-edge-toggle.onchange @calc-tb-payg.CZh4zRfq.js:12803 52.7ms (forced S/L 47.6)"
+},
+{
+"label": "baseline: click empty background",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+0,
+0,
+0
+],
+"top_scripts": "<16ms (below Event Timing threshold)"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+120,
+88,
+88
+],
+"input_delay_ms": 11,
+"processing_ms": 38,
+"presentation_ms": 71,
+"style_layout_ms": 42.0,
+"top_scripts": "LoAF 78.2 (script 37.8, rAF 0.6, S/L/P 7.6): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 37.8ms (forced S/L 34.4)"
+},
+{
+"label": "region: label -> Europe",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": ".region-toggle-label[data-region=eu]",
+"duration_ms": [
+64,
+64,
+64
+],
+"input_delay_ms": 6,
+"processing_ms": 3,
+"presentation_ms": 55,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PAYG calc: click slider track @0.75",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": "#sm-slider (pointer on track)",
+"duration_ms": [
+120
+],
+"input_delay_ms": 17,
+"processing_ms": 0,
+"presentation_ms": 103,
+"style_layout_ms": 68.9,
+"top_scripts": "LoAF 89.8 (script 49.3, rAF 49.5, S/L/P 25.2): FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 49.3ms (forced S/L 43.7)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+176,
+136,
+104
+],
+"input_delay_ms": 80,
+"processing_ms": 54,
+"presentation_ms": 42,
+"style_layout_ms": 91.9,
+"top_scripts": "LoAF 155.2 (script 102.4, rAF 0, S/L/P 0): INPUT#sm-edge-toggle.onchange @calc-tb-payg.CZh4zRfq.js:12803 52.7ms (forced S/L 47.3); INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 49.7ms (forced S/L 44.6)"
+},
+{
+"label": "FAQ: category tab -> 2nd",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": ".faq-cat-tab",
+"duration_ms": [
+32,
+32,
+24
+],
+"input_delay_ms": 13,
+"processing_ms": 1,
+"presentation_ms": 18,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "header: burger open",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": "header .burger",
+"duration_ms": [
+48,
+32,
+32
+],
+"input_delay_ms": 14,
+"processing_ms": 7,
+"presentation_ms": 27,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "theme toggle",
+"profile": "mobile-4x, all animations stopped (CSS anim none + SMIL paused)",
+"selector": ".theme-toggle-btn",
+"duration_ms": [
+80,
+64,
+16
+],
+"input_delay_ms": 8,
+"processing_ms": 2,
+"presentation_ms": 70,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "PC calc: click slider track @0.35",
+"profile": "desktop-4x, Starlight :has(~script:last-child) rule deleted (1 rep)",
+"selector": "#tb-pc-calc .calc-slider",
+"duration_ms": [
+80
+],
+"input_delay_ms": 1,
+"processing_ms": 0,
+"presentation_ms": 79,
+"style_layout_ms": 42.0,
+"top_scripts": "LoAF 63.1 (script 35.6, rAF 36.3, S/L/P 13.7): FrameRequestCallback @calc-tb-pc.g0w2FatQ.js:15948 35.6ms (forced S/L 28.3)"
+},
+{
+"label": "PC calc: add-on switch",
+"profile": "desktop-4x, Starlight :has(~script:last-child) rule deleted (1 rep)",
+"selector": "#tb-pc-calc .calc-toggle (Edge)",
+"duration_ms": [
+88
+],
+"input_delay_ms": 4,
+"processing_ms": 44,
+"presentation_ms": 40,
+"style_layout_ms": 37.0,
+"top_scripts": "LoAF 61.3 (script 43.4, rAF 0.8, S/L/P 0.6): INPUT#pc-edge-toggle.onchange @calc-tb-pc.g0w2FatQ.js:14419 43.4ms (forced S/L 36.4)"
+},
+{
+"label": "PAYG calc: click slider track @0.75",
+"profile": "desktop-4x, Starlight :has(~script:last-child) rule deleted (1 rep)",
+"selector": "#sm-slider (pointer on track)",
+"duration_ms": [
+72
+],
+"input_delay_ms": 1,
+"processing_ms": 0,
+"presentation_ms": 71,
+"style_layout_ms": 27.3,
+"top_scripts": "LoAF 60.3 (script 32.2, rAF 0.2, S/L/P 0.7): INPUT#sm-slider.onchange @calc-tb-payg.CZh4zRfq.js:11369 32.2ms (forced S/L 26.6)"
+},
+{
+"label": "PAYG calc: slider ArrowRight",
+"profile": "desktop-4x, Starlight :has(~script:last-child) rule deleted (1 rep)",
+"selector": "#sm-slider (keyboard ArrowRight)",
+"duration_ms": [
+80
+],
+"input_delay_ms": 0,
+"processing_ms": 25,
+"presentation_ms": 55,
+"style_layout_ms": 43.7,
+"top_scripts": "LoAF 74.3 (script 45.1, rAF 22.1, S/L/P 8.2): INPUT#sm-slider.onchange @calc-tb-payg.CZh4zRfq.js:11369 24.5ms (forced S/L 19.2); FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 20.6ms (forced S/L 16.3)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "desktop-4x, Starlight :has(~script:last-child) rule deleted (1 rep)",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+64
+],
+"input_delay_ms": 2,
+"processing_ms": 0,
+"presentation_ms": 62,
+"style_layout_ms": 26.6,
+"top_scripts": "LoAF 51.1 (script 32.2, rAF 0.7, S/L/P 0.1): INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 32.2ms (forced S/L 26.5)"
+},
+{
+"label": "baseline: click empty background",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": "div.pricing-page background (no handler)",
+"duration_ms": [
+16
+],
+"input_delay_ms": 7,
+"processing_ms": 0,
+"presentation_ms": 9,
+"top_scripts": "no LoAF >50ms"
+},
+{
+"label": "sub-tab: Cloud -> Private Cloud",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": ".sub-tab[data-subtab=thingsboard-private-cloud]",
+"duration_ms": [
+120
+],
+"input_delay_ms": 17,
+"processing_ms": 38,
+"presentation_ms": 65,
+"style_layout_ms": 45.6,
+"top_scripts": "LoAF 88.8 (script 37.7, rAF 0.4, S/L/P 11.3): DIV.onclick @index.astro_astro_type_script_index_0_lang.X8Stmb3A.js:621 37.7ms (forced S/L 34.3)"
+},
+{
+"label": "PC calc: add-on switch",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": "#tb-pc-calc .calc-toggle (Edge)",
+"duration_ms": [
+72
+],
+"input_delay_ms": 10,
+"processing_ms": 35,
+"presentation_ms": 27,
+"style_layout_ms": 27.6,
+"top_scripts": "LoAF 53.8 (script 33.9, rAF 0.5, S/L/P 0.1): INPUT#pc-edge-toggle.onchange @calc-tb-pc.g0w2FatQ.js:14419 33.9ms (forced S/L 27.5)"
+},
+{
+"label": "PAYG calc: slider ArrowRight",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": "#sm-slider (keyboard ArrowRight)",
+"duration_ms": [
+64
+],
+"input_delay_ms": 0,
+"processing_ms": 25,
+"presentation_ms": 39,
+"style_layout_ms": 42.2,
+"top_scripts": "LoAF 61.6 (script 42.6, rAF 18.6, S/L/P 8.3): INPUT#sm-slider.onchange @calc-tb-payg.CZh4zRfq.js:11369 24ms (forced S/L 18.9); FrameRequestCallback @calc-tb-payg.CZh4zRfq.js:11223 18.6ms (forced S/L 15)"
+},
+{
+"label": "PAYG calc: Edge add-on switch",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": "#sm-edge-toggle label (.calc-toggle); also blurs #sm-devices",
+"duration_ms": [
+96
+],
+"input_delay_ms": 52,
+"processing_ms": 25,
+"presentation_ms": 19,
+"style_layout_ms": 37.7,
+"top_scripts": "LoAF 71.6 (script 47.9, rAF 0.1, S/L/P 0): INPUT#sm-edge-toggle.onchange @calc-tb-payg.CZh4zRfq.js:12803 24.3ms (forced S/L 18.8); INPUT#sm-devices.onblur @calc-tb-payg.CZh4zRfq.js:11662 23.6ms (forced S/L 18.9)"
+},
+{
+"label": "theme toggle",
+"profile": "mobile-4x, prefers-reduced-motion + that rule deleted (1 rep)",
+"selector": ".theme-toggle-btn",
+"duration_ms": [
+64
+],
+"input_delay_ms": 8,
+"processing_ms": 2,
+"presentation_ms": 54,
+"top_scripts": "no LoAF >50ms"
+}
+]

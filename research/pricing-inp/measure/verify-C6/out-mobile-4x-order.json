@@ -1,0 +1,109 @@
+{
+ "kind": "mobile",
+ "cpu": 4,
+ "info": {
+  "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+  "w": 412,
+  "dom": 5995,
+  "ccIndex": 33,
+  "launcherIndex": 80,
+  "launcher": {
+   "visibility": "hidden",
+   "anim": "chat-hues",
+   "play": "running",
+   "dur": "15s"
+  },
+  "root": {
+   "anim": "promo-collapse",
+   "promoH": "52px",
+   "promoCur": "52px"
+  },
+  "banner": {
+   "hidden": false
+  },
+  "smil": 4,
+  "anims": [
+   {
+    "name": "promo-collapse",
+    "target": "HTML",
+    "state": "running",
+    "tl": "ScrollTimeline"
+   },
+   {
+    "name": "chat-hues",
+    "target": "chat-launcher",
+    "state": "running",
+    "tl": "DocumentTimeline"
+   }
+  ],
+  "rules": [
+   {
+    "sel": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr)",
+    "media": " @(width < 432px)",
+    "text": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr) { visibility: hidden; }"
+   }
+  ]
+ },
+ "phases": [
+  {
+   "label": "B1 banner hidden, :has rule present",
+   "span": 3.3,
+   "recalcPerS": 59.6,
+   "recalcMsPerS": 492.9,
+   "recalcMedianMs": 8.09,
+   "recalcMaxMs": 13.45,
+   "runTaskMsPerS": 707.1,
+   "elementCounts": {
+    "18": 197
+   }
+  },
+  {
+   "label": "A1 banner visible, :has rule present",
+   "span": 3.29,
+   "recalcPerS": 59.6,
+   "recalcMsPerS": 505.6,
+   "recalcMedianMs": 8.37,
+   "recalcMaxMs": 11.47,
+   "runTaskMsPerS": 727.2,
+   "elementCounts": {
+    "18": 196
+   }
+  },
+  {
+   "label": "B2 banner hidden, :has rule present",
+   "span": 3.29,
+   "recalcPerS": 59.9,
+   "recalcMsPerS": 441.7,
+   "recalcMedianMs": 7.33,
+   "recalcMaxMs": 10.76,
+   "runTaskMsPerS": 644.5,
+   "elementCounts": {
+    "18": 197
+   }
+  },
+  {
+   "label": "A2 banner visible, :has rule present",
+   "span": 3.29,
+   "recalcPerS": 59.6,
+   "recalcMsPerS": 463.9,
+   "recalcMedianMs": 7.56,
+   "recalcMaxMs": 11.67,
+   "runTaskMsPerS": 674,
+   "elementCounts": {
+    "18": 196
+   }
+  },
+  {
+   "label": "A3 banner visible, rule present, launcher animation paused (SMIL still running)",
+   "span": 3.3,
+   "recalcPerS": 60,
+   "recalcMsPerS": 25.5,
+   "recalcMedianMs": 0.44,
+   "recalcMaxMs": 1.15,
+   "runTaskMsPerS": 215,
+   "elementCounts": {
+    "4": 198
+   }
+  }
+ ]
+}

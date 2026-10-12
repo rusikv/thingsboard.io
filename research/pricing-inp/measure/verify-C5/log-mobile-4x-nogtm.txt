@@ -1,0 +1,29 @@
+[mobile-4x/nogtm] wrap {"wrapped":true,"gtmPresent":false}
+[mobile-4x/nogtm] background click                     88ms d48.3 p0.3 (all 4.7) pres39.4 clickSync 1.1 dl  L108/26.4 S208/1266 js8.3 
+[mobile-4x/nogtm] sub-tab -> Private Cloud             256ms d84.2 p54.9 (all 55) pres116.9 clickSync 54.7 dl args:event:PriceOpen:0.00 L107/64.8 S212/1249 js8.7 
+[mobile-4x/nogtm] PC billing -> Annual                 208ms d90 p31.5 (all 31.5) pres86.5 clickSync 31.4 dl  L101/25.6 S206/1239.2 js33.1 
+[mobile-4x/nogtm] PC billing -> Monthly                176ms d45.3 p0 (all 8.1) pres130.7 clickSync 8 dl  L107/32.6 S214/1173 js11.5 
+[mobile-4x/nogtm] sub-tab -> On-premises               200ms d87.5 p39.1 (all 39.1) pres73.4 clickSync 39 dl args:event:PriceOpen:0.00 L104/31.5 S205/1072.2 js12.8 
+[mobile-4x/nogtm] sub-tab -> Cloud                     208ms d89.7 p42.2 (all 42.3) pres76.1 clickSync  dl args:event:PriceOpen:0.00 faq_node_interaction:0.00 L115/61 S221/1344 js45.8 
+[mobile-4x/nogtm] region label toggle                  192ms d77.1 p5 (all 5.1) pres109.9 clickSync 5 dl  L123/42.2 S243/1340.1 js8.2 
+[mobile-4x/nogtm] top-up accordion                     96ms d63.4 p0.5 (all 0.5) pres32.1 clickSync 0.4 dl  L129/45.5 S235/1304.6 js4.4 
+[mobile-4x/nogtm] FAQ item toggle                      112ms d65.7 p0.1 (all 0.1) pres46.2 clickSync 0 dl  L126/29.9 S240/1267.6 js3.1 
+[mobile-4x/nogtm] background click                     96ms d66.5 p0.8 (all 0.8) pres28.7 clickSync 0.1 dl  L105/20.2 S213/1003.4 js3.4 
+[mobile-4x/nogtm] sub-tab -> Private Cloud             192ms d62.2 p42.9 (all 43.5) pres86.9 clickSync 42.8 dl args:event:PriceOpen:0.00 L107/58 S206/1218.1 js6.9 
+[mobile-4x/nogtm] PC billing -> Annual                 216ms d89.4 p9.2 (all 9.8) pres117.4 clickSync 8.9 dl  L95/24.5 S194/1256 js11.2 
+[mobile-4x/nogtm] PC billing -> Monthly                224ms d100.8 p4.5 (all 4.5) pres118.7 clickSync 4.4 dl  L95/39.1 S190/1258.9 js7.1 
+[mobile-4x/nogtm] sub-tab -> On-premises               224ms d116.5 p34.5 (all 34.6) pres73 clickSync 34.5 dl args:event:PriceOpen:0.00 L95/28.4 S186/1182.5 js9.5 
+[mobile-4x/nogtm] sub-tab -> Cloud                     224ms d97.9 p40.6 (all 40.6) pres85.5 clickSync  dl args:event:PriceOpen:0.00 faq_node_interaction:0.00 L106/54.3 S210/1393.8 js24.2 
+[mobile-4x/nogtm] region label toggle                  248ms d36.5 p0 (all 6) pres211.5 clickSync 6 dl  L109/48.2 S222/1564.6 js7.3 
+[mobile-4x/nogtm] top-up accordion                     120ms d77.3 p1.1 (all 1.1) pres41.6 clickSync 0.8 dl  L120/42.9 S221/1405.9 js2.8 
+[mobile-4x/nogtm] FAQ item toggle                      120ms d47.5 p0 (all 0.9) pres72.5 clickSync 0.8 dl  L111/26.7 S214/1496.3 js2.5 
+[mobile-4x/nogtm] background click                     88ms d50.6 p0 (all 0.1) pres37.4 clickSync 0.1 dl  L101/20.9 S208/1286.5 js12.3 
+[mobile-4x/nogtm] sub-tab -> Private Cloud             272ms d54.6 p0 (all 67.3) pres217.4 clickSync 66.5 dl args:event:PriceOpen:0.00 L87/71.6 S168/1273.6 js11.4 
+[mobile-4x/nogtm] PC billing -> Annual                 248ms d117.6 p12.2 (all 12.3) pres118.2 clickSync 12.1 dl  L83/23.1 S172/1251.2 js15.9 
+[mobile-4x/nogtm] PC billing -> Monthly                208ms d78.7 p10.9 (all 10.9) pres118.4 clickSync 9.4 dl  L91/22.6 S182/1250 js13.4 
+[mobile-4x/nogtm] sub-tab -> On-premises               248ms d120.4 p48.4 (all 48.4) pres79.2 clickSync 48.4 dl args:event:PriceOpen:0.00 L95/45.5 S187/1166 js10.2 
+[mobile-4x/nogtm] sub-tab -> Cloud                     232ms d114.7 p34.9 (all 34.9) pres82.4 clickSync  dl args:event:PriceOpen:0.00 faq_node_interaction:0.10 L103/51.1 S202/1443.6 js29.6 
+[mobile-4x/nogtm] region label toggle                  216ms d60.3 p0.1 (all 5.6) pres155.6 clickSync 4.7 dl  L114/48.3 S230/1550.3 js10 
+[mobile-4x/nogtm] top-up accordion                     72ms d56.2 p0 (all 0.3) pres15.8 clickSync 0.2 dl  L125/35 S231/1395.5 js3.9 
+[mobile-4x/nogtm] FAQ item toggle                      88ms d31.3 p0.1 (all 0.3) pres56.6 clickSync 0 dl  L123/27.7 S234/1391.7 js1.7 
+[mobile-4x/nogtm] net {"blockedCount":1,"blockedHosts":["api.github.com/repos/thingsboard/t"],"allowed3p":[],"responses3p":[]}

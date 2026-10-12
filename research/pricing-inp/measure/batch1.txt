@@ -1,0 +1,4 @@
+DONE --nosmil 0
+DONE --nosmil --noanim 0
+DONE --dpr=2 0
+DONE --dpr=2 --nosmil --noanim 0

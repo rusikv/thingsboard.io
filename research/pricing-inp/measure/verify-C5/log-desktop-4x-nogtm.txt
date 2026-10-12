@@ -1,0 +1,29 @@
+[desktop-4x/nogtm] wrap {"wrapped":true,"gtmPresent":false}
+[desktop-4x/nogtm] background click                     56ms d6 p1.8 (all 4.9) pres48.2 clickSync 2.7 dl  L108/25.7 S216/285.7 js7.6 
+[desktop-4x/nogtm] sub-tab -> Private Cloud             248ms d2.1 p0.1 (all 97) pres245.8 clickSync 96.8 dl args:event:PriceOpen:0.60 L94/97.3 S185/382.9 js18.8 
+[desktop-4x/nogtm] PC billing -> Annual                 208ms d12.3 p0 (all 58.3) pres195.7 clickSync 58.1 dl  L86/40 S174/338.9 js60.5 
+[desktop-4x/nogtm] PC billing -> Monthly                168ms d21.4 p0 (all 16.4) pres146.6 clickSync 16.3 dl  L100/35.1 S198/325.5 js19.1 
+[desktop-4x/nogtm] sub-tab -> On-premises               184ms d19.6 p0 (all 61.5) pres164.4 clickSync 60.7 dl args:event:PriceOpen:0.10 L88/60.3 S176/329.6 js12.2 
+[desktop-4x/nogtm] sub-tab -> Cloud                     152ms d18.4 p0.1 (all 52.4) pres133.5 clickSync 51.5 dl args:event:PriceOpen:0.00 L111/56.1 S222/413.5 js14.2 
+[desktop-4x/nogtm] region label toggle                  168ms d2.8 p0 (all 7.7) pres165.2 clickSync 6.8 dl  L111/55.5 S220/381.4 js10.4 
+[desktop-4x/nogtm] top-up accordion                     64ms d15.5 p0 (all 0.6) pres48.5 clickSync 0.1 dl  L112/65.6 S202/353 js4 
+[desktop-4x/nogtm] FAQ item toggle                      64ms d5.1 p0 (all 3) pres58.9 clickSync 2.7 dl faq_node_interaction:0.00 L115/37.7 S220/318.8 js4 
+[desktop-4x/nogtm] background click                     56ms d7.7 p0.1 (all 1.1) pres48.2 clickSync 0.8 dl  L97/28.2 S196/225.7 js0.6 
+[desktop-4x/nogtm] sub-tab -> Private Cloud             200ms d6.1 p0 (all 80.3) pres193.9 clickSync 79.6 dl args:event:PriceOpen:0.00 L108/71.2 S213/481.4 js11.2 
+[desktop-4x/nogtm] PC billing -> Annual                 160ms d17 p0 (all 16.7) pres143 clickSync 16.7 dl  L121/33.1 S244/337.4 js21 
+[desktop-4x/nogtm] PC billing -> Monthly                120ms d9.2 p0 (all 9.6) pres110.8 clickSync 9.5 dl  L119/32.7 S237/357.1 js10.8 
+[desktop-4x/nogtm] sub-tab -> On-premises               160ms d15.1 p0 (all 52.7) pres144.9 clickSync 52.4 dl args:event:PriceOpen:0.00 L103/51.3 S207/369.4 js11.9 
+[desktop-4x/nogtm] sub-tab -> Cloud                     152ms d4.5 p0 (all 56.2) pres147.5 clickSync 56.1 dl args:event:PriceOpen:0.00 L115/54.2 S229/390.9 js8.7 
+[desktop-4x/nogtm] region label toggle                  184ms d10.6 p0.1 (all 12.3) pres173.3 clickSync 11.6 dl  L124/55.6 S248/356.1 js12.7 
+[desktop-4x/nogtm] top-up accordion                     40ms d4.8 p0 (all 1.1) pres35.2 clickSync 0.2 dl  L135/63.1 S243/376.4 js1.3 
+[desktop-4x/nogtm] FAQ item toggle                      80ms d15.8 p0 (all 3.8) pres64.2 clickSync 3.7 dl  L122/31.1 S233/352.8 js5 
+[desktop-4x/nogtm] background click                     56ms d10.2 p0.1 (all 1.7) pres45.7 clickSync 1.4 dl  L108/16.3 S217/209.3 js4.7 
+[desktop-4x/nogtm] sub-tab -> Private Cloud             152ms d3.6 p0 (all 52.8) pres148.4 clickSync 51.7 dl args:event:PriceOpen:0.00 L124/61.6 S243/387.6 js10.1 
+[desktop-4x/nogtm] PC billing -> Annual                 136ms d16 p0.1 (all 7.6) pres119.9 clickSync 7.4 dl  L120/34.7 S240/353.9 js12.9 
+[desktop-4x/nogtm] PC billing -> Monthly                112ms d10.4 p0 (all 8.6) pres101.6 clickSync 8.5 dl  L128/32.9 S254/304.7 js12.3 
+[desktop-4x/nogtm] sub-tab -> On-premises               144ms d18.4 p0 (all 41.4) pres125.6 clickSync 41.3 dl args:event:PriceOpen:0.00 L124/47.4 S247/389.7 js10.7 
+[desktop-4x/nogtm] sub-tab -> Cloud                     136ms d14.6 p0.1 (all 40.4) pres121.3 clickSync 39.6 dl args:event:PriceOpen:0.00 L126/40.6 S251/381 js7.9 
+[desktop-4x/nogtm] region label toggle                  144ms d6.4 p0.7 (all 10.7) pres136.9 clickSync 10 dl  L130/35.1 S257/312.9 js13.4 
+[desktop-4x/nogtm] top-up accordion                     48ms d7.6 p0 (all 2) pres40.4 clickSync 0.6 dl  L144/44.7 S253/335.1 js3.4 
+[desktop-4x/nogtm] FAQ item toggle                      40ms d5.8 p0.1 (all 1.1) pres34.1 clickSync 0.6 dl faq_node_interaction:0.00 L129/32.7 S243/303.5 js1.2 
+[desktop-4x/nogtm] net {"blockedCount":1,"blockedHosts":["api.github.com/repos/thingsboard/t"],"allowed3p":[],"responses3p":[]}

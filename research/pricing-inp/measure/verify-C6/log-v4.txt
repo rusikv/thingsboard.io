@@ -1,0 +1,52 @@
+INFO {
+ "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+ "w": 412,
+ "dom": 5995,
+ "ccIndex": 33,
+ "launcherIndex": 80,
+ "launcher": {
+  "visibility": "hidden",
+  "anim": "chat-hues",
+  "play": "running",
+  "dur": "15s"
+ },
+ "root": {
+  "anim": "promo-collapse",
+  "promoH": "52px",
+  "promoCur": "52px"
+ },
+ "banner": {
+  "hidden": false
+ },
+ "smil": 4,
+ "anims": [
+  {
+   "name": "promo-collapse",
+   "target": "HTML",
+   "state": "running",
+   "tl": "ScrollTimeline"
+  },
+  {
+   "name": "chat-hues",
+   "target": "chat-launcher",
+   "state": "running",
+   "tl": "DocumentTimeline"
+  }
+ ],
+ "rules": [
+  {
+   "sel": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr)",
+   "media": " @(width < 432px)",
+   "text": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr) { visibility: hidden; }"
+  }
+ ]
+}
+tap point {"x":12.36,"y":288.04999999999995,"el":"DIV.pricing-page"}
+state {"banner":true,"vis":"hidden","play":"running"}
+{"label":"T1a rule present (prod)","n":14,"durMed":80,"durMax":112,"delayMed":57.2,"delayMax":83.3,"durs":"112,72,64,80,80,80,64,104,96,104,96,80,64,80"}
+{"label":"T1b launcher paused (= proposed fix while banner up)","n":14,"durMed":72,"durMax":80,"delayMed":34.1,"delayMax":44,"durs":"72,72,56,80,64,72,56,72,64,72,72,64,72,72"}
+{"label":"T1c launcher + SMIL paused (no continuous frames)","n":8,"durMed":16,"durMax":32,"delayMed":10.1,"delayMax":26,"durs":"16,16,16,16,16,16,32,16"}
+state {"banner":true,"vis":"hidden","play":"running"}
+{"label":"T2a rule present (prod)","n":14,"durMed":96,"durMax":120,"delayMed":68.2,"delayMax":81,"durs":"80,96,96,72,96,88,120,88,104,80,104,80,88,112"}
+{"label":"T2b launcher paused (= proposed fix while banner up)","n":14,"durMed":72,"durMax":112,"delayMed":32.9,"delayMax":47.3,"durs":"48,48,64,48,56,64,112,88,72,80,88,88,64,72"}
+{"label":"T2c launcher + SMIL paused (no continuous frames)","n":9,"durMed":16,"durMax":16,"delayMed":11.2,"delayMax":12.1,"durs":"16,16,16,16,16,16,16,16,16"}

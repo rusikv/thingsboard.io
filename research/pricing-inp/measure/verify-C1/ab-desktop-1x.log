@@ -1,0 +1,20 @@
+[desktop-1x] rule found
+[desktop-1x] payg open true rendered elems 790
+[desktop-1x] payg closed true
+[desktop-1x] pc open; rendered elems 1221
+[desktop-1x] chrome Chrome/155.0.8059.39 rounds 4
+[desktop-1x] label                                    orig med d (proc/pres)    drop med d (proc/pres)    v038 med d (proc/pres)    
+[desktop-1x] PAYG: slider ArrowRight                  56 (15.2/41.3) [56,56,56,56]56 (8/48.1) [48,56,48,56] 56 (7.3/48.5) [56,48,56,48]
+[desktop-1x] PAYG: slider ArrowRight #2               56 (14.4/42.9) [48,56,56,56]56 (7.5/48.5) [56,64,56,56]56 (8.3/48) [56,56,56,56] 
+[desktop-1x] PAYG: Edge add-on switch                 56 (0/55.7) [56,56,56,56] 56 (0/55.7) [56,56,56,56] 56 (0.1/55.6) [56,56,56,56]
+[desktop-1x] PAYG: Edge add-on switch (back)          56 (0/55.7) [56,56,56,56] 56 (0/55.7) [56,56,56,56] 56 (0.1/55.7) [56,56,56,56]
+[desktop-1x] On-prem billing: -> Perpetual            56 (0/55.5) [56,56,56,56] 56 (0.1/55.6) [56,56,56,56]56 (0/55.7) [56,56,56,56] 
+[desktop-1x] On-prem billing: -> Subscription         56 (0/54.9) [56,48,48,56] 56 (0/55.3) [56,56,56,56] 56 (0/55.2) [56,56,56,56] 
+[desktop-1x] PC billing: -> Annual                    56 (0.1/55.4) [56,56,56,56]56 (0.1/55.3) [56,56,48,56]56 (0.1/55.5) [56,56,56,56]
+[desktop-1x] PC billing: -> Monthly                   56 (0/55.5) [56,56,56,56] 56 (0/53.9) [56,56,56,56] 56 (0/53.6) [56,56,56,56] 
+[desktop-1x] PC calc: slider ArrowRight               56 (0.3/55.4) [48,48,56,56]40 (0.3/39.5) [40,40,40,32]40 (0.2/39.6) [40,40,40,56]
+[desktop-1x] PC calc: slider ArrowLeft                56 (0.2/55.5) [56,48,56,56]48 (0.2/47.5) [40,48,48,40]40 (0.2/39.7) [40,40,40,56]
+[desktop-1x] PC calc: add-on switch                   56 (0.1/55.4) [48,48,56,56]40 (0.1/39.6) [40,40,40,40]56 (0/55.4) [40,40,56,56] 
+[desktop-1x] PC calc: add-on switch (back)            56 (0/55.6) [56,48,48,56] 40 (0/39.7) [40,40,40,56] 56 (0/55.6) [40,40,64,56] 
+[desktop-1x] sub-tab: -> Cloud                        48 (0/47.6) [48,48,48,56] 48 (0/47.6) [48,48,48,48] 56 (0/54.1) [56,48,56,48] 
+[desktop-1x] sub-tab: -> Private Cloud                56 (0/54.6) [48,48,56,56] 56 (0/54.6) [48,56,48,56] 56 (0/55.5) [56,56,56,56] 

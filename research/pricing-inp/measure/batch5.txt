@@ -1,0 +1,3 @@
+DONE mobile-4x --gpu --quick --dropscriptrule 0
+DONE desktop-4x --gpu --quick --dropscriptrule 0
+DONE mobile-4x --gpu --quick --dropscriptrule --reducedmotion 0

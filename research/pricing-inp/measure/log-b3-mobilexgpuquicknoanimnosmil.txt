@@ -1,0 +1,65 @@
+[mobile-4x-noanim-quick-nosmil-gpu] loaded in 858 ms
+[mobile-4x-noanim-quick-nosmil-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"none","chatAnim":"none","observerErrs":[],"smilPaused":333,"smilElems":4,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-noanim-quick-nosmil-gpu] DOM 5996 elements, depth 22 invisible 5131 rules 1994 :has 94
+[mobile-4x-noanim-quick-nosmil-gpu] idle {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.82} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":0,"ms":0},"layout":{"n":0,"ms":0},"paint":{"n":0,"ms":0},"prePaint":{"n":0,"ms":0},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":0,"drawFrames":0,"updateLayoutTreeElementCounts":[]}
+[mobile-4x-noanim-quick-nosmil-gpu] baseline: click empty background                           16ms  delay 7.3 proc 1 pres 7.7 [click:16(d7/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] sub-tab: Cloud -> Private Cloud                            128ms  delay 9.8 proc 43.2 pres 75 [pointerdown:16(d16/p0) click:128(d10/p43)] LoAF 86.4/43.2s/8.5sl
+[mobile-4x-noanim-quick-nosmil-gpu] sub-tab: Private Cloud -> On-premises                      80ms  delay 15.2 proc 24.3 pres 40.5 [pointerdown:16(d14/p0) click:80(d15/p24)] LoAF 61.5/24.2s/5sl
+[mobile-4x-noanim-quick-nosmil-gpu] sub-tab: On-premises -> Cloud                              72ms  delay 18.8 proc 24 pres 29.2 [pointerdown:16(d17/p1) click:72(d19/p24)] LoAF 60.6/24s/2.2sl
+[mobile-4x-noanim-quick-nosmil-gpu] region: label -> North America                             72ms  delay 10.4 proc 3.8 pres 57.8 [pointerdown:16(d17/p0) click:72(d10/p4)] LoAF 56.9/0s/0sl
+[mobile-4x-noanim-quick-nosmil-gpu] region: label -> Europe                                    64ms  delay 6.6 proc 3.4 pres 54 [pointerdown:16(d16/p0) click:64(d7/p3)] 
+[mobile-4x-noanim-quick-nosmil-gpu] region: switch (checkbox)                                  64ms  delay 6.6 proc 2.7 pres 54.7 [pointerdown:16(d14/p0) click:64(d7/p3)] 
+[mobile-4x-noanim-quick-nosmil-gpu] upsell: See Private Cloud Options (switch tab)             80ms  delay 8.1 proc 28.6 pres 43.3 [pointerdown:16(d16/p0) click:80(d8/p29)] LoAF 60/28.4s/6.9sl
+[mobile-4x-noanim-quick-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       80ms  delay 16.6 proc 23.3 pres 40.1 [pointerdown:16(d16/p0) click:80(d17/p23)] LoAF 60.9/23.3s/2.7sl
+[mobile-4x-noanim-quick-nosmil-gpu] top-up accordion toggle                                    16ms  delay 15.4 proc 0 pres 0.6 [pointerdown:16(d15/p0) click:16(d10/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] (setup) sub-tab -> thingsboard-private-cloud               80ms  delay 8.1 proc 27.8 pres 44.1 [pointerdown:16(d16/p0) click:80(d8/p28)] LoAF 60.5/27.8s/6.5sl
+[mobile-4x-noanim-quick-nosmil-gpu] PC billing: -> Annual                                      24ms  delay 16.3 proc 0.1 pres 7.6 [pointerdown:16(d15/p0) click:24(d16/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] PC billing: -> Monthly                                     16ms  delay 14.9 proc 0 pres 1.1 [pointerdown:16(d15/p0) click:16(d3/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] PC calculator: open #1 (cold chunk)                        16ms  delay 14.1 proc 0 pres 1.9 [pointerdown:16(d14/p0) click:16(d4/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: click slider track @0.35 not found
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: click slider track @0.7 not found
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: click slider track @0.15 not found
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: slider ArrowRight focus failed
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: type digit into devices focus failed
+[mobile-4x-noanim-quick-nosmil-gpu] PC calc: type digit into devices                           <16ms 
+[mobile-4x-noanim-quick-nosmil-gpu] PC calc: type digit into devices                           <16ms 
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: stepper + not found
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calc: add-on switch not found
+[mobile-4x-noanim-quick-nosmil-gpu] SKIP PC calculator: close #1 not found
+[mobile-4x-noanim-quick-nosmil-gpu] (setup) sub-tab -> thingsboard-pe                          64ms  delay 9.9 proc 21.9 pres 32.2 [pointerdown:16(d15/p0) click:64(d10/p22)] 
+[mobile-4x-noanim-quick-nosmil-gpu] On-prem billing: -> Perpetual                              56ms  delay 5.7 proc 4 pres 46.3 [pointerdown:16(d16/p0) click:56(d6/p4)] 
+[mobile-4x-noanim-quick-nosmil-gpu] On-prem billing: -> Subscription                           56ms  delay 4.9 proc 3.3 pres 47.8 [pointerdown:16(d16/p0) click:56(d5/p3)] 
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calculator: open #1 (cold chunk)                      40ms  delay 6.8 proc 4.8 pres 28.4 [pointerdown:16(d15/p0) click:40(d7/p5)] 
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: click slider track @0.4                         120ms  delay 15.1 proc 0 pres 104.9 [pointerdown:120(d15/p0) pointerup:104(d17/p0)] LoAF 82/45.3s/19.8sl,74.6/53.3s/0sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: click slider track @0.75                        136ms  delay 15.6 proc 0 pres 120.4 [pointerdown:136(d16/p0) pointerup:136(d39/p0)] LoAF 102.2/61.5s/25.1sl,82.3/55.1s/0sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: click slider track @0.1                         120ms  delay 16.4 proc 0 pres 103.6 [pointerdown:120(d16/p0) pointerup:112(d25/p0)] LoAF 90.4/51s/23.5sl,73.2/51.5s/0sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: slider ArrowRight                               152ms  delay 0.4 proc 52.8 pres 98.8 [keydown:152(d0/p53) keyup:32(d31/p0)] LoAF 140.8/97.9s/21.4sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: type digit into devices                         80ms  delay 0.1 proc 0.1 pres 79.8 [keydown:80(d0/p0) keypress:80(d0/p3)] LoAF 69.8/46.9s/19.5sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: type digit into devices                         96ms  delay 0.3 proc 0.1 pres 95.6 [keydown:96(d0/p0) keypress:96(d0/p2) keyup:24(d22/p0)] LoAF 80.8/52.6s/25.8sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: type digit into devices                         112ms  delay 0.4 proc 0.1 pres 111.5 [keydown:112(d0/p0) keypress:112(d1/p4) keyup:32(d35/p0)] LoAF 93.8/59.4s/30.2sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calc: Edge add-on switch                              168ms  delay 72.4 proc 54 pres 41.6 [pointerdown:16(d16/p0) click:168(d72/p54)] LoAF 145/96.6s/0sl
+[mobile-4x-noanim-quick-nosmil-gpu] PAYG calculator: close #1                                  16ms  delay 15.3 proc 0.1 pres 0.6 [pointerdown:16(d15/p0) click:16(d8/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] (setup) sub-tab -> thingsboard-cloud                       64ms  delay 9.7 proc 33.8 pres 20.5 [pointerdown:16(d17/p0) click:64(d10/p34)] LoAF 53.1/33.1s/3.2sl
+[mobile-4x-noanim-quick-nosmil-gpu] FAQ: category tab -> 2nd                                   32ms  delay 12.6 proc 0.1 pres 19.3 [pointerdown:16(d17/p0) click:32(d13/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] FAQ: category tab -> 1st                                   24ms  delay 5.8 proc 0.9 pres 17.3 [pointerdown:16(d16/p0) click:24(d6/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] FAQ: expand/collapse item                                  32ms  delay 7.7 proc 0 pres 24.3 [pointerdown:16(d16/p0) click:32(d8/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] FAQ: category tab -> #1                                    16ms  delay 15.8 proc 0 pres 0.2 [pointerdown:16(d16/p0) click:16(d7/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] FAQ: Load more                                             32ms  delay 13.2 proc 0.5 pres 18.3 [pointerdown:16(d16/p0) click:32(d13/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] feature (i) click -> jump to FAQ                           40ms  delay 12.2 proc 3.9 pres 23.9 [pointerdown:16(d17/p0) click:40(d12/p4)] 
+[mobile-4x-noanim-quick-nosmil-gpu] header: burger open                                        40ms  delay 12 proc 4.2 pres 23.8 [pointerdown:16(d15/p0) click:40(d12/p4)] 
+[mobile-4x-noanim-quick-nosmil-gpu] header: expand "Products" in drawer                        56ms  delay 8 proc 0.9 pres 47.1 [pointerdown:16(d16/p0) click:56(d8/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] header: burger close                                       56ms  delay 9.4 proc 0.4 pres 46.2 [pointerdown:16(d16/p0) click:56(d9/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] theme toggle                                               72ms  delay 7.4 proc 1.8 pres 62.8 [pointerdown:16(d15/p0) click:72(d7/p2)] 
+[mobile-4x-noanim-quick-nosmil-gpu] idleAfter {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":0.32}
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.3 proc 0 pres 12.7 [click:16(d3/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.2 proc 0 pres 12.8 [click:16(d3/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(plain): click button                           16ms  delay 2.4 proc 0.8 pres 12.8 [click:16(d2/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.2 proc 0 pres 12.8 [click:16(d3/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(plain): click button                           16ms  delay 3.4 proc 0 pres 12.6 [click:16(d3/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(anim): click button                            32ms  delay 14.6 proc 0 pres 17.4 [click:32(d15/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.8 proc 0 pres 18.2 [click:32(d14/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.6 proc 0.7 pres 17.7 [click:32(d14/p1)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.4 proc 0 pres 18.6 [click:32(d13/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration(anim): click button                            32ms  delay 13.2 proc 0 pres 18.8 [click:32(d13/p0)] 
+[mobile-4x-noanim-quick-nosmil-gpu] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-noanim-quick-nosmil-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-mobile-4x-noanim-quick-nosmil-gpu.json

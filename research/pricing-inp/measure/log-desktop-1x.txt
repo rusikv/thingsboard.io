@@ -1,0 +1,126 @@
+[desktop-1x] loaded in 496 ms
+[desktop-1x] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"chat-hues","observerErrs":[]} consent {"present":true,"hidden":false,"visible":true,"rect":[20,570,340,350]}
+[desktop-1x] DOM 5995 elements, depth 22 invisible 5106 rules 1993 :has 94
+[desktop-1x] idle {"recalcStyleCount":83.1,"recalcStyleMs":39.94,"layoutCount":83.1,"layoutMs":6.23,"scriptMs":0,"taskMs":129.52} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":300,"ms":138.7},"layout":{"n":300,"ms":17.6},"paint":{"n":294,"ms":21.4},"prePaint":{"n":300,"ms":48.8},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":300,"drawFrames":301,"updateLayoutTreeElementCounts":[18,18,18,18,18,18,18,18,18,18]}
+[desktop-1x] baseline: click empty background                           40ms  delay 1.9 proc 0.3 pres 37.8 [pointerdown:40(d2/p0) pointerup:32(d0/p0) click:32(d1/p0)] 
+[desktop-1x] baseline: click empty background                           40ms  delay 0.8 proc 0 pres 39.2 [pointerdown:40(d1/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x] baseline: click empty background                           40ms  delay 0.8 proc 0 pres 39.2 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] sub-tab: Cloud -> Private Cloud                            48ms  delay 0.3 proc 0.1 pres 47.6 [pointerdown:40(d0/p0) pointerup:48(d0/p0) click:48(d0/p12)] 
+[desktop-1x] sub-tab: Private Cloud -> On-premises                      48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:40(d3/p0) click:40(d3/p7)] 
+[desktop-1x] sub-tab: On-premises -> Cloud                              48ms  delay 0.5 proc 0.1 pres 47.4 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p7)] 
+[desktop-1x] sub-tab: Cloud -> Private Cloud                            56ms  delay 5.5 proc 0 pres 50.5 [pointerdown:56(d6/p0) pointerup:56(d1/p0) click:56(d1/p11)] 
+[desktop-1x] sub-tab: Private Cloud -> On-premises                      56ms  delay 2.2 proc 0 pres 53.8 [pointerdown:48(d1/p0) pointerup:56(d2/p0) click:56(d2/p8)] 
+[desktop-1x] sub-tab: On-premises -> Cloud                              48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:48(d0/p0) click:48(d0/p7)] 
+[desktop-1x] sub-tab: Cloud -> Private Cloud                            64ms  delay 1.2 proc 0 pres 62.8 [pointerdown:48(d1/p0) pointerup:64(d1/p0) click:64(d1/p12)] 
+[desktop-1x] sub-tab: Private Cloud -> On-premises                      56ms  delay 2 proc 0.1 pres 53.9 [pointerdown:56(d2/p0) pointerup:56(d1/p0) click:56(d1/p9)] 
+[desktop-1x] sub-tab: On-premises -> Cloud                              72ms  delay 0.3 proc 0.1 pres 71.6 [pointerdown:64(d0/p0) pointerup:72(d0/p0) click:72(d0/p11)] 
+[desktop-1x] region: label -> North America                             72ms  delay 0.5 proc 0 pres 71.5 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] region: label -> Europe                                    80ms  delay 0.6 proc 0 pres 79.4 [pointerdown:64(d1/p0) pointerup:80(d1/p0) click:80(d1/p2)] 
+[desktop-1x] region: label -> North America                             72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:72(d1/p0) pointerup:72(d0/p0) click:72(d0/p1)] 
+[desktop-1x] region: label -> Europe                                    72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:72(d1/p0) pointerup:64(d1/p0) click:64(d1/p1)] 
+[desktop-1x] region: label -> North America                             72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] region: label -> Europe                                    72ms  delay 0.9 proc 0 pres 71.1 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] region: switch (checkbox)                                  72ms  delay 1.5 proc 0.1 pres 70.4 [pointerdown:72(d2/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] region: switch (checkbox)                                  72ms  delay 0.5 proc 0.1 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d1/p1)] 
+[desktop-1x] region: switch (checkbox)                                  72ms  delay 0.4 proc 0 pres 71.6 [pointerdown:72(d0/p0) pointerup:64(d1/p0) click:64(d1/p1)] 
+[desktop-1x] upsell: See Private Cloud Options (switch tab)             72ms  delay 0.7 proc 0.1 pres 71.2 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p7)] 
+[desktop-1x] (setup) sub-tab -> thingsboard-cloud                       72ms  delay 0.3 proc 0 pres 71.7 [pointerdown:72(d0/p0) pointerup:64(d0/p0) click:64(d0/p6)] 
+[desktop-1x] upsell: See Private Cloud Options (switch tab)             72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p7)] 
+[desktop-1x] (setup) sub-tab -> thingsboard-cloud                       64ms  delay 0.3 proc 0.1 pres 63.6 [pointerdown:64(d0/p0) pointerup:64(d0/p0) click:64(d0/p6)] 
+[desktop-1x] upsell: See Private Cloud Options (switch tab)             72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p6)] 
+[desktop-1x] (setup) sub-tab -> thingsboard-cloud                       72ms  delay 0.5 proc 0 pres 71.5 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p6)] 
+[desktop-1x] top-up accordion toggle                                    72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p0)] 
+[desktop-1x] top-up accordion toggle                                    72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p0)] 
+[desktop-1x] top-up accordion toggle                                    72ms  delay 0.5 proc 0 pres 71.5 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p0)] 
+[desktop-1x] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x] (setup) sub-tab -> thingsboard-private-cloud               64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:64(d0/p0) pointerup:64(d0/p0) click:64(d0/p7)] 
+[desktop-1x] PC billing: -> Annual                                      72ms  delay 0.6 proc 0.1 pres 71.3 [pointerdown:72(d1/p0) pointerup:64(d1/p0) click:64(d1/p1)] 
+[desktop-1x] PC billing: -> Monthly                                     72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d1/p1)] 
+[desktop-1x] PC billing: -> Annual                                      72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d1/p0) click:64(d1/p1)] 
+[desktop-1x] PC billing: -> Monthly                                     72ms  delay 0.5 proc 0 pres 71.5 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] PC billing: -> Annual                                      72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:72(d1/p0) pointerup:64(d1/p0) click:64(d1/p1)] 
+[desktop-1x] PC billing: -> Monthly                                     72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x] PC calculator: open #1 (cold chunk)                        72ms  delay 0.9 proc 0 pres 71.1 [pointerdown:72(d1/p0) pointerup:64(d0/p0) click:64(d0/p1)] 
+[desktop-1x] PC calc: click slider track @0.35                          192ms  delay 0.1 proc 0 pres 191.9 [pointerdown:168(d1/p0) pointerup:192(d0/p0) click:192(d1/p0)] LoAF 73.9/18.8s/8.1sl
+[desktop-1x] PC calc: click slider track @0.7                           184ms  delay 0.1 proc 0 pres 183.9 [pointerdown:168(d1/p0) pointerup:184(d0/p0) click:184(d1/p0)] LoAF 70.4/15.8s/8sl
+[desktop-1x] PC calc: click slider track @0.15                          200ms  delay 1.5 proc 0.1 pres 198.4 [pointerdown:200(d2/p0) pointerup:176(d1/p0) click:176(d2/p0)] LoAF 80.1/23.2s/9.1sl,61/0s/1sl,58.4/0s/0.6sl,54.7/0s/1.3sl
+[desktop-1x] PC calc: slider ArrowRight                                 168ms  delay 0.5 proc 0 pres 167.5 [keydown:120(d2/p0) keyup:168(d1/p0)] LoAF 75.2/11.3s/9.3sl,56/0s/0.7sl,55.6/0s/0.7sl,57.4/0s/0.6sl
+[desktop-1x] PC calc: slider ArrowRight                                 152ms  delay 0.2 proc 0.2 pres 151.6 [keydown:152(d0/p0) keyup:144(d16/p0)] LoAF 75.5/10.9s/9sl,52.4/0s/0.8sl
+[desktop-1x] PC calc: slider ArrowRight                                 152ms  delay 2.1 proc 0 pres 149.9 [keydown:104(d1/p0) keyup:152(d2/p0)] LoAF 74/10.2s/9.6sl,53.7/0s/1.5sl,53.4/0s/0.8sl,53.7/0s/1.4sl
+[desktop-1x] PC calc: type digit into devices                           120ms  delay 0.6 proc 0.1 pres 119.3 [keydown:120(d1/p0) keypress:120(d1/p1) keyup:112(d1/p0)] LoAF 80.5/18.3s/9.2sl,53/0s/0.1sl,52.5/0s/0.3sl
+[desktop-1x] PC calc: type digit into devices                           160ms  delay 0.5 proc 0.1 pres 159.4 [keydown:160(d1/p0) keypress:160(d1/p1) keyup:152(d8/p0)] LoAF 72.2/10.9s/8.8sl,54.3/0s/0.1sl,52.4/0s/0.2sl,51.4/0s/0.1sl
+[desktop-1x] PC calc: type digit into devices                           160ms  delay 0.1 proc 0.1 pres 159.8 [keydown:112(d0/p0) keypress:112(d0/p1) keyup:160(d0/p0)] LoAF 73.1/9.5s/9.1sl,53/0s/0.2sl,53.7/0s/0.2sl,56.6/0s/0.2sl
+[desktop-1x] PC calc: stepper +                                         144ms  delay 1.1 proc 0 pres 142.9 [pointerdown:144(d1/p0) pointerup:112(d1/p0) click:112(d1/p12)] LoAF 55.9/11s/0.4sl,69.6/11.7s/0.1sl,53.4/0s/0.2sl,52.7/0s/0.2sl
+[desktop-1x] PC calc: stepper +                                         144ms  delay 0.9 proc 0 pres 143.1 [pointerdown:120(d1/p0) pointerup:144(d1/p0) click:144(d1/p12)] 
+[desktop-1x] PC calc: stepper +                                         136ms  delay 0.4 proc 0 pres 135.6 [pointerdown:112(d1/p0) pointerup:136(d0/p0) click:136(d0/p9)] 
+[desktop-1x] PC calc: add-on switch                                     144ms  delay 0.4 proc 0 pres 143.6 [pointerdown:120(d1/p0) pointerup:144(d0/p0) click:144(d0/p19)] LoAF 51.5/0s/0.2sl
+[desktop-1x] PC calc: add-on switch                                     120ms  delay 0.9 proc 0 pres 119.1 [pointerdown:120(d1/p0) pointerup:96(d1/p0) click:96(d1/p18)] LoAF 70.5/17.5s/0.1sl
+[desktop-1x] PC calc: add-on switch                                     120ms  delay 0.8 proc 0 pres 119.2 [pointerdown:120(d1/p0) pointerup:104(d1/p0) click:104(d1/p16)] LoAF 70.7/15.6s/0.1sl,52.5/0s/0.1sl
+[desktop-1x] PC calculator: close #1                                    128ms  delay 0.9 proc 0 pres 127.1 [pointerdown:128(d1/p0) pointerup:112(d1/p0) click:112(d1/p1)] LoAF 53.4/0s/0.3sl,56.1/0s/0sl
+[desktop-1x] PC calculator: open #2                                     48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:40(d1/p0) pointerup:48(d1/p0) click:48(d1/p16)] 
+[desktop-1x] PC calculator: close #2                                    136ms  delay 1 proc 0 pres 135 [pointerdown:136(d1/p0) pointerup:112(d1/p0) click:112(d1/p0)] LoAF 51.1/0s/0.3sl,51/0s/0.1sl,50.1/0s/0.2sl
+[desktop-1x] PC calculator: open #3                                     40ms  delay 0.3 proc 0.1 pres 39.6 [pointerdown:32(d1/p0) pointerup:40(d0/p0) click:40(d0/p16)] 
+[desktop-1x] PC calculator: close #3                                    120ms  delay 0.8 proc 0 pres 119.2 [pointerdown:120(d1/p0) pointerup:96(d1/p0) click:96(d1/p0)] LoAF 50.5/0s/0.2sl
+[desktop-1x] (setup) sub-tab -> thingsboard-pe                          32ms  delay 0.6 proc 0 pres 31.4 [pointerdown:32(d1/p0) pointerup:32(d0/p0) click:32(d0/p6)] 
+[desktop-1x] On-prem billing: -> Perpetual                              32ms  delay 0.6 proc 0 pres 31.4 [pointerdown:32(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] On-prem billing: -> Subscription                           40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] On-prem billing: -> Perpetual                              40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] On-prem billing: -> Subscription                           32ms  delay 0.4 proc 0.1 pres 31.5 [pointerdown:32(d0/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] On-prem billing: -> Perpetual                              40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] On-prem billing: -> Subscription                           40ms  delay 0.7 proc 0 pres 39.3 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] PAYG calculator: open #1 (cold chunk)                      40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] PAYG calc: click slider track @0.4                         128ms  delay 1 proc 0.1 pres 126.9 [pointerdown:128(d1/p0) pointerup:104(d1/p0) click:104(d18/p0)] LoAF 65.9/13.3s/5.2sl
+[desktop-1x] PAYG calc: click slider track @0.75                        136ms  delay 0.2 proc 0.1 pres 135.7 [pointerdown:120(d1/p0) pointerup:136(d0/p0) click:136(d18/p0)] LoAF 64/11.6s/5.4sl
+[desktop-1x] PAYG calc: click slider track @0.1                         144ms  delay 0.3 proc 0 pres 143.7 [pointerdown:112(d1/p0) pointerup:144(d0/p0) click:144(d20/p0)] LoAF 63.7/11.2s/6.1sl
+[desktop-1x] PAYG calc: slider ArrowRight                               120ms  delay 0.6 proc 11.3 pres 108.1 [keydown:120(d1/p11) keyup:96(d1/p0)] LoAF 70.7/22s/5.9sl
+[desktop-1x] PAYG calc: slider ArrowRight                               136ms  delay 0.3 proc 12.3 pres 123.4 [keydown:136(d0/p12) keyup:112(d1/p0)] LoAF 68.7/22s/5.5sl
+[desktop-1x] PAYG calc: slider ArrowRight                               136ms  delay 0.1 proc 13.2 pres 122.7 [keydown:136(d0/p13) keyup:112(d1/p0)] LoAF 69.4/23.3s/5.4sl
+[desktop-1x] PAYG calc: type digit into devices                         128ms  delay 0.5 proc 0.1 pres 127.4 [keydown:128(d1/p0) keypress:128(d1/p1) keyup:112(d1/p0)] LoAF 65.7/13s/5.4sl
+[desktop-1x] PAYG calc: type digit into devices                         136ms  delay 0.3 proc 0 pres 135.7 [keydown:136(d0/p0) keypress:136(d0/p1) keyup:128(d1/p0)] LoAF 67/12.2s/5.2sl
+[desktop-1x] PAYG calc: type digit into devices                         136ms  delay 0.1 proc 0.1 pres 135.8 [keydown:136(d0/p0) keypress:136(d0/p1) keyup:120(d1/p0)] LoAF 64.4/11.8s/5.2sl
+[desktop-1x] PAYG calc: Edge add-on switch                              136ms  delay 0.7 proc 0.1 pres 135.2 [pointerdown:120(d1/p0) pointerup:136(d1/p0) click:136(d1/p13)] LoAF 52.4/0s/0.3sl
+[desktop-1x] PAYG calc: Edge add-on switch                              152ms  delay 0.4 proc 0 pres 151.6 [pointerdown:120(d1/p0) pointerup:152(d0/p0) click:152(d0/p14)] 
+[desktop-1x] PAYG calc: Edge add-on switch                              184ms  delay 1.1 proc 0 pres 182.9 [pointerdown:184(d1/p0) pointerup:168(d1/p0) click:168(d1/p16)] LoAF 65.5/15.9s/0.1sl,52.5/0s/0.4sl
+[desktop-1x] PAYG calculator: close #1                                  144ms  delay 0.2 proc 0 pres 143.8 [pointerdown:120(d1/p0) pointerup:144(d0/p0) click:144(d0/p1)] 
+[desktop-1x] PAYG calculator: open #2                                   56ms  delay 0.5 proc 0 pres 55.5 [pointerdown:40(d1/p0) pointerup:56(d1/p0) click:56(d1/p26)] 
+[desktop-1x] PAYG calculator: close #2                                  200ms  delay 1.1 proc 0 pres 198.9 [pointerdown:200(d1/p0) pointerup:192(d1/p0) click:192(d1/p0)] LoAF 51.7/0s/0.2sl,50.1/0s/0.1sl,54.3/0s/0.3sl,54.2/0s/0.2sl,67/0s/0.2sl
+[desktop-1x] PAYG calculator: open #3                                   64ms  delay 0.5 proc 0 pres 63.5 [pointerdown:56(d1/p0) pointerup:64(d1/p0) click:64(d1/p22)] 
+[desktop-1x] PAYG calculator: close #3                                  144ms  delay 0.9 proc 0 pres 143.1 [pointerdown:120(d1/p0) pointerup:144(d1/p0) click:144(d1/p0)] 
+[desktop-1x] (setup) sub-tab -> thingsboard-cloud                       40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p8)] 
+[desktop-1x] FAQ: category tab -> 2nd                                   32ms  delay 0.4 proc 0 pres 31.6 [pointerdown:32(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> 1st                                   40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> 2nd                                   40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> 1st                                   40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> 2nd                                   40ms  delay 0.3 proc 0.1 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> 1st                                   40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: expand/collapse item                                  32ms  delay 0.6 proc 0 pres 31.4 [pointerdown:32(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: expand/collapse item                                  40ms  delay 0.3 proc 0.1 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: expand/collapse item                                  40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> #1                                    32ms  delay 0.4 proc 0 pres 31.6 [pointerdown:32(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: Load more                                             40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> #2                                    40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: Load more                                             40ms  delay 0.7 proc 0 pres 39.3 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: category tab -> #3                                    40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] FAQ: Load more                                             40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] feature (i) click -> jump to FAQ                           40ms  delay 0.7 proc 0 pres 39.3 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] feature (i) click -> jump to FAQ                           40ms  delay 0.9 proc 0 pres 39.1 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] feature (i) click -> jump to FAQ                           40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x] SKIP header: hover "Products" (mega-menu open) refused: link /use-cases/
+[desktop-1x] header: click "Products" label (desktop no-op)             40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x] header: click "Products" label (desktop no-op)             40ms  delay 0.2 proc 0.1 pres 39.7 [pointerdown:40(d0/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x] header: click "Products" label (desktop no-op)             40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x] theme toggle                                               40ms  delay 0.3 proc 0.1 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] theme toggle                                               40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] theme toggle                                               40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x] idleAfter {"recalcStyleCount":166.2,"recalcStyleMs":43.63,"layoutCount":83.1,"layoutMs":4.28,"scriptMs":0,"taskMs":189.64}
+[desktop-1x] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-desktop-1x.json

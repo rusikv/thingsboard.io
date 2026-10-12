@@ -1,0 +1,397 @@
+{
+ "profile": "desktop-1x",
+ "mode": "gtm",
+ "reps": 1,
+ "chrome": "Chrome/155.0.8059.39",
+ "startedAt": "2026-10-12T16:23:26.589Z",
+ "blocked": [
+  "https://api.github.com/repos/thingsboard/thingsboard",
+  "https://www.google.com.ua/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&ngs=1&ibt=1&tid=G-PMZCBFYH5Y&cid=308915433.1791822215&gtm=45je6a80v9134478005za20ozb832324071z"
+ ],
+ "allowed3p": [
+  "https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN",
+  "https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"
+ ],
+ "responses3p": [],
+ "gtmBoot": {
+  "calledAt": 7435.899999976158,
+  "scriptTag": true,
+  "ready": {
+   "gtm": true,
+   "ga4": true,
+   "keys": [
+    "GTM-TGBNQXN",
+    "G-PMZCBFYH5Y"
+   ],
+   "dlLen": 10
+  },
+  "metrics": {
+   "scriptMs": 196.2,
+   "taskMs": 829.8
+  },
+  "trace": {
+   "longestTasks": [
+    96.3,
+    42.5,
+    41.3,
+    14.2,
+    8.3,
+    4.7,
+    3.8,
+    3.2
+   ],
+   "tasksOver50": 1,
+   "evalScripts": [
+    {
+     "n": "EvaluateScript",
+     "ms": 41.2,
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN"
+    },
+    {
+     "n": "v8.compile",
+     "ms": 0.1,
+     "url": "https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN"
+    },
+    {
+     "n": "EvaluateScript",
+     "ms": 95.9,
+     "url": "https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"
+    },
+    {
+     "n": "v8.compile",
+     "ms": 0,
+     "url": "https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"
+    }
+   ]
+  },
+  "loafs": [
+   {
+    "dur": 55.3,
+    "blocking": 0,
+    "scripts": [
+     "GTM/gtm.js?id=GTM-TGBNQXN user-callback 42ms f0"
+    ]
+   },
+   {
+    "dur": 104,
+    "blocking": 47,
+    "scripts": [
+     "GTM/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80 classic-script 96ms f0"
+    ]
+   }
+  ]
+ },
+ "wrap": {
+  "wrapped": true,
+  "gtmPresent": true
+ },
+ "interactions": [
+  {
+   "label": "background click",
+   "hit": "main.astro-qyu5y5dt",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "duration": 40,
+    "inputDelay": 1.5,
+    "processing": 0.3,
+    "procAllEvents": 4.1,
+    "presentation": 38.2,
+    "events": "pointerdown:40p0 pointerup:32p0 click:32p4"
+   },
+   "clickSyncMs": [
+    3.7
+   ],
+   "dlPushes": [
+    "gtm.click:3.00"
+   ],
+   "dlPushMs": 3,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 143,
+    "styleMs": 34.9,
+    "layoutN": 72,
+    "layoutMs": 2.4,
+    "scriptMs": 4.8,
+    "taskMs": 118.9
+   }
+  },
+  {
+   "label": "sub-tab -> Private Cloud",
+   "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+   "duration": 56,
+   "under16": false,
+   "best": {
+    "duration": 56,
+    "inputDelay": 0.3,
+    "processing": 0,
+    "procAllEvents": 23.4,
+    "presentation": 55.7,
+    "events": "pointerdown:32p0 pointerup:56p0 click:56p23"
+   },
+   "clickSyncMs": [
+    23.3
+   ],
+   "dlPushes": [
+    "gtm.click:9.40",
+    "args:event:PriceOpen:1.40"
+   ],
+   "dlPushMs": 10.8,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 188,
+    "styleMs": 57.4,
+    "layoutN": 95,
+    "layoutMs": 11.7,
+    "scriptMs": 13.3,
+    "taskMs": 287.1
+   }
+  },
+  {
+   "label": "PC billing -> Annual",
+   "hit": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+   "duration": 64,
+   "under16": false,
+   "best": {
+    "duration": 64,
+    "inputDelay": 0.7,
+    "processing": 0,
+    "procAllEvents": 18.7,
+    "presentation": 63.3,
+    "events": "pointerdown:64p0 pointerup:56p0 click:56p19"
+   },
+   "clickSyncMs": [
+    18.7
+   ],
+   "dlPushes": [
+    "gtm.click:10.70"
+   ],
+   "dlPushMs": 10.7,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 183,
+    "styleMs": 51.3,
+    "layoutN": 92,
+    "layoutMs": 4.8,
+    "scriptMs": 19.4,
+    "taskMs": 326.6
+   }
+  },
+  {
+   "label": "PC billing -> Monthly",
+   "hit": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "duration": 48,
+    "inputDelay": 0.6,
+    "processing": 0.1,
+    "procAllEvents": 11.5,
+    "presentation": 47.3,
+    "events": "pointerdown:48p0 pointerup:40p0 click:40p11"
+   },
+   "clickSyncMs": [
+    11.3
+   ],
+   "dlPushes": [
+    "gtm.click:8.70"
+   ],
+   "dlPushMs": 8.7,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 182,
+    "styleMs": 51,
+    "layoutN": 93,
+    "layoutMs": 4.5,
+    "scriptMs": 11.9,
+    "taskMs": 320.8
+   }
+  },
+  {
+   "label": "sub-tab -> On-premises",
+   "hit": "button#Pricing_PE_SM.sub-tab.segment-tab",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "duration": 48,
+    "inputDelay": 0.4,
+    "processing": 0,
+    "procAllEvents": 18.1,
+    "presentation": 47.6,
+    "events": "pointerdown:48p0 pointerup:48p0 click:48p18"
+   },
+   "clickSyncMs": [
+    17.9
+   ],
+   "dlPushes": [
+    "gtm.click:10.30",
+    "args:event:PriceOpen:1.50"
+   ],
+   "dlPushMs": 11.8,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 188,
+    "styleMs": 56.5,
+    "layoutN": 95,
+    "layoutMs": 6.2,
+    "scriptMs": 13.4,
+    "taskMs": 356.4
+   }
+  },
+  {
+   "label": "sub-tab -> Cloud",
+   "hit": "button#Pricing_PE_Cloud.sub-tab.segment-tab",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "duration": 48,
+    "inputDelay": 0.3,
+    "processing": 0.1,
+    "procAllEvents": 17.7,
+    "presentation": 47.6,
+    "events": "pointerdown:48p0 pointerup:48p0 click:48p18"
+   },
+   "clickSyncMs": [
+    17.6
+   ],
+   "dlPushes": [
+    "gtm.click:10.00",
+    "args:event:PriceOpen:1.50"
+   ],
+   "dlPushMs": 11.5,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 190,
+    "styleMs": 56,
+    "layoutN": 96,
+    "layoutMs": 6.7,
+    "scriptMs": 13.1,
+    "taskMs": 229.7
+   }
+  },
+  {
+   "label": "region label toggle",
+   "hit": "span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "duration": 48,
+    "inputDelay": 0.7,
+    "processing": 0,
+    "procAllEvents": 9.4,
+    "presentation": 47.3,
+    "events": "pointerdown:48p0 pointerup:40p0 click:40p9"
+   },
+   "clickSyncMs": [
+    9.4
+   ],
+   "dlPushes": [
+    "gtm.click:7.60"
+   ],
+   "dlPushMs": 7.6,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 185,
+    "styleMs": 52.9,
+    "layoutN": 94,
+    "layoutMs": 5.7,
+    "scriptMs": 9.7,
+    "taskMs": 230.5
+   }
+  },
+  {
+   "label": "top-up accordion",
+   "hit": "button.topup-header",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "duration": 48,
+    "inputDelay": 1,
+    "processing": 0,
+    "procAllEvents": 2.3,
+    "presentation": 47,
+    "events": "pointerdown:48p0 pointerup:40p0 click:40p2"
+   },
+   "clickSyncMs": [
+    2.1
+   ],
+   "dlPushes": [
+    "gtm.scrollDepth:21.10",
+    "gtm.click:2.00"
+   ],
+   "dlPushMs": 23.1,
+   "loafs": [
+    61
+   ],
+   "gtmLoafScripts": [
+    {
+     "ms": 21.4,
+     "forced": 0,
+     "type": "event-listener",
+     "inv": "DOMWindow.onscrollend"
+    }
+   ],
+   "delta": {
+    "styleN": 184,
+    "styleMs": 65.2,
+    "layoutN": 109,
+    "layoutMs": 9.1,
+    "scriptMs": 24.3,
+    "taskMs": 316.7
+   }
+  },
+  {
+   "label": "FAQ item toggle",
+   "hit": "button.faq-question-toggle",
+   "duration": 56,
+   "under16": false,
+   "best": {
+    "duration": 56,
+    "inputDelay": 0.7,
+    "processing": 0,
+    "procAllEvents": 8.7,
+    "presentation": 55.3,
+    "events": "pointerdown:56p0 pointerup:48p0 click:48p9"
+   },
+   "clickSyncMs": [
+    8.5
+   ],
+   "dlPushes": [
+    "gtm.scrollDepth:1.20",
+    "gtm.scrollDepth:10.80",
+    "gtm.click:2.00",
+    "faq_node_interaction:6.10"
+   ],
+   "dlPushMs": 20.1,
+   "loafs": [],
+   "gtmLoafScripts": [],
+   "delta": {
+    "styleN": 186,
+    "styleMs": 83.1,
+    "layoutN": 106,
+    "layoutMs": 9.3,
+    "scriptMs": 21,
+    "taskMs": 354.2
+   }
+  }
+ ],
+ "netCheck": {
+  "blockedCount": 2,
+  "blockedHosts": [
+   "api.github.com/repos/thingsboard/t",
+   "www.google.com.ua/ads/ga-audiences"
+  ],
+  "allowed3p": [
+   "https://www.googletagmanager.com/gtm.js?id=GTM-TGBNQXN",
+   "https://www.googletagmanager.com/gtag/js?id=G-PMZCBFYH5Y&cx=c&gtm=4e6a80"
+  ],
+  "responses3p": []
+ }
+}

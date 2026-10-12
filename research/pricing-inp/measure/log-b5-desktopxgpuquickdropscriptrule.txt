@@ -1,0 +1,65 @@
+[desktop-4x-quick-dropscriptrule-gpu] loaded in 910 ms
+[desktop-4x-quick-dropscriptrule-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"chat-hues","observerErrs":[],"droppedRules":1,"smilPaused":0,"smilElems":4,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[20,570,340,350]}
+[desktop-4x-quick-dropscriptrule-gpu] DOM 5995 elements, depth 22 invisible 5106 rules 1992 :has 93
+[desktop-4x-quick-dropscriptrule-gpu] idle {"recalcStyleCount":76.7,"recalcStyleMs":110.84,"layoutCount":76.7,"layoutMs":14.7,"scriptMs":0,"taskMs":376.47} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":300,"ms":415.7},"layout":{"n":300,"ms":41.7},"paint":{"n":316,"ms":74.3},"prePaint":{"n":300,"ms":143.2},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":301,"drawFrames":301,"updateLayoutTreeElementCounts":[18,18,18,18,18,18,18,18,18,18]}
+[desktop-4x-quick-dropscriptrule-gpu] baseline: click empty background                           40ms  delay 4.3 proc 1.2 pres 34.5 [pointerdown:40(d4/p1) pointerup:40(d2/p0) click:40(d2/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] sub-tab: Cloud -> Private Cloud                            96ms  delay 1 proc 0.1 pres 94.9 [pointerdown:40(d5/p0) pointerup:96(d1/p0) click:96(d1/p38)] LoAF 79.5/37.1s/8.7sl
+[desktop-4x-quick-dropscriptrule-gpu] sub-tab: Private Cloud -> On-premises                      80ms  delay 0.2 proc 0.1 pres 79.7 [pointerdown:24(d2/p0) pointerup:80(d0/p0) click:80(d0/p24)] LoAF 61.1/22.9s/9.1sl
+[desktop-4x-quick-dropscriptrule-gpu] sub-tab: On-premises -> Cloud                              72ms  delay 3.6 proc 0 pres 68.4 [pointerdown:24(d0/p0) pointerup:72(d4/p0) click:72(d4/p24)] LoAF 55.1/23.3s/6.8sl
+[desktop-4x-quick-dropscriptrule-gpu] region: label -> North America                             72ms  delay 1.2 proc 0 pres 70.8 [pointerdown:32(d2/p0) pointerup:72(d1/p0) click:72(d1/p3)] LoAF 60.8/0s/5sl
+[desktop-4x-quick-dropscriptrule-gpu] region: label -> Europe                                    72ms  delay 1.1 proc 0 pres 70.9 [pointerdown:32(d2/p0) pointerup:72(d1/p0) click:72(d1/p4)] LoAF 58.4/0s/4.9sl
+[desktop-4x-quick-dropscriptrule-gpu] region: switch (checkbox)                                  64ms  delay 0.6 proc 0 pres 63.4 [pointerdown:32(d2/p0) pointerup:64(d1/p0) click:64(d1/p4)] LoAF 55.6/0s/4.8sl
+[desktop-4x-quick-dropscriptrule-gpu] upsell: See Private Cloud Options (switch tab)             80ms  delay 2.4 proc 0 pres 77.6 [pointerdown:32(d2/p0) pointerup:80(d2/p0) click:80(d3/p28)] LoAF 73.8/28s/11.1sl
+[desktop-4x-quick-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-cloud                       64ms  delay 0.3 proc 0 pres 63.7 [pointerdown:24(d2/p1) pointerup:64(d0/p0) click:64(d0/p23)] 
+[desktop-4x-quick-dropscriptrule-gpu] top-up accordion toggle                                    32ms  delay 2.9 proc 0 pres 29.1 [pointerdown:32(d3/p0) pointerup:24(d3/p0) click:24(d3/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-private-cloud               80ms  delay 0.6 proc 0 pres 79.4 [pointerdown:40(d6/p0) pointerup:80(d1/p0) click:80(d1/p27)] LoAF 66.1/26.4s/8.9sl
+[desktop-4x-quick-dropscriptrule-gpu] PC billing: -> Annual                                      48ms  delay 3 proc 0 pres 45 [pointerdown:32(d2/p0) pointerup:48(d3/p0) click:48(d3/p7)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC billing: -> Monthly                                     48ms  delay 4.4 proc 0.1 pres 43.5 [pointerdown:32(d4/p0) pointerup:48(d4/p0) click:48(d5/p6)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calculator: open #1 (cold chunk)                        48ms  delay 7.4 proc 0.1 pres 40.5 [pointerdown:32(d1/p0) pointerup:48(d7/p0) click:48(d8/p5)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: click slider track @0.35                          80ms  delay 1.1 proc 0 pres 78.9 [pointerdown:80(d1/p0) pointerup:40(d5/p1) click:40(d7/p1)] LoAF 63.1/35.6s/13.7sl
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: click slider track @0.7                           80ms  delay 4.1 proc 0 pres 75.9 [pointerdown:80(d4/p0) pointerup:40(d4/p0) click:40(d6/p0)] LoAF 56.9/31.9s/13.2sl
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: click slider track @0.15                          72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:72(d1/p0) pointerup:40(d5/p1) click:40(d7/p0)] LoAF 56.9/31.6s/12.3sl
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: slider ArrowRight                                 72ms  delay 5.6 proc 2.3 pres 64.1 [keydown:72(d6/p2) keyup:24(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: type digit into devices                           80ms  delay 0.8 proc 0 pres 79.2 [keydown:80(d1/p0) keypress:80(d1/p6) keyup:40(d1/p0)] LoAF 52.9/28.2s/8.9sl
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: type digit into devices                           56ms  delay 0.8 proc 0.1 pres 55.1 [keydown:56(d1/p0) keypress:56(d1/p3) keyup:40(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: type digit into devices                           56ms  delay 0.7 proc 0 pres 55.3 [keydown:56(d1/p0) keypress:56(d1/p3) keyup:32(d0/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: stepper +                                         64ms  delay 1.9 proc 0 pres 62.1 [pointerdown:64(d2/p0) pointerup:56(d2/p0) click:56(d2/p26)] 
+[desktop-4x-quick-dropscriptrule-gpu] PC calc: add-on switch                                     88ms  delay 3.6 proc 0 pres 84.4 [pointerdown:40(d2/p0) pointerup:88(d4/p0) click:88(d4/p44)] LoAF 61.3/43.4s/0.6sl
+[desktop-4x-quick-dropscriptrule-gpu] PC calculator: close #1                                    40ms  delay 0.8 proc 0 pres 39.2 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d1/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-pe                          64ms  delay 0.6 proc 0.1 pres 63.3 [pointerdown:40(d5/p0) pointerup:64(d1/p0) click:64(d1/p30)] LoAF 53.6/29.4s/7.2sl
+[desktop-4x-quick-dropscriptrule-gpu] On-prem billing: -> Perpetual                              64ms  delay 0.5 proc 0 pres 63.5 [pointerdown:32(d2/p0) pointerup:64(d1/p0) click:64(d1/p5)] LoAF 54.2/5.4s/5.5sl
+[desktop-4x-quick-dropscriptrule-gpu] On-prem billing: -> Subscription                           72ms  delay 0.2 proc 0.1 pres 71.7 [pointerdown:48(d1/p0) pointerup:72(d0/p0) click:72(d0/p5)] LoAF 52.8/0s/4.7sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calculator: open #1 (cold chunk)                      32ms  delay 2 proc 0.7 pres 29.3 [pointerdown:32(d2/p1) pointerup:32(d2/p0) click:32(d3/p5)] 
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: click slider track @0.4                         64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:64(d0/p0) pointerup:56(d1/p0) click:56(d41/p0)] LoAF 54.1/31.3s/9sl,55.4/30.3s/1.4sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: click slider track @0.75                        72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:72(d1/p0) pointerup:64(d4/p0) click:64(d47/p1)] LoAF 54.8/31.9s/10.1sl,60.3/32.2s/0.7sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: click slider track @0.1                         72ms  delay 11.6 proc 0 pres 60.4 [pointerdown:72(d12/p0) pointerup:56(d0/p0) click:56(d41/p0)] LoAF 67.2/24.9s/8.9sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: slider ArrowRight                               80ms  delay 0.4 proc 25.2 pres 54.4 [keydown:80(d0/p25) keyup:40(d2/p0)] LoAF 74.3/45.1s/8.2sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: type digit into devices                         56ms  delay 2.7 proc 0.7 pres 52.6 [keydown:56(d3/p1) keypress:56(d3/p3) keyup:16(d1/p0)] LoAF 57.1/28.7s/7.8sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: type digit into devices                         56ms  delay 0.1 proc 0.7 pres 55.2 [keydown:56(d0/p1) keypress:56(d1/p2) keyup:40(d0/p0)] LoAF 50.2/26.4s/8.6sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: type digit into devices                         56ms  delay 0.2 proc 0 pres 55.8 [keydown:56(d0/p0) keypress:56(d0/p3) keyup:40(d5/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calc: Edge add-on switch                              64ms  delay 1.9 proc 0 pres 62.1 [pointerdown:64(d2/p0) pointerup:64(d1/p0) click:64(d1/p31)] LoAF 51.1/32.2s/0.1sl
+[desktop-4x-quick-dropscriptrule-gpu] PAYG calculator: close #1                                  40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:40(d0/p0) click:40(d0/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] (setup) sub-tab -> thingsboard-cloud                       72ms  delay 1.5 proc 0 pres 70.5 [pointerdown:40(d7/p0) pointerup:72(d2/p0) click:72(d2/p34)] LoAF 60.8/33.5s/8.5sl
+[desktop-4x-quick-dropscriptrule-gpu] FAQ: category tab -> 2nd                                   32ms  delay 1.3 proc 0.1 pres 30.6 [pointerdown:32(d1/p0) pointerup:32(d1/p0) click:32(d1/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] FAQ: category tab -> 1st                                   32ms  delay 2 proc 0.1 pres 29.9 [pointerdown:32(d2/p0) pointerup:32(d3/p0) click:32(d3/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] FAQ: expand/collapse item                                  32ms  delay 1.3 proc 0.2 pres 30.5 [pointerdown:32(d1/p0) pointerup:24(d1/p1) click:24(d2/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] FAQ: category tab -> #1                                    24ms  delay 1.6 proc 0 pres 22.4 [pointerdown:24(d2/p0) pointerup:24(d3/p0) click:24(d3/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] FAQ: Load more                                             40ms  delay 1.5 proc 0 pres 38.5 [pointerdown:32(d5/p0) pointerup:40(d2/p0) click:40(d2/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] feature (i) click -> jump to FAQ                           64ms  delay 4.9 proc 0.1 pres 59 [pointerdown:32(d4/p0) pointerup:64(d5/p0) click:64(d5/p6)] 
+[desktop-4x-quick-dropscriptrule-gpu] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] header: click "Products" label (desktop no-op)             40ms  delay 4.5 proc 0 pres 35.5 [pointerdown:40(d5/p0) pointerup:24(d3/p0) click:24(d3/p1)] 
+[desktop-4x-quick-dropscriptrule-gpu] theme toggle                                               72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:32(d1/p1) pointerup:72(d1/p0) click:72(d1/p1)] LoAF 53.1/0s/0.7sl
+[desktop-4x-quick-dropscriptrule-gpu] idleAfter {"recalcStyleCount":146.6,"recalcStyleMs":102.81,"layoutCount":73.3,"layoutMs":13.86,"scriptMs":0,"taskMs":453.62}
+[desktop-4x-quick-dropscriptrule-gpu] consent end {"hidden":false,"visible":true,"cookie":false}
+[desktop-4x-quick-dropscriptrule-gpu] calibration(plain): click button                           <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(plain): click button                           <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(plain): click button                           <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(plain): click button                           <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(plain): click button                           <16ms 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(anim): click button                            16ms  delay 0.8 proc 0 pres 15.2 [pointerdown:16(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(anim): click button                            16ms  delay 0.6 proc 0 pres 15.4 [pointerdown:16(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(anim): click button                            16ms  delay 0.1 proc 0 pres 15.9 [pointerdown:16(d0/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(anim): click button                            16ms  delay 0.6 proc 0 pres 15.4 [pointerdown:16(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] calibration(anim): click button                            16ms  delay 0.5 proc 0 pres 15.5 [pointerdown:16(d1/p0)] 
+[desktop-4x-quick-dropscriptrule-gpu] calibration {"plain":[null,null,null,null,null],"anim":[16,16,16,16,16]}
+[desktop-4x-quick-dropscriptrule-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-desktop-4x-quick-dropscriptrule-gpu.json

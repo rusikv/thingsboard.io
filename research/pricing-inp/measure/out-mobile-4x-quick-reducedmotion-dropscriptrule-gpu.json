@@ -1,0 +1,4811 @@
+{
+ "tag": "mobile-4x-quick-reducedmotion-dropscriptrule-gpu",
+ "profile": "mobile-4x",
+ "chrome": "Chrome/155.0.8059.39",
+ "block3p": false,
+ "noanim": false,
+ "trace": false,
+ "gpu": true,
+ "nosmil": false,
+ "reducedMotion": true,
+ "dpr": 1.75,
+ "cpu": 4,
+ "startedAt": "2026-10-12T15:53:56.720Z",
+ "loadMs": 866,
+ "consentBanner": {
+  "present": true,
+  "hidden": false,
+  "visible": true,
+  "rect": [
+   8,
+   522,
+   396,
+   293
+  ]
+ },
+ "state0": {
+  "activeSubTab": "thingsboard-cloud",
+  "regionEU": true,
+  "theme": "light",
+  "url": "https://thingsboard.io/pricing/?product=thingsboard-cloud",
+  "promoBanner": true,
+  "promoVisible": true,
+  "rootAnim": "promo-collapse",
+  "chatAnim": "none",
+  "observerErrs": [],
+  "droppedRules": 1,
+  "smilPaused": 0,
+  "smilElems": 4,
+  "bgSvgVisible": false
+ },
+ "dom": {
+  "elements": 5995,
+  "bodyElements": 5964,
+  "maxDepth": 22,
+  "invisibleInBody": 5171,
+  "invisibleNonMeta": 5145,
+  "hiddenAttrContainers": 7,
+  "elementsInHiddenAttr": 33,
+  "inlineDisplayNoneContainers": 12,
+  "elementsInInlineDisplayNone": 3898,
+  "svgDescendants": 458,
+  "htmlBytes": 825974,
+  "styleSheets": 3,
+  "crossOriginSheets": 0,
+  "cssRules": 1992,
+  "hasSelectorRules": 93,
+  "hasSelectorSamples": [
+   ".plan-card-grid:has(> .plan-card:nth-child(5))",
+   ".plan-card-grid, .plan-card-grid:has(> .plan-card:nth-child(5))",
+   ".calc-result-row .calc-row-value:has(.calc-tooltip)::after, .calc-result-row .calc-row-value:has(.calc-result-badge)::after",
+   ".pricing-page .addons-section:has(+ .perpetual-bottom-cta)",
+   "html:has(#starlight__sidebar:popover-open), body:has(#starlight__sidebar:popover-open)",
+   "main > :nth-last-child(1 of :not(footer, script, style, template)):has(~ footer)",
+   ".sl-container > .sl-markdown-content:not(.doc-footer) > :nth-last-child(1 of :not(script, style, template)), .sl-container > .sl-markdown-co",
+   ".sl-markdown-content .expressive-code .frame:not(:has(.ec-line:nth-child(4)))",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(2):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(2):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(2):last-child):ha",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(3):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(3):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(3):last-child):ha",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(4):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(4):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(4):last-child):ha",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(5):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(5):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(5):last-child):ha",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(6):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(6):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(7):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(7):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(8):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(8):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(9):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(9):last-child) > ",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(10):last-child) >",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(10):last-child) >",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(11):last-child) >",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(11):last-child) >",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(12):last-child) >",
+   ".sl-markdown-content table:not(:where(.not-content *)):not(:where(td *, th *)):has(> thead > tr:first-child > th:nth-child(12):last-child) >",
+   ".sl-markdown-content p:has(> strong:only-child):has(+ :is(ul, ol)), .sl-markdown-content p:has(+ :is(table, .expressive-code))",
+   ".starlight-aside:has(.starlight-aside__content > :is(ul, ol):not(:last-child))",
+   ".starlight-aside:has(.starlight-aside__content > :is(ul, ol):not(:last-child)) .starlight-aside__title",
+   ".sl-markdown-content ol.sl-steps > li:not(:has(img, figure, pre, table, starlight-tabs, iframe))",
+   "button:where(.astro-p2mzi3zh):has(~ :popover-open)",
+   "button:where(.astro-p2mzi3zh):has(~ :popover-open) .open-menu:where(.astro-p2mzi3zh)"
+  ],
+  "animatedElements": [
+   "html.astro-qyu5y5dt :: promo-collapse auto 1 running"
+  ],
+  "sections": {
+   ".pricing-section": [
+    {
+     "n": 1101,
+     "visible": true,
+     "id": "thingsboard-cloud"
+    },
+    {
+     "n": 606,
+     "visible": false,
+     "id": "thingsboard-private-cloud"
+    },
+    {
+     "n": 425,
+     "visible": false,
+     "id": "thingsboard-pe"
+    }
+   ],
+   ".pricing-faq-block": [
+    {
+     "n": 973,
+     "visible": true,
+     "id": "thingsboard-cloud"
+    },
+    {
+     "n": 916,
+     "visible": false,
+     "id": "thingsboard-private-cloud"
+    },
+    {
+     "n": 996,
+     "visible": false,
+     "id": "thingsboard-pe"
+    }
+   ],
+   ".calc-modal-overlay": [
+    {
+     "n": 138,
+     "visible": false,
+     "id": "tb-payg-calc"
+    },
+    {
+     "n": 113,
+     "visible": false,
+     "id": "tb-pc-calc"
+    }
+   ],
+   "[data-region-content]": [
+    {
+     "n": 547,
+     "visible": false,
+     "id": "na"
+    },
+    {
+     "n": 543,
+     "visible": true,
+     "id": "eu"
+    }
+   ],
+   "[data-billing-content]": [
+    {
+     "n": 284,
+     "visible": false,
+     "id": "payg"
+    },
+    {
+     "n": 118,
+     "visible": false,
+     "id": "perpetual"
+    }
+   ],
+   "header.header": [
+    {
+     "n": 451,
+     "visible": true,
+     "id": ""
+    }
+   ],
+   "nav.head-menu": [
+    {
+     "n": 319,
+     "visible": false,
+     "id": ""
+    }
+   ],
+   "footer": [
+    {
+     "n": 79,
+     "visible": true,
+     "id": ""
+    }
+   ],
+   "#cc-main": [
+    {
+     "n": 45,
+     "visible": true,
+     "id": "cc-main"
+    }
+   ],
+   "#chat-launcher": [
+    {
+     "n": 9,
+     "visible": true,
+     "id": "chat-launcher"
+    }
+   ],
+   ".faq-section": [
+    {
+     "n": 969,
+     "visible": true,
+     "id": "thingsboard-cloud"
+    },
+    {
+     "n": 914,
+     "visible": false,
+     "id": "thingsboard-private-cloud"
+    },
+    {
+     "n": 994,
+     "visible": false,
+     "id": "thingsboard-pe"
+    }
+   ],
+   "svg": [
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 10,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 22,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 3,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 6,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 2,
+     "visible": false,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    },
+    {
+     "n": 4,
+     "visible": true,
+     "id": ""
+    }
+   ]
+  },
+  "docAnimations": [
+   {
+    "name": "promo-collapse",
+    "target": "html.astro-qyu5y5dt",
+    "playState": "running",
+    "timeline": "ScrollTimeline"
+   }
+  ]
+ },
+ "idle": {
+  "label": "idle-after-load",
+  "seconds": 5.01,
+  "perSecond": {
+   "recalcStyleCount": 0,
+   "recalcStyleMs": 0,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "scriptMs": 0,
+   "taskMs": 0.48
+  },
+  "trace": {
+   "runTask": {
+    "n": 0,
+    "ms": 0
+   },
+   "updateLayoutTree": {
+    "n": 0,
+    "ms": 0
+   },
+   "layout": {
+    "n": 0,
+    "ms": 0
+   },
+   "paint": {
+    "n": 0,
+    "ms": 0
+   },
+   "prePaint": {
+    "n": 0,
+    "ms": 0
+   },
+   "commit": {
+    "n": 0,
+    "ms": 0
+   },
+   "animate": {
+    "n": 0,
+    "ms": 0
+   },
+   "beginMainThreadFrame": 0,
+   "drawFrames": 0,
+   "updateLayoutTreeElementCounts": []
+  },
+  "loafs": 0,
+  "loafMs": 0,
+  "threadBusyMsPerSec": {
+   "Browser/ThreadPoolForegroundWorker": 21,
+   "Browser/CrBrowserMain": 4.1,
+   "Browser/ThreadPoolSingleThreadForegroundBlocking": 3.5,
+   "Browser/Chrome_IOThread": 0.3,
+   "Renderer/CrRendererMain": 0.3,
+   "Browser/PerfettoTrace": 0.3,
+   "GPU Process/PerfettoTrace": 0.2,
+   "Renderer/PerfettoTrace": 0.1
+  }
+ },
+ "interactions": [
+  {
+   "label": "baseline: click empty background",
+   "group": "baseline",
+   "duration": 16,
+   "under16": false,
+   "best": {
+    "interactionId": 6048,
+    "duration": 16,
+    "worstEvent": "click",
+    "target": "div.pricing-page",
+    "inputDelay": 6.9,
+    "processing": 0.4,
+    "presentation": 8.7,
+    "events": [
+     "click:16(d7/p0)"
+    ],
+    "window": [
+     13364.200000047684,
+     13380.200000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "mouseover:16(p0)@div.pricing-page",
+    "mousedown:16(p0)@div.pricing-page",
+    "mouseup:16(p0)@div.pricing-page"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 0,
+    "recalcStyleMs": 0,
+    "layoutCount": 0,
+    "layoutMs": 0,
+    "scriptMs": 3.5,
+    "taskMs": 16.4,
+    "windowMs": 1640
+   },
+   "click": {
+    "x": 4,
+    "y": 412,
+    "hit": "div.pricing-page"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud"
+  },
+  {
+   "label": "sub-tab: Cloud -> Private Cloud",
+   "group": "sub-tab",
+   "duration": 120,
+   "under16": false,
+   "best": {
+    "interactionId": 6055,
+    "duration": 120,
+    "worstEvent": "click",
+    "target": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+    "inputDelay": 17.1,
+    "processing": 37.8,
+    "presentation": 65.1,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:120(d17/p38)"
+    ],
+    "window": [
+     15648.399999976158,
+     15853
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 15734.9,
+     "duration": 88.8,
+     "blocking": 35.9,
+     "scriptMs": 37.7,
+     "forcedStyleLayoutMs": 34.3,
+     "preLayoutMs": 0.4,
+     "styleLayoutPaintMs": 11.3,
+     "beforeRenderMs": 77.1,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 37.7,
+       "forcedSL": 34.3,
+       "char": 621
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 29,
+    "recalcStyleMs": 65.2,
+    "layoutCount": 5,
+    "layoutMs": 27.7,
+    "scriptMs": 4.7,
+    "taskMs": 295.5,
+    "windowMs": 2035
+   },
+   "click": {
+    "x": 206,
+    "y": 393,
+    "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "sub-tab: Private Cloud -> On-premises",
+   "group": "sub-tab",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6062,
+    "duration": 80,
+    "worstEvent": "click",
+    "target": "button#Pricing_PE_SM.sub-tab.segment-tab",
+    "inputDelay": 18.7,
+    "processing": 19.6,
+    "presentation": 41.7,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:80(d19/p20)"
+    ],
+    "window": [
+     17681.200000047684,
+     17846.600000023842
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p1)@button#Pricing_PE_SM.sub-tab.segment-tab",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 17768.5,
+     "duration": 63,
+     "blocking": 9.5,
+     "scriptMs": 19.6,
+     "forcedStyleLayoutMs": 16,
+     "preLayoutMs": 1,
+     "styleLayoutPaintMs": 8.2,
+     "beforeRenderMs": 53.8,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 19.6,
+       "forcedSL": 16,
+       "char": 621
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 63,
+    "recalcStyleMs": 56.9,
+    "layoutCount": 5,
+    "layoutMs": 9.9,
+    "scriptMs": 4.2,
+    "taskMs": 357.5,
+    "windowMs": 2016
+   },
+   "click": {
+    "x": 206,
+    "y": 297,
+    "hit": "button#Pricing_PE_SM.sub-tab.segment-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "sub-tab: On-premises -> Cloud",
+   "group": "sub-tab",
+   "duration": 104,
+   "under16": false,
+   "best": {
+    "interactionId": 6069,
+    "duration": 104,
+    "worstEvent": "pointerup",
+    "target": "use",
+    "inputDelay": 12.6,
+    "processing": 0.1,
+    "presentation": 91.3,
+    "events": [
+     "pointerdown:32(d16/p0)",
+     "pointerup:104(d13/p0)",
+     "click:104(d37/p25)"
+    ],
+    "window": [
+     19717.300000071526,
+     19906.600000023842
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:32(p0)@use",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null",
+    "pointerenter:32(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 19815.2,
+     "duration": 75.3,
+     "blocking": 9.2,
+     "scriptMs": 30.9,
+     "forcedStyleLayoutMs": 25.5,
+     "preLayoutMs": 6.5,
+     "styleLayoutPaintMs": 2.1,
+     "beforeRenderMs": 66.7,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 25.4,
+       "forcedSL": 21,
+       "char": 621
+      },
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 5.5,
+       "forcedSL": 4.5,
+       "char": 4347
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 69,
+    "recalcStyleMs": 158.1,
+    "layoutCount": 13,
+    "layoutMs": 21,
+    "scriptMs": 21.2,
+    "taskMs": 469.2,
+    "windowMs": 2053
+   },
+   "click": {
+    "x": 206,
+    "y": 345,
+    "hit": "svg.sub-tab-info-icon"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud"
+  },
+  {
+   "label": "region: label -> North America",
+   "group": "region",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6076,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button",
+    "inputDelay": 10.3,
+    "processing": 2.6,
+    "presentation": 35.1,
+    "events": [
+     "pointerdown:16(d14/p0)",
+     "click:48(d10/p3)"
+    ],
+    "window": [
+     21765.5,
+     21896.700000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 22,
+    "recalcStyleMs": 25.4,
+    "layoutCount": 3,
+    "layoutMs": 8.2,
+    "scriptMs": 3.3,
+    "taskMs": 112.3,
+    "windowMs": 2005
+   },
+   "click": {
+    "x": 148,
+    "y": 455,
+    "hit": "span#Pricing_PE_Cloud_NorthAmerica.region-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "region: label -> Europe",
+   "group": "region",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6083,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_Cloud_Europe.region-toggle-label.gtm_button",
+    "inputDelay": 6,
+    "processing": 3.1,
+    "presentation": 38.9,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:48(d6/p3)"
+    ],
+    "window": [
+     23764.600000023842,
+     23897.300000071526
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span#Pricing_PE_Cloud_Europe.region-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 13,
+    "recalcStyleMs": 18.7,
+    "layoutCount": 1,
+    "layoutMs": 8.2,
+    "scriptMs": 3.9,
+    "taskMs": 88.1,
+    "windowMs": 1994
+   },
+   "click": {
+    "x": 290,
+    "y": 455,
+    "hit": "span#Pricing_PE_Cloud_Europe.region-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=eu"
+  },
+  {
+   "label": "region: switch (checkbox)",
+   "group": "region",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6090,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span.region-toggle-slider",
+    "inputDelay": 7.9,
+    "processing": 2.5,
+    "presentation": 37.6,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:48(d8/p3)"
+    ],
+    "window": [
+     25765,
+     25897.200000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span.region-toggle-slider",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 16,
+    "recalcStyleMs": 20.7,
+    "layoutCount": 2,
+    "layoutMs": 9.1,
+    "scriptMs": 3.2,
+    "taskMs": 92.6,
+    "windowMs": 2001
+   },
+   "click": {
+    "x": 231,
+    "y": 455,
+    "hit": "span.region-toggle-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "upsell: See Private Cloud Options (switch tab)",
+   "group": "sub-tab",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "interactionId": 6097,
+    "duration": 88,
+    "worstEvent": "click",
+    "target": "button.n-button.n-button--filled",
+    "inputDelay": 8.6,
+    "processing": 30.3,
+    "presentation": 49.1,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:88(d9/p30)"
+    ],
+    "window": [
+     27765,
+     27937.200000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.n-button.n-button--filled",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 27851.6,
+     "duration": 66.3,
+     "blocking": 11.6,
+     "scriptMs": 30.3,
+     "forcedStyleLayoutMs": 26.8,
+     "preLayoutMs": 0.4,
+     "styleLayoutPaintMs": 10.4,
+     "beforeRenderMs": 55.5,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 30.3,
+       "forcedSL": 26.8,
+       "char": 621
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 30,
+    "recalcStyleMs": 46.9,
+    "layoutCount": 5,
+    "layoutMs": 20.2,
+    "scriptMs": 4.9,
+    "taskMs": 239.5,
+    "windowMs": 2015
+   },
+   "click": {
+    "x": 206,
+    "y": 456,
+    "hit": "button.n-button.n-button--filled"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "(setup) sub-tab -> thingsboard-cloud",
+   "group": "setup",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6104,
+    "duration": 80,
+    "worstEvent": "click",
+    "target": "use",
+    "inputDelay": 21.9,
+    "processing": 19.3,
+    "presentation": 38.8,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:80(d22/p19)"
+    ],
+    "window": [
+     29781,
+     29945.399999976158
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p1)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 29867.4,
+     "duration": 62.3,
+     "blocking": 12.1,
+     "scriptMs": 24.8,
+     "forcedStyleLayoutMs": 20.4,
+     "preLayoutMs": 5.8,
+     "styleLayoutPaintMs": 2.1,
+     "beforeRenderMs": 54.4,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 19.3,
+       "forcedSL": 15.8,
+       "char": 621
+      },
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 5.5,
+       "forcedSL": 4.6,
+       "char": 4347
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 44,
+    "recalcStyleMs": 152.4,
+    "layoutCount": 12,
+    "layoutMs": 15.4,
+    "scriptMs": 16.1,
+    "taskMs": 364.6,
+    "windowMs": 2013
+   },
+   "click": {
+    "x": 206,
+    "y": 345,
+    "hit": "svg.sub-tab-info-icon"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "top-up accordion toggle",
+   "group": "accordion",
+   "duration": 16,
+   "under16": false,
+   "best": {
+    "interactionId": 6111,
+    "duration": 16,
+    "worstEvent": "pointerdown",
+    "target": "button.topup-header",
+    "inputDelay": 14.8,
+    "processing": 0,
+    "presentation": 1.2,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:16(d10/p1)"
+    ],
+    "window": [
+     31798.100000023842,
+     31898
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.topup-header",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 28,
+    "recalcStyleMs": 26.7,
+    "layoutCount": 23,
+    "layoutMs": 13.7,
+    "scriptMs": 0.4,
+    "taskMs": 131.6,
+    "windowMs": 1969
+   },
+   "click": {
+    "x": 206,
+    "y": 456,
+    "hit": "button.topup-header"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "(setup) sub-tab -> thingsboard-private-cloud",
+   "group": "setup",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "interactionId": 6118,
+    "duration": 88,
+    "worstEvent": "click",
+    "target": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+    "inputDelay": 15,
+    "processing": 27,
+    "presentation": 46,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:88(d15/p27)"
+    ],
+    "window": [
+     33763,
+     33936.300000071526
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button#Pricing_PE_PrivateCloud.sub-tab.segment-tab",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 33850,
+     "duration": 72.3,
+     "blocking": 7.5,
+     "scriptMs": 27,
+     "forcedStyleLayoutMs": 24.6,
+     "preLayoutMs": 0.5,
+     "styleLayoutPaintMs": 10.8,
+     "beforeRenderMs": 61,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 27,
+       "forcedSL": 24.6,
+       "char": 621
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 43,
+    "recalcStyleMs": 78.7,
+    "layoutCount": 7,
+    "layoutMs": 21.1,
+    "scriptMs": 4.5,
+    "taskMs": 299.9,
+    "windowMs": 2012
+   },
+   "click": {
+    "x": 206,
+    "y": 393,
+    "hit": "button#Pricing_PE_PrivateCloud.sub-tab.segment-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC billing: -> Annual",
+   "group": "billing",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6125,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+    "inputDelay": 14.2,
+    "processing": 4.1,
+    "presentation": 29.7,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:48(d14/p4)"
+    ],
+    "window": [
+     35780.800000071526,
+     35913.39999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 15,
+    "recalcStyleMs": 16.4,
+    "layoutCount": 1,
+    "layoutMs": 1.7,
+    "scriptMs": 5.6,
+    "taskMs": 128,
+    "windowMs": 1990
+   },
+   "click": {
+    "x": 268,
+    "y": 573,
+    "hit": "span#Pricing_PE_PrivateCloud_Annual.billing-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud&solution=pe-perpetual"
+  },
+  {
+   "label": "PC billing: -> Monthly",
+   "group": "billing",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6132,
+    "duration": 40,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+    "inputDelay": 7.3,
+    "processing": 3.6,
+    "presentation": 29.1,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:40(d7/p4)"
+    ],
+    "window": [
+     37781.5,
+     37905.300000071526
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 13,
+    "recalcStyleMs": 11.6,
+    "layoutCount": 2,
+    "layoutMs": 2.8,
+    "scriptMs": 6,
+    "taskMs": 111.9,
+    "windowMs": 1990
+   },
+   "click": {
+    "x": 148,
+    "y": 573,
+    "hit": "span#Pricing_PE_PrivateCloud_Monthly.billing-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calculator: open #1 (cold chunk)",
+   "group": "calc-open",
+   "duration": 32,
+   "under16": false,
+   "best": {
+    "interactionId": 6139,
+    "duration": 32,
+    "worstEvent": "click",
+    "target": "button.n-button.n-button--filled",
+    "inputDelay": 12,
+    "processing": 4.4,
+    "presentation": 15.6,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:32(d12/p4)"
+    ],
+    "window": [
+     39765.10000002384,
+     39880.700000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.n-button.n-button--filled",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 47,
+    "recalcStyleMs": 124.8,
+    "layoutCount": 27,
+    "layoutMs": 47.3,
+    "scriptMs": 8.5,
+    "taskMs": 379.8,
+    "windowMs": 1980
+   },
+   "click": {
+    "x": 206,
+    "y": 627,
+    "hit": "button.n-button.n-button--filled"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: click slider track @0.35",
+   "group": "calc-input",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6146,
+    "duration": 80,
+    "worstEvent": "pointerdown",
+    "target": "input.calc-slider",
+    "inputDelay": 13.5,
+    "processing": 0,
+    "presentation": 66.5,
+    "events": [
+     "pointerdown:80(d14/p0)"
+    ],
+    "window": [
+     44747.700000047684,
+     44827.700000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:80(p0)@input.calc-slider",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 44760.9,
+     "duration": 56.3,
+     "blocking": 0,
+     "scriptMs": 28.4,
+     "forcedStyleLayoutMs": 20.8,
+     "preLayoutMs": 28.4,
+     "styleLayoutPaintMs": 11.9,
+     "beforeRenderMs": 16,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 28.4,
+       "forcedSL": 20.8,
+       "char": 15948
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 24.4,
+    "layoutCount": 4,
+    "layoutMs": 6.8,
+    "scriptMs": 8.4,
+    "taskMs": 59.9,
+    "windowMs": 1953
+   },
+   "click": {
+    "x": 176,
+    "y": 207,
+    "hit": "input.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: click slider track @0.7",
+   "group": "calc-input",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6153,
+    "duration": 80,
+    "worstEvent": "pointerdown",
+    "target": "input.calc-slider",
+    "inputDelay": 13.3,
+    "processing": 0.1,
+    "presentation": 66.6,
+    "events": [
+     "pointerdown:80(d13/p0)"
+    ],
+    "window": [
+     46715.60000002384,
+     46795.60000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:80(p1)@input.calc-slider",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 46728.2,
+     "duration": 57.4,
+     "blocking": 0,
+     "scriptMs": 27.9,
+     "forcedStyleLayoutMs": 22,
+     "preLayoutMs": 28.1,
+     "styleLayoutPaintMs": 13.4,
+     "beforeRenderMs": 15.9,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 27.9,
+       "forcedSL": 22,
+       "char": 15948
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 26.3,
+    "layoutCount": 4,
+    "layoutMs": 6.9,
+    "scriptMs": 7,
+    "taskMs": 61.3,
+    "windowMs": 1965
+   },
+   "click": {
+    "x": 332,
+    "y": 207,
+    "hit": "input.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: click slider track @0.15",
+   "group": "calc-input",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6160,
+    "duration": 80,
+    "worstEvent": "pointerdown",
+    "target": "input.calc-slider",
+    "inputDelay": 13.8,
+    "processing": 0,
+    "presentation": 66.2,
+    "events": [
+     "pointerdown:80(d14/p0)"
+    ],
+    "window": [
+     48681,
+     48761
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:80(p0)@input.calc-slider",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null",
+    "pointerenter:80(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 48694.4,
+     "duration": 56.3,
+     "blocking": 0,
+     "scriptMs": 27.4,
+     "forcedStyleLayoutMs": 21.9,
+     "preLayoutMs": 27.5,
+     "styleLayoutPaintMs": 12.6,
+     "beforeRenderMs": 16.2,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 27.4,
+       "forcedSL": 21.9,
+       "char": 15948
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 25.4,
+    "layoutCount": 4,
+    "layoutMs": 7.4,
+    "scriptMs": 6.1,
+    "taskMs": 58.6,
+    "windowMs": 1963
+   },
+   "click": {
+    "x": 87,
+    "y": 207,
+    "hit": "input.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: slider ArrowRight",
+   "group": "calc-input",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6167,
+    "duration": 48,
+    "worstEvent": "keydown",
+    "target": "input.calc-slider",
+    "inputDelay": 0.4,
+    "processing": 0.9,
+    "presentation": 46.7,
+    "events": [
+     "keydown:48(d0/p1)"
+    ],
+    "window": [
+     50629.89999997616,
+     50677.89999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 20,
+    "layoutCount": 3,
+    "layoutMs": 5.1,
+    "scriptMs": 6.5,
+    "taskMs": 50.4,
+    "windowMs": 1926
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:ArrowRight"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 56,
+   "under16": false,
+   "best": {
+    "interactionId": 6174,
+    "duration": 56,
+    "worstEvent": "keydown",
+    "target": "input.calc-number-input",
+    "inputDelay": 0.2,
+    "processing": 0.8,
+    "presentation": 55,
+    "events": [
+     "keydown:56(d0/p1)",
+     "keypress:56(d1/p4)"
+    ],
+    "window": [
+     52557.39999997616,
+     52613.39999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:48(p0)@input.calc-number-input",
+    "input:48(p1)@input.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 5,
+    "recalcStyleMs": 25.5,
+    "layoutCount": 6,
+    "layoutMs": 6.7,
+    "scriptMs": 7.1,
+    "taskMs": 61.8,
+    "windowMs": 1947
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:2"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6181,
+    "duration": 40,
+    "worstEvent": "keydown",
+    "target": "input.calc-number-input",
+    "inputDelay": 0.2,
+    "processing": 0.1,
+    "presentation": 39.7,
+    "events": [
+     "keydown:40(d0/p0)",
+     "keypress:40(d0/p3)"
+    ],
+    "window": [
+     54198.60000002384,
+     54238.60000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:40(p0)@input.calc-number-input",
+    "input:32(p0)@input.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 2,
+    "recalcStyleMs": 18.4,
+    "layoutCount": 3,
+    "layoutMs": 4.7,
+    "scriptMs": 6,
+    "taskMs": 44.8,
+    "windowMs": 1632
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:5"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6188,
+    "duration": 40,
+    "worstEvent": "keydown",
+    "target": "input.calc-number-input",
+    "inputDelay": 0.6,
+    "processing": 0.1,
+    "presentation": 39.3,
+    "events": [
+     "keydown:40(d1/p0)",
+     "keypress:40(d1/p4)"
+    ],
+    "window": [
+     55831.800000071526,
+     55871.800000071526
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:40(p0)@input.calc-number-input",
+    "input:32(p1)@input.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 3,
+    "recalcStyleMs": 17.2,
+    "layoutCount": 4,
+    "layoutMs": 5.7,
+    "scriptMs": 5.7,
+    "taskMs": 42.2,
+    "windowMs": 1632
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:0"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: stepper +",
+   "group": "calc-input",
+   "duration": 88,
+   "under16": false,
+   "best": {
+    "interactionId": 6195,
+    "duration": 88,
+    "worstEvent": "click",
+    "target": "button.calc-stepper-btn",
+    "inputDelay": 48.8,
+    "processing": 17.9,
+    "presentation": 21.3,
+    "events": [
+     "pointerdown:16(d14/p0)",
+     "pointerup:16(d13/p0)",
+     "click:88(d49/p18)"
+    ],
+    "window": [
+     57780.39999997616,
+     57952.700000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.calc-stepper-btn",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 57878.4,
+     "duration": 63.2,
+     "blocking": 12.8,
+     "scriptMs": 36.4,
+     "forcedStyleLayoutMs": 25.7,
+     "preLayoutMs": 0,
+     "styleLayoutPaintMs": 0.2,
+     "beforeRenderMs": 63,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "INPUT.onblur",
+       "type": "event-listener",
+       "ms": 19.3,
+       "forcedSL": 13.7,
+       "char": 10406
+      },
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "BUTTON.onclick",
+       "type": "event-listener",
+       "ms": 17.1,
+       "forcedSL": 12,
+       "char": 10996
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 15,
+    "recalcStyleMs": 34.8,
+    "layoutCount": 6,
+    "layoutMs": 8.2,
+    "scriptMs": 12.6,
+    "taskMs": 87,
+    "windowMs": 2032
+   },
+   "click": {
+    "x": 448,
+    "y": 326,
+    "hit": "button.calc-stepper-btn"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calc: add-on switch",
+   "group": "calc-input",
+   "duration": 72,
+   "under16": false,
+   "best": {
+    "interactionId": 6202,
+    "duration": 72,
+    "worstEvent": "click",
+    "target": "span.calc-toggle-track",
+    "inputDelay": 9.9,
+    "processing": 34.6,
+    "presentation": 27.5,
+    "events": [
+     "pointerdown:16(d14/p0)",
+     "click:72(d10/p35)"
+    ],
+    "window": [
+     59813.700000047684,
+     59969.200000047684
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span.calc-toggle-track",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 59899.4,
+     "duration": 53.8,
+     "blocking": 3.6,
+     "scriptMs": 33.9,
+     "forcedStyleLayoutMs": 27.5,
+     "preLayoutMs": 0.5,
+     "styleLayoutPaintMs": 0.1,
+     "beforeRenderMs": 53.2,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-pc.g0w2FatQ.js",
+       "fn": "",
+       "invoker": "INPUT#pc-edge-toggle.onchange",
+       "type": "event-listener",
+       "ms": 33.9,
+       "forcedSL": 27.5,
+       "char": 14419
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 22,
+    "recalcStyleMs": 36.9,
+    "layoutCount": 3,
+    "layoutMs": 7.7,
+    "scriptMs": 7.2,
+    "taskMs": 118.9,
+    "windowMs": 2010
+   },
+   "click": {
+    "x": 426,
+    "y": 411,
+    "hit": "span.calc-toggle-track"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "PC calculator: close #1",
+   "group": "calc-close",
+   "duration": 16,
+   "under16": false,
+   "best": {
+    "interactionId": 6209,
+    "duration": 16,
+    "worstEvent": "pointerdown",
+    "target": "use",
+    "inputDelay": 14.1,
+    "processing": 0,
+    "presentation": 1.9,
+    "events": [
+     "pointerdown:16(d14/p0)",
+     "click:16(d7/p2)"
+    ],
+    "window": [
+     61829.800000071526,
+     61930.39999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 26,
+    "recalcStyleMs": 27.6,
+    "layoutCount": 19,
+    "layoutMs": 23.4,
+    "scriptMs": 3.1,
+    "taskMs": 134,
+    "windowMs": 1971
+   },
+   "click": {
+    "x": 455,
+    "y": 30,
+    "hit": "use"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-private-cloud"
+  },
+  {
+   "label": "(setup) sub-tab -> thingsboard-pe",
+   "group": "setup",
+   "duration": 80,
+   "under16": false,
+   "best": {
+    "interactionId": 6216,
+    "duration": 80,
+    "worstEvent": "click",
+    "target": "button#Pricing_PE_SM.sub-tab.segment-tab",
+    "inputDelay": 21,
+    "processing": 28.9,
+    "presentation": 30.1,
+    "events": [
+     "pointerdown:16(d15/p1)",
+     "click:80(d21/p29)"
+    ],
+    "window": [
+     63795.89999997616,
+     63960.60000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button#Pricing_PE_SM.sub-tab.segment-tab",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 63883.1,
+     "duration": 61.9,
+     "blocking": 0,
+     "scriptMs": 28.8,
+     "forcedStyleLayoutMs": 21.8,
+     "preLayoutMs": 0.6,
+     "styleLayoutPaintMs": 7.5,
+     "beforeRenderMs": 53.8,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 28.8,
+       "forcedSL": 21.8,
+       "char": 621
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 44,
+    "recalcStyleMs": 89.8,
+    "layoutCount": 6,
+    "layoutMs": 11.6,
+    "scriptMs": 7.9,
+    "taskMs": 277,
+    "windowMs": 2005
+   },
+   "click": {
+    "x": 206,
+    "y": 297,
+    "hit": "button#Pricing_PE_SM.sub-tab.segment-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "On-prem billing: -> Perpetual",
+   "group": "billing",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6223,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_SM_Perpetual.billing-toggle-label.gtm_button",
+    "inputDelay": 8.7,
+    "processing": 3.7,
+    "presentation": 35.6,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:48(d9/p4)"
+    ],
+    "window": [
+     65813.10000002384,
+     65945.10000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p1)@span#Pricing_PE_SM_Perpetual.billing-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 27,
+    "recalcStyleMs": 56.7,
+    "layoutCount": 2,
+    "layoutMs": 3.7,
+    "scriptMs": 6.6,
+    "taskMs": 155.8,
+    "windowMs": 1996
+   },
+   "click": {
+    "x": 271,
+    "y": 481,
+    "hit": "span#Pricing_PE_SM_Perpetual.billing-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe&solution=pe-perpetual"
+  },
+  {
+   "label": "On-prem billing: -> Subscription",
+   "group": "billing",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6230,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "span#Pricing_PE_SM_PayAsYouGo.billing-toggle-label.gtm_button",
+    "inputDelay": 5.2,
+    "processing": 2.9,
+    "presentation": 39.9,
+    "events": [
+     "pointerdown:16(d17/p0)",
+     "click:48(d5/p3)"
+    ],
+    "window": [
+     67795.5,
+     67929.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span#Pricing_PE_SM_PayAsYouGo.billing-toggle-label.gtm_button",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 14,
+    "recalcStyleMs": 28.6,
+    "layoutCount": 2,
+    "layoutMs": 7.9,
+    "scriptMs": 5.5,
+    "taskMs": 105.5,
+    "windowMs": 1984
+   },
+   "click": {
+    "x": 104,
+    "y": 455,
+    "hit": "span#Pricing_PE_SM_PayAsYouGo.billing-toggle-label.gtm_button"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calculator: open #1 (cold chunk)",
+   "group": "calc-open",
+   "duration": 24,
+   "under16": false,
+   "best": {
+    "interactionId": 6237,
+    "duration": 24,
+    "worstEvent": "click",
+    "target": "button.n-button.n-button--filled",
+    "inputDelay": 9,
+    "processing": 2.8,
+    "presentation": 12.2,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:24(d9/p3)"
+    ],
+    "window": [
+     69796.30000007153,
+     69904.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p1)@button.n-button.n-button--filled",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 30,
+    "recalcStyleMs": 72.7,
+    "layoutCount": 5,
+    "layoutMs": 7,
+    "scriptMs": 4.8,
+    "taskMs": 165.7,
+    "windowMs": 1981
+   },
+   "click": {
+    "x": 206,
+    "y": 456,
+    "hit": "button.n-button.n-button--filled"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: click slider track @0.4",
+   "group": "calc-input",
+   "duration": 72,
+   "under16": false,
+   "best": {
+    "interactionId": 6244,
+    "duration": 72,
+    "worstEvent": "pointerdown",
+    "target": "input#sm-slider.calc-slider",
+    "inputDelay": 14.6,
+    "processing": 0,
+    "presentation": 57.4,
+    "events": [
+     "pointerdown:72(d15/p0)",
+     "pointerup:40(d2/p0)"
+    ],
+    "window": [
+     74778.60000002384,
+     74903.39999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:72(p0)@input#sm-slider.calc-slider",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 7,
+    "recalcStyleMs": 46.3,
+    "layoutCount": 7,
+    "layoutMs": 6.5,
+    "scriptMs": 10.1,
+    "taskMs": 81.7,
+    "windowMs": 1984
+   },
+   "click": {
+    "x": 169,
+    "y": 171,
+    "hit": "input#sm-slider.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: click slider track @0.75",
+   "group": "calc-input",
+   "duration": 72,
+   "under16": false,
+   "best": {
+    "interactionId": 6251,
+    "duration": 72,
+    "worstEvent": "pointerdown",
+    "target": "input#sm-slider.calc-slider",
+    "inputDelay": 16.2,
+    "processing": 0,
+    "presentation": 55.8,
+    "events": [
+     "pointerdown:72(d16/p0)",
+     "pointerup:40(d1/p0)"
+    ],
+    "window": [
+     76761.60000002384,
+     76886.80000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:72(p0)@input#sm-slider.calc-slider",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 76777.3,
+     "duration": 52.2,
+     "blocking": 0,
+     "scriptMs": 25.6,
+     "forcedStyleLayoutMs": 20.6,
+     "preLayoutMs": 25.6,
+     "styleLayoutPaintMs": 11,
+     "beforeRenderMs": 15.6,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-payg.CZh4zRfq.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 25.6,
+       "forcedSL": 20.6,
+       "char": 11223
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 7,
+    "recalcStyleMs": 48.5,
+    "layoutCount": 7,
+    "layoutMs": 7.6,
+    "scriptMs": 9.7,
+    "taskMs": 107.6,
+    "windowMs": 1982
+   },
+   "click": {
+    "x": 299,
+    "y": 171,
+    "hit": "input#sm-slider.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: click slider track @0.1",
+   "group": "calc-input",
+   "duration": 72,
+   "under16": false,
+   "best": {
+    "interactionId": 6258,
+    "duration": 72,
+    "worstEvent": "pointerdown",
+    "target": "input#sm-slider.calc-slider",
+    "inputDelay": 15.4,
+    "processing": 0,
+    "presentation": 56.6,
+    "events": [
+     "pointerdown:72(d15/p0)",
+     "pointerup:48(d2/p0)"
+    ],
+    "window": [
+     78745.30000007153,
+     78878.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:72(p0)@input#sm-slider.calc-slider",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null",
+    "pointerenter:72(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 7,
+    "recalcStyleMs": 48.8,
+    "layoutCount": 7,
+    "layoutMs": 7,
+    "scriptMs": 11.1,
+    "taskMs": 85.8,
+    "windowMs": 1983
+   },
+   "click": {
+    "x": 57,
+    "y": 171,
+    "hit": "input#sm-slider.calc-slider"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: slider ArrowRight",
+   "group": "calc-input",
+   "duration": 64,
+   "under16": false,
+   "best": {
+    "interactionId": 6265,
+    "duration": 64,
+    "worstEvent": "keydown",
+    "target": "input#sm-slider.calc-slider",
+    "inputDelay": 0.4,
+    "processing": 24.8,
+    "presentation": 38.8,
+    "events": [
+     "keydown:64(d0/p25)"
+    ],
+    "window": [
+     80721.80000007153,
+     80785.80000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [],
+   "loafs": [
+    {
+     "start": 80722.1,
+     "duration": 61.6,
+     "blocking": 1.8,
+     "scriptMs": 42.6,
+     "forcedStyleLayoutMs": 33.9,
+     "preLayoutMs": 18.6,
+     "styleLayoutPaintMs": 8.3,
+     "beforeRenderMs": 34.7,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-payg.CZh4zRfq.js",
+       "fn": "",
+       "invoker": "INPUT#sm-slider.onchange",
+       "type": "event-listener",
+       "ms": 24,
+       "forcedSL": 18.9,
+       "char": 11369
+      },
+      {
+       "src": "/_astro/calc-tb-payg.CZh4zRfq.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 18.6,
+       "forcedSL": 15,
+       "char": 11223
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 7,
+    "recalcStyleMs": 43.3,
+    "layoutCount": 6,
+    "layoutMs": 6.3,
+    "scriptMs": 8.8,
+    "taskMs": 74.6,
+    "windowMs": 1946
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:ArrowRight"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6272,
+    "duration": 40,
+    "worstEvent": "keydown",
+    "target": "input#sm-devices.calc-number-input",
+    "inputDelay": 0.7,
+    "processing": 0,
+    "presentation": 39.3,
+    "events": [
+     "keydown:40(d1/p0)",
+     "keypress:40(d1/p3)"
+    ],
+    "window": [
+     82669.60000002384,
+     82709.60000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:40(p0)@input#sm-devices.calc-number-input",
+    "input:40(p1)@input#sm-devices.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 24.4,
+    "layoutCount": 5,
+    "layoutMs": 3.4,
+    "scriptMs": 4.5,
+    "taskMs": 54.2,
+    "windowMs": 1931
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:2"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6279,
+    "duration": 48,
+    "worstEvent": "keydown",
+    "target": "input#sm-devices.calc-number-input",
+    "inputDelay": 0.5,
+    "processing": 0.1,
+    "presentation": 47.4,
+    "events": [
+     "keydown:48(d1/p0)",
+     "keypress:48(d1/p2)"
+    ],
+    "window": [
+     84297.5,
+     84345.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:48(p0)@input#sm-devices.calc-number-input",
+    "input:48(p0)@input#sm-devices.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 3,
+    "recalcStyleMs": 27.5,
+    "layoutCount": 4,
+    "layoutMs": 3.4,
+    "scriptMs": 4.2,
+    "taskMs": 50.8,
+    "windowMs": 1631
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:5"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: type digit into devices",
+   "group": "calc-input",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6286,
+    "duration": 40,
+    "worstEvent": "keydown",
+    "target": "input#sm-devices.calc-number-input",
+    "inputDelay": 0.8,
+    "processing": 0.1,
+    "presentation": 39.1,
+    "events": [
+     "keydown:40(d1/p0)",
+     "keypress:40(d1/p3)"
+    ],
+    "window": [
+     85929.89999997616,
+     85969.89999997616
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "beforeinput:40(p0)@input#sm-devices.calc-number-input",
+    "input:40(p1)@input#sm-devices.calc-number-input"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 4,
+    "recalcStyleMs": 21.2,
+    "layoutCount": 5,
+    "layoutMs": 4.5,
+    "scriptMs": 4.8,
+    "taskMs": 44.2,
+    "windowMs": 1633
+   },
+   "click": {
+    "x": 0,
+    "y": 0,
+    "hit": "key:0"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calc: Edge add-on switch",
+   "group": "calc-input",
+   "duration": 96,
+   "under16": false,
+   "best": {
+    "interactionId": 6293,
+    "duration": 96,
+    "worstEvent": "click",
+    "target": "span.calc-toggle-track",
+    "inputDelay": 52.4,
+    "processing": 25.4,
+    "presentation": 18.2,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "pointerup:16(d14/p0)",
+     "click:96(d52/p25)"
+    ],
+    "window": [
+     87878,
+     88058.70000004768
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span.calc-toggle-track",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 87977,
+     "duration": 71.6,
+     "blocking": 21.5,
+     "scriptMs": 47.9,
+     "forcedStyleLayoutMs": 37.7,
+     "preLayoutMs": 0.1,
+     "styleLayoutPaintMs": 0,
+     "beforeRenderMs": 71.5,
+     "scripts": [
+      {
+       "src": "/_astro/calc-tb-payg.CZh4zRfq.js",
+       "fn": "",
+       "invoker": "INPUT#sm-edge-toggle.onchange",
+       "type": "event-listener",
+       "ms": 24.3,
+       "forcedSL": 18.8,
+       "char": 12803
+      },
+      {
+       "src": "/_astro/calc-tb-payg.CZh4zRfq.js",
+       "fn": "",
+       "invoker": "INPUT#sm-devices.onblur",
+       "type": "event-listener",
+       "ms": 23.6,
+       "forcedSL": 18.9,
+       "char": 11662
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 22,
+    "recalcStyleMs": 50.5,
+    "layoutCount": 6,
+    "layoutMs": 6.5,
+    "scriptMs": 11.6,
+    "taskMs": 123.6,
+    "windowMs": 2041
+   },
+   "click": {
+    "x": 353,
+    "y": 412,
+    "hit": "span.calc-toggle-track"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "PAYG calculator: close #1",
+   "group": "calc-close",
+   "duration": 16,
+   "under16": false,
+   "best": {
+    "interactionId": 6300,
+    "duration": 16,
+    "worstEvent": "pointerdown",
+    "target": "use",
+    "inputDelay": 15.6,
+    "processing": 0.1,
+    "presentation": 0.3,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:16(d7/p1)"
+    ],
+    "window": [
+     89927.89999997616,
+     90029.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 22,
+    "recalcStyleMs": 14.8,
+    "layoutCount": 1,
+    "layoutMs": 0.1,
+    "scriptMs": 2.7,
+    "taskMs": 68.3,
+    "windowMs": 1973
+   },
+   "click": {
+    "x": 382,
+    "y": 30,
+    "hit": "use"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-pe"
+  },
+  {
+   "label": "(setup) sub-tab -> thingsboard-cloud",
+   "group": "setup",
+   "duration": 96,
+   "under16": false,
+   "best": {
+    "interactionId": 6307,
+    "duration": 96,
+    "worstEvent": "click",
+    "target": "use",
+    "inputDelay": 22.7,
+    "processing": 38.2,
+    "presentation": 35.1,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:96(d23/p38)"
+    ],
+    "window": [
+     91894.89999997616,
+     92075.70000004768
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [
+    {
+     "start": 91981.5,
+     "duration": 78.7,
+     "blocking": 11.7,
+     "scriptMs": 44.4,
+     "forcedStyleLayoutMs": 35.5,
+     "preLayoutMs": 6.9,
+     "styleLayoutPaintMs": 4.2,
+     "beforeRenderMs": 67.6,
+     "scripts": [
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "DIV.onclick",
+       "type": "event-listener",
+       "ms": 38.2,
+       "forcedSL": 30,
+       "char": 621
+      },
+      {
+       "src": "/_astro/index.astro_astro_type_script_index_0_lang.X8Stmb3A.js",
+       "fn": "",
+       "invoker": "FrameRequestCallback",
+       "type": "user-callback",
+       "ms": 6.2,
+       "forcedSL": 5.5,
+       "char": 4347
+      }
+     ]
+    }
+   ],
+   "metricsDelta": {
+    "recalcStyleCount": 48,
+    "recalcStyleMs": 162.8,
+    "layoutCount": 12,
+    "layoutMs": 19.8,
+    "scriptMs": 22.2,
+    "taskMs": 510,
+    "windowMs": 2020
+   },
+   "click": {
+    "x": 206,
+    "y": 345,
+    "hit": "svg.sub-tab-info-icon"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "FAQ: category tab -> 2nd",
+   "group": "faq",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6314,
+    "duration": 40,
+    "worstEvent": "click",
+    "target": "button.faq-cat-tab.active",
+    "inputDelay": 13.4,
+    "processing": 0.7,
+    "presentation": 25.9,
+    "events": [
+     "pointerdown:16(d12/p0)",
+     "click:40(d13/p1)"
+    ],
+    "window": [
+     93914.60000002384,
+     94036.20000004768
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.faq-cat-tab.active",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 20,
+    "recalcStyleMs": 13.5,
+    "layoutCount": 2,
+    "layoutMs": 3.7,
+    "scriptMs": 2.3,
+    "taskMs": 117.5,
+    "windowMs": 1970
+   },
+   "click": {
+    "x": 179,
+    "y": 455,
+    "hit": "button.faq-cat-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "FAQ: category tab -> 1st",
+   "group": "faq",
+   "duration": 32,
+   "under16": false,
+   "best": {
+    "interactionId": 6321,
+    "duration": 32,
+    "worstEvent": "click",
+    "target": "button.faq-cat-tab.active",
+    "inputDelay": 8.5,
+    "processing": 0.6,
+    "presentation": 22.9,
+    "events": [
+     "pointerdown:16(d16/p0)",
+     "click:32(d9/p1)"
+    ],
+    "window": [
+     95894.89999997616,
+     96011.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.faq-cat-tab",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 20,
+    "recalcStyleMs": 10,
+    "layoutCount": 1,
+    "layoutMs": 3.1,
+    "scriptMs": 1.3,
+    "taskMs": 102.9,
+    "windowMs": 1976
+   },
+   "click": {
+    "x": 58,
+    "y": 455,
+    "hit": "button.faq-cat-tab"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "FAQ: expand/collapse item",
+   "group": "faq",
+   "duration": 32,
+   "under16": false,
+   "best": {
+    "interactionId": 6328,
+    "duration": 32,
+    "worstEvent": "click",
+    "target": "button.faq-question-toggle",
+    "inputDelay": 9.1,
+    "processing": 0.5,
+    "presentation": 22.4,
+    "events": [
+     "pointerdown:16(d14/p0)",
+     "click:32(d9/p1)"
+    ],
+    "window": [
+     97862.20000004768,
+     97977.60000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.faq-question-toggle",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 33,
+    "recalcStyleMs": 77.1,
+    "layoutCount": 15,
+    "layoutMs": 10.7,
+    "scriptMs": 2.6,
+    "taskMs": 269.1,
+    "windowMs": 1959
+   },
+   "click": {
+    "x": 174,
+    "y": 456,
+    "hit": "button.faq-question-toggle"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "FAQ: category tab -> #1",
+   "group": "faq",
+   "duration": 24,
+   "under16": false,
+   "best": {
+    "interactionId": 6335,
+    "duration": 24,
+    "worstEvent": "click",
+    "target": "button.faq-cat-tab.active",
+    "inputDelay": 8,
+    "processing": 0.1,
+    "presentation": 15.9,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:24(d8/p0)"
+    ],
+    "window": [
+     99827.89999997616,
+     99936.30000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.faq-cat-tab.active",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 16,
+    "recalcStyleMs": 4.2,
+    "layoutCount": 0,
+    "layoutMs": 0,
+    "scriptMs": 0.7,
+    "taskMs": 69,
+    "windowMs": 1962
+   },
+   "click": {
+    "x": 59,
+    "y": 455,
+    "hit": "button.faq-cat-tab.active"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "FAQ: Load more",
+   "group": "faq",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6342,
+    "duration": 40,
+    "worstEvent": "click",
+    "target": "button.faq-load-more.print:hidden",
+    "inputDelay": 11.7,
+    "processing": 0.1,
+    "presentation": 28.2,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:40(d12/p0)"
+    ],
+    "window": [
+     101795.80000007153,
+     101919.80000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@button.faq-load-more.print:hidden",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 7,
+    "recalcStyleMs": 8.6,
+    "layoutCount": 1,
+    "layoutMs": 4.4,
+    "scriptMs": 2,
+    "taskMs": 54.8,
+    "windowMs": 1980
+   },
+   "click": {
+    "x": 206,
+    "y": 455,
+    "hit": "button.faq-load-more.print:hidden"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "feature (i) click -> jump to FAQ",
+   "group": "tooltip-click",
+   "duration": 48,
+   "under16": false,
+   "best": {
+    "interactionId": 6349,
+    "duration": 48,
+    "worstEvent": "click",
+    "target": "use",
+    "inputDelay": 13.6,
+    "processing": 3.7,
+    "presentation": 30.7,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:48(d14/p4)"
+    ],
+    "window": [
+     103778.70000004768,
+     103910.5
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 23,
+    "recalcStyleMs": 17.4,
+    "layoutCount": 6,
+    "layoutMs": 4.8,
+    "scriptMs": 16.6,
+    "taskMs": 168.2,
+    "windowMs": 1986
+   },
+   "click": {
+    "x": 197,
+    "y": 456,
+    "hit": "svg.plan-feature-info-icon"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "header: burger open",
+   "group": "header",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6356,
+    "duration": 40,
+    "worstEvent": "click",
+    "target": "use",
+    "inputDelay": 12,
+    "processing": 4.4,
+    "presentation": 23.6,
+    "events": [
+     "pointerdown:16(d13/p0)",
+     "click:40(d12/p4)"
+    ],
+    "window": [
+     107463,
+     107585.30000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 24,
+    "recalcStyleMs": 32.8,
+    "layoutCount": 3,
+    "layoutMs": 2.4,
+    "scriptMs": 2.2,
+    "taskMs": 94.3,
+    "windowMs": 1972
+   },
+   "click": {
+    "x": 368,
+    "y": 84,
+    "hit": "use"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "header: expand \"Products\" in drawer",
+   "group": "header",
+   "duration": 32,
+   "under16": false,
+   "best": {
+    "interactionId": 6363,
+    "duration": 32,
+    "worstEvent": "click",
+    "target": "span.main-menu-link",
+    "inputDelay": 8.3,
+    "processing": 0.9,
+    "presentation": 22.8,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:32(d8/p1)"
+    ],
+    "window": [
+     109744.5,
+     109861
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@span.main-menu-link",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 14,
+    "recalcStyleMs": 13.8,
+    "layoutCount": 1,
+    "layoutMs": 2.1,
+    "scriptMs": 4,
+    "taskMs": 40.6,
+    "windowMs": 1980
+   },
+   "click": {
+    "x": 206,
+    "y": 206,
+    "hit": "span.main-menu-link"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "header: burger close",
+   "group": "header",
+   "duration": 40,
+   "under16": false,
+   "best": {
+    "interactionId": 6370,
+    "duration": 40,
+    "worstEvent": "click",
+    "target": "use",
+    "inputDelay": 8.1,
+    "processing": 0.9,
+    "presentation": 31,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:40(d8/p1)"
+    ],
+    "window": [
+     111726.80000007153,
+     111852.10000002384
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@use",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 14,
+    "recalcStyleMs": 15.9,
+    "layoutCount": 1,
+    "layoutMs": 0.8,
+    "scriptMs": 2.7,
+    "taskMs": 70.7,
+    "windowMs": 1984
+   },
+   "click": {
+    "x": 368,
+    "y": 84,
+    "hit": "use"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  },
+  {
+   "label": "theme toggle",
+   "group": "theme",
+   "duration": 64,
+   "under16": false,
+   "best": {
+    "interactionId": 6377,
+    "duration": 64,
+    "worstEvent": "click",
+    "target": "svg.icon.icon-auto",
+    "inputDelay": 8.4,
+    "processing": 1.5,
+    "presentation": 54.1,
+    "events": [
+     "pointerdown:16(d15/p0)",
+     "click:64(d8/p2)"
+    ],
+    "window": [
+     114010.39999997616,
+     114159.30000007153
+    ]
+   },
+   "otherInteractions": [],
+   "nonInteraction": [
+    "pointerover:16(p0)@svg.icon.icon-auto",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null",
+    "pointerenter:16(p0)@null"
+   ],
+   "loafs": [],
+   "metricsDelta": {
+    "recalcStyleCount": 33,
+    "recalcStyleMs": 123.9,
+    "layoutCount": 1,
+    "layoutMs": 0.4,
+    "scriptMs": 2.7,
+    "taskMs": 313.8,
+    "windowMs": 1999
+   },
+   "click": {
+    "x": 320,
+    "y": 84,
+    "hit": "svg.icon.icon-auto"
+   },
+   "urlAfter": "/pricing/?product=thingsboard-cloud&region=na"
+  }
+ ],
+ "idleAfter": {
+  "label": "idle-after-interactions",
+  "seconds": 5,
+  "perSecond": {
+   "recalcStyleCount": 0,
+   "recalcStyleMs": 0,
+   "layoutCount": 0,
+   "layoutMs": 0,
+   "scriptMs": 0,
+   "taskMs": 1.44
+  },
+  "trace": {
+   "runTask": {
+    "n": 0,
+    "ms": 0
+   },
+   "updateLayoutTree": {
+    "n": 0,
+    "ms": 0
+   },
+   "layout": {
+    "n": 0,
+    "ms": 0
+   },
+   "paint": {
+    "n": 0,
+    "ms": 0
+   },
+   "prePaint": {
+    "n": 2,
+    "ms": 0.5
+   },
+   "commit": {
+    "n": 0,
+    "ms": 0
+   },
+   "animate": {
+    "n": 0,
+    "ms": 0
+   },
+   "beginMainThreadFrame": 2,
+   "drawFrames": 0,
+   "updateLayoutTreeElementCounts": []
+  },
+  "loafs": 0,
+  "loafMs": 0,
+  "threadBusyMsPerSec": {
+   "Renderer/CrRendererMain": 1.2,
+   "Browser/CrBrowserMain": 0.7,
+   "Browser/MemoryInfra": 0.4,
+   "GPU Process/CrGpuMain": 0.4,
+   "Browser/PerfettoTrace": 0.2,
+   "GPU Process/PerfettoTrace": 0.2,
+   "Renderer/PerfettoTrace": 0.2,
+   "Renderer/Compositor": 0.1
+  }
+ },
+ "consentBannerEnd": {
+  "hidden": false,
+  "visible": true,
+  "cookie": false
+ },
+ "calibration": {
+  "plain": [
+   16,
+   16,
+   16,
+   16,
+   16
+  ],
+  "anim": [
+   32,
+   32,
+   32,
+   32,
+   32
+  ]
+ },
+ "requestHosts": {
+  "thingsboard.io": 36,
+  "": 5,
+  "api.github.com": 1
+ },
+ "failedRequests": [],
+ "firstInput": [
+  {
+   "name": "click",
+   "startTime": 1957.3000000715256,
+   "duration": 32,
+   "processingStart": 1971.5,
+   "processingEnd": 1971.8999999761581,
+   "interactionId": 4564,
+   "target": "button#b"
+  }
+ ],
+ "finalUrl": "data:text/html,%3C!doctype%20html%3E%3Cmeta%20name%3Dviewport%20content%3D%22width%3Ddevice-width%22%3E%3Cstyle%3E%40property%20--h%7Bsyntax%3A%22%3Ccolor%3E%22%3Binherits%3Atrue%3Binitial-value%3A%233d50f5%7D%40keyframes%20k%7B0%25%7B--h%3A%233d50f5%7D50%25%7B--h%3A%2322c55e%7D100%25%7B--h%3A%233d50f5%7D%7D%23b%7Banimation%3Ak%2015s%20linear%20infinite%3Bbackground%3Avar(--h)%3Bcolor%3A%23fff%7D%3C%2Fstyle%3E%3Cbody%20style%3D%22margin%3A0%3Bheight%3A3000px%3Bbackground%3A%23fff%3Bfont%3A16px%20sans-serif%22%3E%3Cp%20style%3D%22padding%3A40px%22%3Ecalibration%3C%2Fp%3E%3Cbutton%20id%3Db%20style%3D%22margin%3A40px%3Bpadding%3A20px%22%3Ebutton%3C%2Fbutton%3E",
+ "layoutViewport": {
+  "innerWidth": 412,
+  "innerHeight": 823,
+  "docScrollWidth": 412,
+  "vv": [
+   412,
+   823,
+   1
+  ]
+ }
+}

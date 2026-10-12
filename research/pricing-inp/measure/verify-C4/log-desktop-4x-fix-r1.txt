@@ -1,0 +1,41 @@
+[desktop-4x-fix-82233] subtab Cloud->PC                         160ms d2/p0/r158 style 352.5ms x231 layout 83.5ms x127 forced 0 pointerdown:48 pointerup:160 click:160
+[desktop-4x-fix-82233] subtab PC->Cloud                         112ms d2/p0/r110 style 399.2ms x260 layout 45.3ms x131 forced 0 pointerdown:56 pointerup:112 click:112
+[desktop-4x-fix-82233] subtab Cloud->PC                         160ms d14/p0/r146 style 471ms x248 layout 85.1ms x125 forced 0 pointerdown:56 pointerup:160 click:160
+[desktop-4x-fix-82233] subtab PC->Cloud                         136ms d2/p0/r134 style 493.7ms x215 layout 54.6ms x108 forced 0 pointerdown:48 pointerup:136 click:136
+[desktop-4x-fix-82233] subtab Cloud->PC                         208ms d21/p0/r187 style 489.6ms x216 layout 91.5ms x108 forced 0 pointerdown:64 pointerup:208 click:208
+[desktop-4x-fix-82233] subtab PC->Cloud                         144ms d4/p0/r140 style 449.7ms x223 layout 60.3ms x111 forced 0 pointerdown:72 pointerup:144 click:144
+[desktop-4x-fix-82233] subtab Cloud->PC                         160ms d10/p0/r150 style 437.5ms x234 layout 73.9ms x118 forced 0 pointerdown:56 pointerup:160 click:160
+[desktop-4x-fix-82233] subtab PC->Cloud                         200ms d28/p0/r172 style 431.6ms x228 layout 64.6ms x114 forced 0 pointerdown:88 pointerup:200 click:200
+[desktop-4x-fix-82233] (setup) tab thingsboard-private-cloud    168ms d21/p0/r147 style 482.1ms x238 layout 75.1ms x119 forced 0 pointerdown:64 pointerup:168 click:168
+[desktop-4x-fix-82233] (setup) PC open cold                     168ms d7/p0/r161 style 758.3ms x143 layout 127.4ms x74 forced 255.5 pointerdown:40 pointerup:168 click:168
+[desktop-4x-fix-82233] PC add-on switch                         176ms d7/p0/r169 style 372.9ms x240 layout 51.6ms x118 forced 0 pointerdown:56 pointerup:176 click:176
+[desktop-4x-fix-82233] PC add-on switch                         184ms d25/p0/r159 style 424.3ms x225 layout 54.1ms x113 forced 0 pointerdown:80 pointerup:184 click:184
+[desktop-4x-fix-82233] PC add-on switch                         160ms d5/p0/r155 style 363.5ms x235 layout 51.8ms x117 forced 0 pointerdown:56 pointerup:160 click:160
+[desktop-4x-fix-82233] PC add-on switch                         152ms d7/p0/r145 style 400.8ms x241 layout 52.6ms x121 forced 0 pointerdown:64 pointerup:152 click:152
+[desktop-4x-fix-82233] PC stepper +                             112ms d5/p1/r106 style 359ms x246 layout 39ms x122 forced 0 pointerdown:56 pointerup:112 click:112
+[desktop-4x-fix-82233] PC stepper +                             144ms d10/p0/r134 style 376.2ms x242 layout 53.7ms x121 forced 0 pointerdown:64 pointerup:144 click:144
+[desktop-4x-fix-82233] PC stepper +                             136ms d13/p0/r123 style 401.5ms x227 layout 38.8ms x113 forced 0 pointerdown:64 pointerup:136 click:136
+[desktop-4x-fix-82233] (setup) close                            144ms d20/p0/r124 style 350.5ms x214 layout 55.7ms x112 forced 0 pointerdown:104 pointerup:144 click:144
+[desktop-4x-fix-82233] PC calc reopen                           224ms d17/p1/r206 style 465.5ms x250 layout 104.4ms x136 forced 51.4 pointerdown:64 pointerup:224 click:224
+[desktop-4x-fix-82233] (setup) close                            72ms d5/p0/r67 style 342.2ms x242 layout 74.1ms x133 forced 0 pointerdown:56 pointerup:72 click:72
+[desktop-4x-fix-82233] PC calc reopen                           184ms d5/p0/r179 style 415.9ms x241 layout 83.8ms x133 forced 45.8 pointerdown:56 pointerup:184 click:184
+[desktop-4x-fix-82233] (setup) close                            72ms d1/p0/r72 style 329.1ms x252 layout 68.9ms x142 forced 0 pointerdown:48 pointerup:72 click:72
+[desktop-4x-fix-82233] (setup) tab thingsboard-pe               128ms d10/p0/r118 style 524ms x243 layout 51.8ms x124 forced 46.1 pointerdown:48 pointerup:128 click:128
+[desktop-4x-fix-82233] (setup) PAYG open cold                   80ms d9/p0/r71 style 485.8ms x236 layout 40.1ms x117 forced 75.4 pointerdown:40 pointerup:80 click:80
+[desktop-4x-fix-82233] PAYG Edge switch (no blur)               160ms d0/p0/r160 style 343.4ms x251 layout 37.6ms x125 forced 0 pointerdown:56 pointerup:160 click:160
+[desktop-4x-fix-82233] PAYG Edge switch (no blur)               152ms d5/p0/r147 style 345.3ms x254 layout 23.3ms x127 forced 0 pointerdown:56 pointerup:152 click:152
+[desktop-4x-fix-82233] PAYG Edge switch (no blur)               144ms d2/p0/r143 style 318.9ms x250 layout 32.1ms x125 forced 0 pointerdown:40 pointerup:144 click:144
+[desktop-4x-fix-82233] PAYG Edge switch (no blur)               144ms d4/p0/r140 style 343.3ms x252 layout 25ms x126 forced 0 pointerdown:56 pointerup:144 click:144
+[desktop-4x-fix-82233] PAYG slider ArrowRight                   104ms d1/p3/r100 style 240ms x192 layout 19.2ms x97 forced 0 keydown:104 keyup:56
+[desktop-4x-fix-82233] PAYG slider ArrowRight                   96ms d1/p1/r94 style 217.3ms x192 layout 21.3ms x97 forced 0 keydown:96 keyup:56
+[desktop-4x-fix-82233] PAYG slider ArrowRight                   96ms d0/p2/r94 style 202.6ms x192 layout 22ms x97 forced 0 keydown:96 keyup:48
+[desktop-4x-fix-82233] PAYG slider ArrowRight                   80ms d0/p1/r78 style 232ms x190 layout 18.9ms x95 forced 0 keydown:80 keyup:32
+[desktop-4x-fix-82233] PAYG Edge switch after typing (blur)     160ms d8/p1/r151 style 375.6ms x245 layout 31.6ms x123 forced 0 pointerdown:104 pointerup:160 click:160
+[desktop-4x-fix-82233] PAYG Edge switch after typing (blur)     128ms d4/p0/r124 style 361.3ms x250 layout 25.5ms x126 forced 0 pointerdown:88 pointerup:128 click:128
+[desktop-4x-fix-82233] PAYG Edge switch after typing (blur)     168ms d11/p0/r157 style 507.3ms x243 layout 42.5ms x122 forced 0 pointerdown:136 pointerup:168 click:168
+[desktop-4x-fix-82233] (setup) close                            72ms d5/p0/r67 style 334.3ms x253 layout 32.6ms x126 forced 0 pointerdown:56 pointerup:72 click:72
+[desktop-4x-fix-82233] PAYG calc reopen                         152ms d9/p0/r143 style 374.3ms x266 layout 33.9ms x132 forced 42.5 pointerdown:40 pointerup:152 click:152
+[desktop-4x-fix-82233] (setup) close                            56ms d5/p0/r52 style 328.6ms x256 layout 32.1ms x128 forced 0 pointerdown:48 pointerup:56 click:56
+[desktop-4x-fix-82233] PAYG calc reopen                         144ms d9/p0/r136 style 333.4ms x264 layout 41.9ms x131 forced 27.4 pointerdown:40 pointerup:144 click:144
+[desktop-4x-fix-82233] (setup) close                            64ms d3/p0/r61 style 264ms x258 layout 26.9ms x129 forced 0 pointerdown:48 pointerup:64 click:64
+[desktop-4x-fix-82233] patched [{"file":"index.astro_astro_type_script_index_0_lang","n":1,"from":"(n.offsetWidth,requestAnimationFrame(()=>n.classLi"},{"file":"calc-tb-pc.","n":1,"from":"let c=g.parentElement?.scrollTop||0;if(g.innerHTML"},{"file":"calc-tb-pc.","n":1,"from":"let r=g.parentElement?.scrollTop||0;g.innerHTML=n,"},{"file":"calc-tb-payg.","n":1,"from":"let h=x.parentElement?.scrollTop||0;x.innerHTML=m,"},{"file":"calc-tb-payg.","n":1,"from":"let t=x.parentElement?.scrollTop||0;x.innerHTML=e,"},{"file":"calc-tb-payg.","n":1,"from":"_.value=String(k.devices),z(),G()}})"},{"file":"calc-tb-payg.","n":1,"from":"v.value=String(R(e)),z(),G()});function Y("},{"file":"calc-tb-payg.","n":1,"from":"e===`edge`&&!D[e].checked&&(k.addons.edge.count=1)"}] fetchErr -

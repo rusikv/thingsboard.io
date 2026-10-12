@@ -1,0 +1,2 @@
+DONE mobile-4x --gpu 0
+DONE desktop-4x --gpu 0

@@ -1,0 +1,55 @@
+INFO {
+ "ua": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36",
+ "w": 412,
+ "dom": 5995,
+ "ccIndex": 33,
+ "launcherIndex": 80,
+ "launcher": {
+  "visibility": "hidden",
+  "anim": "chat-hues",
+  "play": "running",
+  "dur": "15s"
+ },
+ "root": {
+  "anim": "promo-collapse",
+  "promoH": "52px",
+  "promoCur": "52px"
+ },
+ "banner": {
+  "hidden": false
+ },
+ "smil": 4,
+ "anims": [
+  {
+   "name": "promo-collapse",
+   "target": "HTML",
+   "state": "running",
+   "tl": "ScrollTimeline"
+  },
+  {
+   "name": "chat-hues",
+   "target": "chat-launcher",
+   "state": "running",
+   "tl": "DocumentTimeline"
+  }
+ ],
+ "rules": [
+  {
+   "sel": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr)",
+   "media": " @(width < 432px)",
+   "text": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr) { visibility: hidden; }"
+  }
+ ]
+}
+{"label":"A baseline (banner visible, :has rule present)","span":3.29,"recalcPerS":59.8,"recalcMsPerS":380.9,"recalcMedianMs":5.92,"recalcMaxMs":11.43,"runTaskMsPerS":571,"elementCounts":{"18":197}}
+after hide {"vis":"visible","play":"running"}
+{"label":"B banner hidden via DOM (post-consent state), :has rule present","span":3.3,"recalcPerS":60,"recalcMsPerS":548.8,"recalcMedianMs":9.12,"recalcMaxMs":14.73,"runTaskMsPerS":775,"elementCounts":{"18":198}}
+deleted 1
+{"label":"C banner visible, :has rule deleted (launcher now visible + animating)","span":3.29,"recalcPerS":60.1,"recalcMsPerS":95.4,"recalcMedianMs":1.62,"recalcMaxMs":2.89,"runTaskMsPerS":394.1,"elementCounts":{"18":198}}
+fix state {"vis":"hidden","play":"paused"}
+{"label":"D proposed fix: attr flag + paused","span":3.29,"recalcPerS":60.1,"recalcMsPerS":22.1,"recalcMedianMs":0.21,"recalcMaxMs":1.21,"runTaskMsPerS":246.2,"elementCounts":{"4":198}}
+{"label":"E proposed fix + SMIL paused","span":3.18,"recalcPerS":0,"recalcMsPerS":0,"recalcMedianMs":0,"recalcMaxMs":0,"runTaskMsPerS":0.7,"elementCounts":{}}
+{"label":"F chat-hues off entirely (rule already deleted), SMIL running","span":3.29,"recalcPerS":60.1,"recalcMsPerS":25.7,"recalcMedianMs":0.44,"recalcMaxMs":1.04,"runTaskMsPerS":266.3,"elementCounts":{"4":198}}
+{"label":"G scroll 0->52px in 2px steps (promo-collapse in range)","span":1.32,"recalcPerS":19.7,"recalcMsPerS":609.9,"recalcMedianMs":30.04,"recalcMaxMs":37.25,"runTaskMsPerS":768.2,"elementCounts":{"999":26}}
+{"label":"H scroll 600->652px in 2px steps (past range)","span":0.75,"recalcPerS":34.7,"recalcMsPerS":2.4,"recalcMedianMs":0.04,"recalcMaxMs":0.56,"runTaskMsPerS":89.5,"elementCounts":{"0":26}}
+{"label":"I scroll 0->52px in 2px steps, promo-collapse disabled","span":0.75,"recalcPerS":1.3,"recalcMsPerS":1.9,"recalcMedianMs":1.4,"recalcMaxMs":1.4,"runTaskMsPerS":86.9,"elementCounts":{"15":1}}

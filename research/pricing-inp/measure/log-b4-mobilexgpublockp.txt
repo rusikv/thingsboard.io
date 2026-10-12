@@ -1,0 +1,132 @@
+[mobile-4x-3pblocked-gpu] loaded in 900 ms
+[mobile-4x-3pblocked-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"chat-hues","observerErrs":[],"smilPaused":0,"smilElems":4,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-3pblocked-gpu] DOM 5995 elements, depth 22 invisible 5131 rules 1993 :has 94
+[mobile-4x-3pblocked-gpu] idle {"recalcStyleCount":78,"recalcStyleMs":561.78,"layoutCount":78,"layoutMs":19.31,"scriptMs":0,"taskMs":783.17} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":301,"ms":1982.3},"layout":{"n":302,"ms":60.3},"paint":{"n":0,"ms":0},"prePaint":{"n":302,"ms":136.5},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":301,"drawFrames":301,"updateLayoutTreeElementCounts":[18,18,18,18,18,18,18,18,18,18]}
+[mobile-4x-3pblocked-gpu] baseline: click empty background                           64ms  delay 35.4 proc 0.5 pres 28.1 [pointerdown:56(d30/p1) pointerup:64(d35/p1) click:64(d42/p1)] 
+[mobile-4x-3pblocked-gpu] baseline: click empty background                           72ms  delay 40.6 proc 0.3 pres 31.1 [pointerdown:40(d30/p0) pointerup:48(d36/p0) click:72(d41/p0)] 
+[mobile-4x-3pblocked-gpu] baseline: click empty background                           72ms  delay 41.8 proc 0 pres 30.2 [pointerdown:40(d30/p0) pointerup:48(d37/p0) click:72(d42/p0)] 
+[mobile-4x-3pblocked-gpu] sub-tab: Cloud -> Private Cloud                            192ms  delay 56.1 proc 46.1 pres 89.8 [pointerdown:40(d31/p0) pointerup:48(d34/p0) click:192(d56/p46)] LoAF 114.6/46.1s/14sl
+[mobile-4x-3pblocked-gpu] sub-tab: Private Cloud -> On-premises                      128ms  delay 56.8 proc 21.5 pres 49.7 [pointerdown:56(d46/p0) pointerup:40(d30/p0) click:128(d57/p22)] LoAF 76.8/20.6s/7.7sl
+[mobile-4x-3pblocked-gpu] sub-tab: On-premises -> Cloud                              128ms  delay 39.1 proc 0.1 pres 88.8 [pointerdown:40(d30/p0) pointerup:128(d39/p0) click:128(d64/p25)] LoAF 85.7/30.9s/2sl
+[mobile-4x-3pblocked-gpu] sub-tab: Cloud -> Private Cloud                            168ms  delay 69.5 proc 36.9 pres 61.6 [pointerdown:48(d31/p0) pointerup:56(d41/p0) click:168(d70/p37)] LoAF 104.4/36.9s/12.3sl
+[mobile-4x-3pblocked-gpu] sub-tab: Private Cloud -> On-premises                      128ms  delay 58.6 proc 19.5 pres 49.9 [pointerdown:40(d30/p0) pointerup:48(d35/p0) click:128(d59/p20)] LoAF 72.8/19s/9.3sl
+[mobile-4x-3pblocked-gpu] sub-tab: On-premises -> Cloud                              128ms  delay 64.8 proc 21.8 pres 41.4 [pointerdown:40(d29/p0) pointerup:48(d37/p0) click:128(d65/p22)] LoAF 69.5/21.8s/2.1sl
+[mobile-4x-3pblocked-gpu] sub-tab: Cloud -> Private Cloud                            136ms  delay 52.7 proc 30.3 pres 53 [pointerdown:40(d31/p0) pointerup:48(d36/p0) click:136(d53/p30)] LoAF 82/30.3s/10.2sl
+[mobile-4x-3pblocked-gpu] sub-tab: Private Cloud -> On-premises                      120ms  delay 38 proc 0 pres 82 [pointerdown:40(d28/p0) pointerup:120(d38/p0) click:120(d60/p20)] LoAF 79.7/20s/10.6sl
+[mobile-4x-3pblocked-gpu] sub-tab: On-premises -> Cloud                              128ms  delay 63.7 proc 21.6 pres 42.7 [pointerdown:48(d33/p0) pointerup:48(d33/p0) click:128(d64/p22)] LoAF 72.7/21.6s/2.5sl
+[mobile-4x-3pblocked-gpu] region: label -> North America                             112ms  delay 48 proc 4.5 pres 59.5 [pointerdown:56(d29/p0) pointerup:72(d37/p0) click:112(d48/p5)] LoAF 60.3/0s/0.5sl
+[mobile-4x-3pblocked-gpu] region: label -> Europe                                    112ms  delay 40 proc 2.8 pres 69.2 [pointerdown:40(d30/p0) pointerup:48(d32/p0) click:112(d40/p3)] LoAF 58.2/0s/0.7sl
+[mobile-4x-3pblocked-gpu] region: label -> North America                             120ms  delay 41.9 proc 3.3 pres 74.8 [pointerdown:40(d29/p1) pointerup:56(d35/p0) click:120(d42/p3)] LoAF 66.1/0s/1.3sl
+[mobile-4x-3pblocked-gpu] region: label -> Europe                                    88ms  delay 9.9 proc 0 pres 78.1 [pointerdown:40(d18/p0) pointerup:88(d10/p0) click:88(d16/p3)] LoAF 60.9/0s/0.5sl
+[mobile-4x-3pblocked-gpu] region: label -> North America                             120ms  delay 45.8 proc 4.6 pres 69.6 [pointerdown:40(d28/p0) pointerup:56(d39/p0) click:120(d46/p5)] LoAF 65.3/0s/0.6sl
+[mobile-4x-3pblocked-gpu] region: label -> Europe                                    112ms  delay 42.1 proc 2.9 pres 67 [pointerdown:40(d31/p0) pointerup:56(d35/p0) click:112(d42/p3)] LoAF 57.1/0s/0.6sl
+[mobile-4x-3pblocked-gpu] region: switch (checkbox)                                  144ms  delay 45.2 proc 4 pres 94.8 [pointerdown:40(d29/p0) pointerup:48(d35/p0) click:144(d45/p4)] LoAF 77.9/0s/1.1sl
+[mobile-4x-3pblocked-gpu] region: switch (checkbox)                                  112ms  delay 39.6 proc 4.1 pres 68.3 [pointerdown:40(d27/p0) pointerup:56(d33/p0) click:112(d40/p4)] LoAF 61.9/0s/0.5sl
+[mobile-4x-3pblocked-gpu] region: switch (checkbox)                                  112ms  delay 42.1 proc 3.3 pres 66.6 [pointerdown:40(d28/p0) pointerup:48(d36/p0) click:112(d42/p3)] LoAF 55.3/0s/1.1sl
+[mobile-4x-3pblocked-gpu] upsell: See Private Cloud Options (switch tab)             128ms  delay 43 proc 28.5 pres 56.5 [pointerdown:40(d29/p0) pointerup:48(d35/p0) click:128(d43/p29)] LoAF 70.2/28.5s/10.6sl
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-cloud                       144ms  delay 67.5 proc 22.4 pres 54.1 [pointerdown:40(d30/p0) pointerup:48(d38/p1) click:144(d68/p22)] LoAF 77.4/22.1s/3.1sl
+[mobile-4x-3pblocked-gpu] upsell: See Private Cloud Options (switch tab)             128ms  delay 46.1 proc 27.5 pres 54.4 [pointerdown:56(d28/p0) pointerup:72(d36/p0) click:128(d46/p28)] LoAF 71.5/27.5s/10.9sl
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-cloud                       152ms  delay 79.5 proc 22.9 pres 49.6 [pointerdown:40(d30/p0) pointerup:56(d44/p0) click:152(d80/p23)] LoAF 83.4/22.9s/2.9sl
+[mobile-4x-3pblocked-gpu] upsell: See Private Cloud Options (switch tab)             136ms  delay 51.2 proc 26.7 pres 58.1 [pointerdown:56(d30/p0) pointerup:72(d37/p1) click:136(d51/p27)] LoAF 71.8/26.7s/10.8sl
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-cloud                       136ms  delay 66.1 proc 24.2 pres 45.7 [pointerdown:40(d30/p0) pointerup:48(d38/p0) click:136(d66/p24)] LoAF 75.2/24.2s/2.9sl
+[mobile-4x-3pblocked-gpu] top-up accordion toggle                                    72ms  delay 36.9 proc 0.3 pres 34.8 [pointerdown:56(d31/p0) pointerup:72(d37/p0) click:72(d49/p1)] 
+[mobile-4x-3pblocked-gpu] top-up accordion toggle                                    72ms  delay 39.8 proc 0.1 pres 32.1 [pointerdown:40(d29/p0) pointerup:48(d36/p0) click:72(d40/p0)] 
+[mobile-4x-3pblocked-gpu] top-up accordion toggle                                    72ms  delay 42.4 proc 0 pres 29.6 [pointerdown:40(d27/p0) pointerup:48(d34/p0) click:72(d42/p0)] 
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-private-cloud               136ms  delay 50.5 proc 27.9 pres 57.6 [pointerdown:40(d27/p0) pointerup:48(d36/p0) click:136(d51/p28)] LoAF 78.2/27.4s/11.3sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Annual                                      136ms  delay 54.3 proc 24.7 pres 57 [pointerdown:40(d27/p0) pointerup:48(d37/p0) click:136(d54/p25)] LoAF 83.3/24.7s/2.7sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Monthly                                     104ms  delay 46.1 proc 4.5 pres 53.4 [pointerdown:56(d27/p0) pointerup:72(d37/p0) click:104(d46/p5)] LoAF 51.4/0s/2.4sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Annual                                      112ms  delay 54.2 proc 3.1 pres 54.7 [pointerdown:56(d30/p0) pointerup:72(d36/p0) click:112(d54/p3)] LoAF 53.9/0s/2.6sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Monthly                                     104ms  delay 44 proc 3.6 pres 56.4 [pointerdown:48(d36/p0) pointerup:48(d35/p0) click:104(d44/p4)] LoAF 53.1/0s/3sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Annual                                      112ms  delay 48.3 proc 5.1 pres 58.6 [pointerdown:40(d31/p0) pointerup:48(d38/p0) click:112(d48/p5)] LoAF 57.1/0s/2.9sl
+[mobile-4x-3pblocked-gpu] PC billing: -> Monthly                                     112ms  delay 46.5 proc 5.2 pres 60.3 [pointerdown:56(d32/p0) pointerup:72(d35/p0) click:112(d47/p5)] LoAF 59.6/0s/2.5sl
+[mobile-4x-3pblocked-gpu] PC calculator: open #1 (cold chunk)                        104ms  delay 52.2 proc 5.6 pres 46.2 [pointerdown:40(d30/p0) pointerup:48(d36/p0) click:104(d52/p6)] LoAF 54.5/0s/2.9sl
+[mobile-4x-3pblocked-gpu] PC calc: click slider track @0.35                          160ms  delay 31.3 proc 0 pres 128.7 [pointerdown:160(d31/p0) pointerup:96(d85/p0)] LoAF 128.3/75s/33.6sl
+[mobile-4x-3pblocked-gpu] PC calc: click slider track @0.7                           152ms  delay 28.2 proc 0 pres 123.8 [pointerdown:152(d28/p0) pointerup:88(d70/p0)] LoAF 114.1/69.1s/31.2sl
+[mobile-4x-3pblocked-gpu] PC calc: click slider track @0.15                          152ms  delay 27 proc 0 pres 125 [pointerdown:152(d27/p0) pointerup:88(d75/p0)] LoAF 118.5/72.1s/32.7sl
+[mobile-4x-3pblocked-gpu] PC calc: slider ArrowRight                                 104ms  delay 0.5 proc 0.7 pres 102.8 [keydown:104(d1/p1) keyup:64(d43/p0)] LoAF 93.7/44.3s/32.7sl
+[mobile-4x-3pblocked-gpu] PC calc: slider ArrowRight                                 104ms  delay 8.7 proc 0.9 pres 94.4 [keydown:104(d9/p1) keyup:48(d34/p0)] LoAF 91.7/48.8s/32.6sl
+[mobile-4x-3pblocked-gpu] PC calc: slider ArrowRight                                 96ms  delay 0.1 proc 0.1 pres 95.8 [keydown:96(d0/p0) keyup:48(d35/p0)] LoAF 86.3/36.5s/33.9sl
+[mobile-4x-3pblocked-gpu] PC calc: type digit into devices                           144ms  delay 3.9 proc 0 pres 140.1 [keydown:144(d4/p0) keypress:144(d4/p5) keyup:80(d67/p0)] LoAF 135.2/81.4s/33.7sl
+[mobile-4x-3pblocked-gpu] PC calc: type digit into devices                           104ms  delay 0.6 proc 0.2 pres 103.2 [keydown:104(d1/p0) keypress:104(d1/p2) keyup:56(d39/p0)] LoAF 97.2/48.6s/32.8sl
+[mobile-4x-3pblocked-gpu] PC calc: type digit into devices                           88ms  delay 0.1 proc 0.1 pres 87.8 [keydown:88(d0/p0) keypress:88(d0/p4) keyup:32(d21/p0)] LoAF 78.2/31.9s/29.9sl
+[mobile-4x-3pblocked-gpu] PC calc: stepper +                                         224ms  delay 127.8 proc 38.6 pres 57.6 [pointerdown:48(d29/p0) pointerup:48(d38/p0) click:224(d128/p39)] LoAF 165.4/86s/0.2sl
+[mobile-4x-3pblocked-gpu] PC calc: stepper +                                         136ms  delay 40 proc 48.3 pres 47.7 [pointerdown:40(d27/p0) pointerup:56(d33/p0) click:136(d40/p48)] LoAF 88.7/48.3s/0.6sl
+[mobile-4x-3pblocked-gpu] PC calc: stepper +                                         144ms  delay 41.5 proc 47.4 pres 55.1 [pointerdown:48(d28/p0) pointerup:56(d35/p0) click:144(d42/p47)] LoAF 88.4/47.4s/0.9sl
+[mobile-4x-3pblocked-gpu] PC calc: add-on switch                                     184ms  delay 44.1 proc 81.1 pres 58.8 [pointerdown:48(d29/p0) pointerup:56(d34/p0) click:184(d44/p81)] LoAF 128.3/80.1s/0.8sl
+[mobile-4x-3pblocked-gpu] PC calc: add-on switch                                     176ms  delay 39.6 proc 79 pres 57.4 [pointerdown:48(d26/p0) pointerup:48(d33/p0) click:176(d40/p79)] LoAF 121.3/78.3s/1.1sl
+[mobile-4x-3pblocked-gpu] PC calc: add-on switch                                     168ms  delay 24.5 proc 0 pres 143.5 [pointerdown:40(d19/p0) pointerup:168(d25/p0) click:168(d29/p82)] LoAF 124.1/80.9s/0.7sl
+[mobile-4x-3pblocked-gpu] PC calculator: close #1                                    64ms  delay 43.2 proc 1.7 pres 19.1 [pointerdown:48(d31/p1) pointerup:48(d36/p0) click:64(d43/p2)] 
+[mobile-4x-3pblocked-gpu] PC calculator: open #2                                     184ms  delay 51 proc 70.7 pres 62.3 [pointerdown:40(d29/p0) pointerup:48(d35/p0) click:184(d51/p71)] LoAF 126.2/70.7s/0.9sl
+[mobile-4x-3pblocked-gpu] PC calculator: close #2                                    64ms  delay 41.8 proc 1.1 pres 21.1 [pointerdown:48(d26/p0) pointerup:56(d35/p0) click:64(d42/p1)] 
+[mobile-4x-3pblocked-gpu] PC calculator: open #3                                     184ms  delay 46.3 proc 75.7 pres 62 [pointerdown:40(d28/p0) pointerup:48(d36/p0) click:184(d46/p76)] LoAF 130/75.5s/1.4sl
+[mobile-4x-3pblocked-gpu] PC calculator: close #3                                    64ms  delay 42.7 proc 1.6 pres 19.7 [pointerdown:48(d31/p0) pointerup:56(d35/p1) click:64(d43/p2)] 
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-pe                          120ms  delay 59.3 proc 28.4 pres 32.3 [pointerdown:40(d28/p1) pointerup:48(d38/p0) click:120(d59/p28)] LoAF 67/28.4s/6.7sl
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Perpetual                              104ms  delay 42.9 proc 4.7 pres 56.4 [pointerdown:40(d26/p0) pointerup:48(d34/p0) click:104(d43/p5)] LoAF 50.5/0s/4sl
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Subscription                           112ms  delay 41.1 proc 4.1 pres 66.8 [pointerdown:48(d29/p0) pointerup:48(d35/p0) click:112(d41/p4)] LoAF 60.8/0s/5.2sl
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Perpetual                              96ms  delay 41.9 proc 3.6 pres 50.5 [pointerdown:40(d29/p0) pointerup:48(d34/p0) click:96(d42/p4)] 
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Subscription                           120ms  delay 42.6 proc 4 pres 73.4 [pointerdown:48(d32/p0) pointerup:48(d37/p0) click:120(d43/p4)] LoAF 62.2/0s/4.6sl
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Perpetual                              96ms  delay 41.5 proc 3.9 pres 50.6 [pointerdown:48(d30/p0) pointerup:48(d36/p0) click:96(d42/p4)] 
+[mobile-4x-3pblocked-gpu] On-prem billing: -> Subscription                           128ms  delay 54.5 proc 4 pres 69.5 [pointerdown:40(d30/p0) pointerup:48(d38/p0) click:128(d55/p4)] LoAF 66.9/0s/4.7sl
+[mobile-4x-3pblocked-gpu] PAYG calculator: open #1 (cold chunk)                      88ms  delay 43.3 proc 4.2 pres 40.5 [pointerdown:48(d30/p0) pointerup:48(d34/p0) click:88(d43/p4)] 
+[mobile-4x-3pblocked-gpu] PAYG calc: click slider track @0.4                         120ms  delay 29.2 proc 0 pres 90.8 [pointerdown:120(d29/p0) pointerup:120(d36/p0)] LoAF 94.5/53.3s/22.5sl,79.1/47.5s/2.6sl
+[mobile-4x-3pblocked-gpu] PAYG calc: click slider track @0.75                        152ms  delay 42.2 proc 0 pres 109.8 [pointerdown:152(d42/p0) pointerup:144(d60/p0)] LoAF 102.5/64.2s/27.3sl,87.1/49.9s/2.8sl
+[mobile-4x-3pblocked-gpu] PAYG calc: click slider track @0.1                         120ms  delay 30.2 proc 0 pres 89.8 [pointerdown:120(d30/p0) pointerup:120(d35/p0)] LoAF 86.1/49.1s/25.6sl,76.6/46.5s/2.7sl
+[mobile-4x-3pblocked-gpu] PAYG calc: slider ArrowRight                               152ms  delay 4 proc 58.1 pres 89.9 [keydown:152(d4/p58) keyup:40(d26/p0)] LoAF 146.9/107.1s/25.4sl
+[mobile-4x-3pblocked-gpu] PAYG calc: slider ArrowRight                               176ms  delay 0.4 proc 59.6 pres 116 [keydown:176(d0/p60) keyup:72(d52/p0)] LoAF 164.3/110s/24.7sl
+[mobile-4x-3pblocked-gpu] PAYG calc: slider ArrowRight                               168ms  delay 0.1 proc 53.9 pres 114 [keydown:168(d0/p54) keyup:64(d50/p0)] LoAF 158.5/97.5s/21.5sl
+[mobile-4x-3pblocked-gpu] PAYG calc: type digit into devices                         96ms  delay 5.8 proc 0.1 pres 90.1 [keydown:96(d6/p0) keypress:96(d6/p2) keyup:32(d22/p0)] LoAF 90/52s/21.9sl
+[mobile-4x-3pblocked-gpu] PAYG calc: type digit into devices                         104ms  delay 0.2 proc 0 pres 103.8 [keydown:104(d0/p0) keypress:104(d0/p2) keyup:56(d41/p0)] LoAF 96.5/57.5s/23.5sl
+[mobile-4x-3pblocked-gpu] PAYG calc: type digit into devices                         128ms  delay 0.3 proc 0.7 pres 127 [keydown:128(d0/p1) keypress:128(d1/p5) keyup:80(d55/p0)] LoAF 114.4/68.5s/25sl
+[mobile-4x-3pblocked-gpu] PAYG calc: Edge add-on switch                              224ms  delay 122.5 proc 53.3 pres 48.2 [pointerdown:40(d27/p0) pointerup:48(d35/p0) click:224(d123/p53)] LoAF 167.6/109.8s/0.9sl
+[mobile-4x-3pblocked-gpu] PAYG calc: Edge add-on switch                              152ms  delay 42.2 proc 63.3 pres 46.5 [pointerdown:48(d28/p0) pointerup:56(d36/p0) click:152(d42/p63)] LoAF 97/63.1s/0.1sl
+[mobile-4x-3pblocked-gpu] PAYG calc: Edge add-on switch                              152ms  delay 40.6 proc 64.8 pres 46.6 [pointerdown:48(d30/p0) pointerup:48(d34/p0) click:152(d41/p65)] LoAF 97.8/64.7s/0.4sl
+[mobile-4x-3pblocked-gpu] PAYG calculator: close #1                                  72ms  delay 44.2 proc 1.2 pres 26.6 [pointerdown:48(d28/p0) pointerup:56(d37/p0) click:72(d44/p1)] 
+[mobile-4x-3pblocked-gpu] PAYG calculator: open #2                                   160ms  delay 45.8 proc 66.8 pres 47.4 [pointerdown:40(d28/p0) pointerup:48(d36/p0) click:160(d46/p67)] LoAF 107.9/66.8s/1.2sl
+[mobile-4x-3pblocked-gpu] PAYG calculator: close #2                                  64ms  delay 42.5 proc 0.7 pres 20.8 [pointerdown:48(d30/p0) pointerup:48(d35/p0) click:64(d43/p1)] 
+[mobile-4x-3pblocked-gpu] PAYG calculator: open #3                                   160ms  delay 49.9 proc 66 pres 44.1 [pointerdown:40(d30/p0) pointerup:48(d35/p0) click:160(d50/p66)] LoAF 105.1/65.3s/1.3sl
+[mobile-4x-3pblocked-gpu] PAYG calculator: close #3                                  64ms  delay 47.2 proc 0.8 pres 16 [pointerdown:48(d31/p0) pointerup:48(d35/p0) click:64(d47/p1)] 
+[mobile-4x-3pblocked-gpu] (setup) sub-tab -> thingsboard-cloud                       128ms  delay 58.6 proc 31.8 pres 37.6 [pointerdown:48(d29/p0) pointerup:48(d37/p0) click:128(d59/p32)] LoAF 74.1/37s/4sl
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 2nd                                   88ms  delay 52.3 proc 0.8 pres 34.9 [pointerdown:40(d28/p0) pointerup:48(d35/p0) click:88(d52/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 1st                                   80ms  delay 45.1 proc 0.8 pres 34.1 [pointerdown:48(d30/p0) pointerup:48(d36/p0) click:80(d45/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 2nd                                   80ms  delay 44.7 proc 0.7 pres 34.6 [pointerdown:40(d30/p0) pointerup:48(d36/p0) click:80(d45/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 1st                                   80ms  delay 45.4 proc 0.1 pres 34.5 [pointerdown:40(d29/p0) pointerup:48(d36/p0) click:80(d45/p0)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 2nd                                   88ms  delay 45.6 proc 0.9 pres 41.5 [pointerdown:40(d30/p0) pointerup:48(d37/p0) click:88(d46/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> 1st                                   80ms  delay 46.3 proc 0.5 pres 33.2 [pointerdown:40(d29/p0) pointerup:48(d37/p0) click:80(d46/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: expand/collapse item                                  80ms  delay 46.1 proc 0.5 pres 33.4 [pointerdown:40(d29/p0) pointerup:48(d37/p0) click:80(d46/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: expand/collapse item                                  72ms  delay 46.2 proc 0.5 pres 25.3 [pointerdown:40(d30/p0) pointerup:48(d35/p0) click:72(d46/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: expand/collapse item                                  72ms  delay 44.2 proc 0 pres 27.8 [pointerdown:48(d32/p0) pointerup:48(d36/p0) click:72(d44/p0)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> #1                                    72ms  delay 44.5 proc 0.5 pres 27 [pointerdown:40(d27/p0) pointerup:48(d35/p0) click:72(d45/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: Load more                                             96ms  delay 49.4 proc 1.2 pres 45.4 [pointerdown:40(d28/p0) pointerup:48(d36/p0) click:96(d49/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> #2                                    80ms  delay 43.5 proc 0.6 pres 35.9 [pointerdown:40(d29/p0) pointerup:48(d34/p0) click:80(d44/p1)] 
+[mobile-4x-3pblocked-gpu] FAQ: Load more                                             88ms  delay 52.1 proc 0.2 pres 35.7 [pointerdown:40(d28/p0) pointerup:48(d36/p0) click:88(d52/p0)] 
+[mobile-4x-3pblocked-gpu] FAQ: category tab -> #3                                    88ms  delay 44.6 proc 0.1 pres 43.3 [pointerdown:56(d30/p0) pointerup:72(d36/p0) click:88(d45/p0)] 
+[mobile-4x-3pblocked-gpu] FAQ: Load more                                             88ms  delay 52.6 proc 0.8 pres 34.6 [pointerdown:56(d26/p0) pointerup:72(d36/p0) click:88(d53/p1)] 
+[mobile-4x-3pblocked-gpu] feature (i) click -> jump to FAQ                           96ms  delay 50.8 proc 3.9 pres 41.3 [pointerdown:40(d31/p0) pointerup:48(d36/p0) click:96(d51/p4)] 
+[mobile-4x-3pblocked-gpu] feature (i) click -> jump to FAQ                           96ms  delay 49.4 proc 3.7 pres 42.9 [pointerdown:40(d30/p0) pointerup:48(d35/p0) click:96(d49/p4)] 
+[mobile-4x-3pblocked-gpu] feature (i) click -> jump to FAQ                           96ms  delay 47.1 proc 3.9 pres 45 [pointerdown:48(d30/p0) pointerup:48(d35/p0) click:96(d47/p4)] 
+[mobile-4x-3pblocked-gpu] header: burger open                                        88ms  delay 48.3 proc 5.2 pres 34.5 [pointerdown:48(d29/p0) pointerup:48(d35/p0) click:88(d48/p5)] 
+[mobile-4x-3pblocked-gpu] header: expand "Products" in drawer                        96ms  delay 42 proc 0.5 pres 53.5 [pointerdown:40(d29/p0) pointerup:48(d35/p0) click:96(d42/p1)] 
+[mobile-4x-3pblocked-gpu] header: burger close                                       104ms  delay 45.1 proc 0.7 pres 58.2 [pointerdown:48(d30/p0) pointerup:48(d34/p0) click:104(d45/p1)] 
+[mobile-4x-3pblocked-gpu] header: burger open                                        80ms  delay 42.9 proc 5.1 pres 32 [pointerdown:40(d29/p0) pointerup:48(d36/p0) click:80(d43/p5)] 
+[mobile-4x-3pblocked-gpu] header: expand "Products" in drawer                        96ms  delay 39 proc 0.9 pres 56.1 [pointerdown:48(d29/p0) pointerup:48(d34/p0) click:96(d39/p1)] 
+[mobile-4x-3pblocked-gpu] header: burger close                                       104ms  delay 42.1 proc 1 pres 60.9 [pointerdown:48(d29/p0) pointerup:48(d36/p0) click:104(d42/p1)] 
+[mobile-4x-3pblocked-gpu] header: burger open                                        80ms  delay 44.4 proc 6.3 pres 29.3 [pointerdown:40(d28/p0) pointerup:56(d36/p0) click:80(d44/p6)] 
+[mobile-4x-3pblocked-gpu] header: expand "Products" in drawer                        96ms  delay 42.3 proc 0.7 pres 53 [pointerdown:48(d30/p0) pointerup:48(d37/p0) click:96(d42/p1)] 
+[mobile-4x-3pblocked-gpu] header: burger close                                       96ms  delay 40 proc 0.4 pres 55.6 [pointerdown:48(d31/p0) pointerup:48(d34/p0) click:96(d40/p0)] 
+[mobile-4x-3pblocked-gpu] theme toggle                                               128ms  delay 44.6 proc 2.2 pres 81.2 [pointerdown:40(d25/p0) pointerup:48(d36/p0) click:128(d45/p2)] LoAF 61.9/0s/0.9sl
+[mobile-4x-3pblocked-gpu] theme toggle                                               112ms  delay 42.4 proc 1 pres 68.6 [pointerdown:56(d30/p0) pointerup:72(d36/p0) click:112(d42/p1)] LoAF 56.6/0s/1.5sl
+[mobile-4x-3pblocked-gpu] theme toggle                                               72ms  delay 46.5 proc 1 pres 24.5 [pointerdown:40(d30/p0) pointerup:48(d36/p0) click:72(d47/p1)] 
+[mobile-4x-3pblocked-gpu] idleAfter {"recalcStyleCount":146,"recalcStyleMs":461.51,"layoutCount":73,"layoutMs":13.73,"scriptMs":0,"taskMs":815.79}
+[mobile-4x-3pblocked-gpu] consent end {"hidden":false,"visible":true,"cookie":false}
+[mobile-4x-3pblocked-gpu] calibration(plain): click button                           16ms  delay 3.9 proc 0 pres 12.1 [click:16(d4/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(plain): click button                           16ms  delay 2 proc 0 pres 14 [click:16(d2/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(plain): click button                           16ms  delay 2.1 proc 0.6 pres 13.3 [click:16(d2/p1)] 
+[mobile-4x-3pblocked-gpu] calibration(plain): click button                           16ms  delay 3 proc 0 pres 13 [click:16(d3/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(plain): click button                           16ms  delay 3.9 proc 0.1 pres 12 [click:16(d4/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(anim): click button                            32ms  delay 14.4 proc 0.1 pres 17.5 [click:32(d14/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(anim): click button                            32ms  delay 15.1 proc 0 pres 16.9 [click:32(d15/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(anim): click button                            32ms  delay 14.5 proc 0 pres 17.5 [click:32(d15/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(anim): click button                            32ms  delay 14.2 proc 0 pres 17.8 [click:32(d14/p0)] 
+[mobile-4x-3pblocked-gpu] calibration(anim): click button                            32ms  delay 13.7 proc 0 pres 18.3 [click:32(d14/p0)] 
+[mobile-4x-3pblocked-gpu] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-3pblocked-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-mobile-4x-3pblocked-gpu.json

@@ -1,0 +1,65 @@
+[desktop-1x-noanim-quick-gpu] loaded in 543 ms
+[desktop-1x-noanim-quick-gpu] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"https://thingsboard.io/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"none","chatAnim":"none","observerErrs":[]} consent {"present":true,"hidden":false,"visible":true,"rect":[20,570,340,350]}
+[desktop-1x-noanim-quick-gpu] DOM 5996 elements, depth 22 invisible 5106 rules 1994 :has 94
+[desktop-1x-noanim-quick-gpu] idle {"recalcStyleCount":72.7,"recalcStyleMs":7.43,"layoutCount":72.7,"layoutMs":5.59,"scriptMs":0,"taskMs":77.74} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":300,"ms":31.2},"layout":{"n":300,"ms":17.4},"paint":{"n":0,"ms":0},"prePaint":{"n":300,"ms":44.1},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":300,"drawFrames":300,"updateLayoutTreeElementCounts":[4,4,4,4,4,4,4,4,4,4]}
+[desktop-1x-noanim-quick-gpu] baseline: click empty background                           48ms  delay 1.4 proc 0.2 pres 46.4 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] sub-tab: Cloud -> Private Cloud                            48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:40(d0/p0) click:40(d0/p15)] 
+[desktop-1x-noanim-quick-gpu] sub-tab: Private Cloud -> On-premises                      48ms  delay 1.1 proc 0.2 pres 46.7 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p5)] 
+[desktop-1x-noanim-quick-gpu] sub-tab: On-premises -> Cloud                              48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:40(d0/p0) click:40(d0/p5)] 
+[desktop-1x-noanim-quick-gpu] region: label -> North America                             48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] region: label -> Europe                                    48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] region: switch (checkbox)                                  48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:40(d1/p0) click:40(d1/p1)] 
+[desktop-1x-noanim-quick-gpu] upsell: See Private Cloud Options (switch tab)             48ms  delay 0.7 proc 0 pres 47.3 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p6)] 
+[desktop-1x-noanim-quick-gpu] (setup) sub-tab -> thingsboard-cloud                       48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:40(d0/p0) click:40(d0/p7)] 
+[desktop-1x-noanim-quick-gpu] top-up accordion toggle                                    48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:48(d0/p0) click:48(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] (setup) sub-tab -> thingsboard-private-cloud               48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:48(d0/p0) click:48(d0/p7)] 
+[desktop-1x-noanim-quick-gpu] PC billing: -> Annual                                      48ms  delay 0.5 proc 0.1 pres 47.4 [pointerdown:48(d1/p0) pointerup:48(d1/p0) click:48(d1/p1)] 
+[desktop-1x-noanim-quick-gpu] PC billing: -> Monthly                                     48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:48(d1/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] PC calculator: open #1 (cold chunk)                        48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] PC calc: click slider track @0.35                          48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:48(d0/p0) click:48(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: click slider track @0.7                           56ms  delay 0.4 proc 0 pres 55.6 [pointerdown:56(d0/p0) pointerup:48(d0/p0) click:48(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: click slider track @0.15                          56ms  delay 0.3 proc 0 pres 55.7 [pointerdown:56(d0/p0) pointerup:48(d0/p0) click:48(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: slider ArrowRight                                 56ms  delay 0.2 proc 0.1 pres 55.7 [keydown:48(d1/p1) keyup:56(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: type digit into devices                           56ms  delay 0.1 proc 0.1 pres 55.8 [keydown:56(d0/p0) keypress:56(d0/p1) keyup:56(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: type digit into devices                           56ms  delay 0.2 proc 0.1 pres 55.7 [keydown:56(d0/p0) keypress:56(d0/p1) keyup:40(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: type digit into devices                           56ms  delay 0.9 proc 0 pres 55.1 [keydown:48(d0/p0) keypress:48(d0/p2) keyup:56(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] PC calc: stepper +                                         56ms  delay 0.7 proc 0 pres 55.3 [pointerdown:56(d1/p0) pointerup:48(d0/p0) click:48(d0/p11)] 
+[desktop-1x-noanim-quick-gpu] PC calc: add-on switch                                     56ms  delay 0.6 proc 0 pres 55.4 [pointerdown:56(d1/p0) pointerup:48(d0/p0) click:48(d0/p21)] 
+[desktop-1x-noanim-quick-gpu] PC calculator: close #1                                    48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:48(d0/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] (setup) sub-tab -> thingsboard-pe                          48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:48(d0/p0) click:48(d0/p9)] 
+[desktop-1x-noanim-quick-gpu] On-prem billing: -> Perpetual                              48ms  delay 0.7 proc 0 pres 47.3 [pointerdown:48(d1/p0) pointerup:48(d0/p0) click:48(d1/p1)] 
+[desktop-1x-noanim-quick-gpu] On-prem billing: -> Subscription                           48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:48(d0/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] PAYG calculator: open #1 (cold chunk)                      48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:48(d1/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: click slider track @0.4                         48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:48(d1/p0) pointerup:40(d0/p0) click:40(d20/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: click slider track @0.75                        48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:32(d0/p0) click:32(d21/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: click slider track @0.1                         48ms  delay 0.3 proc 0 pres 47.7 [pointerdown:48(d0/p0) pointerup:40(d0/p0) click:40(d26/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: slider ArrowRight                               48ms  delay 0.2 proc 12.9 pres 34.9 [keydown:48(d0/p13) keyup:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: type digit into devices                         48ms  delay 0.2 proc 0.1 pres 47.7 [keydown:48(d0/p0) keypress:48(d0/p1) keyup:40(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: type digit into devices                         48ms  delay 0.1 proc 0 pres 47.9 [keydown:48(d0/p0) keypress:48(d0/p1) keyup:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: type digit into devices                         48ms  delay 0.1 proc 0 pres 47.9 [keydown:48(d0/p0) keypress:48(d0/p1) keyup:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] PAYG calc: Edge add-on switch                              40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:40(d0/p0) click:40(d0/p14)] 
+[desktop-1x-noanim-quick-gpu] PAYG calculator: close #1                                  40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:40(d0/p0) click:40(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] (setup) sub-tab -> thingsboard-cloud                       40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:40(d0/p0) click:40(d0/p9)] 
+[desktop-1x-noanim-quick-gpu] FAQ: category tab -> 2nd                                   40ms  delay 0.3 proc 0 pres 39.7 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] FAQ: category tab -> 1st                                   40ms  delay 0.3 proc 0 pres 39.7 [pointerdown:40(d0/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] FAQ: expand/collapse item                                  40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] FAQ: category tab -> #1                                    40ms  delay 0.5 proc 0 pres 39.5 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] FAQ: Load more                                             40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:40(d1/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] feature (i) click -> jump to FAQ                           40ms  delay 0.7 proc 0 pres 39.3 [pointerdown:40(d1/p0) pointerup:32(d0/p0) click:32(d0/p1)] 
+[desktop-1x-noanim-quick-gpu] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x-noanim-quick-gpu] header: click "Products" label (desktop no-op)             40ms  delay 0.3 proc 0 pres 39.7 [pointerdown:40(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] theme toggle                                               40ms  delay 0.4 proc 0 pres 39.6 [pointerdown:40(d0/p0) pointerup:40(d0/p0) click:40(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] idleAfter {"recalcStyleCount":74.3,"recalcStyleMs":6.37,"layoutCount":74.3,"layoutMs":3.84,"scriptMs":0,"taskMs":96.18}
+[desktop-1x-noanim-quick-gpu] calibration(plain): click button                           <16ms 
+[desktop-1x-noanim-quick-gpu] calibration(plain): click button                           <16ms 
+[desktop-1x-noanim-quick-gpu] calibration(plain): click button                           <16ms 
+[desktop-1x-noanim-quick-gpu] calibration(plain): click button                           <16ms 
+[desktop-1x-noanim-quick-gpu] calibration(plain): click button                           <16ms 
+[desktop-1x-noanim-quick-gpu] calibration(anim): click button                            16ms  delay 0.3 proc 0 pres 15.7 [pointerdown:16(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] calibration(anim): click button                            16ms  delay 1.3 proc 0 pres 14.7 [pointerdown:16(d1/p0)] 
+[desktop-1x-noanim-quick-gpu] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0)] 
+[desktop-1x-noanim-quick-gpu] calibration {"plain":[null,null,null,null,null],"anim":[16,16,16,16,16]}
+[desktop-1x-noanim-quick-gpu] wrote /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/out-desktop-1x-noanim-quick-gpu.json
+EXIT 0

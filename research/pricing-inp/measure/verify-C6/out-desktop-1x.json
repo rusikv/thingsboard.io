@@ -1,0 +1,95 @@
+{
+ "kind": "desktop",
+ "cpu": 1,
+ "info": {
+  "ua": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "w": 1350,
+  "dom": 5995,
+  "ccIndex": 33,
+  "launcherIndex": 80,
+  "launcher": {
+   "visibility": "visible",
+   "anim": "chat-hues",
+   "play": "running",
+   "dur": "15s"
+  },
+  "root": {
+   "anim": "promo-collapse",
+   "promoH": "40px",
+   "promoCur": "40px"
+  },
+  "banner": {
+   "hidden": false
+  },
+  "smil": 4,
+  "anims": [
+   {
+    "name": "promo-collapse",
+    "target": "HTML",
+    "state": "running",
+    "tl": "ScrollTimeline"
+   },
+   {
+    "name": "chat-hues",
+    "target": "chat-launcher",
+    "state": "running",
+    "tl": "DocumentTimeline"
+   }
+  ],
+  "rules": [
+   {
+    "sel": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr)",
+    "media": " @(width < 432px)",
+    "text": ":root:has(#cc-main .cm:not([hidden])) .chat-launcher:where(.astro-pr2o3lpr) { visibility: hidden; }"
+   }
+  ]
+ },
+ "phases": [
+  {
+   "label": "desktop idle (chat-hues + SMIL, :has rule not in effect)",
+   "span": 3.31,
+   "recalcPerS": 56.5,
+   "recalcMsPerS": 35.5,
+   "recalcMedianMs": 0.59,
+   "recalcMaxMs": 2.06,
+   "runTaskMsPerS": 138.6,
+   "elementCounts": {
+    "18": 187
+   }
+  },
+  {
+   "label": "G scroll 0->40px in 2px steps (promo-collapse in range)",
+   "span": 0.8,
+   "recalcPerS": 24.9,
+   "recalcMsPerS": 391.5,
+   "recalcMedianMs": 15.76,
+   "recalcMaxMs": 24.28,
+   "runTaskMsPerS": 495,
+   "elementCounts": {
+    "1018": 20
+   }
+  },
+  {
+   "label": "H scroll 600->640px in 2px steps (past range)",
+   "span": 0.66,
+   "recalcPerS": 30.5,
+   "recalcMsPerS": 1.9,
+   "recalcMedianMs": 0.05,
+   "recalcMaxMs": 0.34,
+   "runTaskMsPerS": 74.7,
+   "elementCounts": {
+    "0": 20
+   }
+  },
+  {
+   "label": "I scroll 0->40px in 2px steps, promo-collapse disabled",
+   "span": 0.65,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "recalcMedianMs": 0,
+   "recalcMaxMs": 0,
+   "runTaskMsPerS": 40.4,
+   "elementCounts": {}
+  }
+ ]
+}
