@@ -1,5 +1,6 @@
 ---
 import SearchConsentNotice from '@components/SearchConsentNotice.astro';
+import '@styles/google-cse.scss';
 ---
 
 <p class="doc-search-query print:only" hidden></p>
@@ -59,9 +60,7 @@ import SearchConsentNotice from '@components/SearchConsentNotice.astro';
 	}
 </script>
 
-<style is:global lang="scss">
-	@use '../styles/google-cse' as *;
-
+<style is:global>
 	.doc-search-widget {
 		margin-top: 1rem;
 		/* Cap the whole widget so the input and result rows share the same
@@ -280,10 +279,6 @@ import SearchConsentNotice from '@components/SearchConsentNotice.astro';
 		border-bottom-color: var(--sl-color-hairline-light) !important;
 	}
 
-	/* Dark input: shared with the header search modal. */
-	.doc-search-widget {
-		@include google-cse-dark-input;
-	}
 	[data-theme='dark'] .doc-search-widget .gsc-result a.gs-title,
 	[data-theme='dark'] .doc-search-widget .gsc-result a.gs-title:link,
 	[data-theme='dark'] .doc-search-widget .gsc-result a.gs-title:visited {

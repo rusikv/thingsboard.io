@@ -1,6 +1,7 @@
 ---
 import SearchConsentNotice from '@components/SearchConsentNotice.astro';
 import { Products, productDocsPrefix } from '@models/site.models.ts';
+import '@styles/google-cse.scss';
 
 // TBMQ docs moved off-site, so no `/docs/mqtt-broker/**` pages — and no search page —
 // exist here any more. The prefixes stay in `productDocsPrefix` for the links that still
@@ -306,9 +307,7 @@ const searchRoutes: [string, string][] = [
 	}
 </style>
 
-<style is:global lang="scss">
-	@use '../styles/google-cse' as *;
-
+<style is:global>
 	html.tb-search-open {
 		overflow: hidden;
 		scrollbar-gutter: stable;
@@ -382,40 +381,6 @@ const searchRoutes: [string, string][] = [
 	   the dropdown tracks the input when the page scrolls. */
 	html.tb-search-open .gssb_c { position: fixed !important; }
 
-	/* Dark-theme the CSE autocomplete dropdown. It's rendered at body root
-	   (not inside .doc-search-widget or .tb-search-box) so we scope on the
-	   global [data-theme='dark'] selector and let the rule apply everywhere
-	   the dropdown can appear. */
-	[data-theme='dark'] .gssb_c {
-		background: var(--sl-color-bg) !important;
-		border: 1px solid var(--sl-color-hairline) !important;
-	}
-	/* Drop CSE's light-grey inner frame. */
-	[data-theme='dark'] .gssb_c .gsc-completion-container {
-		border-color: transparent !important;
-	}
-	[data-theme='dark'] .gssb_c table,
-	[data-theme='dark'] .gssb_c tbody,
-	[data-theme='dark'] .gssb_c tr,
-	[data-theme='dark'] .gssb_c td {
-		background: transparent !important;
-		color: var(--sl-color-text) !important;
-	}
-	[data-theme='dark'] .gssb_c .gssb_a,
-	[data-theme='dark'] .gssb_c .gsq_a,
-	[data-theme='dark'] .gssb_c .gssb_d {
-		color: var(--sl-color-text) !important;
-	}
-	/* Hovered or arrow-key row. */
-	[data-theme='dark'] .gssb_c .gsc-completion-selected {
-		background: var(--sl-color-gray-6) !important;
-	}
-	/* Branding row ("Enhanced by Google") — keep readable but muted */
-	[data-theme='dark'] .gssb_c .gssb_p,
-	[data-theme='dark'] .gssb_c .gssb_e {
-		color: var(--sl-color-gray-3) !important;
-	}
-
 	.tb-search-status {
 		margin: 0;
 		color: var(--sl-color-gray-3);
@@ -462,10 +427,6 @@ const searchRoutes: [string, string][] = [
 		padding: 0 !important;
 	}
 	.tb-search-box .gsc-input-box { border-radius: 6px !important; }
-	/* Dark input: shared with the docs search pages. */
-	.tb-search-box {
-		@include google-cse-dark-input;
-	}
 	.tb-search-box 	.gsc-webResult.gsc-result {
 		border-radius: 6px !important;
 		padding: 8px !important;
