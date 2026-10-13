@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C4
+cd /home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C4
 for round in 1 2; do
   for prof in desktop-4x mobile-4x; do
     for v in base fix; do

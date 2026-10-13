@@ -1,0 +1,64 @@
+THREAD CrGpuMain: 331.6 ms/s busy
+THREAD VizCompositorThread: 60.1 ms/s busy
+THREAD CrRendererMain: 211.7 ms/s busy
+THREAD Compositor: 91.7 ms/s busy
+== desktop-1x-fix_pricing_: main-thread aggregates over 3.00s (ms/s, count/s)
+    211.7 ms/s    242/s  RunTask
+    205.6 ms/s    242/s  ThreadControllerImpl::RunTask
+    203.0 ms/s     60/s  ProxyMain::BeginMainFrame
+    176.9 ms/s     60/s  WebFrameWidgetImpl::UpdateLifecycle
+    147.9 ms/s     60/s  LocalFrameView::RunStyleAndLayoutLifecyclePhases
+    147.3 ms/s     60/s  LocalFrameView::updateStyleAndLayoutIfNeededRecursive
+    147.0 ms/s     60/s  LocalFrameView::UpdateStyleAndLayout
+    146.2 ms/s     60/s  Blink.Style.UpdateTime
+    138.5 ms/s     60/s  UpdateLayoutTree
+    137.3 ms/s     60/s  Document::updateStyle
+    134.8 ms/s     60/s  Document::recalcStyle
+     13.5 ms/s     60/s  LocalFrameView::RunPaintLifecyclePhase
+     12.3 ms/s     60/s  Commit
+     12.2 ms/s     60/s  PrePaint
+      8.9 ms/s     60/s  WebFrameWidgetImpl::BeginMainFrame
+      8.7 ms/s     60/s  LocalFrameView::RunPrePaintLifecyclePhase
+      8.3 ms/s     60/s  Blink.PrePaint.UpdateTime
+      8.3 ms/s     60/s  Blink.Animate.UpdateTime
+      7.9 ms/s     60/s  PageAnimator::serviceScriptedAnimations
+      7.6 ms/s     60/s  Blink.Paint.UpdateTime
+      7.3 ms/s     57/s  Paint
+      7.1 ms/s     60/s  SelectorStats
+      5.1 ms/s    120/s  AnimationTimeline::serviceAnimations
+      3.1 ms/s     60/s  LocalFrameView::RunCompositingInputsLifecyclePhase
+      2.9 ms/s     29/s  LayerTreeHost::DoUpdateLayers
+      2.8 ms/s     60/s  Blink.CompositingInputs.UpdateTime
+      2.4 ms/s     60/s  LocalFrameView::pushPaintArtifactToCompositor
+      2.2 ms/s    242/s  BlinkScheduler_OnTaskCompleted
+      2.2 ms/s     60/s  Blink.CompositingCommit.UpdateTime
+      2.0 ms/s     60/s  LocalFrameView::UpdateViewportIntersectionsForSubtree
+      2.0 ms/s     60/s  Layerize
+      1.9 ms/s     60/s  LocalFrameView::ScheduleAnimation
+      1.8 ms/s     60/s  Blink.IntersectionObservation.UpdateTime
+      1.8 ms/s    120/s  IntersectionObserverController::computeIntersections
+      1.3 ms/s     60/s  MainThreadSchedulerImpl::WillBeginFrame
+      1.3 ms/s     60/s  AnimationHost::TickAnimations
+      1.2 ms/s    242/s  BlinkScheduler_PerformMicrotaskCheckpoint
+      1.1 ms/s    567/s  UpdateLayer
+      1.1 ms/s     31/s  MainFrameAborted
+      0.9 ms/s     60/s  MainThreadSchedulerImpl::DidCommitFrameToCompositor
+      0.8 ms/s     60/s  MainThreadSchedulerImpl::EndIdlePeriod
+      0.7 ms/s    120/s  SetIdlePeriodState
+      0.6 ms/s     60/s  StartIdlePeriod
+      0.6 ms/s     60/s  EndIdlePeriod
+      0.5 ms/s     60/s  CullRectUpdate
+UpdateLayoutTree elementCounts sample: [
+  18, 18, 18, 18, 18,
+  18, 18, 18, 18, 18,
+  18, 18
+]
+longest UpdateLayoutTree 6.45ms children:
+   +0.01 6.42ms Document::updateStyle 
+   +0.01 6.38ms Document::recalcStyle 
+invalidation reasons:
+   180x StyleRecalcInvalidationTracking:Animation::BUTTON id='chat-launcher' class='chat-launcher print:hidden 
+   180x StyleRecalcInvalidationTracking:Animation::DIV class='pricing-bg-wave pricing-bg-wave--a astro-x4tg6t5i
+   180x StyleRecalcInvalidationTracking:Animation::DIV class='pricing-bg-wave pricing-bg-wave--b astro-x4tg6t5i
+   180x StyleRecalcInvalidationTracking:Animation::DIV class='pricing-bg-wave pricing-bg-wave--c astro-x4tg6t5i
+   180x StyleRecalcInvalidationTracking:Animation::DIV class='pricing-bg-wave pricing-bg-wave--d astro-x4tg6t5i

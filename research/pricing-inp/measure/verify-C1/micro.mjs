@@ -3,7 +3,7 @@
 // Usage: node micro.mjs <cpuRate>
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C1';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C1';
 const CPU = Number(process.argv[2] || 1);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const port = 9700 + Math.floor(Math.random() * 200);
@@ -24,7 +24,7 @@ const traceStop = async () => { const p = new Promise((r) => (tdone = r)); await
 
 await send('Page.enable'); await send('Runtime.enable');
 await send('Emulation.setDeviceMetricsOverride', { width: 1350, height: 940, deviceScaleFactor: 1, mobile: false });
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await sleep(10000);
 await send('Emulation.setCPUThrottlingRate', { rate: CPU });
 

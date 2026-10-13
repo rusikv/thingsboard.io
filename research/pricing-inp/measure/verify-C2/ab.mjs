@@ -3,7 +3,7 @@
 // conditions: all | smilonly | chatonly | none | fix (fix = SMIL replaced by WAAPI transform anims; chat anim off)
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const OUT = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C2';
+const OUT = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C2';
 const [kind, cond, repsS] = process.argv.slice(2);
 const REPS = Number(repsS || 20);
 const mobile = kind === 'mobile';
@@ -40,7 +40,7 @@ addEventListener('DOMContentLoaded', () => {
 `;
 await send('Page.addScriptToEvaluateOnNewDocument', { source: pre });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await lp;
 await sleep(mobile ? 7000 : 5000);
 

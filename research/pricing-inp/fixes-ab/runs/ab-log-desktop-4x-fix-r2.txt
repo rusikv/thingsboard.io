@@ -1,0 +1,138 @@
+[desktop-4x-gpu-fix-r2] loaded in 1317 ms
+[desktop-4x-gpu-fix-r2] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"http://localhost:4332/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"chat-hues","observerErrs":[],"smilPaused":0,"smilElems":0,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[20,570,340,350]}
+[desktop-4x-gpu-fix-r2] DOM 5996 elements, depth 22 invisible 5102 rules 1965 :has 91
+[desktop-4x-gpu-fix-r2] idle {"recalcStyleCount":99.4,"recalcStyleMs":391.98,"layoutCount":0,"layoutMs":0,"scriptMs":0.06,"taskMs":850.62} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":301,"ms":989.3},"layout":{"n":0,"ms":0},"paint":{"n":378,"ms":216.3},"prePaint":{"n":302,"ms":287.8},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":301,"drawFrames":301,"updateLayoutTreeElementCounts":[18,18,18,18,18,18,18,18,18,18]}
+[desktop-4x-gpu-fix-r2] baseline: click empty background                           32ms  delay 3 proc 1 pres 28 [pointerdown:32(d3/p1) pointerup:32(d2/p0) click:32(d2/p1)] 
+[desktop-4x-gpu-fix-r2] baseline: click empty background                           32ms  delay 2 proc 0 pres 30 [pointerdown:32(d2/p0) pointerup:24(d6/p1) click:24(d6/p0)] 
+[desktop-4x-gpu-fix-r2] baseline: click empty background                           40ms  delay 4 proc 0 pres 36 [pointerdown:40(d4/p0) pointerup:24(d4/p0) click:24(d4/p0)] 
+[desktop-4x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            408ms  delay 18.7 proc 0.7 pres 388.6 [pointerdown:48(d1/p0) pointerup:408(d19/p1) click:408(d19/p169)] LoAF 335.3/167.3s/32.9sl
+[desktop-4x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      224ms  delay 16.4 proc 0.1 pres 207.5 [pointerdown:72(d21/p0) pointerup:224(d16/p0) click:224(d17/p78)] LoAF 182.1/77.4s/26.2sl
+[desktop-4x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              184ms  delay 20.5 proc 0.1 pres 163.4 [pointerdown:80(d18/p0) pointerup:184(d21/p0) click:184(d21/p71)] LoAF 59.1/0s/1.7sl,144.7/70.5s/14.1sl
+[desktop-4x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            192ms  delay 0.8 proc 0 pres 191.2 [pointerdown:48(d3/p0) pointerup:192(d1/p0) click:192(d1/p81)] LoAF 164.3/80.6s/22sl
+[desktop-4x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      200ms  delay 22.1 proc 0.1 pres 177.8 [pointerdown:80(d22/p0) pointerup:200(d22/p0) click:200(d23/p60)] LoAF 56.2/0s/0.7sl,155.6/59.6s/24.9sl
+[desktop-4x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              192ms  delay 17.8 proc 0 pres 174.2 [pointerdown:96(d19/p0) pointerup:192(d18/p0) click:192(d18/p79)] LoAF 84/0s/22.6sl,152.7/78.4s/13.9sl
+[desktop-4x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            264ms  delay 8.7 proc 0 pres 255.3 [pointerdown:40(d7/p0) pointerup:264(d9/p0) click:264(d10/p110)] LoAF 220.1/109s/32.3sl
+[desktop-4x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      160ms  delay 4.8 proc 0 pres 155.2 [pointerdown:80(d10/p1) pointerup:160(d5/p0) click:160(d5/p51)] LoAF 130.5/50.9s/21sl
+[desktop-4x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              144ms  delay 3.3 proc 0 pres 140.7 [pointerdown:48(d3/p0) pointerup:144(d3/p0) click:144(d3/p67)] LoAF 126.6/66.7s/13sl
+[desktop-4x-gpu-fix-r2] region: label -> North America                             152ms  delay 1.2 proc 0 pres 150.8 [pointerdown:40(d3/p0) pointerup:152(d1/p0) click:152(d1/p6)] LoAF 125.9/5.8s/10.7sl
+[desktop-4x-gpu-fix-r2] region: label -> Europe                                    192ms  delay 16.8 proc 0.1 pres 175.1 [pointerdown:40(d8/p0) pointerup:192(d17/p0) click:192(d17/p13)] LoAF 162.6/13s/8.7sl
+[desktop-4x-gpu-fix-r2] region: label -> North America                             160ms  delay 8.1 proc 0.1 pres 151.8 [pointerdown:32(d2/p0) pointerup:160(d8/p0) click:160(d8/p6)] LoAF 131.2/5.8s/12.9sl
+[desktop-4x-gpu-fix-r2] region: label -> Europe                                    296ms  delay 13.5 proc 0 pres 282.5 [pointerdown:24(d10/p0) pointerup:296(d14/p0) click:296(d14/p15)] LoAF 233.8/14.9s/16.2sl
+[desktop-4x-gpu-fix-r2] region: label -> North America                             176ms  delay 3.4 proc 0 pres 172.6 [pointerdown:16(d3/p0) pointerup:176(d3/p0) click:176(d3/p7)] LoAF 150.9/7.3s/16.5sl
+[desktop-4x-gpu-fix-r2] region: label -> Europe                                    168ms  delay 1.7 proc 0 pres 166.3 [pointerdown:40(d4/p0) pointerup:168(d2/p0) click:168(d2/p8)] LoAF 118.2/8.1s/10.2sl
+[desktop-4x-gpu-fix-r2] region: switch (checkbox)                                  216ms  delay 1.5 proc 0 pres 214.5 [pointerdown:40(d2/p0) pointerup:216(d2/p0) click:216(d2/p6)] LoAF 159.6/0s/12.4sl
+[desktop-4x-gpu-fix-r2] region: switch (checkbox)                                  248ms  delay 5.3 proc 0 pres 242.7 [pointerdown:48(d2/p0) pointerup:248(d5/p0) click:248(d5/p12)] LoAF 198.6/9.6s/14.9sl
+[desktop-4x-gpu-fix-r2] region: switch (checkbox)                                  136ms  delay 3.8 proc 0 pres 132.2 [pointerdown:48(d3/p0) pointerup:136(d4/p0) click:136(d4/p11)] LoAF 97.9/7.5s/6.3sl
+[desktop-4x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             352ms  delay 19.5 proc 0.5 pres 332 [pointerdown:88(d16/p0) pointerup:352(d20/p1) click:352(d20/p154)] LoAF 306.1/153.8s/48.8sl
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       416ms  delay 16.1 proc 0.8 pres 399.1 [pointerdown:80(d13/p0) pointerup:416(d16/p1) click:416(d17/p202)] LoAF 68.1/0s/0.1sl,366.5/201.9s/34.1sl
+[desktop-4x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             304ms  delay 5.7 proc 0 pres 298.3 [pointerdown:48(d6/p1) pointerup:304(d6/p0) click:304(d6/p127)] LoAF 251.4/126.5s/35sl
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       152ms  delay 2.9 proc 0.1 pres 149 [pointerdown:72(d13/p0) pointerup:152(d3/p0) click:152(d3/p63)] LoAF 130.7/62s/14.8sl
+[desktop-4x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             200ms  delay 9.4 proc 0.4 pres 190.2 [pointerdown:48(d2/p0) pointerup:200(d9/p0) click:200(d10/p80)] LoAF 167.7/80s/19.4sl
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       208ms  delay 12.1 proc 0 pres 195.9 [pointerdown:112(d40/p0) pointerup:208(d12/p0) click:208(d12/p72)] LoAF 69.4/0s/0.9sl,162.9/71.5s/29sl
+[desktop-4x-gpu-fix-r2] top-up accordion toggle                                    40ms  delay 7.1 proc 0 pres 32.9 [pointerdown:40(d7/p0) pointerup:40(d8/p0) click:40(d8/p1)] 
+[desktop-4x-gpu-fix-r2] top-up accordion toggle                                    56ms  delay 2.3 proc 0 pres 53.7 [pointerdown:40(d14/p0) pointerup:56(d2/p0) click:56(d2/p1)] 
+[desktop-4x-gpu-fix-r2] top-up accordion toggle                                    48ms  delay 1.7 proc 0.1 pres 46.2 [pointerdown:32(d5/p0) pointerup:48(d2/p0) click:48(d2/p0)] 
+[desktop-4x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-4x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-4x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-4x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-4x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-4x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-private-cloud               192ms  delay 7.3 proc 0 pres 184.7 [pointerdown:40(d9/p0) pointerup:192(d7/p0) click:192(d7/p69)] LoAF 150.1/68.5s/20.5sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Annual                                      232ms  delay 30.8 proc 0.4 pres 200.8 [pointerdown:88(d24/p0) pointerup:232(d31/p0) click:232(d31/p28)] LoAF 74.9/0s/25.5sl,170.1/32.4s/0.3sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Monthly                                     176ms  delay 15.3 proc 0.1 pres 160.6 [pointerdown:48(d17/p1) pointerup:176(d15/p0) click:176(d16/p17)] LoAF 146.5/16.5s/0.1sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Annual                                      216ms  delay 43.3 proc 0.1 pres 172.6 [pointerdown:48(d24/p0) pointerup:216(d43/p0) click:216(d43/p20)] LoAF 135.6/19.4s/0sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Monthly                                     120ms  delay 8.5 proc 0.4 pres 111.1 [pointerdown:48(d17/p0) pointerup:120(d9/p0) click:120(d9/p13)] LoAF 98.1/13.2s/0.1sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Annual                                      136ms  delay 14.2 proc 2 pres 119.8 [pointerdown:64(d31/p0) pointerup:136(d14/p2) click:136(d16/p14)] LoAF 95.8/13.8s/12.9sl
+[desktop-4x-gpu-fix-r2] PC billing: -> Monthly                                     168ms  delay 23.5 proc 0.1 pres 144.4 [pointerdown:80(d42/p0) pointerup:168(d24/p0) click:168(d24/p23)] LoAF 128.7/22.1s/15.4sl
+[desktop-4x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms LoAF 200.8/0s/172.8sl,57.6/0s/0sl,51.4/6.7s/19.2sl,55.1/0s/18.7sl
+[desktop-4x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms LoAF 59/7.8s/16.8sl
+[desktop-4x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms LoAF 52.7/0s/13.9sl,59.8/0s/23sl
+[desktop-4x-gpu-fix-r2] PC calculator: open #1 (cold chunk)                        160ms  delay 24.6 proc 0 pres 135.4 [pointerdown:104(d29/p0) pointerup:160(d25/p0) click:160(d25/p29)] LoAF 73/0s/1.1sl,131.7/28.9s/1.7sl
+[desktop-4x-gpu-fix-r2] PC calc: click slider track @0.35                          176ms  delay 12.3 proc 0 pres 163.7 [pointerdown:176(d12/p0) pointerup:112(d33/p0) click:112(d38/p1)] LoAF 122.4/19.3s/61.8sl
+[desktop-4x-gpu-fix-r2] PC calc: click slider track @0.7                           200ms  delay 18.2 proc 0 pres 181.8 [pointerdown:200(d18/p0) pointerup:144(d77/p0) click:144(d85/p0)] LoAF 159.7/29.6s/83.1sl
+[desktop-4x-gpu-fix-r2] PC calc: click slider track @0.15                          168ms  delay 9.2 proc 0 pres 158.8 [pointerdown:168(d9/p0) pointerup:112(d41/p1) click:112(d49/p1)] LoAF 112.4/15.7s/60.3sl
+[desktop-4x-gpu-fix-r2] PC calc: slider ArrowRight                                 144ms  delay 6.7 proc 2.5 pres 134.8 [keydown:144(d7/p3) keyup:104(d51/p0)] LoAF 99.4/15.5s/69.5sl
+[desktop-4x-gpu-fix-r2] PC calc: slider ArrowRight                                 184ms  delay 19 proc 2 pres 163 [keydown:184(d19/p2) keyup:144(d85/p1)] LoAF 134.6/29.2s/81.3sl
+[desktop-4x-gpu-fix-r2] PC calc: slider ArrowRight                                 152ms  delay 12.3 proc 1 pres 138.7 [keydown:152(d12/p1) keyup:104(d52/p0)] LoAF 107.8/16.3s/54.1sl
+[desktop-4x-gpu-fix-r2] PC calc: type digit into devices                           152ms  delay 0.8 proc 0.6 pres 150.6 [keydown:152(d1/p1) keypress:152(d1/p11) keyup:96(d34/p0)] LoAF 95.1/15.5s/57.2sl
+[desktop-4x-gpu-fix-r2] PC calc: type digit into devices                           136ms  delay 4.2 proc 0 pres 131.8 [keydown:136(d4/p0) keypress:136(d4/p4) keyup:96(d22/p0)] LoAF 78.5/14s/43.9sl,59.8/0s/3.6sl
+[desktop-4x-gpu-fix-r2] PC calc: type digit into devices                           144ms  delay 0.7 proc 0.1 pres 143.2 [keydown:144(d1/p0) keypress:144(d1/p12) keyup:88(d20/p0)] LoAF 80.4/16.2s/42.7sl
+[desktop-4x-gpu-fix-r2] PC calc: stepper +                                         120ms  delay 4.6 proc 0 pres 115.4 [pointerdown:88(d9/p0) pointerup:120(d5/p0) click:120(d5/p2)] LoAF 87.5/17.4s/41.1sl
+[desktop-4x-gpu-fix-r2] PC calc: stepper +                                         128ms  delay 4.2 proc 0 pres 123.8 [pointerdown:56(d3/p0) pointerup:128(d4/p0) click:128(d4/p1)] LoAF 85.8/16.3s/44.7sl
+[desktop-4x-gpu-fix-r2] PC calc: stepper +                                         120ms  delay 5 proc 0 pres 115 [pointerdown:64(d4/p0) pointerup:120(d5/p0) click:120(d6/p1)] LoAF 74.9/15.4s/39.1sl
+[desktop-4x-gpu-fix-r2] PC calc: add-on switch                                     216ms  delay 7 proc 0.7 pres 208.3 [pointerdown:88(d10/p0) pointerup:216(d7/p1) click:216(d8/p4)] LoAF 148.5/17.4s/58.8sl
+[desktop-4x-gpu-fix-r2] PC calc: add-on switch                                     160ms  delay 3.4 proc 0 pres 156.6 [pointerdown:16(d4/p0) pointerup:160(d3/p0) click:160(d3/p2)] LoAF 111.8/15.5s/44.4sl
+[desktop-4x-gpu-fix-r2] PC calc: add-on switch                                     384ms  delay 14.7 proc 0 pres 369.3 [pointerdown:80(d11/p0) pointerup:384(d15/p0) click:384(d15/p3)] LoAF 270.5/55.7s/114.9sl
+[desktop-4x-gpu-fix-r2] PC calculator: close #1                                    208ms  delay 6.9 proc 0.6 pres 200.5 [pointerdown:152(d30/p0) pointerup:208(d7/p1) click:208(d8/p10)] LoAF 60.2/0s/4.3sl,86.3/8.5s/0.1sl,79.5/0s/9.9sl
+[desktop-4x-gpu-fix-r2] PC calculator: open #2                                     512ms  delay 8.4 proc 0.2 pres 503.4 [pointerdown:80(d18/p0) pointerup:512(d8/p0) click:512(d9/p229)] LoAF 419.3/234.2s/8.2sl,85/0s/1.9sl
+[desktop-4x-gpu-fix-r2] PC calculator: close #2                                    88ms  delay 5.6 proc 0 pres 82.4 [pointerdown:80(d9/p0) pointerup:88(d6/p0) click:88(d6/p2)] 
+[desktop-4x-gpu-fix-r2] PC calculator: open #3                                     240ms  delay 18.5 proc 0.2 pres 221.3 [pointerdown:56(d11/p0) pointerup:240(d19/p0) click:240(d19/p86)] LoAF 171.4/85.5s/3.2sl
+[desktop-4x-gpu-fix-r2] PC calculator: close #3                                    128ms  delay 5.4 proc 0 pres 122.6 [pointerdown:72(d17/p1) pointerup:128(d5/p0) click:128(d6/p2)] 
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-pe                          184ms  delay 1.8 proc 0 pres 182.2 [pointerdown:72(d28/p0) pointerup:184(d2/p0) click:184(d2/p104)] LoAF 50.3/0s/0.7sl,140.4/103.4s/17sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Perpetual                              160ms  delay 15.9 proc 0.9 pres 143.2 [pointerdown:24(d7/p0) pointerup:160(d16/p1) click:160(d17/p11)] LoAF 122.8/11.2s/10.3sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Subscription                           312ms  delay 3 proc 0.5 pres 308.5 [pointerdown:32(d2/p0) pointerup:312(d3/p1) click:312(d4/p9)] LoAF 230.4/8.8s/22.1sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Perpetual                              104ms  delay 1.9 proc 0 pres 102.1 [pointerdown:16(d3/p0) pointerup:104(d2/p0) click:104(d2/p7)] LoAF 66.9/6.6s/8.4sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Subscription                           248ms  delay 11.7 proc 0 pres 236.3 [pointerdown:40(d11/p0) pointerup:248(d12/p0) click:248(d13/p16)] LoAF 187.7/15.7s/16.3sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Perpetual                              104ms  delay 4.7 proc 0.1 pres 99.2 [pointerdown:48(d3/p0) pointerup:104(d5/p0) click:104(d5/p9)] LoAF 88.3/8.9s/11.3sl
+[desktop-4x-gpu-fix-r2] On-prem billing: -> Subscription                           144ms  delay 9.8 proc 0 pres 134.2 [pointerdown:40(d10/p1) pointerup:144(d10/p0) click:144(d10/p10)] LoAF 104.2/8.8s/11.4sl
+[desktop-4x-gpu-fix-r2] PAYG calculator: open #1 (cold chunk)                      64ms  delay 1.8 proc 0.1 pres 62.1 [pointerdown:48(d2/p1) pointerup:64(d2/p0) click:64(d2/p8)] LoAF 148/99.5s/3.8sl
+[desktop-4x-gpu-fix-r2] PAYG calc: click slider track @0.4                         352ms  delay 128.6 proc 0.5 pres 222.9 [pointerdown:296(d17/p0) pointerup:352(d129/p1) click:352(d150/p1)] LoAF 215.7/36.4s/122.6sl,177.1/31.4s/87.2sl
+[desktop-4x-gpu-fix-r2] PAYG calc: click slider track @0.75                        400ms  delay 44.4 proc 0.1 pres 355.5 [pointerdown:400(d44/p0) pointerup:296(d193/p0) click:296(d203/p1)] LoAF 56.8/0s/27.4sl,276.5/37.1s/156.3sl,62.1/0s/0.1sl
+[desktop-4x-gpu-fix-r2] PAYG calc: click slider track @0.1                         352ms  delay 109.6 proc 0 pres 242.4 [pointerdown:264(d18/p0) pointerup:352(d110/p0) click:352(d126/p1)] LoAF 178.8/26s/106.7sl,166.7/27.5s/88.6sl
+[desktop-4x-gpu-fix-r2] PAYG calc: slider ArrowRight                               248ms  delay 16.2 proc 1 pres 230.8 [keydown:248(d16/p1) keyup:208(d130/p0)] LoAF 160.4/29.3s/95.3sl
+[desktop-4x-gpu-fix-r2] PAYG calc: slider ArrowRight                               112ms  delay 0.7 proc 1.8 pres 109.5 [keydown:112(d1/p2) keyup:72(d21/p0)] LoAF 72.7/13.6s/42.2sl
+[desktop-4x-gpu-fix-r2] PAYG calc: slider ArrowRight                               152ms  delay 8.4 proc 0.7 pres 142.9 [keydown:152(d8/p1) keyup:104(d29/p0)] LoAF 85.6/16s/46.9sl
+[desktop-4x-gpu-fix-r2] PAYG calc: type digit into devices                         80ms  delay 0.4 proc 0.1 pres 79.5 [keydown:80(d0/p0) keypress:80(d1/p4) keyup:32(d5/p0)] LoAF 55.5/10.1s/32.2sl
+[desktop-4x-gpu-fix-r2] PAYG calc: type digit into devices                         144ms  delay 3 proc 0.1 pres 140.9 [keydown:144(d3/p0) keypress:144(d3/p4) keyup:88(d32/p0)] LoAF 77.1/13.2s/41.3sl
+[desktop-4x-gpu-fix-r2] PAYG calc: type digit into devices                         264ms  delay 9.5 proc 0.1 pres 254.4 [keydown:264(d10/p0) keypress:264(d10/p15) keyup:200(d106/p1)] LoAF 164.1/27.6s/97.8sl,53.5/0s/2.2sl
+[desktop-4x-gpu-fix-r2] PAYG calc: Edge add-on switch                              256ms  delay 20.8 proc 0 pres 235.2 [pointerdown:256(d21/p0) pointerup:120(d3/p0) click:120(d4/p2)] LoAF 205.5/43.7s/0.2sl,93/11.8s/38.8sl
+[desktop-4x-gpu-fix-r2] PAYG calc: Edge add-on switch                              168ms  delay 4.6 proc 0 pres 163.4 [pointerdown:64(d7/p0) pointerup:168(d5/p0) click:168(d5/p2)] LoAF 101.2/12.4s/43sl
+[desktop-4x-gpu-fix-r2] PAYG calc: Edge add-on switch                              176ms  delay 2.1 proc 0.1 pres 173.8 [pointerdown:56(d4/p0) pointerup:176(d2/p0) click:176(d2/p2)] LoAF 133/16.4s/59.8sl
+[desktop-4x-gpu-fix-r2] PAYG calculator: close #1                                  120ms  delay 20.1 proc 0.1 pres 99.8 [pointerdown:56(d3/p0) pointerup:120(d20/p0) click:120(d20/p3)] 
+[desktop-4x-gpu-fix-r2] PAYG calculator: open #2                                   160ms  delay 1.1 proc 0 pres 158.9 [pointerdown:56(d6/p1) pointerup:160(d1/p0) click:160(d1/p63)] LoAF 121/63.2s/2.1sl
+[desktop-4x-gpu-fix-r2] PAYG calculator: close #2                                  64ms  delay 2.9 proc 0.1 pres 61 [pointerdown:56(d5/p0) pointerup:64(d3/p0) click:64(d3/p2)] 
+[desktop-4x-gpu-fix-r2] PAYG calculator: open #3                                   440ms  delay 36.7 proc 0 pres 403.3 [pointerdown:72(d18/p0) pointerup:440(d37/p0) click:440(d37/p137)] LoAF 50.9/0s/0.6sl,320.6/137.1s/6.7sl,99.2/0s/12.3sl
+[desktop-4x-gpu-fix-r2] PAYG calculator: close #3                                  168ms  delay 21.7 proc 0.1 pres 146.2 [pointerdown:96(d8/p0) pointerup:168(d22/p0) click:168(d23/p4)] LoAF 62.5/0s/1.8sl
+[desktop-4x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       232ms  delay 1.7 proc 0 pres 230.3 [pointerdown:48(d10/p0) pointerup:232(d2/p0) click:232(d2/p135)] LoAF 183.6/134.9s/18.7sl
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 2nd                                   112ms  delay 27.8 proc 0.1 pres 84.1 [pointerdown:112(d28/p0) pointerup:112(d31/p1) click:112(d32/p6)] LoAF 73.5/0s/1.9sl,81.4/0s/0sl
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 1st                                   56ms  delay 4.2 proc 0 pres 51.8 [pointerdown:40(d7/p0) pointerup:56(d4/p0) click:56(d4/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 2nd                                   88ms  delay 19 proc 0 pres 69 [pointerdown:64(d9/p0) pointerup:88(d19/p0) click:88(d19/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 1st                                   64ms  delay 1.1 proc 0.7 pres 62.2 [pointerdown:48(d3/p0) pointerup:64(d1/p1) click:64(d2/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 2nd                                   96ms  delay 8.1 proc 0.1 pres 87.8 [pointerdown:24(d6/p0) pointerup:96(d8/p0) click:96(d9/p2)] LoAF 50.7/0s/3.1sl
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> 1st                                   104ms  delay 7.6 proc 0.5 pres 95.9 [pointerdown:88(d27/p0) pointerup:104(d8/p1) click:104(d8/p1)] LoAF 61.1/0s/1.7sl,66.1/0s/0sl
+[desktop-4x-gpu-fix-r2] FAQ: expand/collapse item                                  56ms  delay 10.2 proc 0.7 pres 45.1 [pointerdown:56(d10/p1) pointerup:48(d5/p1) click:48(d5/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: expand/collapse item                                  80ms  delay 2.3 proc 0 pres 77.7 [pointerdown:24(d11/p0) pointerup:80(d2/p0) click:80(d2/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: expand/collapse item                                  80ms  delay 15.9 proc 0 pres 64.1 [pointerdown:64(d21/p0) pointerup:80(d16/p0) click:80(d16/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> #1                                    40ms  delay 5.6 proc 0 pres 34.4 [pointerdown:40(d6/p0) pointerup:40(d6/p0) click:40(d6/p0)] 
+[desktop-4x-gpu-fix-r2] FAQ: Load more                                             144ms  delay 10.9 proc 0.1 pres 133 [pointerdown:104(d40/p0) pointerup:144(d11/p0) click:144(d11/p2)] LoAF 55.8/0s/1.4sl,94.2/0s/22.3sl
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> #2                                    152ms  delay 15.8 proc 0.1 pres 136.1 [pointerdown:64(d12/p1) pointerup:152(d16/p0) click:152(d16/p2)] LoAF 96.5/0s/25.1sl
+[desktop-4x-gpu-fix-r2] FAQ: Load more                                             72ms  delay 7.7 proc 0 pres 64.3 [pointerdown:40(d8/p0) pointerup:72(d8/p0) click:72(d8/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: category tab -> #3                                    72ms  delay 1 proc 0 pres 71 [pointerdown:64(d14/p0) pointerup:72(d1/p0) click:72(d1/p1)] 
+[desktop-4x-gpu-fix-r2] FAQ: Load more                                             88ms  delay 2.5 proc 0 pres 85.5 [pointerdown:56(d12/p0) pointerup:88(d3/p0) click:88(d3/p1)] LoAF 51.4/0s/13.8sl
+[desktop-4x-gpu-fix-r2] feature (i) click -> jump to FAQ                           112ms  delay 6.2 proc 0 pres 105.8 [pointerdown:40(d3/p0) pointerup:112(d6/p0) click:112(d6/p11)] LoAF 55.4/11.3s/13.3sl
+[desktop-4x-gpu-fix-r2] feature (i) click -> jump to FAQ                           176ms  delay 30.1 proc 0 pres 145.9 [pointerdown:56(d11/p0) pointerup:176(d30/p0) click:176(d30/p13)] LoAF 98.7/12.9s/20.9sl
+[desktop-4x-gpu-fix-r2] feature (i) click -> jump to FAQ                           136ms  delay 7.8 proc 0 pres 128.2 [pointerdown:40(d2/p0) pointerup:136(d8/p0) click:136(d8/p10)] LoAF 82.4/9.7s/16.4sl
+[desktop-4x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-4x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-4x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-4x-gpu-fix-r2] header: click "Products" label (desktop no-op)             40ms  delay 4 proc 0.6 pres 35.4 [pointerdown:40(d4/p1) pointerup:32(d2/p1) click:32(d3/p1)] 
+[desktop-4x-gpu-fix-r2] header: click "Products" label (desktop no-op)             48ms  delay 15.1 proc 0 pres 32.9 [pointerdown:48(d15/p0) pointerup:40(d8/p0) click:40(d9/p1)] 
+[desktop-4x-gpu-fix-r2] header: click "Products" label (desktop no-op)             56ms  delay 12.4 proc 0 pres 43.6 [pointerdown:48(d5/p0) pointerup:56(d12/p0) click:56(d13/p0)] 
+[desktop-4x-gpu-fix-r2] theme toggle                                               312ms  delay 3.4 proc 0.1 pres 308.5 [pointerdown:40(d2/p0) pointerup:312(d3/p0) click:312(d4/p4)] LoAF 150.4/0s/1sl,66.1/0s/4.7sl
+[desktop-4x-gpu-fix-r2] theme toggle                                               224ms  delay 5.1 proc 0 pres 218.9 [pointerdown:40(d1/p0) pointerup:224(d5/p0) click:224(d5/p3)] LoAF 163/0s/0.1sl
+[desktop-4x-gpu-fix-r2] theme toggle                                               48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:40(d10/p0) pointerup:48(d0/p0) click:48(d0/p3)] 
+[desktop-4x-gpu-fix-r2] idleAfter {"recalcStyleCount":102.5,"recalcStyleMs":570.91,"layoutCount":0,"layoutMs":0,"scriptMs":0.18,"taskMs":1348.01}
+[desktop-4x-gpu-fix-r2] consent end {"hidden":false,"visible":true,"cookie":false}
+[desktop-4x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-4x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-4x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-4x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-4x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-4x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 1.2 proc 0 pres 14.8 [pointerdown:16(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-4x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.3 proc 0 pres 15.7 [pointerdown:16(d0/p0)] 
+[desktop-4x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 1 proc 0 pres 15 [pointerdown:16(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-4x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.9 proc 0 pres 15.1 [pointerdown:16(d1/p0)] 
+[desktop-4x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.7 proc 0 pres 15.3 [pointerdown:16(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-4x-gpu-fix-r2] calibration {"plain":[null,null,null,null,null],"anim":[16,16,16,16,16]}
+[desktop-4x-gpu-fix-r2] wrote /home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/out-desktop-4x-gpu-fix-r2.json

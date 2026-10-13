@@ -3,7 +3,7 @@
 // Usage: node ab.mjs <desktop|mobile> <cpuRate> [rounds]
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C1';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C1';
 const MODE = process.argv[2] || 'desktop';
 const CPU = Number(process.argv[3] || 4);
 const ROUNDS = Number(process.argv[4] || 4);
@@ -29,7 +29,7 @@ await send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceSc
 if (MOBILE) await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
 await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-color-scheme', value: 'light' }] });
 await send('Page.addScriptToEvaluateOnNewDocument', { source: `(() => { const S = window.__ev = []; new PerformanceObserver((l) => l.getEntries().forEach((e) => { if (e.interactionId) S.push({ n: e.name, id: e.interactionId, d: e.duration, s: e.startTime, ps: e.processingStart, pe: e.processingEnd }); })).observe({ type: 'event', durationThreshold: 16, buffered: true }); })();` });
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await sleep(12000);
 await send('Emulation.setCPUThrottlingRate', { rate: CPU });
 

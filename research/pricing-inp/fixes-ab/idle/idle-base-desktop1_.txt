@@ -1,0 +1,64 @@
+THREAD CrRendererMain: 511.3 ms/s busy
+THREAD CrGpuMain: 318.9 ms/s busy
+THREAD VizCompositorThread: 37.5 ms/s busy
+THREAD Compositor: 104.4 ms/s busy
+== desktop-1x-base_: main-thread aggregates over 3.01s (ms/s, count/s)
+    511.2 ms/s    402/s  RunTask
+    504.7 ms/s    402/s  ThreadControllerImpl::RunTask
+    496.9 ms/s     60/s  ProxyMain::BeginMainFrame
+    460.5 ms/s     60/s  WebFrameWidgetImpl::UpdateLifecycle
+    342.9 ms/s     60/s  LocalFrameView::RunStyleAndLayoutLifecyclePhases
+    342.4 ms/s     60/s  LocalFrameView::updateStyleAndLayoutIfNeededRecursive
+    342.1 ms/s     60/s  LocalFrameView::UpdateStyleAndLayout
+    334.4 ms/s     60/s  Blink.Style.UpdateTime
+    325.6 ms/s     60/s  UpdateLayoutTree
+    324.4 ms/s     60/s  Document::updateStyle
+    323.1 ms/s     60/s  Document::recalcStyle
+    103.0 ms/s     60/s  LocalFrameView::RunPaintLifecyclePhase
+     84.4 ms/s     60/s  LocalFrameView::pushPaintArtifactToCompositor
+     84.2 ms/s     60/s  Blink.CompositingCommit.UpdateTime
+     84.0 ms/s     60/s  Layerize
+     83.5 ms/s     60/s  PaintArtifactCompositor::Update
+     16.5 ms/s     60/s  Commit
+     15.9 ms/s     60/s  WebFrameWidgetImpl::BeginMainFrame
+     15.4 ms/s    107/s  Paint
+     15.3 ms/s     60/s  Blink.Animate.UpdateTime
+     14.9 ms/s     60/s  PageAnimator::serviceScriptedAnimations
+     14.8 ms/s     60/s  Blink.Paint.UpdateTime
+     11.0 ms/s     60/s  PrePaint
+      8.2 ms/s     60/s  LocalFrameView::RunPrePaintLifecyclePhase
+      8.2 ms/s     60/s  SelectorStats
+      7.9 ms/s     60/s  Blink.PrePaint.UpdateTime
+      6.1 ms/s     60/s  Blink.Layout.UpdateTime
+      5.3 ms/s    120/s  IntersectionObserverController::computeIntersections
+      5.1 ms/s     60/s  LocalFrameView::UpdateViewportIntersectionsForSubtree
+      4.9 ms/s    120/s  AnimationTimeline::serviceAnimations
+      4.9 ms/s     60/s  Blink.IntersectionObservation.UpdateTime
+      4.8 ms/s     60/s  LayerTreeHost::DoUpdateLayers
+      4.7 ms/s     60/s  LocalFrameView::layout
+      4.4 ms/s     60/s  Layout
+      3.8 ms/s     60/s  LocalFrameView::performLayout
+      2.7 ms/s    402/s  BlinkScheduler_OnTaskCompleted
+      2.4 ms/s     60/s  LocalFrameView::RunCompositingInputsLifecyclePhase
+      2.3 ms/s    181/s  LocalFrameView::ScheduleAnimation
+      2.2 ms/s     60/s  Blink.CompositingInputs.UpdateTime
+      2.0 ms/s   1061/s  UpdateLayer
+      1.6 ms/s    402/s  BlinkScheduler_PerformMicrotaskCheckpoint
+      1.2 ms/s     60/s  MainThreadSchedulerImpl::WillBeginFrame
+      1.0 ms/s    357/s  ScrollTree::SetScrollOffset
+      1.0 ms/s     60/s  CullRectUpdate
+      0.9 ms/s      5/s  V8.GC_MC_INCREMENTAL
+UpdateLayoutTree elementCounts sample: [
+  24, 24, 24, 24, 24,
+  24, 24, 24, 24, 24,
+  24, 24
+]
+longest UpdateLayoutTree 12.99ms children:
+   +0.01 12.97ms Document::updateStyle 
+   +0.02 12.95ms Document::recalcStyle 
+invalidation reasons:
+   1448x StyleRecalcInvalidationTracking:Attribute::g class='astro-x4tg6t5i'
+   1445x LayoutInvalidationTracking:Style changed::g class='astro-x4tg6t5i'
+   181x StyleRecalcInvalidationTracking:Animation::BUTTON id='chat-launcher' class='chat-launcher print:hidden 
+   181x StyleRecalcInvalidationTracking:Animation::SPAN class='ai__badge astro-iyj3hvgy'
+   181x StyleRecalcInvalidationTracking:Animation::DIV class='ai__bands astro-iyj3hvgy'

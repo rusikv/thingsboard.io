@@ -2,6 +2,8 @@
 
 Research branch only, not meant to be merged. Code refs are against `upstream/main` @ `e9cbd6dc4`.
 
+**Update 2026-10-13:** the fixes are implemented on branch `perf/pricing-inp` and verified with a base-vs-fix A/B. For the handoff, results and next steps, see [fixes-ab/README.md](fixes-ab/README.md).
+
 ## TL;DR
 
 - **Load performance is solved.** PSI lab: mobile 99 / desktop 100 (TBT 10 / 0 ms). It was 95 / 77 on Jul 7.

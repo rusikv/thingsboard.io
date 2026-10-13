@@ -1,0 +1,126 @@
+{
+ "tag": "desktop-1x-base-13310",
+ "variant": "base",
+ "profile": "desktop-1x",
+ "chrome": "Chrome/155.0.8059.39",
+ "keep3p": false,
+ "patched": [],
+ "results": [
+  {
+   "check": "slider",
+   "fx": 0.72,
+   "mid": {
+    "v": "2.19",
+    "d": "29310"
+   },
+   "fin": {
+    "v": "2",
+    "d": "1000",
+    "plan": "Business"
+   }
+  },
+  {
+   "check": "slider",
+   "fx": 0.8,
+   "mid": {
+    "v": "2.44",
+    "d": "66560"
+   },
+   "fin": {
+    "v": "2",
+    "d": "1000",
+    "plan": "Business"
+   }
+  },
+  {
+   "check": "slider",
+   "fx": 0.9,
+   "mid": {
+    "v": "2.75",
+    "d": "112750"
+   },
+   "fin": {
+    "v": "3",
+    "d": "150000",
+    "plan": "Deployment Summary"
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 9,
+    "sh": 565,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 9,
+   "after": {
+    "st": 9,
+    "sh": 681
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 681,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 120,
+    "sh": 797
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 797,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 120,
+    "sh": 681
+   }
+  },
+  {
+   "check": "scroll",
+   "before": {
+    "st": 120,
+    "sh": 681,
+    "ch": 556,
+    "ov": "auto",
+    "anchor": "auto"
+   },
+   "mid": 120,
+   "after": {
+    "st": 9,
+    "sh": 565
+   }
+  },
+  {
+   "check": "fade",
+   "samples": [
+    "0",
+    "0",
+    "0.171331",
+    "0.576144",
+    "0.825195",
+    "0.978078",
+    "1",
+    "1"
+   ]
+  }
+ ],
+ "state0": {
+  "tab": "thingsboard-cloud",
+  "consent": true
+ }
+}

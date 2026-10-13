@@ -4,7 +4,7 @@
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C3';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C3';
 const CPU = Number(process.argv[2] || 1);
 const MOBILE = process.argv[3] === '1';
 const NS = (process.argv[4] || '0,60,300,900').split(',').map(Number);
@@ -43,7 +43,7 @@ async function main() {
 	await c.send('Emulation.setDeviceMetricsOverride', { width: W, height: H, deviceScaleFactor: MOBILE ? 1.75 : 1, mobile: MOBILE });
 	await c.send('Page.addScriptToEvaluateOnNewDocument', { source: INSTR });
 	const loaded = new Promise((r) => c.on('Page.loadEventFired', r));
-	await c.send('Page.navigate', { url: 'https://thingsboard.io/pricing/' }); await loaded; await sleep(6000);
+	await c.send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' }); await loaded; await sleep(6000);
 	await c.send('Emulation.setCPUThrottlingRate', { rate: CPU });
 	const ver0 = await ev(`({ url: location.href, tabs: [...document.querySelectorAll('.sub-tab')].map(t => t.dataset.subtab), yg: !!document.getElementById('yourgpt_root'), elements: document.querySelectorAll('*').length })`);
 	console.log('chrome', ver.Browser, 'cpu', CPU, 'mobile', MOBILE, JSON.stringify(ver0));

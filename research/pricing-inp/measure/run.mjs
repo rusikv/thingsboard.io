@@ -1,10 +1,11 @@
 // INP lab harness: drives headless Chrome over raw CDP against prod /pricing/.
 // Usage: node run.mjs <profile> [--block3p] [--noanim] [--trace] [--tag=x]
+// Set TB_ORIGIN (e.g. http://localhost:4321) to measure a local build instead of prod.
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp';
-const TARGET = 'https://thingsboard.io/pricing/';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure';
+const TARGET = (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/';
 const PROFILES = {
 	'mobile-4x': { w: 412, h: 823, dpr: 1.75, mobile: true, cpu: 4 },
 	'mobile-1x': { w: 412, h: 823, dpr: 1.75, mobile: true, cpu: 1 },
@@ -492,7 +493,7 @@ async function main() {
 							.sort((a, b) => b.duration - a.duration)
 							.slice(0, 6)
 							.map((s) => ({
-								src: (s.sourceURL || '').replace('https://thingsboard.io', '').slice(0, 110),
+								src: (s.sourceURL || '').replace(process.env.TB_ORIGIN || 'https://thingsboard.io', '').slice(0, 110),
 								fn: s.sourceFunctionName,
 								invoker: (s.invoker || '').slice(0, 80),
 								type: s.invokerType,
@@ -522,7 +523,7 @@ async function main() {
 					windowMs: Math.round(data.t1 - mark.t0),
 				},
 				click: info ? { x: Math.round(info.x || 0), y: Math.round(info.y || 0), hit: info.hit } : null,
-				urlAfter: data.url.replace('https://thingsboard.io', ''),
+				urlAfter: data.url.replace(process.env.TB_ORIGIN || 'https://thingsboard.io', ''),
 			};
 			results.push(rec);
 			log(

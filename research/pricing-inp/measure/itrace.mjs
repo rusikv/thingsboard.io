@@ -2,7 +2,7 @@
 // Usage: node itrace.mjs <cpu> <selector> [--pre=<selector to click first, untraced>] [--noanim]
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure';
 const [cpuS, sel] = process.argv.slice(2);
 const pre = (process.argv.find((a) => a.startsWith('--pre=')) || '').slice(6);
 const cpu = Number(cpuS);
@@ -31,7 +31,7 @@ if (process.argv.includes('--nohas')) {
 	await send('Page.addScriptToEvaluateOnNewDocument', { source: `addEventListener('DOMContentLoaded', () => { let n = 0; const walk = (list) => { for (let i = list.length - 1; i >= 0; i--) { const r = list[i]; if (r.cssRules && !r.selectorText) walk(r.cssRules); else if (r.selectorText && /(^|[\\s,>])(html|body|:root|\\.page)[^\\s,]*:has\\(/.test(r.selectorText)) { list === r.parentStyleSheet?.cssRules ? r.parentStyleSheet.deleteRule(i) : r.parentRule.deleteRule(i); n++; } } }; for (const sh of document.styleSheets) { try { walk(sh.cssRules); } catch {} } window.__removedHas = n; });` });
 }
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await lp; await sleep(6000);
 const clickSel = async (s) => {
 	const p = await ev(`(() => { const el = Array.from(document.querySelectorAll(${JSON.stringify(s)})).find(e => e.checkVisibility()); if (!el) return null; el.scrollIntoView({ block: 'center', behavior: 'instant' }); const r = el.getBoundingClientRect(); const x = r.left + r.width / 2, y = r.top + r.height / 2; const h = document.elementFromPoint(x, y); if (!h || h.closest('a[href], #cc-main, #chat-launcher')) return null; return { x, y }; })()`);

@@ -1,0 +1,132 @@
+[mobile-4x-gpu-fix-r1] loaded in 1238 ms
+[mobile-4x-gpu-fix-r1] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"http://localhost:4332/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"none","observerErrs":[],"smilPaused":0,"smilElems":0,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[8,522,396,293]}
+[mobile-4x-gpu-fix-r1] DOM 5996 elements, depth 22 invisible 5127 rules 1965 :has 91
+[mobile-4x-gpu-fix-r1] idle {"recalcStyleCount":0,"recalcStyleMs":0,"layoutCount":0,"layoutMs":0,"scriptMs":0.14,"taskMs":6.39} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":0,"ms":0},"layout":{"n":0,"ms":0},"paint":{"n":0,"ms":0},"prePaint":{"n":0,"ms":0},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":0,"drawFrames":300,"updateLayoutTreeElementCounts":[]}
+[mobile-4x-gpu-fix-r1] baseline: click empty background                           32ms  delay 23.3 proc 2.6 pres 6.1 [pointerdown:32(d23/p3) click:32(d23/p2)] 
+[mobile-4x-gpu-fix-r1] baseline: click empty background                           32ms  delay 18.5 proc 0.1 pres 13.4 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:32(d19/p0)] 
+[mobile-4x-gpu-fix-r1] baseline: click empty background                           32ms  delay 26.4 proc 0 pres 5.6 [pointerdown:32(d26/p0) click:24(d15/p0)] 
+[mobile-4x-gpu-fix-r1] sub-tab: Cloud -> Private Cloud                            312ms  delay 60.3 proc 110.6 pres 141.1 [pointerdown:16(d15/p0) pointerup:16(d14/p0) click:312(d60/p111)] LoAF 230.5/108.9s/22.6sl
+[mobile-4x-gpu-fix-r1] sub-tab: Private Cloud -> On-premises                      232ms  delay 44.3 proc 0 pres 187.7 [pointerdown:24(d20/p0) pointerup:232(d44/p0) click:232(d87/p44)] LoAF 154.8/43.4s/17.5sl
+[mobile-4x-gpu-fix-r1] sub-tab: On-premises -> Cloud                              256ms  delay 101.7 proc 67.3 pres 87 [pointerdown:32(d34/p0) pointerup:32(d28/p0) click:256(d102/p67)] LoAF 188.9/74.4s/6.1sl
+[mobile-4x-gpu-fix-r1] sub-tab: Cloud -> Private Cloud                            232ms  delay 40.8 proc 61.2 pres 130 [pointerdown:16(d14/p0) click:232(d41/p61)] LoAF 176.4/60.4s/28sl
+[mobile-4x-gpu-fix-r1] sub-tab: Private Cloud -> On-premises                      296ms  delay 84.1 proc 64.1 pres 147.8 [pointerdown:16(d18/p0) pointerup:24(d25/p0) click:296(d84/p64)] LoAF 201.2/63.5s/23.8sl
+[mobile-4x-gpu-fix-r1] sub-tab: On-premises -> Cloud                              200ms  delay 41.6 proc 0 pres 158.4 [pointerdown:32(d33/p0) pointerup:200(d42/p0) click:200(d92/p43)] LoAF 135.3/42.5s/3.9sl
+[mobile-4x-gpu-fix-r1] sub-tab: Cloud -> Private Cloud                            320ms  delay 56.3 proc 95.9 pres 167.8 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:320(d56/p96)] LoAF 246.3/95.7s/35.3sl
+[mobile-4x-gpu-fix-r1] sub-tab: Private Cloud -> On-premises                      224ms  delay 62.2 proc 44.3 pres 117.5 [pointerdown:24(d20/p0) pointerup:16(d16/p0) click:224(d62/p44)] LoAF 154.2/44.2s/21sl
+[mobile-4x-gpu-fix-r1] sub-tab: On-premises -> Cloud                              200ms  delay 92 proc 45.6 pres 62.4 [pointerdown:56(d34/p0) pointerup:40(d40/p0) click:200(d92/p46)] LoAF 132.8/52.5s/4sl
+[mobile-4x-gpu-fix-r1] region: label -> North America                             112ms  delay 25.4 proc 6.3 pres 80.3 [pointerdown:16(d15/p0) pointerup:16(d12/p0) click:112(d25/p6)] LoAF 67.8/5.2s/0sl
+[mobile-4x-gpu-fix-r1] region: label -> Europe                                    136ms  delay 32.7 proc 6.9 pres 96.4 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:136(d33/p7)] LoAF 81.8/6.9s/0.4sl
+[mobile-4x-gpu-fix-r1] region: label -> North America                             112ms  delay 22.3 proc 5.3 pres 84.4 [pointerdown:16(d15/p0) pointerup:16(d12/p0) click:112(d22/p5)] LoAF 69/5.1s/0.2sl
+[mobile-4x-gpu-fix-r1] region: label -> Europe                                    96ms  delay 19.5 proc 4.8 pres 71.7 [pointerdown:16(d14/p0) pointerup:16(d12/p0) click:96(d20/p5)] LoAF 58.1/0s/0.1sl
+[mobile-4x-gpu-fix-r1] region: label -> North America                             168ms  delay 45.6 proc 0 pres 122.4 [pointerdown:16(d15/p0) pointerup:168(d46/p0) click:168(d62/p11)] LoAF 94.6/11.3s/0.1sl
+[mobile-4x-gpu-fix-r1] region: label -> Europe                                    168ms  delay 27.3 proc 7 pres 133.7 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:168(d27/p7)] LoAF 109.2/6.5s/0.1sl
+[mobile-4x-gpu-fix-r1] region: switch (checkbox)                                  152ms  delay 24.5 proc 7.9 pres 119.6 [pointerdown:16(d14/p0) pointerup:16(d14/p0) click:152(d25/p8)] LoAF 99.5/6.6s/0.8sl
+[mobile-4x-gpu-fix-r1] region: switch (checkbox)                                  112ms  delay 22.5 proc 5.3 pres 84.2 [pointerdown:16(d15/p0) pointerup:16(d12/p0) click:112(d23/p5)] LoAF 75.2/0s/0.8sl
+[mobile-4x-gpu-fix-r1] region: switch (checkbox)                                  112ms  delay 17.6 proc 5.6 pres 88.8 [pointerdown:24(d19/p0) click:112(d18/p6)] LoAF 72/0s/0.6sl
+[mobile-4x-gpu-fix-r1] upsell: See Private Cloud Options (switch tab)             320ms  delay 29.4 proc 105.3 pres 185.3 [pointerdown:16(d13/p0) pointerup:16(d13/p0) click:320(d29/p105)] LoAF 240.9/104.6s/37.6sl
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-cloud                       192ms  delay 69.7 proc 40.6 pres 81.7 [pointerdown:24(d24/p0) pointerup:24(d23/p0) click:192(d70/p41)] LoAF 128.2/45.8s/5.5sl
+[mobile-4x-gpu-fix-r1] upsell: See Private Cloud Options (switch tab)             296ms  delay 37.1 proc 103.2 pres 155.7 [pointerdown:16(d15/p0) pointerup:16(d14/p0) click:296(d37/p103)] LoAF 225.7/102.7s/34.9sl
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-cloud                       264ms  delay 87.9 proc 61.9 pres 114.2 [pointerdown:56(d43/p0) pointerup:16(d16/p0) click:264(d88/p62)] LoAF 193.9/68.9s/6.9sl
+[mobile-4x-gpu-fix-r1] upsell: See Private Cloud Options (switch tab)             224ms  delay 29.5 proc 63.8 pres 130.7 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:224(d30/p64)] LoAF 162.4/63.3s/23.2sl
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-cloud                       232ms  delay 74.4 proc 55 pres 102.6 [pointerdown:56(d41/p0) pointerup:16(d14/p0) click:232(d74/p55)] LoAF 173.3/66s/5.9sl
+[mobile-4x-gpu-fix-r1] top-up accordion toggle                                    56ms  delay 28.1 proc 0.1 pres 27.8 [pointerdown:16(d12/p0) pointerup:16(d12/p0) click:56(d28/p0)] 
+[mobile-4x-gpu-fix-r1] top-up accordion toggle                                    48ms  delay 20.8 proc 0.2 pres 27 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:48(d21/p0)] 
+[mobile-4x-gpu-fix-r1] top-up accordion toggle                                    40ms  delay 15.8 proc 0.1 pres 24.1 [pointerdown:16(d14/p0) pointerup:16(d12/p0) click:40(d16/p0)] 
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-private-cloud               232ms  delay 41.2 proc 65.1 pres 125.7 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:232(d41/p65)] LoAF 163.8/64.7s/23.9sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Annual                                      144ms  delay 44.9 proc 19.9 pres 79.2 [pointerdown:16(d16/p0) pointerup:16(d19/p0) click:144(d45/p20)] LoAF 97/19.7s/0.7sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Monthly                                     104ms  delay 33.6 proc 7.9 pres 62.5 [pointerdown:24(d24/p0) pointerup:24(d25/p0) click:104(d34/p8)] LoAF 50.1/7.8s/0.4sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Annual                                      168ms  delay 52 proc 13.7 pres 102.3 [pointerdown:32(d33/p0) pointerup:32(d30/p0) click:168(d52/p14)] LoAF 108.9/13.7s/0.2sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Monthly                                     144ms  delay 30.7 proc 0.4 pres 112.9 [pointerdown:40(d30/p0) pointerup:144(d31/p0) click:144(d47/p10)] LoAF 70.6/9.5s/0.3sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Annual                                      152ms  delay 44.9 proc 11.8 pres 95.3 [pointerdown:48(d33/p0) pointerup:24(d23/p1) click:152(d45/p12)] LoAF 90.1/11.1s/0.2sl
+[mobile-4x-gpu-fix-r1] PC billing: -> Monthly                                     88ms  delay 20.9 proc 6.5 pres 60.6 [pointerdown:24(d25/p0) click:88(d21/p7)] LoAF 53.1/6.5s/0.5sl
+[mobile-4x-gpu-fix-r1] PC calculator: open #1 (cold chunk)                        88ms  delay 18.9 proc 0 pres 69.1 [pointerdown:16(d15/p0) pointerup:88(d19/p0) click:88(d45/p13)] LoAF 62.2/11.4s/0.1sl
+[mobile-4x-gpu-fix-r1] PC calc: click slider track @0.35                          120ms  delay 28.1 proc 0 pres 91.9 [pointerdown:120(d28/p0) pointerup:40(d39/p0)] LoAF 83.1/16.1s/35.7sl
+[mobile-4x-gpu-fix-r1] PC calc: click slider track @0.7                           136ms  delay 33.6 proc 0.1 pres 102.3 [pointerdown:136(d34/p0) pointerup:64(d49/p0)] LoAF 81.8/16.2s/34.9sl
+[mobile-4x-gpu-fix-r1] PC calc: click slider track @0.15                          96ms  delay 17.6 proc 0 pres 78.4 [pointerdown:96(d18/p0) pointerup:24(d23/p0)] LoAF 66/11.5s/27.6sl
+[mobile-4x-gpu-fix-r1] PC calc: slider ArrowRight                                 72ms  delay 7.6 proc 1.5 pres 62.9 [keydown:72(d8/p2) keyup:16(d7/p0)] LoAF 55.7/11.8s/24.6sl
+[mobile-4x-gpu-fix-r1] PC calc: slider ArrowRight                                 96ms  delay 7.5 proc 0.9 pres 87.6 [keydown:96(d8/p1) keyup:24(d15/p0)] LoAF 71.6/17.9s/30.5sl
+[mobile-4x-gpu-fix-r1] PC calc: slider ArrowRight                                 88ms  delay 7.2 proc 2.3 pres 78.5 [keydown:88(d7/p2) keyup:24(d8/p0)] LoAF 65.8/12.9s/28.7sl
+[mobile-4x-gpu-fix-r1] PC calc: type digit into devices                           72ms  delay 1.1 proc 0 pres 70.9 [keydown:72(d1/p0) keypress:72(d1/p6) keyup:16(d1/p0)] 
+[mobile-4x-gpu-fix-r1] PC calc: type digit into devices                           72ms  delay 3.1 proc 2 pres 66.9 [keydown:72(d3/p2) keypress:72(d5/p7)] LoAF 58.2/13.4s/19.3sl
+[mobile-4x-gpu-fix-r1] PC calc: type digit into devices                           64ms  delay 0.6 proc 0 pres 63.4 [keydown:64(d1/p0) keypress:64(d1/p5)] 
+[mobile-4x-gpu-fix-r1] PC calc: stepper +                                         112ms  delay 36.2 proc 1.5 pres 74.3 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:112(d36/p2)] LoAF 71.4/11.9s/33sl
+[mobile-4x-gpu-fix-r1] PC calc: stepper +                                         120ms  delay 26.9 proc 0.8 pres 92.3 [pointerdown:16(d17/p0) pointerup:16(d16/p0) click:120(d27/p1)] LoAF 67.7/17.7s/31.1sl
+[mobile-4x-gpu-fix-r1] PC calc: stepper +                                         96ms  delay 22.4 proc 0.8 pres 72.8 [pointerdown:16(d16/p0) click:96(d22/p1)] LoAF 61.6/15s/27.6sl
+[mobile-4x-gpu-fix-r1] PC calc: add-on switch                                     120ms  delay 25.6 proc 2.6 pres 91.8 [pointerdown:16(d14/p0) click:120(d26/p3)] LoAF 69/13.3s/20.6sl
+[mobile-4x-gpu-fix-r1] PC calc: add-on switch                                     144ms  delay 19.8 proc 1.9 pres 122.3 [pointerdown:16(d17/p1) click:144(d20/p2)] LoAF 88.3/19.7s/32.1sl
+[mobile-4x-gpu-fix-r1] PC calc: add-on switch                                     104ms  delay 21.3 proc 1 pres 81.7 [pointerdown:16(d13/p0) pointerup:16(d12/p1) click:104(d21/p1)] LoAF 62.1/13.6s/23sl
+[mobile-4x-gpu-fix-r1] PC calculator: close #1                                    56ms  delay 26.7 proc 2.8 pres 26.5 [pointerdown:16(d12/p0) pointerup:16(d13/p0) click:56(d27/p3)] 
+[mobile-4x-gpu-fix-r1] PC calculator: open #2                                     296ms  delay 38 proc 128.6 pres 129.4 [pointerdown:16(d16/p0) pointerup:16(d16/p0) click:296(d38/p129)] LoAF 248.2/139s/5sl,63.9/0s/10.5sl
+[mobile-4x-gpu-fix-r1] PC calculator: close #2                                    56ms  delay 25.4 proc 1.4 pres 29.2 [pointerdown:16(d14/p1) pointerup:16(d12/p0) click:56(d25/p1)] 
+[mobile-4x-gpu-fix-r1] PC calculator: open #3                                     152ms  delay 34.1 proc 49 pres 68.9 [pointerdown:24(d19/p0) pointerup:16(d13/p0) click:152(d34/p49)] LoAF 125.6/57.3s/3.5sl
+[mobile-4x-gpu-fix-r1] PC calculator: close #3                                    40ms  delay 17.3 proc 1.1 pres 21.6 [pointerdown:16(d14/p0) click:40(d17/p1)] 
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-pe                          296ms  delay 53.4 proc 136.1 pres 106.5 [pointerdown:16(d18/p0) click:296(d53/p136)] LoAF 221/135.1s/17.5sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Perpetual                              112ms  delay 20.8 proc 7.6 pres 83.6 [pointerdown:24(d20/p0) click:112(d21/p8)] LoAF 75.5/7.6s/6.3sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Subscription                           144ms  delay 19.5 proc 8.7 pres 115.8 [pointerdown:16(d15/p0) pointerup:16(d14/p0) click:144(d20/p9)] LoAF 107.7/7.9s/7.4sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Perpetual                              136ms  delay 29 proc 6.4 pres 100.6 [pointerdown:16(d15/p0) pointerup:16(d19/p0) click:136(d29/p6)] LoAF 80.7/6.3s/9.6sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Subscription                           160ms  delay 27.1 proc 7.6 pres 125.3 [pointerdown:24(d23/p0) pointerup:24(d22/p0) click:160(d27/p8)] LoAF 96.5/7.5s/8.6sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Perpetual                              128ms  delay 22.8 proc 7.3 pres 97.9 [pointerdown:16(d15/p0) pointerup:16(d16/p0) click:128(d23/p7)] LoAF 79.9/7.2s/8.1sl
+[mobile-4x-gpu-fix-r1] On-prem billing: -> Subscription                           128ms  delay 15.4 proc 7.2 pres 105.4 [pointerdown:16(d18/p0) click:128(d15/p7)] LoAF 94.2/6.8s/7.2sl
+[mobile-4x-gpu-fix-r1] PAYG calculator: open #1 (cold chunk)                      48ms  delay 22.7 proc 8.1 pres 17.2 [pointerdown:16(d16/p0) click:48(d23/p8)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: click slider track @0.4                         72ms  delay 15.7 proc 0.1 pres 56.2 [pointerdown:72(d16/p0) pointerup:64(d13/p0)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: click slider track @0.75                        136ms  delay 18.6 proc 0 pres 117.4 [pointerdown:136(d19/p0) pointerup:32(d28/p0)] LoAF 77.6/21.3s/36.6sl
+[mobile-4x-gpu-fix-r1] PAYG calc: click slider track @0.1                         80ms  delay 11.2 proc 0 pres 68.8 [pointerdown:72(d9/p1) pointerup:80(d11/p0)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: slider ArrowRight                               72ms  delay 3.9 proc 0.8 pres 67.3 [keydown:72(d4/p1) keyup:24(d4/p0)] LoAF 51.4/10.7s/22.3sl
+[mobile-4x-gpu-fix-r1] PAYG calc: slider ArrowRight                               64ms  delay 2.4 proc 0.7 pres 60.9 [keydown:64(d2/p1) keyup:16(d3/p0)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: slider ArrowRight                               64ms  delay 1.9 proc 0.9 pres 61.2 [keydown:64(d2/p1)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: type digit into devices                         72ms  delay 1.7 proc 0 pres 70.3 [keydown:72(d2/p0) keypress:72(d2/p5) keyup:16(d1/p0)] 
+[mobile-4x-gpu-fix-r1] PAYG calc: type digit into devices                         80ms  delay 0.9 proc 0.7 pres 78.4 [keydown:80(d1/p1) keypress:80(d2/p5)] LoAF 55.6/12.5s/27.4sl
+[mobile-4x-gpu-fix-r1] PAYG calc: type digit into devices                         80ms  delay 0.4 proc 0 pres 79.6 [keydown:80(d0/p0) keypress:80(d0/p7)] LoAF 52.4/12.2s/22.8sl
+[mobile-4x-gpu-fix-r1] PAYG calc: Edge add-on switch                              144ms  delay 54.2 proc 1.6 pres 88.2 [pointerdown:16(d15/p0) pointerup:16(d14/p0) click:144(d54/p2)] LoAF 87.3/22.3s/23sl
+[mobile-4x-gpu-fix-r1] PAYG calc: Edge add-on switch                              104ms  delay 21.2 proc 0.8 pres 82 [pointerdown:16(d15/p0) pointerup:16(d13/p0) click:104(d21/p1)] LoAF 53.5/7.6s/27.2sl
+[mobile-4x-gpu-fix-r1] PAYG calc: Edge add-on switch                              144ms  delay 28.9 proc 1.3 pres 113.8 [pointerdown:16(d15/p0) click:144(d29/p1)] LoAF 89.3/17s/35.3sl
+[mobile-4x-gpu-fix-r1] PAYG calculator: close #1                                  80ms  delay 33.1 proc 3.4 pres 43.5 [pointerdown:16(d12/p1) pointerup:16(d13/p0) click:80(d33/p3)] 
+[mobile-4x-gpu-fix-r1] PAYG calculator: open #2                                   176ms  delay 36.5 proc 47.7 pres 91.8 [pointerdown:16(d12/p1) pointerup:16(d12/p0) click:176(d37/p48)] LoAF 138.5/55.7s/6.8sl
+[mobile-4x-gpu-fix-r1] PAYG calculator: close #2                                  88ms  delay 26.2 proc 2.4 pres 59.4 [pointerdown:16(d11/p0) click:88(d26/p2)] 
+[mobile-4x-gpu-fix-r1] PAYG calculator: open #3                                   232ms  delay 34.4 proc 0 pres 197.6 [pointerdown:32(d23/p0) pointerup:232(d34/p0) click:232(d75/p60)] LoAF 167.1/59.5s/5.3sl
+[mobile-4x-gpu-fix-r1] PAYG calculator: close #3                                  96ms  delay 35.8 proc 3.3 pres 56.9 [pointerdown:16(d12/p0) pointerup:16(d13/p0) click:96(d36/p3)] 
+[mobile-4x-gpu-fix-r1] (setup) sub-tab -> thingsboard-cloud                       224ms  delay 65.7 proc 94.5 pres 63.8 [pointerdown:16(d17/p0) pointerup:16(d18/p0) click:224(d66/p95)] LoAF 175.1/100.5s/9.5sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 2nd                                   128ms  delay 51.4 proc 1.5 pres 75.1 [pointerdown:32(d30/p0) click:128(d51/p2)] LoAF 76.5/0s/10.4sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 1st                                   104ms  delay 37.6 proc 0.7 pres 65.7 [pointerdown:24(d18/p0) pointerup:16(d13/p0) click:104(d38/p1)] LoAF 63.5/0s/12.2sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 2nd                                   152ms  delay 47.5 proc 1.2 pres 103.3 [pointerdown:24(d25/p0) pointerup:24(d24/p0) click:152(d48/p1)] LoAF 84.3/0s/14.7sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 1st                                   112ms  delay 36.3 proc 0.7 pres 75 [pointerdown:16(d14/p0) pointerup:16(d18/p0) click:112(d36/p1)] LoAF 59.9/0s/11.3sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 2nd                                   128ms  delay 44.3 proc 0.8 pres 82.9 [pointerdown:16(d11/p0) pointerup:24(d20/p0) click:128(d44/p1)] LoAF 74/0s/14.4sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> 1st                                   144ms  delay 40.3 proc 1 pres 102.7 [pointerdown:16(d16/p0) pointerup:16(d17/p0) click:144(d40/p1)] LoAF 86.2/0s/13.9sl
+[mobile-4x-gpu-fix-r1] FAQ: expand/collapse item                                  120ms  delay 44.3 proc 0 pres 75.7 [pointerdown:16(d17/p0) pointerup:120(d44/p0) click:120(d79/p1)] LoAF 58.4/0s/1sl
+[mobile-4x-gpu-fix-r1] FAQ: expand/collapse item                                  112ms  delay 37.4 proc 0 pres 74.6 [pointerup:112(d37/p0) click:112(d58/p1)] 
+[mobile-4x-gpu-fix-r1] FAQ: expand/collapse item                                  88ms  delay 43.7 proc 0.1 pres 44.2 [pointerdown:24(d20/p0) pointerup:24(d23/p0) click:88(d44/p0)] 
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> #1                                    40ms  delay 25.1 proc 0.9 pres 14 [pointerdown:16(d18/p0) pointerup:16(d13/p0) click:40(d25/p1)] 
+[mobile-4x-gpu-fix-r1] FAQ: Load more                                             96ms  delay 29.8 proc 0.9 pres 65.3 [pointerdown:24(d19/p0) click:96(d30/p1)] LoAF 56.8/0s/8.5sl
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> #2                                    96ms  delay 28.1 proc 0.3 pres 67.6 [pointerdown:24(d19/p0) pointerup:16(d13/p0) click:96(d28/p0)] 
+[mobile-4x-gpu-fix-r1] FAQ: Load more                                             96ms  delay 34.9 proc 0.7 pres 60.4 [pointerdown:16(d15/p0) pointerup:16(d17/p0) click:96(d35/p1)] 
+[mobile-4x-gpu-fix-r1] FAQ: category tab -> #3                                    96ms  delay 24.8 proc 0.6 pres 70.6 [pointerdown:16(d15/p0) click:96(d25/p1)] LoAF 50.7/0s/8.8sl
+[mobile-4x-gpu-fix-r1] FAQ: Load more                                             96ms  delay 32.5 proc 1 pres 62.5 [pointerdown:24(d19/p0) pointerup:16(d14/p0) click:96(d33/p1)] 
+[mobile-4x-gpu-fix-r1] feature (i) click -> jump to FAQ                           96ms  delay 37.9 proc 5.3 pres 52.8 [pointerdown:16(d15/p0) pointerup:16(d15/p0) click:96(d38/p5)] 
+[mobile-4x-gpu-fix-r1] feature (i) click -> jump to FAQ                           136ms  delay 44.2 proc 6 pres 85.8 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:136(d44/p6)] LoAF 76.2/13s/7.9sl
+[mobile-4x-gpu-fix-r1] feature (i) click -> jump to FAQ                           120ms  delay 31.8 proc 6.5 pres 81.7 [pointerdown:16(d16/p0) pointerup:16(d13/p0) click:120(d32/p7)] LoAF 69.3/15.2s/6.1sl
+[mobile-4x-gpu-fix-r1] header: burger open                                        168ms  delay 65.4 proc 28.3 pres 74.3 [pointerdown:16(d15/p0) pointerup:24(d20/p0) click:168(d65/p28)] LoAF 111.3/28.2s/0.8sl
+[mobile-4x-gpu-fix-r1] header: expand "Products" in drawer                        128ms  delay 43 proc 2.8 pres 82.2 [pointerdown:16(d15/p0) pointerup:16(d18/p0) click:128(d43/p3)] LoAF 80.1/0s/0sl
+[mobile-4x-gpu-fix-r1] header: burger close                                       128ms  delay 34.7 proc 1.9 pres 91.4 [pointerdown:24(d19/p0) pointerup:16(d12/p0) click:128(d35/p2)] LoAF 74/0s/0.3sl
+[mobile-4x-gpu-fix-r1] header: burger open                                        80ms  delay 24.7 proc 9.8 pres 45.5 [pointerdown:16(d13/p0) pointerup:16(d16/p0) click:80(d25/p10)] 
+[mobile-4x-gpu-fix-r1] header: expand "Products" in drawer                        88ms  delay 23.4 proc 1.3 pres 63.3 [pointerdown:24(d19/p0) pointerup:16(d12/p0) click:88(d23/p1)] LoAF 52.2/0s/1sl
+[mobile-4x-gpu-fix-r1] header: burger close                                       136ms  delay 29.2 proc 1.2 pres 105.6 [pointerdown:16(d14/p0) pointerup:16(d13/p0) click:136(d29/p1)] LoAF 71.3/0s/0.7sl
+[mobile-4x-gpu-fix-r1] header: burger open                                        80ms  delay 29.7 proc 9.9 pres 40.4 [pointerdown:16(d13/p0) pointerup:16(d17/p0) click:80(d30/p10)] 
+[mobile-4x-gpu-fix-r1] header: expand "Products" in drawer                        56ms  delay 17.8 proc 1 pres 37.2 [pointerdown:16(d14/p0) pointerup:16(d12/p0) click:56(d18/p1)] 
+[mobile-4x-gpu-fix-r1] header: burger close                                       112ms  delay 24.3 proc 1 pres 86.7 [pointerdown:16(d11/p0) pointerup:16(d12/p0) click:112(d24/p1)] LoAF 56.1/0s/1.4sl
+[mobile-4x-gpu-fix-r1] theme toggle                                               208ms  delay 26.9 proc 6.7 pres 174.4 [pointerdown:24(d17/p0) click:208(d27/p7)] LoAF 128.8/6.2s/0.6sl,50.9/0s/18.3sl
+[mobile-4x-gpu-fix-r1] theme toggle                                               208ms  delay 19.8 proc 3.1 pres 185.1 [pointerdown:24(d19/p0) click:208(d20/p3)] LoAF 131.8/0s/0.1sl,53.1/0s/3sl
+[mobile-4x-gpu-fix-r1] theme toggle                                               64ms  delay 21.8 proc 3.4 pres 38.8 [pointerdown:24(d21/p0) pointerup:16(d12/p0) click:64(d22/p3)] 
+[mobile-4x-gpu-fix-r1] idleAfter {"recalcStyleCount":0.2,"recalcStyleMs":0.16,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":5.81}
+[mobile-4x-gpu-fix-r1] consent end {"hidden":false,"visible":true,"cookie":false}
+[mobile-4x-gpu-fix-r1] calibration(plain): click button                           16ms  delay 6.2 proc 0 pres 9.8 [click:16(d6/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(plain): click button                           16ms  delay 3.9 proc 0 pres 12.1 [click:16(d4/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(plain): click button                           16ms  delay 5 proc 0 pres 11 [click:16(d5/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(plain): click button                           16ms  delay 4.6 proc 0.6 pres 10.8 [click:16(d5/p1)] 
+[mobile-4x-gpu-fix-r1] calibration(plain): click button                           16ms  delay 5 proc 0 pres 11 [click:16(d5/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(anim): click button                            32ms  delay 16.5 proc 0 pres 15.5 [click:32(d17/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(anim): click button                            32ms  delay 13.9 proc 0 pres 18.1 [click:32(d14/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(anim): click button                            32ms  delay 15.1 proc 0.5 pres 16.4 [click:32(d15/p1)] 
+[mobile-4x-gpu-fix-r1] calibration(anim): click button                            32ms  delay 13.1 proc 0.1 pres 18.8 [click:32(d13/p0)] 
+[mobile-4x-gpu-fix-r1] calibration(anim): click button                            32ms  delay 14.7 proc 0.1 pres 17.2 [click:32(d15/p0)] 
+[mobile-4x-gpu-fix-r1] calibration {"plain":[16,16,16,16,16],"anim":[32,32,32,32,32]}
+[mobile-4x-gpu-fix-r1] wrote /home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/out-mobile-4x-gpu-fix-r1.json

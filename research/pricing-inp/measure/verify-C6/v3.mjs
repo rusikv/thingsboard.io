@@ -2,7 +2,7 @@
 // Usage: node v.mjs <mobile|desktop> <cpu>
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C6';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C6';
 const [kind = 'mobile', cpuS = '4'] = process.argv.slice(2);
 const mobile = kind === 'mobile';
 const cpu = Number(cpuS);
@@ -28,7 +28,7 @@ if (mobile) {
 }
 await send('Emulation.setCPUThrottlingRate', { rate: cpu });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await lp;
 await sleep(8000);
 

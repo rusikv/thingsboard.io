@@ -1,0 +1,138 @@
+[desktop-1x-gpu-fix-r2] loaded in 498 ms
+[desktop-1x-gpu-fix-r2] state0 {"activeSubTab":"thingsboard-cloud","regionEU":true,"theme":"light","url":"http://localhost:4332/pricing/?product=thingsboard-cloud","promoBanner":true,"promoVisible":true,"rootAnim":"promo-collapse","chatAnim":"chat-hues","observerErrs":[],"smilPaused":0,"smilElems":0,"bgSvgVisible":true} consent {"present":true,"hidden":false,"visible":true,"rect":[20,570,340,350]}
+[desktop-1x-gpu-fix-r2] DOM 5996 elements, depth 22 invisible 5102 rules 1965 :has 91
+[desktop-1x-gpu-fix-r2] idle {"recalcStyleCount":85.1,"recalcStyleMs":65.64,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":151.73} {"runTask":{"n":0,"ms":0},"updateLayoutTree":{"n":302,"ms":207.3},"layout":{"n":0,"ms":0},"paint":{"n":300,"ms":34.3},"prePaint":{"n":302,"ms":56.1},"commit":{"n":0,"ms":0},"animate":{"n":0,"ms":0},"beginMainThreadFrame":302,"drawFrames":302,"updateLayoutTreeElementCounts":[18,18,18,18,18,18,18,18,18,18]}
+[desktop-1x-gpu-fix-r2] baseline: click empty background                           56ms  delay 4 proc 0.4 pres 51.6 [pointerdown:56(d4/p0) pointerup:24(d1/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] baseline: click empty background                           40ms  delay 1.9 proc 0 pres 38.1 [pointerdown:40(d2/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x-gpu-fix-r2] baseline: click empty background                           24ms  delay 0.7 proc 0 pres 23.3 [pointerdown:24(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            80ms  delay 0.2 proc 0 pres 79.8 [pointerdown:24(d1/p0) pointerup:80(d0/p0) click:80(d0/p31)] LoAF 61.1/30.7s/4.9sl
+[desktop-1x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:32(d0/p0) pointerup:64(d0/p0) click:64(d0/p10)] 
+[desktop-1x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              48ms  delay 0.2 proc 0 pres 47.8 [pointerdown:40(d0/p0) pointerup:48(d0/p0) click:48(d0/p12)] 
+[desktop-1x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            56ms  delay 1.5 proc 0 pres 54.5 [pointerdown:32(d0/p0) pointerup:56(d2/p0) click:56(d2/p17)] 
+[desktop-1x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      48ms  delay 0.8 proc 0 pres 47.2 [pointerdown:40(d0/p0) pointerup:48(d1/p0) click:48(d1/p9)] 
+[desktop-1x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:40(d1/p0) pointerup:64(d0/p0) click:64(d0/p14)] 
+[desktop-1x-gpu-fix-r2] sub-tab: Cloud -> Private Cloud                            56ms  delay 1.7 proc 0 pres 54.3 [pointerdown:48(d0/p0) pointerup:56(d2/p0) click:56(d2/p23)] LoAF 52.4/22.8s/3.8sl
+[desktop-1x-gpu-fix-r2] sub-tab: Private Cloud -> On-premises                      40ms  delay 0.2 proc 0 pres 39.8 [pointerdown:32(d0/p0) pointerup:40(d0/p0) click:40(d0/p7)] 
+[desktop-1x-gpu-fix-r2] sub-tab: On-premises -> Cloud                              40ms  delay 4.5 proc 0 pres 35.5 [pointerdown:40(d5/p0) pointerup:40(d0/p0) click:40(d0/p11)] 
+[desktop-1x-gpu-fix-r2] region: label -> North America                             64ms  delay 0.6 proc 0 pres 63.4 [pointerdown:48(d1/p0) pointerup:64(d1/p0) click:64(d1/p2)] 
+[desktop-1x-gpu-fix-r2] region: label -> Europe                                    64ms  delay 0.6 proc 0 pres 63.4 [pointerdown:48(d1/p0) pointerup:64(d1/p0) click:64(d1/p2)] 
+[desktop-1x-gpu-fix-r2] region: label -> North America                             48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:32(d1/p0) pointerup:48(d1/p0) click:48(d1/p1)] 
+[desktop-1x-gpu-fix-r2] region: label -> Europe                                    64ms  delay 0.5 proc 0 pres 63.5 [pointerdown:32(d1/p0) pointerup:64(d1/p0) click:64(d1/p2)] LoAF 51.3/0s/3.4sl
+[desktop-1x-gpu-fix-r2] region: label -> North America                             48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:32(d1/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-gpu-fix-r2] region: label -> Europe                                    56ms  delay 0.6 proc 0 pres 55.4 [pointerdown:32(d2/p0) pointerup:56(d1/p0) click:56(d1/p2)] 
+[desktop-1x-gpu-fix-r2] region: switch (checkbox)                                  48ms  delay 0.6 proc 0 pres 47.4 [pointerdown:40(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] region: switch (checkbox)                                  48ms  delay 1.5 proc 0 pres 46.5 [pointerdown:48(d2/p0) pointerup:48(d0/p0) click:48(d1/p1)] 
+[desktop-1x-gpu-fix-r2] region: switch (checkbox)                                  48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:32(d1/p0) pointerup:48(d0/p0) click:48(d0/p2)] 
+[desktop-1x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:48(d2/p0) pointerup:64(d0/p0) click:64(d0/p15)] 
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       64ms  delay 1.3 proc 0 pres 62.7 [pointerdown:48(d1/p0) pointerup:64(d1/p0) click:64(d1/p13)] 
+[desktop-1x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             80ms  delay 0.6 proc 0.1 pres 79.3 [pointerdown:32(d2/p0) pointerup:80(d1/p0) click:80(d1/p31)] LoAF 60.1/30.7s/4sl
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       48ms  delay 0.2 proc 0 pres 47.8 [pointerdown:40(d0/p0) pointerup:48(d0/p0) click:48(d0/p12)] 
+[desktop-1x-gpu-fix-r2] upsell: See Private Cloud Options (switch tab)             64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:32(d1/p0) pointerup:64(d0/p0) click:64(d0/p14)] 
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:40(d1/p0) pointerup:48(d1/p0) click:48(d1/p12)] 
+[desktop-1x-gpu-fix-r2] top-up accordion toggle                                    24ms  delay 0.5 proc 0 pres 23.5 [pointerup:24(d1/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] top-up accordion toggle                                    32ms  delay 1.6 proc 0 pres 30.4 [pointerdown:32(d2/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x-gpu-fix-r2] top-up accordion toggle                                    32ms  delay 0.5 proc 0 pres 31.5 [pointerdown:32(d1/p0) pointerup:24(d1/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x-gpu-fix-r2] hover: plan feature (i) tooltip                            <16ms 
+[desktop-1x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x-gpu-fix-r2] hover: add-on (i) tooltip                                  <16ms 
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-private-cloud               56ms  delay 1.3 proc 0 pres 54.7 [pointerdown:32(d1/p0) pointerup:56(d1/p0) click:56(d1/p16)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Annual                                      48ms  delay 0.8 proc 0 pres 47.2 [pointerdown:48(d1/p0) pointerup:40(d2/p0) click:40(d2/p4)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Monthly                                     40ms  delay 1.1 proc 0 pres 38.9 [pointerdown:40(d1/p0) pointerup:40(d2/p0) click:40(d2/p3)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Annual                                      48ms  delay 0.8 proc 0 pres 47.2 [pointerdown:48(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Monthly                                     48ms  delay 0.9 proc 0 pres 47.1 [pointerdown:48(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Annual                                      48ms  delay 1.7 proc 0 pres 46.3 [pointerdown:48(d2/p0) pointerup:40(d1/p0) click:40(d1/p3)] 
+[desktop-1x-gpu-fix-r2] PC billing: -> Monthly                                     48ms  delay 0.7 proc 0 pres 47.3 [pointerdown:32(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x-gpu-fix-r2] hover: comparison-table (i) tooltip                        <16ms 
+[desktop-1x-gpu-fix-r2] PC calculator: open #1 (cold chunk)                        40ms  delay 2 proc 0 pres 38 [pointerdown:32(d1/p0) pointerup:40(d2/p0) click:40(d2/p5)] LoAF 63.6/45.6s/1.3sl
+[desktop-1x-gpu-fix-r2] PC calc: click slider track @0.35                          64ms  delay 0.3 proc 0.1 pres 63.6 [pointerdown:56(d1/p0) pointerup:64(d0/p0) click:64(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: click slider track @0.7                           88ms  delay 2.9 proc 0 pres 85.1 [pointerdown:88(d3/p0) pointerup:72(d3/p0) click:72(d4/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: click slider track @0.15                          72ms  delay 0.2 proc 0.1 pres 71.7 [pointerdown:72(d0/p0) pointerup:64(d0/p0) click:64(d2/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: slider ArrowRight                                 64ms  delay 1 proc 0.4 pres 62.6 [keydown:64(d1/p0) keyup:48(d2/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: slider ArrowRight                                 40ms  delay 0.1 proc 0 pres 39.9 [keydown:32(d0/p0) keyup:40(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: slider ArrowRight                                 56ms  delay 0.3 proc 0.1 pres 55.6 [keydown:56(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: type digit into devices                           96ms  delay 1.9 proc 0.3 pres 93.8 [keydown:96(d2/p0) keypress:96(d2/p4) keyup:72(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: type digit into devices                           40ms  delay 0.2 proc 0.1 pres 39.7 [keydown:40(d0/p0) keypress:40(d0/p1) keyup:40(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: type digit into devices                           64ms  delay 0.2 proc 0.2 pres 63.6 [keydown:64(d0/p0) keypress:64(d0/p2)] 
+[desktop-1x-gpu-fix-r2] PC calc: stepper +                                         56ms  delay 0.8 proc 0 pres 55.2 [pointerdown:56(d1/p0) pointerup:56(d1/p0) click:56(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: stepper +                                         56ms  delay 1 proc 0 pres 55 [pointerdown:56(d1/p0) pointerup:56(d1/p0) click:56(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: stepper +                                         56ms  delay 0.6 proc 0 pres 55.4 [pointerdown:56(d1/p0) pointerup:48(d1/p0) click:48(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: add-on switch                                     80ms  delay 1.4 proc 0 pres 78.6 [pointerdown:56(d2/p0) pointerup:80(d1/p0) click:80(d1/p1)] 
+[desktop-1x-gpu-fix-r2] PC calc: add-on switch                                     56ms  delay 0.8 proc 0.1 pres 55.1 [pointerdown:56(d1/p0) pointerup:56(d1/p0) click:56(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PC calc: add-on switch                                     80ms  delay 0.4 proc 0.1 pres 79.5 [pointerdown:32(d2/p0) pointerup:80(d0/p0) click:80(d1/p1)] 
+[desktop-1x-gpu-fix-r2] PC calculator: close #1                                    56ms  delay 0.3 proc 0 pres 55.7 [pointerdown:40(d0/p0) pointerup:56(d0/p0) click:56(d0/p1)] 
+[desktop-1x-gpu-fix-r2] PC calculator: open #2                                     72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:32(d1/p0) pointerup:72(d1/p0) click:72(d1/p28)] LoAF 54.5/27.8s/0.5sl
+[desktop-1x-gpu-fix-r2] PC calculator: close #2                                    64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:48(d2/p0) pointerup:64(d0/p0) click:64(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PC calculator: open #3                                     72ms  delay 1 proc 0 pres 71 [pointerdown:32(d1/p0) pointerup:72(d1/p0) click:72(d1/p29)] LoAF 53.1/29.1s/0.4sl
+[desktop-1x-gpu-fix-r2] PC calculator: close #3                                    120ms  delay 1.1 proc 0 pres 118.9 [pointerdown:72(d3/p0) pointerup:120(d1/p0) click:120(d1/p3)] LoAF 51/0s/0.1sl
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-pe                          104ms  delay 2.1 proc 0 pres 101.9 [pointerdown:40(d7/p0) pointerup:104(d2/p0) click:104(d2/p33)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Perpetual                              56ms  delay 0.8 proc 0.1 pres 55.1 [pointerdown:56(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Subscription                           56ms  delay 0.6 proc 0 pres 55.4 [pointerdown:56(d1/p0) pointerup:56(d0/p0) click:56(d0/p2)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Perpetual                              48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:32(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Subscription                           48ms  delay 0.4 proc 0 pres 47.6 [pointerup:48(d0/p0) click:48(d0/p3)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Perpetual                              48ms  delay 0.5 proc 0 pres 47.5 [pointerdown:32(d1/p0) pointerup:48(d1/p0) click:48(d1/p2)] 
+[desktop-1x-gpu-fix-r2] On-prem billing: -> Subscription                           64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:16(d1/p0) pointerup:64(d0/p0) click:64(d0/p2)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: open #1 (cold chunk)                      32ms  delay 0.7 proc 0 pres 31.3 [pointerdown:32(d1/p0) pointerup:24(d0/p0) click:24(d0/p2)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: click slider track @0.4                         64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:64(d0/p0) pointerup:56(d3/p0) click:56(d6/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: click slider track @0.75                        64ms  delay 0.5 proc 0 pres 63.5 [pointerdown:64(d1/p0) pointerup:64(d0/p0) click:64(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: click slider track @0.1                         64ms  delay 0.4 proc 0 pres 63.6 [pointerdown:56(d0/p0) pointerup:64(d0/p0) click:64(d2/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: slider ArrowRight                               64ms  delay 0.2 proc 0.3 pres 63.5 [keydown:64(d0/p0) keyup:56(d2/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: slider ArrowRight                               64ms  delay 1.1 proc 0 pres 62.9 [keydown:56(d1/p0) keyup:64(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: slider ArrowRight                               48ms  delay 0.3 proc 0.2 pres 47.5 [keydown:48(d0/p0) keyup:40(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: type digit into devices                         72ms  delay 0.3 proc 0.1 pres 71.6 [keydown:72(d0/p0) keypress:72(d0/p2) keyup:64(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: type digit into devices                         64ms  delay 0.9 proc 0 pres 63.1 [keydown:64(d1/p0) keypress:64(d1/p1) keyup:56(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: type digit into devices                         48ms  delay 0.1 proc 0.1 pres 47.8 [keydown:48(d0/p0) keypress:48(d0/p2)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: Edge add-on switch                              72ms  delay 0.7 proc 0 pres 71.3 [pointerdown:56(d2/p0) pointerup:72(d1/p0) click:72(d1/p1)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: Edge add-on switch                              48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:40(d1/p0) pointerup:48(d0/p0) click:48(d0/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calc: Edge add-on switch                              96ms  delay 0.9 proc 0 pres 95.1 [pointerdown:56(d2/p0) pointerup:96(d1/p0) click:96(d1/p0)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: close #1                                  80ms  delay 0.5 proc 0 pres 79.5 [pointerdown:56(d1/p0) pointerup:80(d1/p0) click:80(d1/p1)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: open #2                                   64ms  delay 0.6 proc 0.1 pres 63.3 [pointerdown:40(d1/p0) pointerup:64(d1/p0) click:64(d1/p17)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: close #2                                  80ms  delay 1.6 proc 0 pres 78.4 [pointerdown:56(d1/p0) pointerup:80(d2/p0) click:80(d2/p1)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: open #3                                   56ms  delay 0.5 proc 0 pres 55.5 [pointerdown:24(d1/p0) pointerup:56(d1/p0) click:56(d1/p14)] 
+[desktop-1x-gpu-fix-r2] PAYG calculator: close #3                                  32ms  delay 0.4 proc 0 pres 31.6 [pointerdown:24(d0/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-gpu-fix-r2] (setup) sub-tab -> thingsboard-cloud                       56ms  delay 1.7 proc 0 pres 54.3 [pointerdown:32(d1/p0) pointerup:56(d2/p0) click:56(d2/p22)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 2nd                                   24ms  delay 0.7 proc 0 pres 23.3 [pointerdown:24(d1/p0) pointerup:24(d0/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 1st                                   24ms  delay 0.6 proc 0 pres 23.4 [pointerdown:24(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 2nd                                   24ms  delay 0.6 proc 0 pres 23.4 [pointerdown:24(d1/p0) pointerup:24(d1/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 1st                                   24ms  delay 0.4 proc 0 pres 23.6 [pointerdown:16(d1/p0) pointerup:24(d0/p0) click:24(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 2nd                                   32ms  delay 0.6 proc 0 pres 31.4 [pointerdown:24(d1/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> 1st                                   24ms  delay 0.7 proc 0 pres 23.3 [pointerdown:24(d1/p0) pointerup:16(d0/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: expand/collapse item                                  24ms  delay 0.5 proc 0 pres 23.5 [pointerdown:24(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: expand/collapse item                                  16ms  delay 0.7 proc 0 pres 15.3 [pointerdown:16(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: expand/collapse item                                  16ms  delay 0.5 proc 0 pres 15.5 [pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> #1                                    16ms  delay 0.5 proc 0 pres 15.5 [pointerdown:16(d1/p0) pointerup:16(d1/p0) click:16(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: Load more                                             40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:16(d1/p0) pointerup:40(d1/p0) click:40(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> #2                                    32ms  delay 0.8 proc 0 pres 31.2 [pointerdown:32(d1/p0) pointerup:32(d1/p0) click:32(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: Load more                                             56ms  delay 1 proc 0.1 pres 54.9 [pointerdown:56(d1/p0) pointerup:40(d2/p0) click:40(d2/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: category tab -> #3                                    48ms  delay 0.5 proc 0.1 pres 47.4 [pointerdown:48(d1/p0) pointerup:48(d1/p0) click:48(d1/p0)] 
+[desktop-1x-gpu-fix-r2] FAQ: Load more                                             48ms  delay 1.1 proc 0.1 pres 46.8 [pointerdown:48(d1/p0) pointerup:40(d2/p0) click:40(d2/p0)] 
+[desktop-1x-gpu-fix-r2] feature (i) click -> jump to FAQ                           40ms  delay 0.3 proc 0 pres 39.7 [pointerdown:32(d1/p0) pointerup:40(d0/p0) click:40(d0/p3)] 
+[desktop-1x-gpu-fix-r2] feature (i) click -> jump to FAQ                           48ms  delay 0.4 proc 0 pres 47.6 [pointerdown:40(d1/p0) pointerup:48(d0/p0) click:48(d0/p2)] 
+[desktop-1x-gpu-fix-r2] feature (i) click -> jump to FAQ                           40ms  delay 0.6 proc 0 pres 39.4 [pointerdown:32(d1/p0) pointerup:40(d1/p0) click:40(d1/p2)] 
+[desktop-1x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x-gpu-fix-r2] header: hover "Products" (mega-menu open)                  <16ms 
+[desktop-1x-gpu-fix-r2] header: click "Products" label (desktop no-op)             32ms  delay 0.6 proc 0.1 pres 31.3 [pointerdown:32(d1/p0) pointerup:32(d0/p0) click:32(d0/p0)] 
+[desktop-1x-gpu-fix-r2] header: click "Products" label (desktop no-op)             56ms  delay 1.7 proc 0.1 pres 54.2 [pointerdown:56(d2/p0) pointerup:48(d0/p0) click:48(d0/p0)] 
+[desktop-1x-gpu-fix-r2] header: click "Products" label (desktop no-op)             56ms  delay 1.3 proc 0 pres 54.7 [pointerdown:56(d1/p0) pointerup:48(d0/p0) click:48(d0/p0)] 
+[desktop-1x-gpu-fix-r2] theme toggle                                               88ms  delay 0.9 proc 0 pres 87.1 [pointerup:88(d1/p0) click:88(d1/p1)] 
+[desktop-1x-gpu-fix-r2] theme toggle                                               72ms  delay 0.6 proc 0 pres 71.4 [pointerdown:32(d1/p0) pointerup:72(d1/p0) click:72(d1/p1)] 
+[desktop-1x-gpu-fix-r2] theme toggle                                               56ms  delay 0.3 proc 0 pres 55.7 [pointerdown:56(d0/p0) pointerup:48(d0/p0) click:48(d0/p1)] 
+[desktop-1x-gpu-fix-r2] idleAfter {"recalcStyleCount":84.3,"recalcStyleMs":63.77,"layoutCount":0,"layoutMs":0,"scriptMs":0,"taskMs":157.59}
+[desktop-1x-gpu-fix-r2] consent end {"hidden":false,"visible":true,"cookie":false}
+[desktop-1x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-1x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-1x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-1x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-1x-gpu-fix-r2] calibration(plain): click button                           <16ms 
+[desktop-1x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.3 proc 0 pres 15.7 [pointerdown:16(d0/p0)] 
+[desktop-1x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0) pointerup:16(d0/p0) click:16(d0/p0)] 
+[desktop-1x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0) pointerup:16(d0/p0) click:16(d0/p0)] 
+[desktop-1x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.2 proc 0 pres 15.8 [pointerdown:16(d0/p0) pointerup:16(d0/p0) click:16(d0/p0)] 
+[desktop-1x-gpu-fix-r2] calibration(anim): click button                            16ms  delay 0.4 proc 0 pres 15.6 [pointerdown:16(d0/p0)] 
+[desktop-1x-gpu-fix-r2] calibration {"plain":[null,null,null,null,null],"anim":[16,16,16,16,16]}
+[desktop-1x-gpu-fix-r2] wrote /home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/out-desktop-1x-gpu-fix-r2.json

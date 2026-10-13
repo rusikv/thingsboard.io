@@ -1,0 +1,194 @@
+[
+ {
+  "page": "/pricing/",
+  "view": "desktop",
+  "theme": "light",
+  "instances": 1,
+  "theme_attr": "light",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "desktop",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "desktop",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "desktop",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/pricing/",
+  "view": "desktop",
+  "theme": "dark",
+  "instances": 1,
+  "theme_attr": "dark",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "desktop",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "desktop",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "desktop",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/pricing/",
+  "view": "wide",
+  "theme": "light",
+  "instances": 1,
+  "theme_attr": "light",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "wide",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "wide",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "wide",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/pricing/",
+  "view": "wide",
+  "theme": "dark",
+  "instances": 1,
+  "theme_attr": "dark",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "wide",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "wide",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "wide",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/pricing/",
+  "view": "mobile",
+  "theme": "light",
+  "instances": 1,
+  "theme_attr": "light",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "mobile",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "mobile",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "mobile",
+  "theme": "light",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/pricing/",
+  "view": "mobile",
+  "theme": "dark",
+  "instances": 1,
+  "theme_attr": "dark",
+  "anims": 4
+ },
+ {
+  "page": "/",
+  "view": "mobile",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/thingsboard-pe/",
+  "view": "mobile",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ },
+ {
+  "page": "/products/paas/",
+  "view": "mobile",
+  "theme": "dark",
+  "instances": 2,
+  "theme_attr": "light",
+  "anims": 8
+ }
+]

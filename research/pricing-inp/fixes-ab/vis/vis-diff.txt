@@ -1,0 +1,17 @@
+SIZE _-desktop-light-i0-t7.3.png: (1335, 705) vs (1350, 705)
+125 pairs; worst max delta 25
+  max  25  >5: 40.652%  _products_paas_-mobile-dark-i0-t0.png
+  max  21  >5:  0.000%  _-mobile-light-i0-t0.png
+  max  21  >5:  0.000%  _pricing_-desktop-dark-i0-t0.png
+  max  20  >5:  0.000%  _-mobile-light-i0-t7.3.png
+  max  19  >5:  0.000%  _-mobile-light-i0-t21.1.png
+  max  19  >5:  0.000%  _-mobile-dark-i0-t21.1.png
+  max  19  >5:  0.000%  _pricing_-desktop-light-i0-t0.png
+  max  19  >5:  0.000%  _pricing_-wide-dark-i0-t21.1.png
+  max  17  >5:  0.000%  _pricing_-desktop-dark-i0-t7.3.png
+  max  17  >5:  0.000%  _pricing_-desktop-dark-i0-t21.1.png
+  max  16  >5:  0.000%  _-wide-light-i1-t7.3.png
+  max  16  >5:  0.000%  _-wide-light-i1-t0.png
+  max  16  >5:  0.000%  _-wide-dark-i1-t7.3.png
+  max  16  >5:  0.000%  _pricing_-wide-light-i0-t21.1.png
+  max  15  >5:  0.000%  _pricing_-desktop-light-i0-t7.3.png

@@ -3,7 +3,7 @@
 // conds: all (prod now) | smilonly (chat-hue off ~ field period) | chatonly (SMIL paused) | none | fix (SMIL -> WAAPI transform layers, chat off)
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const OUT = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C2';
+const OUT = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C2';
 const [kind, roundsS] = process.argv.slice(2);
 const ROUNDS = Number(roundsS || 5);
 const mobile = kind === 'mobile';
@@ -30,7 +30,7 @@ await send('Emulation.setDeviceMetricsOverride', { width: P.w, height: P.h, devi
 await send('Emulation.setCPUThrottlingRate', { rate: P.cpu });
 await send('Page.addScriptToEvaluateOnNewDocument', { source: `window.__et = []; new PerformanceObserver((l) => { for (const e of l.getEntries()) if (e.interactionId) __et.push({ id: e.interactionId, name: e.name, start: e.startTime, dur: e.duration, ps: e.processingStart, pe: e.processingEnd }); }).observe({ type: 'event', durationThreshold: 16, buffered: true });` });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await lp;
 await sleep(mobile ? 7000 : 5000);
 

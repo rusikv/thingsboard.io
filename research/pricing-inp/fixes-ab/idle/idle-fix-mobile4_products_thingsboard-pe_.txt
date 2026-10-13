@@ -1,0 +1,11 @@
+THREAD CrRendererMain: 0.8 ms/s busy
+THREAD VizCompositorThread: 7.7 ms/s busy
+THREAD Compositor: 41.4 ms/s busy
+== mobile-4x-fix_products_thingsboard-pe_: main-thread aggregates over 2.07s (ms/s, count/s)
+      0.8 ms/s      6/s  RunTask
+      0.3 ms/s      6/s  ThreadControllerImpl::RunTask
+      0.3 ms/s      6/s  BlinkScheduler_OnTaskCompleted
+      0.1 ms/s      6/s  BlinkScheduler_PerformMicrotaskCheckpoint
+      0.0 ms/s      5/s  TimerBase::run
+UpdateLayoutTree elementCounts sample: []
+invalidation reasons:

@@ -1,6 +1,6 @@
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure';
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const port = 9890 + Math.floor(Math.random() * 9);
 const ud = `${DIR}/profile-dbg-${Date.now()}`;
@@ -17,7 +17,7 @@ await send('Emulation.setUserAgentOverride', { userAgent: 'Mozilla/5.0 (Linux; A
 await send('Emulation.setDeviceMetricsOverride', { width: 412, height: 823, deviceScaleFactor: 1.75, mobile: true });
 await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 5 });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/?product=thingsboard-private-cloud' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/?product=thingsboard-private-cloud' });
 await lp; await sleep(3000);
 console.log(await ev(`(() => { const b = Array.from(document.querySelectorAll('.pricing-section[data-section="thingsboard-private-cloud"] .upsell-card-btn')).map(b => ({ txt: b.textContent.trim(), onclick: b.getAttribute('onclick'), tag: b.tagName, vis: b.checkVisibility() })); return JSON.stringify(b); })()`));
 console.log('typeof openTbPcCalc', await ev('typeof window.openTbPcCalc'));

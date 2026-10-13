@@ -1,0 +1,13 @@
+THREAD CrRendererMain: 0.8 ms/s busy
+THREAD VizCompositorThread: 11.2 ms/s busy
+THREAD Compositor: 53.0 ms/s busy
+== mobile-4x-fix_products_paas_: main-thread aggregates over 2.07s (ms/s, count/s)
+      0.8 ms/s      7/s  RunTask
+      0.2 ms/s      7/s  ThreadControllerImpl::RunTask
+      0.1 ms/s      7/s  BlinkScheduler_OnTaskCompleted
+      0.1 ms/s      7/s  BlinkScheduler_PerformMicrotaskCheckpoint
+      0.0 ms/s      0/s  SimpleWatcher::OnHandleReady
+      0.0 ms/s      5/s  TimerBase::run
+      0.0 ms/s      0/s  Closed mojo endpoint
+UpdateLayoutTree elementCounts sample: []
+invalidation reasons:

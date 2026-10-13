@@ -3,8 +3,8 @@
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C4';
-const TARGET = 'https://thingsboard.io/pricing/';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C4';
+const TARGET = (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/';
 const PROFILES = {
 	'mobile-4x': { w: 412, h: 823, dpr: 1.75, mobile: true, cpu: 4 },
 	'desktop-4x': { w: 1350, h: 940, dpr: 1, mobile: false, cpu: 4 },

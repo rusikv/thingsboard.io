@@ -2,7 +2,7 @@
 // Usage: node idletrace.mjs <mobile|desktop> <cpu> [--noanim] [--nosmil] [--touchtap]
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure';
 const [kind, cpuS] = process.argv.slice(2);
 const flags = process.argv.slice(4);
 const mobile = kind === 'mobile';
@@ -31,7 +31,7 @@ await send('Emulation.setCPUThrottlingRate', { rate: cpu });
 if (flags.includes('--noanim')) await send('Page.addScriptToEvaluateOnNewDocument', { source: `addEventListener('DOMContentLoaded',()=>{const s=document.createElement('style');s.textContent='html,:root,#chat-launcher,#chat-launcher *{animation:none!important}';document.head.appendChild(s)})` });
 if (flags.includes('--nosmil')) await send('Page.addScriptToEvaluateOnNewDocument', { source: `addEventListener('DOMContentLoaded',()=>document.querySelectorAll('svg').forEach(s=>s.pauseAnimations&&!s.ownerSVGElement&&s.pauseAnimations()))` });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + (process.env.TB_PATH || '/pricing/') });
 await lp;
 await sleep(8000);
 const cats = ['devtools.timeline', 'blink', 'blink.debug', 'disabled-by-default-blink.debug', 'disabled-by-default-devtools.timeline', 'toplevel', 'cc', 'input', 'benchmark', 'disabled-by-default-devtools.timeline.invalidationTracking', 'scheduler', 'renderer.scheduler', 'disabled-by-default-renderer.scheduler'];
@@ -50,7 +50,7 @@ if (flags.includes('--touchtap')) {
 const dp = new Promise((r) => (done = r));
 await send('Tracing.end');
 await dp;
-const tag = `${kind}-${cpu}x${flags.join('')}`;
+const tag = `${kind}-${cpu}x${flags.join('')}${process.env.TB_TAG ? '-' + process.env.TB_TAG : ''}`;
 fs.writeFileSync(`${DIR}/idletrace-${tag}.json`, JSON.stringify(evs));
 // aggregate: events nested inside UpdateLayoutTree on renderer main
 const tn = new Map(); for (const e of evs) if (e.ph === 'M' && e.name === 'thread_name') tn.set(e.pid + ':' + e.tid, e.args.name);
@@ -60,6 +60,18 @@ const M = evs.filter((e) => e.pid + ':' + e.tid === best && e.ph === 'X').sort((
 const span = (Math.max(...M.map((e) => e.ts + e.dur)) - Math.min(...M.map((e) => e.ts))) / 1e6;
 const agg = {};
 for (const e of M) { agg[e.name] = agg[e.name] || { n: 0, ms: 0 }; agg[e.name].n++; agg[e.name].ms += e.dur / 1000; }
+// busy time per thread (top-level X events only), so GPU raster work shows up next to renderer main
+{
+	const byThread = new Map();
+	for (const [k, n] of tn) if (['CrRendererMain', 'CrGpuMain', 'VizCompositorThread', 'Compositor'].includes(n)) byThread.set(k, { n, ev: [] });
+	for (const e of evs) if (e.ph === 'X' && byThread.has(e.pid + ':' + e.tid)) byThread.get(e.pid + ':' + e.tid).ev.push(e);
+	for (const { n, ev } of byThread.values()) {
+		ev.sort((a, b) => a.ts - b.ts);
+		let busy = 0, end = -1;
+		for (const e of ev) { const s0 = Math.max(e.ts, end); const e1 = e.ts + (e.dur || 0); if (e1 > s0) { busy += e1 - s0; end = e1; } }
+		if (ev.length) console.log(`THREAD ${n}: ${(busy / 1000 / span).toFixed(1)} ms/s busy`);
+	}
+}
 console.log(`== ${tag}: main-thread aggregates over ${span.toFixed(2)}s (ms/s, count/s)`);
 for (const [k, v] of Object.entries(agg).sort((a, b) => b[1].ms - a[1].ms).slice(0, 45)) console.log(`  ${(v.ms / span).toFixed(1).padStart(7)} ms/s ${(v.n / span).toFixed(0).padStart(6)}/s  ${k}`);
 const ult = M.filter((e) => e.name === 'UpdateLayoutTree');

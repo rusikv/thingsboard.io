@@ -2,7 +2,7 @@
 // Usage: node vis.mjs <desktop|mobile>
 import { spawn } from 'node:child_process';
 import fs from 'node:fs';
-const OUT = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C2';
+const OUT = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C2';
 const kind = process.argv[2];
 const mobile = kind === 'mobile';
 const P = mobile ? { w: 412, h: 823, dpr: 1.75 } : { w: 1350, h: 940, dpr: 1 };
@@ -22,7 +22,7 @@ await send('Page.enable');
 if (mobile) await send('Emulation.setUserAgentOverride', { userAgent: 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Mobile Safari/537.36', platform: 'Android' });
 await send('Emulation.setDeviceMetricsOverride', { width: P.w, height: P.h, deviceScaleFactor: P.dpr, mobile });
 const lp = new Promise((r) => (loaded = r));
-await send('Page.navigate', { url: 'https://thingsboard.io/pricing/' });
+await send('Page.navigate', { url: (process.env.TB_ORIGIN || 'https://thingsboard.io') + '/pricing/' });
 await lp;
 await sleep(4000);
 // hide everything except the background so the diff only sees the waves

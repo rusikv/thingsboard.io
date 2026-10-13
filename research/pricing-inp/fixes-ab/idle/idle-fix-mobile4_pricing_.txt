@@ -1,0 +1,14 @@
+THREAD CrGpuMain: 225.7 ms/s busy
+THREAD CrRendererMain: 7.3 ms/s busy
+THREAD VizCompositorThread: 71.7 ms/s busy
+THREAD Compositor: 63.7 ms/s busy
+== mobile-4x-fix_pricing_: main-thread aggregates over 3.00s (ms/s, count/s)
+      7.3 ms/s     67/s  RunTask
+      2.7 ms/s     67/s  BlinkScheduler_OnTaskCompleted
+      2.3 ms/s     67/s  ThreadControllerImpl::RunTask
+      1.7 ms/s     67/s  BlinkScheduler_PerformMicrotaskCheckpoint
+      0.1 ms/s      0/s  SimpleWatcher::OnHandleReady
+      0.0 ms/s      0/s  Receive mojo reply
+      0.0 ms/s      4/s  TimerBase::run
+UpdateLayoutTree elementCounts sample: []
+invalidation reasons:

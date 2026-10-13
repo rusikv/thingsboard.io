@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-const DIR = '/tmp/claude-1000/-home-thingsboard095-tb-thingsboard-io/3973666f-bba9-429b-a45b-e0ddba54c47a/scratchpad/inp/verify-C5';
+const DIR = '/home/ruru/projects/thingsboard.io-research/research/pricing-inp/measure/verify-C5';
 const files = fs.readdirSync(DIR).filter((f) => /^out-.*\.json$/.test(f));
 const latest = {};
 for (const f of files) {
