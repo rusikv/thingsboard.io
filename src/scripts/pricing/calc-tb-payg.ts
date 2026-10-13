@@ -155,6 +155,8 @@ export function initTbPaygCalc() {
 	}
 
 	function calculate(opts?: { track?: boolean }) {
+		// This render shows the latest state, so it covers a queued frame too.
+		if (_calcFrame) { cancelAnimationFrame(_calcFrame); _calcFrame = 0; }
 		if (state.devices >= SM_ENTERPRISE) { lastTotal = null; lastPlan = 'Enterprise'; renderEnterprise(); if (opts?.track !== false) sendSmGTM(null); return; }
 		const plan = getPlan(state.devices);
 		updateUI(plan);
@@ -236,7 +238,9 @@ export function initTbPaygCalc() {
 			html += `<div class="calc-addon-result"><span class="calc-addon-result-name">White-labeled Mobile App</span><button type="button" class="calc-addon-result-action" data-enable-addon="mobile">Add (${fmt(SM_PLANS.mobileApp)})</button></div>`;
 		}
 
-		const _st2 = results.parentElement?.scrollTop || 0; results.innerHTML = html; if (results.parentElement) results.parentElement.scrollTop = _st2;
+		// The panel keeps its scroll position across the swap on its own. Saving
+		// and restoring scrollTop around it forced two full layouts per render.
+		results.innerHTML = html;
 
 		// Footer — build total tooltip
 		const totalParts = [`${fmt(plan.price)} (base plan)`];
@@ -283,7 +287,7 @@ export function initTbPaygCalc() {
 		(state.addons as any)[key].on = true;
 		if (key === 'edge') { state.addons.edge.count = 1; edgeCounter.classList.remove('hidden'); }
 		cards[key as keyof typeof cards].classList.add('active');
-		calculate();
+		scheduleCalculate();
 	});
 
 	// Footer CTA tracking. Footer re-renders every recalc, so delegate one click
@@ -300,7 +304,7 @@ export function initTbPaygCalc() {
 		if (state.addons.trendz.on) html += row('Trendz Analytics', 'Enabled');
 		if (state.addons.mobile.on) html += row('White-labeled Mobile App', 'Enabled');
 		html += `<p class="calc-enterprise-msg">You have reached a tier where economies of scale apply. Let’s talk about aligning our pricing with your specific rollout schedule and volume requirements.</p>`;
-		const _st2 = results.parentElement?.scrollTop || 0; results.innerHTML = html; if (results.parentElement) results.parentElement.scrollTop = _st2;
+		results.innerHTML = html;
 
 		const msg = `Enterprise Request\n- Devices: ${fmtN(state.devices)}\n- Prod Instances: ${fmtN(state.prodInstances)}` +
 			(state.addons.edge.on ? `\n- Edge Instances: ${fmtN(state.addons.edge.count)}` : '') +
@@ -309,22 +313,31 @@ export function initTbPaygCalc() {
 		footer.innerHTML = `<a class="calc-cta" href="/contact-us/?subject=${encodeURIComponent('ThingsBoard Products')}&message=${encodeURIComponent(msg)}" target="_blank" rel="noopener noreferrer">Get Enterprise Quote</a>`;
 	}
 
-	// rAF-batch calculate() during continuous input (slider drag, typing) so we
-	// rebuild the results panel at most once per animation frame. Final-state
-	// events (change/blur) still call calculate() directly to commit.
-	let _calcQueued = false;
+	// rAF-batch calculate() so the results panel is rebuilt at most once per
+	// animation frame. Input, change and click handlers queue through here; a
+	// slider key press, which fires input and change in one task, renders once.
+	// A direct calculate() renders the latest state and cancels the queued frame.
+	let _calcFrame = 0;
 	function scheduleCalculate() {
-		if (_calcQueued) return;
-		_calcQueued = true;
-		requestAnimationFrame(() => { _calcQueued = false; calculate(); });
+		if (_calcFrame) return;
+		_calcFrame = requestAnimationFrame(() => { _calcFrame = 0; calculate(); });
+	}
+
+	// A blur commits the typed value. Typing has already rendered through
+	// scheduleCalculate(), so the blur renders only when normalizing changed the
+	// state, or to flush a queued frame. It renders right away: on touch the blur
+	// and the next tap's click run in one task, and that click can depend on the
+	// rendered results (stepper limits, the CTA link).
+	function commitCalculate(changed: boolean) {
+		if (changed || _calcFrame) calculate();
 	}
 
 	// ─── Slider ───
 	slider.addEventListener('input', () => { state.devices = sliderToDevices(parseFloat(slider.value)); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); });
 	// Snap a release onto the plan ticks; past the last tick the range is continuous.
-	slider.addEventListener('change', () => { const v = parseFloat(slider.value); if (v <= SM_LAST_TICK) { const s = Math.round(v); slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); calculate(); } });
+	slider.addEventListener('change', () => { const v = parseFloat(slider.value); if (v <= SM_LAST_TICK) { const s = Math.round(v); slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); } });
 	devicesInput.addEventListener('input', () => { const d = parseInt(devicesInput.value); if (!isNaN(d) && d > 0) { state.devices = Math.min(SM_MAX, d); slider.value = String(devicesToSlider(state.devices)); updateProgress(); scheduleCalculate(); } });
-	devicesInput.addEventListener('blur', () => { let d = Math.max(1, Math.min(SM_MAX, parseInt(devicesInput.value) || 1)); if (d <= 1000) d = SM_THRESHOLDS.find(t => d <= t) || 1000; state.devices = d; devicesInput.value = String(d); slider.value = String(devicesToSlider(d)); updateProgress(); calculate(); });
+	devicesInput.addEventListener('blur', () => { let d = Math.max(1, Math.min(SM_MAX, parseInt(devicesInput.value) || 1)); if (d <= 1000) d = SM_THRESHOLDS.find(t => d <= t) || 1000; const changed = d !== state.devices; state.devices = d; devicesInput.value = String(d); slider.value = String(devicesToSlider(d)); updateProgress(); commitCalculate(changed); });
 
 	// ─── Steppers ───
 	function bindStepper(containerId: string, key: 'prod' | 'edge') {
@@ -336,7 +349,7 @@ export function initTbPaygCalc() {
 				const plan = getPlan(state.devices);
 				if (key === 'prod') { state.prodInstances = action === 'increment' ? state.prodInstances + 1 : Math.max(plan.includedProdInstances, state.prodInstances - 1); }
 				else if (key === 'edge') { const min = plan.edgeInstancesIncluded; state.addons.edge.count = action === 'increment' ? state.addons.edge.count + 1 : Math.max(min, state.addons.edge.count - 1); }
-				calculate();
+				scheduleCalculate();
 			});
 		});
 		sInp?.addEventListener('input', () => {
@@ -348,11 +361,12 @@ export function initTbPaygCalc() {
 		});
 		sInp?.addEventListener('blur', () => {
 			const plan = getPlan(state.devices);
+			const prev = key === 'prod' ? state.prodInstances : state.addons.edge.count;
 			let v = parseInt(sInp.value) || 0;
 			if (key === 'prod') { v = Math.max(plan.includedProdInstances, v); state.prodInstances = v; }
 			else if (key === 'edge') { v = Math.max(plan.edgeInstancesIncluded, v); state.addons.edge.count = v; }
 			sInp.value = String(v);
-			calculate();
+			commitCalculate(v !== prev);
 		});
 	}
 	bindStepper('#sm-prod-stepper', 'prod');
@@ -364,13 +378,13 @@ export function initTbPaygCalc() {
 			if (toggles[key].disabled) return;
 			(state.addons as any)[key].on = toggles[key].checked;
 			if (key === 'edge' && !toggles[key].checked) state.addons.edge.count = 1;
-			calculate();
+			scheduleCalculate();
 		});
 	});
 
 	// Choose pilot
 	$('#sm-choose-pilot').addEventListener('click', () => {
-		state.devices = 100; devicesInput.value = '100'; slider.value = String(devicesToSlider(100)); updateProgress(); calculate();
+		state.devices = 100; devicesInput.value = '100'; slider.value = String(devicesToSlider(100)); updateProgress(); scheduleCalculate();
 	});
 
 	// ─── Modal ───
