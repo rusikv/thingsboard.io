@@ -149,7 +149,8 @@ const { contained = false } = Astro.props;
 		position: absolute;
 	}
 
-	[data-theme='dark'] .wave-bg {
+	/* `:global()`: the theme attribute sits on <html>, outside this component's scope. */
+	:global([data-theme='dark']) .wave-bg {
 		--wave-bg-color: #6b9aff;
 	}
 
@@ -198,7 +199,6 @@ const { contained = false } = Astro.props;
 	.wave-bg__wave {
 		position: absolute;
 		inset: 0;
-		will-change: transform;
 	}
 
 	.wave-bg__wave--a {
