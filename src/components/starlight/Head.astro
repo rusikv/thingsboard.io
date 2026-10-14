@@ -1,6 +1,7 @@
 ---
 import Default from '@astrojs/starlight/components/Head.astro';
 import markdownCss from '@astrojs/starlight/style/markdown.css?inline';
+import layersCss from 'node_modules/@astrojs/starlight/dist/style/layers.css?inline';
 import ThirdPartyScripts from '~/components/ThirdPartyScripts.astro';
 
 const locals = Astro.locals as unknown as Record<string, unknown>;
@@ -20,21 +21,12 @@ if (locals.bslNoCanonical === true) {
 	);
 }
 
-// Starlight's markdown.css, inlined only on the pages `MarkdownContent` gives `DocMarkdownContent`
-// (BaseLayout sets `bsl` before Starlight renders this head), and on BaseLayout pages that render
-// `.sl-markdown-content` themselves and set `bslMarkdownCss` in their frontmatter. Astro collects CSS by
-// module graph, not by what renders, so importing it anywhere in the Starlight tree, or in any component
-// that shares a CSS chunk with one, ships it to BaseLayout pages too, where its list-spacing rule matches
-// nothing but its non-subject `:has()` makes every DOM insertion restyle the whole document. `?inline`
-// gives the same minified CSS as the bundle. This sheet precedes the bundled CSS, so it first declares
-// Starlight's layer order (from its `dist/style/layers.css`); without that, `starlight.content` would
-// become the lowest sublayer. As before, these are the page's first `starlight.content` rules, so
-// component overrides in that layer still come after them.
-const markdownSheet =
-	locals.bsl === true && locals.bslMarkdownCss !== true
-		? undefined
-		: '@layer starlight.base, starlight.reset, starlight.core, starlight.content, starlight.components, starlight.utils;' +
-			markdownCss;
+// Starlight's markdown.css, inlined on the pages that render `.sl-markdown-content`: every non-BaseLayout
+// page, plus BaseLayout pages that set `bslMarkdownCss`. It is not imported anywhere in the Starlight
+// tree, since Astro ships imported CSS to every page in the module graph, rendered or not. This sheet
+// precedes the bundled CSS, so Starlight's layer order comes first; without it `starlight.content` would
+// become the lowest sublayer.
+const markdownSheet = locals.bsl === true && locals.bslMarkdownCss !== true ? undefined : layersCss + markdownCss;
 ---
 
 <Default {...Astro.props}><slot /></Default>

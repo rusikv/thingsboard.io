@@ -6,10 +6,9 @@ import DocMarkdownContent from '~/components/starlight/DocMarkdownContent.astro'
 // the `.sl-markdown-content` wrapper, the per-type "more guides"
 // navigation, the anchor-copy script, and the table / config-list
 // styles — marketing pages own their own layout inside the slot.
-// Everything else gets `DocMarkdownContent`. The split only decides what
-// renders: Astro collects CSS by module graph, so DocMarkdownContent's
-// styles still reach BSL bundles. Starlight's markdown.css is therefore
-// not imported in this tree; `Head.astro` inlines it on non-BSL pages.
+// Everything else gets `DocMarkdownContent`. The split decides what renders,
+// not what CSS ships; Starlight's markdown.css is not imported in this tree,
+// `Head.astro` inlines it where it is needed.
 const isBaseStarlight = (Astro.locals as unknown as Record<string, unknown>).bsl === true;
 ---
 

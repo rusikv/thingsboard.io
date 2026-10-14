@@ -12,10 +12,8 @@ import { shouldShowFeedback } from '~/util/shouldShowFeedback';
 // tacks on the per-type "more guides" navigation, binds anchor-link copy,
 // and emits the docs-specific table / config-list styles. `MarkdownContent.
 // astro` proxies in front and short-circuits to a bare `<slot />` on
-// `BaseLayout` pages. That keeps the markup off those pages, not the CSS:
-// this file is in every route's module graph. Starlight's markdown.css is
-// therefore not imported here; `Head.astro` inlines it on the pages that
-// render this component.
+// `BaseLayout` pages. Starlight's markdown.css is not imported here, since
+// this file is in every route's module graph; `Head.astro` inlines it.
 
 const { entry } = Astro.locals.starlightRoute;
 const hasToc = !!Astro.locals.starlightRoute.toc;

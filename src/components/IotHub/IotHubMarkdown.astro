@@ -19,9 +19,8 @@ import { getMarkdownProcessor } from '@util/markdown-processor';
 //      match, and replaces the matched text with `slotComment(i)`.
 //   3. Add a case to the render switch in the template below.
 //
-// Starlight's markdown.css is not imported here: it would reach every page
-// through this component's shared CSS chunk. Pages that render this set
-// `bslMarkdownCss` so `starlight/Head.astro` inlines it for them.
+// Starlight's markdown.css is not imported here, it would ship to every page;
+// pages that render this set `bslMarkdownCss` and `starlight/Head.astro` inlines it.
 
 interface Props {
 	markdown: string | null | undefined;
