@@ -1,5 +1,7 @@
 # /pricing/ INP investigation — handoff (2026-10-12)
 
+**Update 2026-10-14:** the fixes were reviewed and three PRs are open (#764, #765, #766). Current handoff: [review-2026-10-14/README.md](review-2026-10-14/README.md).
+
 Research branch only, not meant to be merged. Code refs are against `upstream/main` @ `e9cbd6dc4`.
 
 **Update 2026-10-13:** the fixes are implemented on branch `perf/pricing-inp` and verified with a base-vs-fix A/B. For the handoff, results and next steps, see [fixes-ab/README.md](fixes-ab/README.md).

@@ -1,0 +1,184 @@
+[
+ {
+  "path": "/",
+  "i": 0,
+  "host": "products",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 4.9,
+   "recalcPerS": 3,
+   "recalcMsPerS": 0.5,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 2
+  },
+  "paused": {
+   "taskMsPerS": 15.2,
+   "recalcPerS": 6,
+   "recalcMsPerS": 3,
+   "layoutPerS": 1,
+   "paintPerS": 11,
+   "framesPerS": 8
+  }
+ },
+ {
+  "path": "/",
+  "i": 1,
+  "host": "closing-cta",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 4.5,
+   "recalcPerS": 4,
+   "recalcMsPerS": 0.5,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 2
+  },
+  "paused": {
+   "taskMsPerS": 0.7,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  }
+ },
+ {
+  "path": "/products/thingsboard-pe/",
+  "i": 0,
+  "host": "choice",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 11.7,
+   "recalcPerS": 2,
+   "recalcMsPerS": 0.2,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  },
+  "paused": {
+   "taskMsPerS": 0.1,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 0
+  }
+ },
+ {
+  "path": "/products/thingsboard-pe/",
+  "i": 1,
+  "host": "closing-cta",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 3.2,
+   "recalcPerS": 2,
+   "recalcMsPerS": 0.3,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  },
+  "paused": {
+   "taskMsPerS": 0.1,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 0
+  }
+ },
+ {
+  "path": "/products/paas/",
+  "i": 0,
+  "host": "choice",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 3,
+   "recalcPerS": 2,
+   "recalcMsPerS": 0.3,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  },
+  "paused": {
+   "taskMsPerS": 0.1,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 0
+  }
+ },
+ {
+  "path": "/products/paas/",
+  "i": 1,
+  "host": "closing-cta",
+  "contained": true,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 3.2,
+   "recalcPerS": 2,
+   "recalcMsPerS": 0.2,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  },
+  "paused": {
+   "taskMsPerS": 0.2,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 0
+  }
+ },
+ {
+  "path": "/pricing/",
+  "i": 0,
+  "host": "MAIN",
+  "contained": false,
+  "inView": true,
+  "waveAnimsSeen": 4,
+  "composited": 4,
+  "failed": [],
+  "running": {
+   "taskMsPerS": 3.4,
+   "recalcPerS": 2,
+   "recalcMsPerS": 0.2,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 1
+  },
+  "paused": {
+   "taskMsPerS": 0.2,
+   "recalcPerS": 0,
+   "recalcMsPerS": 0,
+   "layoutPerS": 0,
+   "paintPerS": 0,
+   "framesPerS": 0
+  }
+ }
+]

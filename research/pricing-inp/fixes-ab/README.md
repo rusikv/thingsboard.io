@@ -4,6 +4,8 @@ This continues the investigation in [../README.md](../README.md).
 
 The fixes are on branch **`perf/pricing-inp`** (on the fork, based on upstream `main` @ `e9cbd6dc4`). This folder holds the base-vs-fix A/B that verified them. Like the rest of `research/`, it is not meant to be merged.
 
+**Update 2026-10-14:** the branch was reviewed, four fixes were added, and the three PRs are open (#764, #765, #766). The current handoff is [../review-2026-10-14/README.md](../review-2026-10-14/README.md); the "State" and "Next steps" below are the Oct 13 snapshot.
+
 ## State
 
 `perf/pricing-inp` has five commits, grouped by the PR they will go to:
