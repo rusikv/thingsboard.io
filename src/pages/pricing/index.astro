@@ -12,7 +12,7 @@ import TopUpsSection from '../../components/Pricing/TopUpsSection.astro';
 import PerpetualBenefits from '../../components/Pricing/PerpetualBenefits.astro';
 import TbPaygCalculator from '../../components/Pricing/TbPaygCalculator.astro';
 import TbPrivateCloudCalculator from '../../components/Pricing/TbPrivateCloudCalculator.astro';
-import PricingBackground from '../../components/Pricing/PricingBackground.astro';
+import WaveBackground from '@components/Landing/WaveBackground.astro';
 import NButton from '../../components/Landing/NButton.astro';
 import ComparisonTable from '../../components/Pricing/ComparisonTable.astro';
 
@@ -151,7 +151,7 @@ const validSubTabIds = tbSubTabs.map((t) => t.id);
 	title="Pricing"
 	description="ThingsBoard IoT Platform pricing — compare On-premises, ThingsBoard Cloud and Private Cloud plans with transparent subscription and perpetual licensing."
 >
-	<PricingBackground />
+	<WaveBackground />
 	<div class="pricing-page">
 		<PricingHero />
 
