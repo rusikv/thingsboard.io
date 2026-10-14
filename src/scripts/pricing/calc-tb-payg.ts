@@ -336,6 +336,17 @@ export function initTbPaygCalc() {
 	slider.addEventListener('input', () => { state.devices = sliderToDevices(parseFloat(slider.value)); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); });
 	// Snap a release onto the plan ticks; past the last tick the range is continuous.
 	slider.addEventListener('change', () => { const v = parseFloat(slider.value); if (v <= SM_LAST_TICK) { const s = Math.round(v); slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); } });
+	// A key press moves the range by one 0.01 step, which the release snap rounds straight back onto
+	// the tick it started from, so on the ticks a key moves a whole tick. Past the last tick the
+	// default step applies, and the last tick steps right into that range.
+	const TICK_KEYS: Record<string, number> = { ArrowRight: 1, ArrowUp: 1, PageUp: 1, ArrowLeft: -1, ArrowDown: -1, PageDown: -1 };
+	slider.addEventListener('keydown', (e) => {
+		const dir = TICK_KEYS[e.key]; const v = parseFloat(slider.value);
+		if (!dir || v > SM_LAST_TICK || (dir > 0 && v >= SM_LAST_TICK)) return;
+		e.preventDefault();
+		const s = Math.max(0, Math.round(v) + dir);
+		slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate();
+	});
 	devicesInput.addEventListener('input', () => { const d = parseInt(devicesInput.value); if (!isNaN(d) && d > 0) { state.devices = Math.min(SM_MAX, d); slider.value = String(devicesToSlider(state.devices)); updateProgress(); scheduleCalculate(); } });
 	devicesInput.addEventListener('blur', () => { let d = Math.max(1, Math.min(SM_MAX, parseInt(devicesInput.value) || 1)); if (d <= 1000) d = SM_THRESHOLDS.find(t => d <= t) || 1000; const changed = d !== state.devices; state.devices = d; devicesInput.value = String(d); slider.value = String(devicesToSlider(d)); updateProgress(); commitCalculate(changed); });
 
