@@ -9,6 +9,7 @@ import {
 	pushCalculatorOpen,
 	type CalculatorType,
 } from '@root/scripts/pricing/calc-analytics';
+import { createRenderScheduler } from '@root/scripts/pricing/render-scheduler';
 
 declare function sliderProgress(slider: HTMLInputElement): void;
 declare function initTickMarks(container: HTMLElement): void;
@@ -491,31 +492,23 @@ export function initTbPcCalc() {
 	}
 	pcGetInputs = getInputs;
 
-	// rAF-batch calculate() so the results panel is rebuilt at most once per
-	// animation frame. Input, change and click handlers queue through here.
-	// A direct calculate() renders the latest state and cancels the queued frame.
-	let _calcFrame = 0;
-	function scheduleCalculate() {
-		if (_calcFrame) return;
-		_calcFrame = requestAnimationFrame(() => { _calcFrame = 0; calculate(); });
-	}
-
-	// A blur commits the typed value; see commitCalculate() in calc-tb-payg.ts.
-	// It renders only when normalizing changed the state or a frame is queued,
-	// and right away, because on touch the next tap's click runs in the same task.
-	function commitCalculate(changed: boolean) {
-		if (changed || _calcFrame) calculate();
-	}
+	// Results renders are batched to one per frame; the rules live in render-scheduler.ts.
+	const {
+		schedule: scheduleCalculate,
+		commit: commitCalculate,
+		flush: flushCalculate,
+		cancel: cancelQueuedCalculate,
+	} = createRenderScheduler(() => calculate());
 
 	// The plan the last render chose, which sizes the Edge add-on. A queued
 	// render may switch it, so it is flushed first.
 	function renderedPlan() {
-		if (_calcFrame) calculate();
+		flushCalculate();
 		return state.currentPlan || PLANS_DATA.plans[0];
 	}
 
 	function calculate(opts?: { track?: boolean }) {
-		if (_calcFrame) { cancelAnimationFrame(_calcFrame); _calcFrame = 0; }
+		cancelQueuedCalculate();
 		const track = opts?.track !== false;
 		const inp = getInputs();
 		const matching = PLANS_DATA.plans.filter(p => inp.totalDP <= p.maxMsgPerMin);

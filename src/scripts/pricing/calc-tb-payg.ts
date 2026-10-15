@@ -6,6 +6,7 @@
 
 import { makeModalController } from '@root/scripts/pricing/modal-controller';
 import { makeInteractionPusher, pushCalculatorOpen, bindCtaTracking, bindExportButtons, type CalculatorType } from '@root/scripts/pricing/calc-analytics';
+import { createRenderScheduler } from '@root/scripts/pricing/render-scheduler';
 import { attributionQuery } from '@util/attribution';
 import { onConsentChange } from '@util/consent';
 import { SM_ENTERPRISE, SM_LAST_TICK, SM_MAX, SM_PLANS, SM_RAMP_START, SM_THRESHOLDS } from '@data/pricing/tb-payg-calculator';
@@ -132,8 +133,7 @@ export function initTbPaygCalc() {
 	}
 
 	function calculate(opts?: { track?: boolean }) {
-		// This render shows the latest state, so it covers a queued frame too.
-		if (_calcFrame) { cancelAnimationFrame(_calcFrame); _calcFrame = 0; }
+		cancelQueuedCalculate();
 		if (state.devices >= SM_ENTERPRISE) { lastTotal = null; lastPlan = 'Enterprise'; renderEnterprise(); if (opts?.track !== false) sendSmGTM(null); return; }
 		const plan = getPlan(state.devices);
 		updateUI(plan);
@@ -290,24 +290,12 @@ export function initTbPaygCalc() {
 		footer.innerHTML = `<a class="calc-cta" href="/contact-us/?subject=${encodeURIComponent('ThingsBoard Products')}&message=${encodeURIComponent(msg)}" target="_blank" rel="noopener noreferrer">Get Enterprise Quote</a>`;
 	}
 
-	// rAF-batch calculate() so the results panel is rebuilt at most once per
-	// animation frame. Input, change and click handlers queue through here; a
-	// slider key press, which fires input and change in one task, renders once.
-	// A direct calculate() renders the latest state and cancels the queued frame.
-	let _calcFrame = 0;
-	function scheduleCalculate() {
-		if (_calcFrame) return;
-		_calcFrame = requestAnimationFrame(() => { _calcFrame = 0; calculate(); });
-	}
-
-	// A blur commits the typed value. Typing has already rendered through
-	// scheduleCalculate(), so the blur renders only when normalizing changed the
-	// state, or to flush a queued frame. It renders right away: on touch the blur
-	// and the next tap's click run in one task, and that click can depend on the
-	// rendered results (stepper limits, the CTA link).
-	function commitCalculate(changed: boolean) {
-		if (changed || _calcFrame) calculate();
-	}
+	// Results renders are batched to one per frame; the rules live in render-scheduler.ts.
+	const {
+		schedule: scheduleCalculate,
+		commit: commitCalculate,
+		cancel: cancelQueuedCalculate,
+	} = createRenderScheduler(() => calculate());
 
 	// ─── Slider ───
 	slider.addEventListener('input', () => { state.devices = sliderToDevices(parseFloat(slider.value)); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); });
