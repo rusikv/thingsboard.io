@@ -22,7 +22,7 @@ if (locals.bslNoCanonical === true) {
 }
 
 // Starlight's markdown.css, inlined on the pages that render `.sl-markdown-content`: every non-BaseLayout
-// page, plus BaseLayout pages that set `bslMarkdownCss`. It is not imported anywhere in the Starlight
+// page, plus BaseLayout pages that pass `markdownCss`. It is not imported anywhere in the Starlight
 // tree, since Astro ships imported CSS to every page in the module graph, rendered or not. This sheet
 // precedes the bundled CSS, so Starlight's layer order comes first; without it `starlight.content` would
 // become the lowest sublayer.
