@@ -32,30 +32,22 @@ $-clear-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' wi
 	.gssb_c {
 		background: var(--sl-color-bg) !important;
 		border: 1px solid var(--sl-color-hairline-light) !important;
-	}
-	// Drop CSE's light-grey inner frame.
-	.gssb_c .gsc-completion-container {
-		border-color: transparent !important;
-	}
-	.gssb_c table,
-	.gssb_c tbody,
-	.gssb_c tr,
-	.gssb_c td {
-		background: transparent !important;
-		color: var(--sl-color-text) !important;
-	}
-	.gssb_c .gssb_a,
-	.gssb_c .gsq_a,
-	.gssb_c .gssb_d {
-		color: var(--sl-color-text) !important;
-	}
-	// Hovered or arrow-key row.
-	.gssb_c .gsc-completion-selected {
-		background: var(--sl-color-gray-6) !important;
-	}
-	// "Enhanced by Google" row: readable but muted.
-	.gssb_c .gssb_p,
-	.gssb_c .gssb_e {
-		color: var(--sl-color-gray-3) !important;
+
+		// Drop CSE's light-grey inner frame.
+		.gsc-completion-container {
+			border-color: transparent !important;
+		}
+		:is(table, tbody, tr, td) {
+			background: transparent !important;
+			color: var(--sl-color-text) !important;
+		}
+		// Hovered or arrow-key row.
+		.gsc-completion-selected {
+			background: var(--sl-color-gray-6) !important;
+		}
+		// "Enhanced by Google" row: readable but muted.
+		:is(.gssb_p, .gssb_e) {
+			color: var(--sl-color-gray-3) !important;
+		}
 	}
 }
