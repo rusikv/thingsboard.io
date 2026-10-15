@@ -149,8 +149,9 @@ const { contained = false } = Astro.props;
 		position: absolute;
 	}
 
-	/* `:global()`: the theme attribute sits on <html>, outside this component's scope. */
-	:global([data-theme='dark']) .wave-bg {
+	/* `:global()`: the theme attribute sits on <html>, outside this component's scope. `:where()` keeps
+	   this default below any section's own `--wave-bg-color`, whatever order the stylesheets land in. */
+	:global([data-theme='dark']) :where(.wave-bg) {
 		--wave-bg-color: #6b9aff;
 	}
 
