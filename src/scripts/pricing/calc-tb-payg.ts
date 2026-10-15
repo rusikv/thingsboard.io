@@ -315,9 +315,11 @@ export function initTbPaygCalc() {
 	slider.addEventListener('change', () => { const v = parseFloat(slider.value); if (v <= SM_LAST_TICK) { const s = Math.round(v); slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate(); } });
 	// A key press moves the range by one 0.01 step, which the release snap rounds straight back onto
 	// the tick it started from, so on the ticks a key moves a whole tick. Past the last tick the
-	// default step applies, and the last tick steps right into that range.
+	// default step applies, and the last tick steps right into that range. Modified keys pass
+	// through: Alt/Cmd+Arrow is the browser's Back and Forward.
 	const TICK_KEYS: Record<string, number> = { ArrowRight: 1, ArrowUp: 1, PageUp: 1, ArrowLeft: -1, ArrowDown: -1, PageDown: -1 };
 	slider.addEventListener('keydown', (e) => {
+		if (e.altKey || e.ctrlKey || e.metaKey) return;
 		const dir = TICK_KEYS[e.key]; const v = parseFloat(slider.value);
 		if (!dir || v > SM_LAST_TICK || (dir > 0 && v >= SM_LAST_TICK)) return;
 		e.preventDefault();
