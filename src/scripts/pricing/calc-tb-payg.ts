@@ -8,33 +8,10 @@ import { makeModalController } from '@root/scripts/pricing/modal-controller';
 import { makeInteractionPusher, pushCalculatorOpen, bindCtaTracking, bindExportButtons, type CalculatorType } from '@root/scripts/pricing/calc-analytics';
 import { attributionQuery } from '@util/attribution';
 import { onConsentChange } from '@util/consent';
+import { SM_ENTERPRISE, SM_LAST_TICK, SM_MAX, SM_PLANS, SM_RAMP_START, SM_THRESHOLDS } from '@data/pricing/tb-payg-calculator';
 
 declare function sliderProgress(slider: HTMLInputElement): void;
 declare function initAllSliders(root?: HTMLElement | Document): void;
-
-// Paid tiers only. The BUSL repositioning replaced Maker/Prototype with a free
-// plan (see @data/pricing/tb-self-managed), and the free tier deliberately does
-// NOT appear here: the calculator prices add-on-laden configurations, and the
-// free plan's add-on/instance policy is undefined — every recommendation below
-// stays purchasable through the license portal CTA.
-const SM_PLANS = {
-	mobileApp: 99, mobileAppSetup: 1000,
-	plans: [
-		{ name: 'Pilot', price: 99, includedDevices: 100, includedProdInstances: 1, extraProdInstancePrice: 100, edgeMonthPrice: 19, edgeInstancesIncluded: 1, extraEdgePrice: 39, trendzMonthPrice: 29, wl: true, productId: 'b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a', planId: '87f3b1e0-f5eb-11f0-8e58-abbac8d0a38a' },
-		{ name: 'Startup', price: 299, includedDevices: 500, includedProdInstances: 2, extraProdInstancePrice: 100, edgeMonthPrice: 49, edgeInstancesIncluded: 2, extraEdgePrice: 39, trendzMonthPrice: 89, wl: true, productId: 'b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a', planId: 'b8ad2500-f5eb-11f0-8e58-abbac8d0a38a' },
-		{ name: 'Business', price: 499, includedDevices: 1000, extraDevicePrice: 0.1, includedProdInstances: 3, extraProdInstancePrice: 100, edgeMonthPrice: 89, edgeInstancesIncluded: 3, extraEdgePrice: 39, trendzMonthPrice: 149, trendzExtraDevicePrice: 0.03, wl: true, productId: 'b5a35ce0-f5ea-11f0-8e58-abbac8d0a38a', planId: 'f4b90050-f5eb-11f0-8e58-abbac8d0a38a' },
-	],
-};
-
-// Slider detents = each subscription tier's included-device count, derived from
-// SM_PLANS so a tier change stays in sync automatically. The Maker/Prototype
-// stops (10 / 50 devices) left with the BUSL repositioning; the discrete stops
-// are now the three real plans, and everything past the last one is the
-// continuous "1,000 → enterprise" ramp.
-const SM_THRESHOLDS = SM_PLANS.plans.map((p) => p.includedDevices);
-const SM_LAST_TICK = SM_THRESHOLDS.length - 1;
-const SM_MAX = 150000;
-const SM_ENTERPRISE = 50000;
 
 const SM_DESCS: Record<string, { prod: string }> = {
 	Pilot: { prod: 'Your plan includes 1 instance. Add a 2nd instance for HA to prevent downtime.' },
@@ -68,7 +45,7 @@ export function initTbPaygCalc() {
 	const toggles = { edge: $('#sm-edge-toggle') as HTMLInputElement, trendz: $('#sm-trendz-toggle') as HTMLInputElement, mobile: $('#sm-mobile-toggle') as HTMLInputElement };
 	const cards = { edge: $('#sm-edge-card'), trendz: $('#sm-trendz-card'), mobile: $('#sm-mobile-card') };
 
-	let state = { devices: 100, prodInstances: 1, addons: { edge: { on: false, count: 1 }, trendz: { on: false }, mobile: { on: false } } };
+	let state = { devices: SM_THRESHOLDS[0], prodInstances: 1, addons: { edge: { on: false, count: 1 }, trendz: { on: false }, mobile: { on: false } } };
 
 	// Last settled total + plan, updated wherever sendSmGTM runs, read by the
 	// footer CTA click handler so it reports the value live at click time.
@@ -98,12 +75,12 @@ export function initTbPaygCalc() {
 
 	function sliderToDevices(v: number): number {
 		if (v <= SM_LAST_TICK) return SM_THRESHOLDS[Math.min(Math.round(v), SM_LAST_TICK)];
-		return Math.round(1000 + (v - SM_LAST_TICK) * (SM_MAX - 1000));
+		return Math.round(SM_RAMP_START + (v - SM_LAST_TICK) * (SM_MAX - SM_RAMP_START));
 	}
 
 	function devicesToSlider(d: number): number {
-		if (d <= 1000) { const idx = SM_THRESHOLDS.findIndex(t => d <= t); return idx !== -1 ? idx : SM_LAST_TICK; }
-		return SM_LAST_TICK + (d - 1000) / (SM_MAX - 1000);
+		if (d <= SM_RAMP_START) { const idx = SM_THRESHOLDS.findIndex(t => d <= t); return idx !== -1 ? idx : SM_LAST_TICK; }
+		return SM_LAST_TICK + (d - SM_RAMP_START) / (SM_MAX - SM_RAMP_START);
 	}
 
 	function updateProgress() {
@@ -348,7 +325,7 @@ export function initTbPaygCalc() {
 		slider.value = String(s); state.devices = sliderToDevices(s); devicesInput.value = String(state.devices); updateProgress(); scheduleCalculate();
 	});
 	devicesInput.addEventListener('input', () => { const d = parseInt(devicesInput.value); if (!isNaN(d) && d > 0) { state.devices = Math.min(SM_MAX, d); slider.value = String(devicesToSlider(state.devices)); updateProgress(); scheduleCalculate(); } });
-	devicesInput.addEventListener('blur', () => { let d = Math.max(1, Math.min(SM_MAX, parseInt(devicesInput.value) || 1)); if (d <= 1000) d = SM_THRESHOLDS.find(t => d <= t) || 1000; const changed = d !== state.devices; state.devices = d; devicesInput.value = String(d); slider.value = String(devicesToSlider(d)); updateProgress(); commitCalculate(changed); });
+	devicesInput.addEventListener('blur', () => { let d = Math.max(1, Math.min(SM_MAX, parseInt(devicesInput.value) || 1)); if (d <= SM_RAMP_START) d = SM_THRESHOLDS.find(t => d <= t) || SM_RAMP_START; const changed = d !== state.devices; state.devices = d; devicesInput.value = String(d); slider.value = String(devicesToSlider(d)); updateProgress(); commitCalculate(changed); });
 
 	// ─── Steppers ───
 	function bindStepper(containerId: string, key: 'prod' | 'edge') {
@@ -395,7 +372,7 @@ export function initTbPaygCalc() {
 
 	// Choose pilot
 	$('#sm-choose-pilot').addEventListener('click', () => {
-		state.devices = 100; devicesInput.value = '100'; slider.value = String(devicesToSlider(100)); updateProgress(); scheduleCalculate();
+		state.devices = SM_THRESHOLDS[0]; devicesInput.value = String(state.devices); slider.value = '0'; updateProgress(); scheduleCalculate();
 	});
 
 	// ─── Modal ───
@@ -469,8 +446,8 @@ export function initTbPaygCalc() {
 
 	// Reset
 	$('[data-calc-reset]').addEventListener('click', () => {
-		state = { devices: 100, prodInstances: 1, addons: { edge: { on: false, count: 1 }, trendz: { on: false }, mobile: { on: false } } };
-		devicesInput.value = '100'; slider.value = '0';
+		state = { devices: SM_THRESHOLDS[0], prodInstances: 1, addons: { edge: { on: false, count: 1 }, trendz: { on: false }, mobile: { on: false } } };
+		devicesInput.value = String(state.devices); slider.value = '0';
 		toggles.edge.checked = false; toggles.trendz.checked = false; toggles.mobile.checked = false;
 		cards.edge.classList.remove('active', 'addon-free'); cards.trendz.classList.remove('active', 'addon-free'); cards.mobile.classList.remove('active', 'addon-disabled');
 		edgeCounter.classList.add('hidden');
