@@ -61,7 +61,9 @@ const { id } = Astro.props as Props;
 
 	// A transparent viewport-filling <dialog> that carries the dim and the blur itself, so one opacity fade
 	// shows and hides both, and only a click on its padding lands on the dialog (a backdrop click). The UA
-	// hides a closed dialog with `display: none`, so `display` is set on `[open]` only.
+	// hides a closed dialog with `display: none`, so `display` is set on `[open]` only. It fades out under
+	// `.calc-modal--closing` while still open and only then closes (modal-controller.ts), so it needs no
+	// exit transition.
 	.calc-modal-overlay {
 		position: fixed;
 		inset: 0;
@@ -83,15 +85,6 @@ const { id } = Astro.props as Props;
 		opacity: 0;
 		transition: opacity 0.3s ease;
 
-		// `overlay` keeps the closing dialog in the top layer while it fades. Without it (Firefox, Safari) the
-		// exit frames would paint inside the page, under the site header, so those browsers close at once.
-		@supports (overlay: auto) {
-			transition:
-				opacity 0.3s ease,
-				display 0.3s ease allow-discrete,
-				overlay 0.3s ease allow-discrete;
-		}
-
 		@include media-down(lg) {
 			padding: 0;
 		}
@@ -103,6 +96,10 @@ const { id } = Astro.props as Props;
 			@starting-style {
 				opacity: 0;
 			}
+		}
+
+		&[open].calc-modal--closing {
+			opacity: 0;
 		}
 
 		&::backdrop {
@@ -125,6 +122,10 @@ const { id } = Astro.props as Props;
 			@starting-style {
 				transform: translateY(20px) scale(0.97);
 			}
+		}
+
+		.calc-modal-overlay[open].calc-modal--closing & {
+			transform: translateY(20px) scale(0.97);
 		}
 
 		@include media-down(lg) {
