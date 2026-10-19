@@ -1,5 +1,9 @@
 // Scroll lock and backdrop click for native modal <dialog>s; `showModal()` itself gives the top layer,
-// inert page, focus trap, Esc and focus return.
+// inert page, Esc and focus return. Focus stays in the dialog while the page is inert, but Tab can still
+// reach the browser's own UI: it is not a cyclic trap.
+//
+// Bound dialogs may stack (a second `showModal()` over an open one): the page stays locked until the last
+// of them has faded out.
 
 import { lockScroll, unlockScroll } from '@util/scroll-lock';
 
@@ -15,6 +19,14 @@ export interface ModalDialog {
 }
 
 const bound = new WeakMap<HTMLDialogElement, ModalDialog>();
+
+// Bound dialogs holding the page scroll lock: each joins on open and leaves once it has faded out, not on
+// `close`, so a dialog closed under a still-fading one doesn't cut that fade short.
+const holders = new Set<HTMLDialogElement>();
+
+function release(dialog: HTMLDialogElement): void {
+	if (holders.delete(dialog) && holders.size === 0) unlockScroll();
+}
 
 // Binds once: a later call for the same dialog (e.g. from a component wrapping `Modal.astro`, whose
 // script may run first or second) returns the first binding and ignores its options.
@@ -34,16 +46,19 @@ export function bindModalDialog(dialog: HTMLDialogElement, { fadeMs = 0 }: Modal
 	});
 
 	dialog.addEventListener('close', () => {
+		// `close` is queued: the dialog may have been reopened before it fired.
+		if (dialog.open) return;
 		window.clearTimeout(unlockTimer);
-		if (fadeMs > 0) unlockTimer = window.setTimeout(unlockScroll, fadeMs);
-		else unlockScroll();
+		if (fadeMs > 0) unlockTimer = window.setTimeout(() => release(dialog), fadeMs);
+		else release(dialog);
 	});
 
 	if (fadeMs > 0) {
 		dialog.addEventListener('transitionend', (e) => {
-			if (e.target === dialog && e.propertyName === 'opacity' && !dialog.open) {
+			// The dialog's own fade, not a `::backdrop` one, which is dispatched to the dialog too.
+			if (e.target === dialog && e.propertyName === 'opacity' && !e.pseudoElement && !dialog.open) {
 				window.clearTimeout(unlockTimer);
-				unlockScroll();
+				release(dialog);
 			}
 		});
 	}
@@ -54,6 +69,7 @@ export function bindModalDialog(dialog: HTMLDialogElement, { fadeMs = 0 }: Modal
 			window.clearTimeout(unlockTimer);
 			if (dialog.open) return;
 			dialog.showModal();
+			holders.add(dialog);
 			lockScroll();
 		},
 		close() {
