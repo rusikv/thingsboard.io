@@ -1,32 +1,20 @@
-// Shared open/close controller for the pricing calculator modals.
-// Encapsulates the choreography the modals share:
-//   • portal the fixed overlay to <body> so it escapes Starlight's
-//     `.main-pane { isolation: isolate }` and paints above the site header;
-//   • lock page scroll (scrollbar-width compensated) while open;
-//   • defer hide + unlock by `fadeMs` to match the CSS fade-out, cancelling that
-//     timer if the modal is reopened within the window.
-// Calculator-specific work runs through the onOpen / onClose / onEscape hooks.
+// Shared open/close controller for the pricing calculator dialogs (CalculatorModal.astro). The native
+// <dialog> and `bindModalDialog` give the top layer, inert page, Esc, focus return, backdrop click and the
+// scroll lock; this wires the close button and runs the calculator-specific onOpen / onClose hooks.
 
-import { lockScroll, unlockScroll } from '@util/scroll-lock';
-import { portalToBody } from '@util/portal-to-body';
-export { portalToBody };
+import { bindModalDialog } from '@util/modal-dialog';
 
-// Defined by the inline script in CalculatorModal.astro (toggles the fade class).
-declare function calcModalOpen(): void;
-declare function calcModalClose(): void;
+// The exit fade of `.calc-modal-overlay` in CalculatorModal.astro. Must match. Without `overlay` support the
+// dialog closes at once (the fade is gated on it there), so the page unlocks at once too.
+const FADE_MS = CSS.supports('overlay', 'auto') ? 300 : 0;
 
 interface ModalControllerOptions {
-	/** The `.calc-modal-overlay` element (e.g. #tb-pc-calc). Must be non-null. */
-	modal: HTMLElement;
-	/** Fade-out duration in ms; hide + unlock are deferred by this. Default 300. */
-	fadeMs?: number;
-	/** Per-calculator work after the modal is shown (e.g. recalc, init sliders). */
+	/** The calculator's `<dialog class="calc-modal-overlay">` (e.g. #tb-pc-calc). */
+	modal: HTMLDialogElement;
+	/** Per-calculator work after the dialog is shown (e.g. recalc, init sliders). */
 	onOpen?: () => void;
-	/** Per-calculator work when closing (e.g. hide a nested sub-modal). */
+	/** Per-calculator work once the dialog has closed, by any path: button, Esc or backdrop. */
 	onClose?: () => void;
-	/** Handle Escape for a higher layer (e.g. a sub-modal) — return true if handled
-	 *  so the controller leaves the main modal open. */
-	onEscape?: () => boolean;
 }
 
 export interface ModalController {
@@ -34,45 +22,18 @@ export interface ModalController {
 	close: () => void;
 }
 
-export function makeModalController(opts: ModalControllerOptions): ModalController {
-	const { modal, fadeMs = 300, onOpen, onClose, onEscape } = opts;
-	let closeTimer: ReturnType<typeof setTimeout> | null = null;
+export function makeModalController({ modal, onOpen, onClose }: ModalControllerOptions): ModalController {
+	const dialog = bindModalDialog(modal, { fadeMs: FADE_MS });
+	modal.querySelector('[data-calc-close]')?.addEventListener('click', () => dialog.close());
+	if (onClose) modal.addEventListener('close', onClose);
 
-	function open(): void {
-		// Cancel a pending close so a fast close→reopen isn't clobbered by the
-		// stale timer.
-		if (closeTimer) {
-			clearTimeout(closeTimer);
-			closeTimer = null;
-		}
-		portalToBody(modal);
-		modal.style.display = '';
-		lockScroll();
-		calcModalOpen();
-		onOpen?.();
-	}
-
-	function close(): void {
-		calcModalClose();
-		onClose?.();
-		if (closeTimer) clearTimeout(closeTimer);
-		// Defer hide + scroll-unlock until the fade finishes; cancelled by open().
-		closeTimer = setTimeout(() => {
-			modal.style.display = 'none';
-			unlockScroll();
-			closeTimer = null;
-		}, fadeMs);
-	}
-
-	modal.querySelector('[data-calc-close]')?.addEventListener('click', close);
-	modal.addEventListener('click', (e) => {
-		if (e.target === modal) close();
-	});
-	document.addEventListener('keydown', (e) => {
-		if (e.key !== 'Escape') return;
-		if (onEscape?.()) return; // a higher layer handled it
-		if (modal.style.display !== 'none') close();
-	});
-
-	return { open, close };
+	return {
+		open() {
+			// A second click while the calculator chunk loads must not run onOpen (open event, render) twice.
+			if (modal.open) return;
+			dialog.open();
+			onOpen?.();
+		},
+		close: () => dialog.close(),
+	};
 }

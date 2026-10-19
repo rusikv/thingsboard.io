@@ -2,13 +2,14 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
+	/** The dialog's id. The `header` slot's heading takes `${id}-title`: it names the dialog. */
 	id: string;
 }
 
 const { id } = Astro.props as Props;
 ---
 
-<div id={id} class="calc-modal-overlay print:hidden" style="display:none;">
+<dialog id={id} class="calc-modal-overlay print:hidden" aria-labelledby={`${id}-title`}>
 	<div class="calc-modal-wrapper">
 		<button type="button" class="calc-modal-close" data-calc-close aria-label="Close calculator">
 			<Icon name="tabler:x" />
@@ -48,7 +49,7 @@ const { id } = Astro.props as Props;
 		</div>
 		</div>
 	</div>
-</div>
+</dialog>
 
 <style lang="scss" is:global>
 	@use '../../styles/variables' as *;
@@ -58,34 +59,54 @@ const { id } = Astro.props as Props;
 	// CALCULATOR MODAL — LAYOUT
 	// ═══════════════════════════════════════════
 
+	// A transparent viewport-filling <dialog> that carries the dim and the blur itself, so one opacity fade
+	// shows and hides both, and only a click on its padding lands on the dialog (a backdrop click). The UA
+	// hides a closed dialog with `display: none`, so `display` is set on `[open]` only.
 	.calc-modal-overlay {
 		position: fixed;
 		inset: 0;
-		z-index: 10000;
-		background: rgba(0, 0, 0, 0);
-		backdrop-filter: blur(0px);
-		display: flex;
+		width: 100%;
+		height: 100%;
+		max-width: none;
+		max-height: none;
+		margin: 0;
+		border: 0;
+		padding: $spacing-3;
+		// Not a scroll container, unlike the UA's `overflow: auto`: the close button hangs past the card
+		// edge and hidden tooltips keep their last `top`, and either would give the dialog a scrollbar.
+		overflow: clip;
+		color: inherit;
+		background: rgba(0, 0, 0, 0.5);
+		backdrop-filter: blur(4px);
 		align-items: center;
 		justify-content: center;
-		padding: $spacing-3;
+		opacity: 0;
+		transition: opacity 0.3s ease;
+
+		// `overlay` keeps the closing dialog in the top layer while it fades. Without it (Firefox, Safari) the
+		// exit frames would paint inside the page, under the site header, so those browsers close at once.
+		@supports (overlay: auto) {
+			transition:
+				opacity 0.3s ease,
+				display 0.3s ease allow-discrete,
+				overlay 0.3s ease allow-discrete;
+		}
 
 		@include media-down(lg) {
 			padding: 0;
 		}
-		opacity: 0;
-		visibility: hidden;
-		transition: opacity 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease, visibility 0.3s ease;
 
-		&[style*='display: none'],
-		&[style*='display:none'] {
-			display: none !important;
+		&[open] {
+			display: flex;
+			opacity: 1;
+
+			@starting-style {
+				opacity: 0;
+			}
 		}
 
-		&.calc-modal--open {
-			opacity: 1;
-			visibility: visible;
-			background: rgba(0, 0, 0, 0.5);
-			backdrop-filter: blur(4px);
+		&::backdrop {
+			background: transparent;
 		}
 	}
 
@@ -93,11 +114,17 @@ const { id } = Astro.props as Props;
 		position: relative;
 		width: 100%;
 		max-width: 1152px;
+		// The tooltips are `position: fixed` and placed against this box, which the transform makes their
+		// containing block: it must never become `none`.
 		transform: translateY(20px) scale(0.97);
 		transition: transform 0.3s ease;
 
-		.calc-modal--open & {
+		.calc-modal-overlay[open] & {
 			transform: translateY(0) scale(1);
+
+			@starting-style {
+				transform: translateY(20px) scale(0.97);
+			}
 		}
 
 		@include media-down(lg) {
@@ -1316,17 +1343,6 @@ const { id } = Astro.props as Props;
 </style>
 
 <script is:inline>
-	// ─── Modal open/close visuals ───
-	// Scroll-lock is owned by the consumer scripts via `@util/scroll-lock`
-	// (lockScroll/unlockScroll); here we only toggle the fade-in class.
-	window.calcModalOpen = function() {
-		const overlay = document.querySelector('.calc-modal-overlay:not([style*="display: none"]):not([style*="display:none"])');
-		if (overlay) requestAnimationFrame(function() { overlay.classList.add('calc-modal--open'); });
-	};
-	window.calcModalClose = function() {
-		document.querySelectorAll('.calc-modal-overlay').forEach(function(el) { el.classList.remove('calc-modal--open'); });
-	};
-
 	// ─── Shared slider utilities (global) ───
 
 	// Cache the two theme-dependent CSS custom properties on `window` so
