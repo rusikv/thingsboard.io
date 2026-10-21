@@ -43,6 +43,15 @@ export function bindModalDialog(
 		if (closing) dialog.classList.remove(closing);
 	};
 
+	// WebKit leaves a modal dialog under a stacked one interactive, so mark those inert while this one is
+	// open, and lift that before closing so focus can return into them. Close a stacked dialog through
+	// `close()` here, not `dialog.close()`, or focus lands on <body>.
+	let covered: HTMLDialogElement[] = [];
+	const uncover = () => {
+		for (const d of covered) d.inert = false;
+		covered = [];
+	};
+
 	// The panel fills the dialog box, so a click on the dialog element itself landed on the backdrop. The press
 	// must have too: a text selection dragged out of a field ends with a click on the dialog.
 	let pressedBackdrop = false;
@@ -53,18 +62,19 @@ export function bindModalDialog(
 		if (e.target === dialog && pressedBackdrop) modal.close();
 	});
 
-	if (closing) {
-		// Esc too, when the browser lets it be held back (not without a user activation since the last one).
-		dialog.addEventListener('cancel', (e) => {
-			if (!e.cancelable) return;
+	dialog.addEventListener('cancel', (e) => {
+		// Esc fades out first too, when the browser lets it be held back (not without a user activation since
+		// the last one). Otherwise the browser closes the dialog now.
+		if (closing && e.cancelable) {
 			e.preventDefault();
 			modal.close();
-		});
-	}
+		} else uncover();
+	});
 
 	dialog.addEventListener('close', () => {
 		// `close` is queued: the dialog may have been reopened before it fired.
 		if (dialog.open) return;
+		uncover();
 		stopClosing();
 		window.clearTimeout(unlockTimer);
 		// A fade-first dialog has already faded out.
@@ -89,18 +99,22 @@ export function bindModalDialog(
 			stopClosing();
 			if (dialog.open) return;
 			dialog.showModal();
+			covered = [...holders].filter((d) => d !== dialog && d.open && !d.inert);
+			for (const d of covered) d.inert = true;
 			holders.add(dialog);
 			lockScroll();
 		},
 		close() {
 			if (!dialog.open) return;
 			if (!closing) {
+				uncover();
 				dialog.close();
 				return;
 			}
 			if (dialog.classList.contains(closing)) return;
 			dialog.classList.add(closing);
 			closeTimer = window.setTimeout(() => {
+				uncover();
 				dialog.close();
 				dialog.classList.remove(closing);
 			}, fadeMs);
