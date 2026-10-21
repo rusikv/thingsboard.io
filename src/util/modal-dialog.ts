@@ -1,9 +1,5 @@
 // Scroll lock and backdrop click for native modal <dialog>s; `showModal()` itself gives the top layer,
-// inert page, Esc and focus return. Focus stays in the dialog while the page is inert, but Tab can still
-// reach the browser's own UI: it is not a cyclic trap.
-//
-// Bound dialogs may stack (a second `showModal()` over an open one): the page stays locked until the last
-// of them has faded out.
+// inert page, Esc and focus return. Dialogs may stack: the page unlocks when the last one has faded out.
 
 import { lockScroll, unlockScroll } from '@util/scroll-lock';
 
@@ -11,10 +7,8 @@ export interface ModalDialogOptions {
 	// Length of the dialog's exit transition: the page scrollbar comes back once it has faded out.
 	// An `opacity` transitionend on the dialog releases it sooner.
 	fadeMs?: number;
-	// Fade out while still open, then close: a close (button, backdrop, Esc) puts this class on the dialog,
-	// whose CSS fades it out under the class, and `close()` runs once `fadeMs` has passed. Leaving the modal
-	// state restyles the whole page (it stops being inert), and this keeps that work out of the click or key
-	// press that asked to close. The dialog then needs no exit transition of its own.
+	// Close by fading the still-open dialog out under this class, then `close()` after `fadeMs`. Leaving the
+	// modal state restyles the whole page, and this keeps that out of the closing click or key press.
 	closingClass?: string;
 }
 
@@ -25,8 +19,7 @@ export interface ModalDialog {
 
 const bound = new WeakMap<HTMLDialogElement, ModalDialog>();
 
-// Bound dialogs holding the page scroll lock: each joins on open and leaves once it has faded out, not on
-// `close`, so a dialog closed under a still-fading one doesn't cut that fade short.
+// Dialogs holding the scroll lock; each is released after its fade, not on `close`.
 const holders = new Set<HTMLDialogElement>();
 
 function release(dialog: HTMLDialogElement): void {
@@ -43,7 +36,6 @@ export function bindModalDialog(
 	if (existing) return existing;
 	let unlockTimer = 0;
 	let closeTimer = 0;
-	// The class a fade-first close puts on, or none when the dialog closes at once.
 	const closing = fadeMs > 0 ? closingClass : undefined;
 
 	const stopClosing = () => {
@@ -62,8 +54,7 @@ export function bindModalDialog(
 	});
 
 	if (closing) {
-		// Esc fades out first too. The browser lets a page hold a close request back only after a user
-		// activation since the last one, so a repeated Esc may still close at once.
+		// Esc too, when the browser lets it be held back (not without a user activation since the last one).
 		dialog.addEventListener('cancel', (e) => {
 			if (!e.cancelable) return;
 			e.preventDefault();
@@ -76,14 +67,14 @@ export function bindModalDialog(
 		if (dialog.open) return;
 		stopClosing();
 		window.clearTimeout(unlockTimer);
-		// A dialog that faded out before closing is already gone.
+		// A fade-first dialog has already faded out.
 		if (fadeMs > 0 && !closing) unlockTimer = window.setTimeout(() => release(dialog), fadeMs);
 		else release(dialog);
 	});
 
 	if (fadeMs > 0 && !closing) {
 		dialog.addEventListener('transitionend', (e) => {
-			// The dialog's own fade, not a `::backdrop` one, which is dispatched to the dialog too.
+			// Not a `::backdrop` transition, which fires on the dialog too.
 			if (e.target === dialog && e.propertyName === 'opacity' && !e.pseudoElement && !dialog.open) {
 				window.clearTimeout(unlockTimer);
 				release(dialog);
@@ -92,8 +83,7 @@ export function bindModalDialog(
 	}
 
 	const modal: ModalDialog = {
-		// A reopen during the exit fade keeps the lock instead of releasing it under the open dialog, and a
-		// reopen during a fade-first close fades the dialog back in.
+		// A reopen during the exit fade keeps the lock instead of releasing it under the open dialog.
 		open() {
 			window.clearTimeout(unlockTimer);
 			stopClosing();

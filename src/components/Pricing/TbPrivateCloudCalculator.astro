@@ -81,9 +81,8 @@ import CalculatorModal from './CalculatorModal.astro';
 </CalculatorModal>
 
 {
-	/* Payload editor (JSON sample → data points), a modal opened over the calculator's. It stays a DOM sibling
-	   of CalculatorModal: inside it, the tooltip below would be placed against the calculator panel, and
-	   "Apply payload" (`.calc-cta`) would count as a calculator CTA click. */
+	/* Outside CalculatorModal on purpose: inside it, this tooltip would be placed against the calculator
+	   panel and "Apply payload" (`.calc-cta`) would be tracked as a calculator CTA. */
 }
 <dialog id="pc-payload-modal" class="calc-payload-overlay print:hidden" aria-labelledby="pc-payload-title">
 	<div class="calc-payload-dialog">
@@ -204,10 +203,8 @@ import CalculatorModal from './CalculatorModal.astro';
 	}
 
 	// ─── Payload dialog ───
-	// A transparent viewport-filling <dialog>, so only a click on its padding is a backdrop click. It keeps the
-	// UA `overflow: auto`, and the panel centres with `margin: auto`, so a panel taller than the viewport (a
-	// phone held sideways) scrolls from its top. The dim and blur sit on `::backdrop`: on the dialog,
-	// `backdrop-filter` would make it the containing block of the tooltip, which is placed against the viewport.
+	// Keeps the UA `overflow: auto` so a panel taller than the viewport scrolls. The blur sits on `::backdrop`:
+	// on the dialog it would become the containing block of the tooltip, which is placed against the viewport.
 	.calc-payload-overlay {
 		width: 100%;
 		height: 100%;

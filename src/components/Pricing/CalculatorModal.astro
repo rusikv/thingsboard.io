@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 
 interface Props {
-	/** The dialog's id. The `header` slot's heading takes `${id}-title`: it names the dialog. */
+	/** The `header` slot's heading needs the id `${id}-title`, which names the dialog. */
 	id: string;
 }
 
@@ -59,9 +59,8 @@ const { id } = Astro.props as Props;
 	// CALCULATOR MODAL — LAYOUT
 	// ═══════════════════════════════════════════
 
-	// A full-viewport <dialog> that draws the dim and blur itself: one opacity fade covers both, and a click
-	// on its padding is a backdrop click. `display` is set on `[open]` only, so the browser's `display: none`
-	// still hides it closed. It fades out under `.calc-modal--closing` before closing (modal-controller.ts).
+	// A full-viewport <dialog> that draws the dim and blur itself; a click on its padding is a backdrop click.
+	// `display` goes on `[open]` only, so the UA still hides it closed.
 	.calc-modal-overlay {
 		position: fixed;
 		inset: 0;

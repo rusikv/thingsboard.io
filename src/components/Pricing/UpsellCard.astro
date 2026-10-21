@@ -9,7 +9,7 @@ interface Props {
 	targetSection?: string;
 	/** JS function to call on click (e.g., "window.openTbPcCalc?.()") */
 	onclick?: string;
-	/** The click opens a dialog (a calculator), announced with `aria-haspopup`. */
+	/** Adds aria-haspopup="dialog" (the calculator CTAs). */
 	opensDialog?: boolean;
 }
 

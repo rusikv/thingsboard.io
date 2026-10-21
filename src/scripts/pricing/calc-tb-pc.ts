@@ -331,7 +331,6 @@ export function initTbPcCalc() {
 	}
 
 	// ─── Payload modal ───
-	// A second modal <dialog> over the calculator's: Esc and a backdrop click close only the top one.
 	const payloadModal = document.getElementById('pc-payload-modal') as HTMLDialogElement;
 	const payloadDialog = bindModalDialog(payloadModal);
 	const jsonInput = document.getElementById('pc-json-input') as HTMLTextAreaElement;
@@ -802,9 +801,8 @@ export function initTbPcCalc() {
 			calculate({ track: false });
 			requestAnimationFrame(() => initAllSliders(modal));
 		},
-		// Close the payload editor too if a script closes the calculator under it (a user can't: the
-		// calculator is inert while the editor is open). Flush any pending interaction so the final config
-		// isn't lost in the debounce window.
+		// The editor is open here only if a script closed the calculator under it. Flush any pending
+		// interaction so the final config isn't lost in the debounce window.
 		onClose: () => {
 			closePayloadModal();
 			calcAnalytics.flush();
