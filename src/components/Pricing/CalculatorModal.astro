@@ -62,8 +62,6 @@ const { id } = Astro.props as Props;
 	// A full-viewport <dialog> that draws the dim and blur itself; a click on its padding is a backdrop click.
 	// `display` goes on `[open]` only, so the UA still hides it closed.
 	.calc-modal-overlay {
-		position: fixed;
-		inset: 0;
 		width: 100%;
 		height: 100%;
 		max-width: none;
@@ -440,7 +438,7 @@ const { id } = Astro.props as Props;
 
 	.calc-tooltip-text {
 		position: fixed;
-		z-index: 100000;
+		z-index: 3;
 		pointer-events: none;
 		left: -9999px;
 		top: 0;
