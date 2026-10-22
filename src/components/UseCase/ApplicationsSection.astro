@@ -3,7 +3,7 @@ import SmartImage from '@components/SmartImage.astro';
 import SectionBadge from '@components/SectionBadge.astro';
 import type { ApplicationItem } from '@data/use-cases/types.ts';
 import { ICON_RING_GEOMETRY } from '@components/UseCase/icon-ring-geometry.ts';
-import { resolveDarkVariants, USECASE_DARK_SVGS } from '@components/UseCase/dark-variant.ts';
+import { darkTwinOf } from '@components/UseCase/dark-variant.ts';
 
 interface Props {
 	title: string;
@@ -27,15 +27,8 @@ if (noGeometry.length > 0) {
 			`src/components/UseCase/icon-ring-geometry.ts: ${noGeometry.map((app) => app.desktopImage).join(', ')}`
 	);
 }
-// Every application icon ships a `-dark.svg` sibling recoloured for dark mode (brand
-// indigo → #b3c7ff, CE navy → #78b4f5) unless its data opts out; the styles swap to it.
-// Resolved up front so a missing file fails the build by name, rather than pointing the
-// copy at a CDN fallback URL that does not exist (dark-variant.ts).
-const darkTwins = resolveDarkVariants(
-	`"${title}" application icons`,
-	applications.map((app) => ({ src: app.desktopImage, sameInDark: app.sameInDark })),
-	USECASE_DARK_SVGS
-);
+// Each icon's `-dark.svg` twin (brand indigo → #b3c7ff, CE navy → #78b4f5). darkTwinOf
+// fails the build when it is missing, instead of pointing at a CDN URL that does not exist.
 
 // Desktop icons are taller than wide; the real height keeps a not-yet-loaded copy
 // (e.g. the other theme's, fetched on a switch) at its final size.
@@ -87,8 +80,8 @@ const mobileCrop = (src: string) => {
 
 		<div class="uc-images-row">
 			{
-				applications.map((app, i) => {
-					const darkSrc = darkTwins[i];
+				applications.map((app) => {
+					const darkSrc = darkTwinOf(app.desktopImage);
 					const height = desktopHeight(app.desktopImage);
 					return (
 						<div class="uc-app-image">
@@ -97,17 +90,15 @@ const mobileCrop = (src: string) => {
 								alt={app.imageAlt}
 								width={DESKTOP_W}
 								height={height}
-								class:list={['uc-ic', { 'uc-ic--light': darkSrc !== undefined }]}
+								class="uc-ic uc-ic--light"
 							/>
-							{darkSrc && (
-								<SmartImage
-									src={darkSrc}
-									alt={app.imageAlt}
-									width={DESKTOP_W}
-									height={height}
-									class="uc-ic uc-ic--dark"
-								/>
-							)}
+							<SmartImage
+								src={darkSrc}
+								alt={app.imageAlt}
+								width={DESKTOP_W}
+								height={height}
+								class="uc-ic uc-ic--dark"
+							/>
 						</div>
 					);
 				})
@@ -129,10 +120,10 @@ const mobileCrop = (src: string) => {
 	{/* Mobile: alternating image-text blocks */}
 	<div class="uc-applications-small">
 		{
-			applications.map((app, i) => {
+			applications.map((app) => {
 				// Mobile reuses the DESKTOP icon, cropped to the ring (no rotated variant).
 				const crop = mobileCrop(app.desktopImage);
-				const darkSrc = darkTwins[i];
+				const darkSrc = darkTwinOf(app.desktopImage);
 				return (
 					<div class="uc-app-block">
 						<div class="uc-app-block-image">
@@ -143,18 +134,16 @@ const mobileCrop = (src: string) => {
 									width={crop.width}
 									height={crop.height}
 									style={crop.style}
-									class:list={['uc-crop-img uc-ic', { 'uc-ic--light': darkSrc !== undefined }]}
+									class="uc-crop-img uc-ic uc-ic--light"
 								/>
-								{darkSrc && (
-									<SmartImage
-										src={darkSrc}
-										alt={app.imageAlt}
-										width={crop.width}
-										height={crop.height}
-										style={crop.style}
-										class="uc-crop-img uc-ic uc-ic--dark"
-									/>
-								)}
+								<SmartImage
+									src={darkSrc}
+									alt={app.imageAlt}
+									width={crop.width}
+									height={crop.height}
+									style={crop.style}
+									class="uc-crop-img uc-ic uc-ic--dark"
+								/>
 							</div>
 						</div>
 						<div class="uc-app-block-text">
@@ -304,9 +293,7 @@ const mobileCrop = (src: string) => {
 	}
 
 	// ── Dark mode ──────────────────────────────────
-	// An icon with a `-dark.svg` sibling (recoloured to the dark token for its family:
-	// brand indigo → #b3c7ff, CE navy → #78b4f5) swaps to it in dark mode; an icon that
-	// opted out carries neither modifier and stays as is.
+	// Swap each icon for its `-dark.svg` twin.
 	.uc-ic--dark {
 		display: none;
 	}

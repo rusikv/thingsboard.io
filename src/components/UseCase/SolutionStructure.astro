@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
 import SectionBadge from '../SectionBadge.astro';
-import { resolveDarkVariants } from '@components/UseCase/dark-variant.ts';
+import { darkTwinOf } from '@components/UseCase/dark-variant.ts';
 
 interface Props {
 	title: string;
@@ -11,10 +11,9 @@ interface Props {
 	schemeSrc: string;
 	schemeAlt: string;
 	schemeCaption?: string;
-	sameInDark?: boolean;
 }
 
-const { title, badge, shortText, longText, schemeSrc, schemeAlt, schemeCaption, sameInDark } = Astro.props;
+const { title, badge, shortText, longText, schemeSrc, schemeAlt, schemeCaption } = Astro.props;
 
 const schemaModules = import.meta.glob<{ default: ImageMetadata }>(
 	'/src/assets/schemas/*.svg',
@@ -25,12 +24,10 @@ const lightMod = schemaModules[schemeSrc];
 if (!lightMod) {
 	throw new Error(`[use-cases] "${title}" solution scheme: asset not found: "${schemeSrc}"`);
 }
-// The `-dark` twin is required unless the data opts out (`sameInDark`), per dark-variant.ts.
-const [darkPath] = resolveDarkVariants(`"${title}" solution scheme`, [{ src: schemeSrc, sameInDark }], schemaModules);
+// darkTwinOf fails the build if the twin is missing.
+const darkImage = schemaModules[darkTwinOf(schemeSrc, schemaModules)]!.default;
 
 const lightImage = lightMod.default;
-// resolveDarkVariants threw if the twin is absent.
-const darkImage = darkPath ? schemaModules[darkPath]!.default : undefined;
 ---
 
 <section class="uc-solution-structure">
@@ -52,7 +49,7 @@ const darkImage = darkPath ? schemaModules[darkPath]!.default : undefined;
 	}
 	<figure class="uc-scheme">
 		<img
-			class:list={['uc-scheme-img', { 'uc-scheme-img--light': darkImage !== undefined }]}
+			class="uc-scheme-img uc-scheme-img--light"
 			src={lightImage.src}
 			alt={schemeAlt}
 			width={lightImage.width}
@@ -60,19 +57,15 @@ const darkImage = darkPath ? schemaModules[darkPath]!.default : undefined;
 			loading="lazy"
 			decoding="async"
 		/>
-		{
-			darkImage && (
-				<img
-					class="uc-scheme-img uc-scheme-img--dark"
-					src={darkImage.src}
-					alt={schemeAlt}
-					width={darkImage.width}
-					height={darkImage.height}
-					loading="lazy"
-					decoding="async"
-				/>
-			)
-		}
+		<img
+			class="uc-scheme-img uc-scheme-img--dark"
+			src={darkImage.src}
+			alt={schemeAlt}
+			width={darkImage.width}
+			height={darkImage.height}
+			loading="lazy"
+			decoding="async"
+		/>
 		{schemeCaption && <figcaption class="uc-scheme-caption" set:html={schemeCaption} />}
 	</figure>
 </section>
@@ -125,9 +118,7 @@ const darkImage = darkPath ? schemaModules[darkPath]!.default : undefined;
 		margin: 0 auto;
 	}
 
-	/* Theme-aware swap: light is the default, dark is shown only when the page is in
-	   dark mode. A scheme that opted out of a dark twin (`sameInDark`) carries neither
-	   modifier class and stays visible in both themes. */
+	/* Light by default; dark mode shows the dark copy. Both are always rendered. */
 	.uc-scheme-img--dark {
 		display: none;
 	}

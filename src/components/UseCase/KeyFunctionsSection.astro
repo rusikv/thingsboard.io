@@ -2,8 +2,7 @@
 import KeyFunctionImage from '@components/UseCase/KeyFunctionImage.astro';
 import ScadaModeToggle from './ScadaModeToggle.astro';
 import type { ScadaKeyFunction } from '@data/use-cases/types.ts';
-import { SCADA_MODE_LABELS, type ScadaMode } from '@data/use-cases/_scada-shared';
-import { resolveDarkVariants, USECASE_DARK_SVGS } from '@components/UseCase/dark-variant.ts';
+import { SCADA_MODE_LABELS } from '@data/use-cases/_scada-shared';
 
 interface Props {
 	highPerformance: ScadaKeyFunction[];
@@ -12,17 +11,6 @@ interface Props {
 
 const { highPerformance, traditional } = Astro.props;
 const hasBothModes = traditional.length > 0;
-
-// The dark twin per symbol, resolved for the whole set so one build failure lists every
-// missing file for the mode (dark-variant.ts).
-const darkTwins = (fns: ScadaKeyFunction[], mode: ScadaMode) =>
-	resolveDarkVariants(
-		`key-function symbols (${SCADA_MODE_LABELS[mode]})`,
-		fns.map((fn) => ({ src: fn.image, sameInDark: fn.sameInDark })),
-		USECASE_DARK_SVGS
-	);
-const highPerformanceTwins = darkTwins(highPerformance, 'high-performance');
-const traditionalTwins = darkTwins(traditional, 'traditional');
 ---
 
 <section class="uc-key-functions uc-section-padding">
@@ -38,13 +26,13 @@ const traditionalTwins = darkTwins(traditional, 'traditional');
 		data-print-label={hasBothModes ? SCADA_MODE_LABELS['high-performance'] : undefined}
 	>
 		{
-			highPerformance.map((fn, i) => (
+			highPerformance.map((fn) => (
 				<div class="uc-key-function-block">
 					<div class="uc-key-function-desc">
 						<h3>{fn.title}</h3>
 						<p set:html={fn.description} />
 					</div>
-					<KeyFunctionImage src={fn.image} alt={fn.imageAlt} darkSrc={highPerformanceTwins[i]} />
+					<KeyFunctionImage src={fn.image} alt={fn.imageAlt} />
 				</div>
 			))
 		}
@@ -58,13 +46,13 @@ const traditionalTwins = darkTwins(traditional, 'traditional');
 			data-print-label={SCADA_MODE_LABELS.traditional}
 		>
 			{
-				traditional.map((fn, i) => (
+				traditional.map((fn) => (
 					<div class="uc-key-function-block">
 						<div class="uc-key-function-desc">
 							<h3>{fn.title}</h3>
 							<p set:html={fn.description} />
 						</div>
-						<KeyFunctionImage src={fn.image} alt={fn.imageAlt} darkSrc={traditionalTwins[i]} />
+						<KeyFunctionImage src={fn.image} alt={fn.imageAlt} />
 					</div>
 				))
 			}
@@ -102,8 +90,6 @@ const traditionalTwins = darkTwins(traditional, 'traditional');
 			}
 		}
 
-		// A bare <img> is a symbol that opted out of a dark copy (`sameInDark`).
-		> img,
 		> .uc-key-function-image {
 			max-width: 240px;
 			width: 100%;
@@ -116,8 +102,7 @@ const traditionalTwins = darkTwins(traditional, 'traditional');
 		}
 	}
 
-	// The light and dark copies are stacked and swapped by visibility so both keep the
-	// same box.
+	// Light and dark copies are stacked and swapped by visibility, so both keep one box.
 	.uc-key-function-image {
 		position: relative;
 		display: block;

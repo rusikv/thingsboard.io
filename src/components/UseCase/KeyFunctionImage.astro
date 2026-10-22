@@ -1,23 +1,19 @@
 ---
 // One SCADA key-function symbol: the light copy (local or CDN) with its dark twin stacked
-// on top and swapped by visibility in KeyFunctionsSection, which resolves `darkSrc` for the
-// whole set (dark-variant.ts). A symbol that opted out comes without one and renders as is.
+// on top; KeyFunctionsSection swaps them by visibility.
 import SmartImage from '@components/SmartImage.astro';
+import { darkTwinOf } from '@components/UseCase/dark-variant.ts';
 
 interface Props {
 	src: string;
 	alt: string;
-	darkSrc?: string;
 }
 
-const { src, alt, darkSrc } = Astro.props;
+const { src, alt } = Astro.props;
+const darkSrc = darkTwinOf(src);
 ---
 
-{darkSrc ? (
-	<span class="uc-key-function-image">
-		<SmartImage src={src} alt={alt} width={400} height={200} class="uc-key-function-image__light" />
-		<SmartImage src={darkSrc} alt={alt} width={400} height={200} class="uc-key-function-image__dark print:hidden" />
-	</span>
-) : (
-	<SmartImage src={src} alt={alt} width={400} height={200} />
-)}
+<span class="uc-key-function-image">
+	<SmartImage src={src} alt={alt} width={400} height={200} class="uc-key-function-image__light" />
+	<SmartImage src={darkSrc} alt={alt} width={400} height={200} class="uc-key-function-image__dark print:hidden" />
+</span>
