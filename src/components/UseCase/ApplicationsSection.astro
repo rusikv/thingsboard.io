@@ -3,6 +3,7 @@ import SmartImage from '@components/SmartImage.astro';
 import SectionBadge from '@components/SectionBadge.astro';
 import type { ApplicationItem } from '@data/use-cases/types.ts';
 import { ICON_RING_GEOMETRY } from '@components/UseCase/icon-ring-geometry.ts';
+import { resolveDarkVariants, USECASE_DARK_SVGS } from '@components/UseCase/dark-variant.ts';
 
 interface Props {
 	title: string;
@@ -17,35 +18,24 @@ const { title, badge, subtitle, applications } = Astro.props;
 const topApps = applications.filter((_, i) => i % 2 === 0);
 const bottomApps = applications.filter((_, i) => i % 2 !== 0);
 
-// Every application icon ships a `-dark.svg` sibling recoloured for dark mode
-// (brand indigo → #b3c7ff, CE navy → #78b4f5); the styles swap to it.
-// Only the keys are read (SmartImage resolves the URL), so the glob stays lazy and
-// shares SmartImage's own `?url` loaders instead of importing every icon up front.
-const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
-	query: '?url',
-	import: 'default',
-});
-const darkSrcFor = (src: string) => src.replace(/\.svg$/, '-dark.svg');
-
-// Every icon needs a ring-geometry entry (the desktop height and the mobile crop read it)
-// and a local `-dark.svg`. Name any that lack one, rather than failing on an undefined
-// entry or pointing the dark copy at a CDN fallback URL that does not exist.
+// Every icon needs a ring-geometry entry (the desktop height and the mobile crop read it).
+// Name any that lack one, rather than failing on an undefined entry.
 const noGeometry = applications.filter((app) => !ICON_RING_GEOMETRY[app.desktopImage]);
-const noDark = applications.filter((app) => !(darkSrcFor(app.desktopImage) in darkVariants));
-if (noGeometry.length > 0 || noDark.length > 0) {
-	const errors: string[] = [];
-	if (noGeometry.length > 0) {
-		errors.push(
-			`no ring geometry — add an entry to src/components/UseCase/icon-ring-geometry.ts: ${noGeometry.map((app) => app.desktopImage).join(', ')}`
-		);
-	}
-	if (noDark.length > 0) {
-		errors.push(
-			`no dark variant — add these files: ${noDark.map((app) => darkSrcFor(app.desktopImage)).join(', ')}`
-		);
-	}
-	throw new Error(`[use-cases] "${title}" application icons: ${errors.join(' | ')}`);
+if (noGeometry.length > 0) {
+	throw new Error(
+		`[use-cases] "${title}" application icons: no ring geometry — add an entry to ` +
+			`src/components/UseCase/icon-ring-geometry.ts: ${noGeometry.map((app) => app.desktopImage).join(', ')}`
+	);
 }
+// Every application icon ships a `-dark.svg` sibling recoloured for dark mode (brand
+// indigo → #b3c7ff, CE navy → #78b4f5) unless its data opts out; the styles swap to it.
+// Resolved up front so a missing file fails the build by name, rather than pointing the
+// copy at a CDN fallback URL that does not exist (dark-variant.ts).
+const darkTwins = resolveDarkVariants(
+	`"${title}" application icons`,
+	applications.map((app) => ({ src: app.desktopImage, sameInDark: app.sameInDark })),
+	USECASE_DARK_SVGS
+);
 
 // Desktop icons are taller than wide; the real height keeps a not-yet-loaded copy
 // (e.g. the other theme's, fetched on a switch) at its final size.
@@ -97,8 +87,8 @@ const mobileCrop = (src: string) => {
 
 		<div class="uc-images-row">
 			{
-				applications.map((app) => {
-					const darkSrc = darkSrcFor(app.desktopImage);
+				applications.map((app, i) => {
+					const darkSrc = darkTwins[i];
 					const height = desktopHeight(app.desktopImage);
 					return (
 						<div class="uc-app-image">
@@ -107,15 +97,17 @@ const mobileCrop = (src: string) => {
 								alt={app.imageAlt}
 								width={DESKTOP_W}
 								height={height}
-								class="uc-ic uc-ic--light"
+								class:list={['uc-ic', { 'uc-ic--light': darkSrc !== undefined }]}
 							/>
-							<SmartImage
-								src={darkSrc}
-								alt={app.imageAlt}
-								width={DESKTOP_W}
-								height={height}
-								class="uc-ic uc-ic--dark"
-							/>
+							{darkSrc && (
+								<SmartImage
+									src={darkSrc}
+									alt={app.imageAlt}
+									width={DESKTOP_W}
+									height={height}
+									class="uc-ic uc-ic--dark"
+								/>
+							)}
 						</div>
 					);
 				})
@@ -137,10 +129,10 @@ const mobileCrop = (src: string) => {
 	{/* Mobile: alternating image-text blocks */}
 	<div class="uc-applications-small">
 		{
-			applications.map((app) => {
+			applications.map((app, i) => {
 				// Mobile reuses the DESKTOP icon, cropped to the ring (no rotated variant).
 				const crop = mobileCrop(app.desktopImage);
-				const darkSrc = darkSrcFor(app.desktopImage);
+				const darkSrc = darkTwins[i];
 				return (
 					<div class="uc-app-block">
 						<div class="uc-app-block-image">
@@ -151,16 +143,18 @@ const mobileCrop = (src: string) => {
 									width={crop.width}
 									height={crop.height}
 									style={crop.style}
-									class="uc-crop-img uc-ic uc-ic--light"
+									class:list={['uc-crop-img uc-ic', { 'uc-ic--light': darkSrc !== undefined }]}
 								/>
-								<SmartImage
-									src={darkSrc}
-									alt={app.imageAlt}
-									width={crop.width}
-									height={crop.height}
-									style={crop.style}
-									class="uc-crop-img uc-ic uc-ic--dark"
-								/>
+								{darkSrc && (
+									<SmartImage
+										src={darkSrc}
+										alt={app.imageAlt}
+										width={crop.width}
+										height={crop.height}
+										style={crop.style}
+										class="uc-crop-img uc-ic uc-ic--dark"
+									/>
+								)}
 							</div>
 						</div>
 						<div class="uc-app-block-text">
@@ -310,9 +304,9 @@ const mobileCrop = (src: string) => {
 	}
 
 	// ── Dark mode ──────────────────────────────────
-	// Every application icon ships a `-dark.svg` sibling, recoloured to the dark
-	// token for its family (brand indigo → #b3c7ff, CE navy → #78b4f5); swap to it
-	// in dark mode.
+	// An icon with a `-dark.svg` sibling (recoloured to the dark token for its family:
+	// brand indigo → #b3c7ff, CE navy → #78b4f5) swaps to it in dark mode; an icon that
+	// opted out carries neither modifier and stays as is.
 	.uc-ic--dark {
 		display: none;
 	}

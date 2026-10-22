@@ -19,6 +19,11 @@ export interface ApplicationItem {
 	desktopImage: string;
 	imageAlt: string;
 	imageTitle?: string;
+	/**
+	 * Reads as is on the dark page, so no `-dark` twin is required; otherwise a missing twin
+	 * fails the build (src/components/UseCase/dark-variant.ts).
+	 */
+	sameInDark?: boolean;
 }
 
 export interface CarouselImage {
@@ -34,6 +39,11 @@ export interface ScadaKeyFunction {
 	description: string;
 	image: string;
 	imageAlt: string;
+	/**
+	 * Reads as is on the dark page, so no `-dark` twin is required; otherwise a missing twin
+	 * fails the build (src/components/UseCase/dark-variant.ts).
+	 */
+	sameInDark?: boolean;
 }
 
 export interface ComparisonRow {
@@ -57,6 +67,11 @@ export interface UseCaseSolutionStructure {
 	schemeSrc: string;
 	schemeAlt: string;
 	schemeCaption?: string;
+	/**
+	 * Reads as is on the dark page, so no `-dark` twin is required; otherwise a missing twin
+	 * fails the build (src/components/UseCase/dark-variant.ts).
+	 */
+	sameInDark?: boolean;
 }
 
 export interface UseCaseBenefits {

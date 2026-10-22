@@ -1,26 +1,19 @@
 ---
-// One SCADA key-function symbol. A symbol with a `-dark.svg` sibling gets its dark copy
-// stacked on top and swapped by visibility; the others keep the light plate set in
-// KeyFunctionsSection.
+// One SCADA key-function symbol: the light copy (local or CDN) with its dark twin stacked
+// on top and swapped by visibility in KeyFunctionsSection, which resolves `darkSrc` for the
+// whole set (dark-variant.ts). A symbol that opted out comes without one and renders as is.
 import SmartImage from '@components/SmartImage.astro';
 
 interface Props {
 	src: string;
 	alt: string;
+	darkSrc?: string;
 }
 
-const { src, alt } = Astro.props;
-
-// Only the keys are read (SmartImage resolves the URL), so the glob stays lazy.
-const darkVariants = import.meta.glob('/src/assets/images/usecases/**/*-dark.svg', {
-	query: '?url',
-	import: 'default',
-});
-const darkSrc = src.replace(/\.svg$/, '-dark.svg');
-const hasDark = darkSrc in darkVariants;
+const { src, alt, darkSrc } = Astro.props;
 ---
 
-{hasDark ? (
+{darkSrc ? (
 	<span class="uc-key-function-image">
 		<SmartImage src={src} alt={alt} width={400} height={200} class="uc-key-function-image__light" />
 		<SmartImage src={darkSrc} alt={alt} width={400} height={200} class="uc-key-function-image__dark print:hidden" />
