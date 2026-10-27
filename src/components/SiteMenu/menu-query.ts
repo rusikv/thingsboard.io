@@ -16,6 +16,12 @@ const rootCssVar = (name: string) => getComputedStyle(document.documentElement).
 export const menuRowQuery = () => `(min-width: ${rootCssVar('--menu-row-from')})`;
 
 /**
+ * Wide enough for Sign in and Try for free in the header. Below this width they move to the bottom of
+ * the mobile menu sheet.
+ */
+export const fullHeaderQuery = () => `(min-width: ${rootCssVar('--bar-compact-below')})`;
+
+/**
  * Wide and tall enough for the split sheet: the section list as a sidebar beside the open section.
  * Only matters below `menuRowQuery`.
  */

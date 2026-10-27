@@ -7,7 +7,10 @@ export interface NavItem {
 	label: string;
 	href?: string;
 	submenuId?: string;
-	/** DOM id on the rendered link, for analytics hooks (`Menu_Pricing`). */
+	/**
+	 * DOM id on the rendered link, for analytics hooks (`Menu_Pricing`). The link also shows in the menu
+	 * sheet; `SiteMenu` keeps the id on whichever copy shows.
+	 */
 	id?: string;
 	/** Extra class on the rendered link, e.g. `gtm_button` for GTM tracking. */
 	linkClass?: string;

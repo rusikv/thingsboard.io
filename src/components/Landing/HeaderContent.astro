@@ -57,7 +57,13 @@ const currentYear = new Date().getFullYear();
 			<a class="signin" href={CLOUD_SIGNIN.href} {...CLOUD_SIGNIN.attrs}>
 				Sign in
 			</a>
-			<a id="Menu_TryItNow" class="try gtm_button" href={CLOUD_SIGNUP.href} {...CLOUD_SIGNUP.attrs}>
+			<a
+				id="Menu_TryItNow"
+				class="try gtm_button"
+				data-analytics-id="Menu_TryItNow"
+				href={CLOUD_SIGNUP.href}
+				{...CLOUD_SIGNUP.attrs}
+			>
 				Try for free
 			</a>
 			{/* Menu button: opens `SiteMenu`'s mobile menu sheet below 1200px, where the desktop menu row is

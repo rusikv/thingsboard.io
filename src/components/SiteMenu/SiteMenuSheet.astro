@@ -24,11 +24,12 @@ import { CLOUD_SIGNIN, CLOUD_SIGNUP } from '@data/cta-destinations';
  * pages) don't get one in the menu either.
  *
  * Below 600px the header hides Sign in and Try for free, so the sheet shows them in its footer. They
- * use the same links and `gtm_button` class as the header's buttons, with `_Sheet` added to the ids
- * (`Menu_TryItNow_Sheet`, and `Menu_Pricing_Sheet` in the list) because ids must be unique on the
- * page. A GTM trigger keyed on an id needs to list both ids. The buttons use the UI kit's button
- * styles (`_button.scss`) at its 44px size, applied in `HeaderContent`. There is no theme switch here:
- * the theme follows the system setting, and the switch is in the footer.
+ * use the same links and `gtm_button` class as the header's buttons. The analytics ids
+ * (`Menu_TryItNow`, and `Menu_Pricing` in the list) are on whichever copy shows: `SiteMenu`'s script
+ * moves each id between the header's copy and the sheet's copy (`data-analytics-id` marks both). The
+ * buttons use the UI kit's button styles (`_button.scss`) at its 44px size, applied in
+ * `HeaderContent`. There is no theme switch here: the theme follows the system setting, and the
+ * switch is in the footer.
  *
  * `SiteMenu`'s script runs the sheet: switching views, focus, Escape (on a phone it goes back one
  * view, then closes; in the split layout it closes), and hiding the page underneath and keeping Tab
@@ -59,7 +60,7 @@ const pathname = Astro.url.pathname;
 						) : (
 							<a
 								class:list={['sm__sheet-row', item.linkClass]}
-								id={item.id ? `${item.id}_Sheet` : undefined}
+								data-analytics-id={item.id}
 								href={item.href}
 								aria-current={isHere(pathname, item.href) ? 'page' : undefined}
 							>
@@ -92,7 +93,12 @@ const pathname = Astro.url.pathname;
 		<a class="sm__foot-signin" href={CLOUD_SIGNIN.href} {...CLOUD_SIGNIN.attrs}>
 			Sign in
 		</a>
-		<a id="Menu_TryItNow_Sheet" class="sm__foot-try gtm_button" href={CLOUD_SIGNUP.href} {...CLOUD_SIGNUP.attrs}>
+		<a
+			class="sm__foot-try gtm_button"
+			data-analytics-id="Menu_TryItNow"
+			href={CLOUD_SIGNUP.href}
+			{...CLOUD_SIGNUP.attrs}
+		>
 			Try for free
 		</a>
 	</div>

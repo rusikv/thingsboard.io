@@ -66,6 +66,7 @@ const pathname = Astro.url.pathname;
 					<a
 						class:list={['sm__top', item.linkClass]}
 						id={item.id}
+						data-analytics-id={item.id}
 						href={item.href}
 						aria-current={isHere(pathname, item.href) ? 'page' : undefined}
 					>
@@ -91,7 +92,7 @@ const pathname = Astro.url.pathname;
 <script>
 	import { lockScroll, unlockScroll } from '@util/scroll-lock';
 	import { dismissSidebar } from '@util/layers';
-	import { menuRowQuery, menuSplitQuery } from '@components/SiteMenu/menu-query';
+	import { fullHeaderQuery, menuRowQuery, menuSplitQuery } from '@components/SiteMenu/menu-query';
 
 	const nav = document.querySelector<HTMLElement>('nav.sm');
 	const header = nav?.closest<HTMLElement>('header.header') ?? null;
@@ -662,6 +663,31 @@ const pathname = Astro.url.pathname;
 				: views.find((v) => v.dataset.smView === id);
 			if (body && target && body.parentElement !== target) target.append(body);
 		};
+
+		// --- Analytics ids ---
+
+		// GTM counts clicks on "Pricing" and "Try for free" by their ids, `Menu_Pricing` and
+		// `Menu_TryItNow`. Each link has two copies, one in the header and one in the menu sheet, and only
+		// one of them shows at any width. An id must be unique on the page, so the id sits on the copy that
+		// shows, and moves when the window crosses the width where the copies swap. That way GTM sees the
+		// same ids at every width. The server puts the id on the header's copy, which is where it stays
+		// without JavaScript.
+		const keepIdOnShownCopy = (id: string, headerCopyShows: MediaQueryList) => {
+			const copies = [...header.querySelectorAll<HTMLElement>(`[data-analytics-id="${id}"]`)];
+			const sheetCopy = copies.find((el) => sheet?.contains(el));
+			const headerCopy = copies.find((el) => el !== sheetCopy);
+			const placeId = () => {
+				const [shown, hidden] = headerCopyShows.matches ? [headerCopy, sheetCopy] : [sheetCopy, headerCopy];
+				hidden?.removeAttribute('id');
+				shown?.setAttribute('id', id);
+			};
+			placeId();
+			headerCopyShows.addEventListener('change', placeId);
+		};
+		// Pricing is in the desktop menu row from 1200px, and in the menu sheet's list below that.
+		keepIdOnShownCopy('Menu_Pricing', wide);
+		// Try for free is in the header from 600px, and at the bottom of the menu sheet below that.
+		keepIdOnShownCopy('Menu_TryItNow', matchMedia(fullHeaderQuery()));
 
 		// The element that last had focus. When the window crosses the breakpoint, the focused control
 		// may get hidden: focus then drops to <body> without a blur event, often before this script sees
