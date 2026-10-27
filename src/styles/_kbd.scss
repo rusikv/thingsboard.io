@@ -1,0 +1,22 @@
+// ============================================
+// Keyboard shortcut hint: a key's name in a thin bordered box. It is drawn in `currentColor`, so it
+// works in any control on any background: "Ctrl K" in the header's search button, "Esc" on the search
+// dialog's close button. `ui/Kbd.astro` renders it; use the mixin for markup a script builds (the
+// `SiteSearch` dialog).
+// ============================================
+@use 'variables' as *;
+
+@mixin ui-kbd {
+	display: inline-flex;
+	align-items: center;
+	box-sizing: border-box;
+	height: 20px;
+	padding: 0 5px;
+	border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+	border-radius: 4px;
+	font-family: inherit;
+	font-size: $font-size-xs;
+	font-weight: $font-weight-normal;
+	line-height: 1;
+	white-space: nowrap;
+}

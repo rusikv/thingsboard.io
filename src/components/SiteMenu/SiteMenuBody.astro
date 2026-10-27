@@ -1,0 +1,40 @@
+---
+import SiteMenuSection from '@components/SiteMenu/SiteMenuSection.astro';
+import SiteMenuPromos from '@components/SiteMenu/SiteMenuPromos.astro';
+import type { MenuSection } from '@components/SiteMenu/menu-model';
+
+/**
+ * One menu section's content: its link groups and the promo links at the bottom, plus the section
+ * name as a heading. It is rendered only once, inside the mobile menu sheet. The first time a section
+ * opens in the desktop menu panel, `SiteMenu`'s script moves its `[data-sm-body]` element into the
+ * panel; when the window narrows below 1200px, it moves back to the sheet. So both menus show the
+ * same DOM nodes, and each section's links appear in the page only once. Each menu lays the content
+ * out with its own CSS.
+ */
+interface Props {
+	entry: MenuSection;
+	/**
+	 * The id for the section heading. Without it, no heading is rendered. The heading sits outside
+	 * `[data-sm-body]`, so it stays in the sheet when the body moves to the desktop menu panel. The
+	 * panel doesn't need it: it opens right under the header's menu item, which already shows the name.
+	 */
+	titleId?: string;
+}
+
+const {
+	entry: { item, sub },
+	titleId,
+} = Astro.props;
+---
+
+{titleId && (
+	<div class="sm__head">
+		<h2 class="sm__title" id={titleId}>
+			{item.label}
+		</h2>
+	</div>
+)}
+<div class="sm__body" data-sm-body={sub.id}>
+	<SiteMenuSection submenu={sub} sectionName={item.label} />
+	<SiteMenuPromos section={sub.id} />
+</div>

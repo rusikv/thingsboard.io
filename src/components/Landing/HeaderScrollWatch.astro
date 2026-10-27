@@ -1,7 +1,18 @@
 ---
-// Toggles `data-header-scrolled` on the header once scrolled past 50px (lets a
-// transparent header flip to solid). The sentinel is appended to <body> so it
-// sits in the page flow even though this component renders in the fixed header.
+// The marketing header uses two attributes. Both are set by IntersectionObservers, not a scroll
+// listener:
+//
+// - `data-header-scrolled` (this file): set once the page content starts to slide under the header,
+//   that is, 8px past the promo banner's height (hero banners start below the promo banner), or 50px
+//   if that is more. The invisible marker element it watches is added to <body>, so it is positioned
+//   in the page even though this component renders inside the fixed header.
+// - `data-header-over-hero` (`HeaderHeroWatch`, added only on pages with a dark hero banner): set
+//   while the dark hero is still under the header's bottom edge.
+//
+// The header's styles in `HeaderContent` read both attributes. The `bar-over-dark-hero` mixin
+// (`_variables.scss`) combines them to decide when the header uses white text and dark-style buttons.
+//
+// Comments live here because comments inside `is:inline` would ship in every page's HTML.
 ---
 
 <script is:inline>
@@ -12,7 +23,7 @@
 		const sentinel = document.createElement('div');
 		sentinel.setAttribute('aria-hidden', 'true');
 		sentinel.style.cssText =
-			'position:absolute;top:50px;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden';
+			'position:absolute;top:max(50px, calc(var(--promo-h, 0px) + 8px));left:0;width:1px;height:1px;pointer-events:none;visibility:hidden';
 		document.body.prepend(sentinel);
 
 		new IntersectionObserver(

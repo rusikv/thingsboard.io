@@ -1,0 +1,27 @@
+---
+/**
+ * A keyboard shortcut hint: the key's name in a thin bordered box, 20px tall, in `currentColor`.
+ * Used for "Ctrl K" in the header's search button. It is decorative (the control it sits in already
+ * says what it does), so it is hidden from screen readers; the shortcut itself is announced through
+ * the control's `aria-keyshortcuts`. For markup built by a script, use the `ui-kbd` mixin from
+ * `_kbd.scss` instead.
+ */
+
+interface Props {
+	class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<kbd class:list={['ui-kbd', className]} aria-hidden="true">
+	<slot />
+</kbd>
+
+<style is:global lang="scss">
+	@use '../../styles/kbd' as *;
+
+	.ui-kbd {
+		@include ui-kbd;
+	}
+</style>

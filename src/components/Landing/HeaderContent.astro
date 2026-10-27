@@ -1,12 +1,14 @@
 ---
-import Navigation from '@components/Landing/Navigation.astro';
+import SiteMenu from '@components/SiteMenu/SiteMenu.astro';
 import HeaderScrollWatch from '@components/Landing/HeaderScrollWatch.astro';
-import HeaderIcons from '@components/Landing/HeaderIcons.astro';
+import HeaderHeroWatch from '@components/Landing/HeaderHeroWatch.astro';
+import SearchButton from '@components/SearchButton.astro';
+import SiteSearch from '@components/SiteSearch.astro';
 import GitHubButton from '@components/Landing/GitHubButton.astro';
-import NButton from '@components/Landing/NButton.astro';
 import CloudRegionDialog from '@components/Landing/CloudRegionDialog.astro';
 import { Icon } from 'astro-icon/components';
 import { Products } from '@models/site.models';
+import { CLOUD_SIGNIN, CLOUD_SIGNUP } from '@data/cta-destinations';
 import type { HeaderConfig } from '@util/header-config';
 
 interface Props {
@@ -16,49 +18,52 @@ interface Props {
 }
 
 const { gitHubPlatform, headerConfig } = Astro.props;
-const { variant, showSearch, showThemeToggle, minimal } = headerConfig;
+const { look, hero, minimal } = headerConfig;
 
-// Ship the scroll-flip script only on the variants that go transparent.
-const needsScrollState = variant === 'transparent' || variant === 'transparent-hover';
+// The docs search page has its own search box, so the header leaves out its search button there.
+const { pathname } = Astro.url;
+const isDocsSearchPage = pathname.startsWith('/docs/') && pathname.endsWith('/search/');
+const showSearch = headerConfig.search && !isDocsSearchPage;
+
+// The marketing header changes when the page scrolls; the docs header never does. So the small
+// inline script that watches scrolling (`HeaderScrollWatch`) is only added to marketing pages.
+const needsScrollState = look === 'marketing';
 const currentYear = new Date().getFullYear();
 ---
 
-<div class="logo-burger" data-header-variant={variant}>
+<div class="logo-burger" data-header-look={look} data-header-hero={hero}>
 	<a href="/" class="logo" aria-label="Link to homepage"></a>
 	<span class="header-copyright print:only">&copy; {currentYear} The ThingsBoard Authors</span>
 </div>
 
-{/* Minimal chrome: the logo and the theme toggle, nothing that leads off the page. */}
-{minimal ? (
-	<div class="head-buttons print:hidden" data-header-variant={variant}>
-		<HeaderIcons showSearch={false} showThemeToggle={showThemeToggle} />
-	</div>
-) : (
+{/* Minimal header (campaign landings): only the logo, with no menu, search or account buttons. */}
+{!minimal && (
 	<>
-		{/* Before <Navigation> on purpose: its ~125 KiB of markup shifted the centred nav (≈0.012 CLS); `order` restores the visual order. */}
-		<div class="head-buttons print:hidden" data-header-variant={variant}>
-			<HeaderIcons showSearch={showSearch} showThemeToggle={showThemeToggle} />
+		{/* The menu comes before the right-hand buttons in the markup, so Tab moves through the logo,
+		    the menu items, then search and the account buttons. The menu items are aligned toward the
+		    logo, so the buttons arriving later in the HTML do not shift them while the page loads. */}
+		<SiteMenu />
+
+		<div class="head-buttons print:hidden" data-header-look={look} data-header-hero={hero}>
+			{showSearch && (
+				<div class="icon-buttons">
+					<SearchButton />
+				</div>
+			)}
 			<GitHubButton platform={gitHubPlatform} />
-			{/* Both open the `CloudRegionDialog`; the hrefs are the no-script fallback. */}
-			<a
-				class="region-signin__trigger"
-				href="https://thingsboard.cloud/login"
-				target="_blank"
-				rel="noopener noreferrer"
-				data-cloud-auth="signin"
-			>
+			{/* Both links open `CloudRegionDialog`; the hrefs are used when scripts are off. Sign in is a
+			    secondary button with regular-weight text, like Menu and the star count, so Try for free is
+			    the only emphasized button in the header. */}
+			<a class="signin" href={CLOUD_SIGNIN.href} {...CLOUD_SIGNIN.attrs}>
 				Sign in
 			</a>
-			<NButton
-				id="Menu_TryItNow"
-				href="/installations/choose-region/"
-				variant="filled"
-				class="try gtm_button"
-				data-cloud-auth="signup"
-			>
+			<a id="Menu_TryItNow" class="try gtm_button" href={CLOUD_SIGNUP.href} {...CLOUD_SIGNUP.attrs}>
 				Try for free
-			</NButton>
-			<button onclick="Burger()" class="burger" aria-expanded="false">
+			</a>
+			{/* Menu button: opens `SiteMenu`'s mobile menu sheet below 1200px, where the desktop menu row is
+			    hidden. When scripts are off, the link below replaces it at every width and opens the sheet
+			    through its `#sm-sheet` link target. */}
+			<button type="button" data-sm-toggle aria-controls="sm-sheet" class="burger" aria-expanded="false">
 				<Icon name="tabler:menu-2" class="icon-open" aria-hidden="true" />
 				<Icon name="tabler:x" class="icon-close" aria-hidden="true" />
 				<span class="burger__label">
@@ -66,44 +71,29 @@ const currentYear = new Date().getFullYear();
 					<span class="label-close">Close</span>
 				</span>
 			</button>
+			<a href="#sm-sheet" class="burger sm__nojs">
+				<Icon name="tabler:menu-2" aria-hidden="true" />
+				<span>Menu</span>
+			</a>
 		</div>
 
-		<Navigation />
-
 		<CloudRegionDialog signupIds={headerConfig.cloudSignupIds} />
+
+		{/* The search dialog, rendered once per page. The search button and keyboard shortcuts open it. */}
+		{showSearch && <SiteSearch />}
 	</>
 )}
 
 {needsScrollState && <HeaderScrollWatch />}
+{hero === 'dark' && <HeaderHeroWatch />}
 
 <script>
-	import { lockScroll, unlockScroll } from '@util/scroll-lock';
-
-	// Burger menu toggle
-	function Burger() {
-		const header = document.querySelector('header.header');
-
-		if (header?.classList.contains('opened-burger')) {
-			header.classList.remove('opened-burger');
-			const subMenus = document.querySelectorAll('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
-			subMenus.forEach((menu) => menu.classList.remove('open-sub'));
-			unlockScroll();
-		} else {
-			header?.classList.add('opened-burger');
-			lockScroll();
-		}
-
-		// Read back from the class, so the swipe gestures that also toggle the drawer keep it right.
-		const open = header?.classList.contains('opened-burger') ?? false;
-		header?.querySelector('.burger')?.setAttribute('aria-expanded', String(open));
-	}
-
-	// Make function available globally
-	(window as any).Burger = Burger;
+	import { menuRowQuery } from '@components/SiteMenu/menu-query';
+	import { layerOver } from '@util/layers';
 
 	// Swipe to open/close mobile menus:
 	//   Starlight sidebar — swipe RIGHT from left edge to open, swipe LEFT to close
-	//   Burger menu      — swipe LEFT from right edge to open, swipe RIGHT to close
+	//   Mobile menu sheet — swipe LEFT from right edge to open, swipe RIGHT to go back a level or close
 	(function () {
 		const OPEN_EDGE = 30; // px from screen edge that starts an open gesture
 		const MIN_DIST = 60; // minimum horizontal travel to trigger
@@ -111,7 +101,7 @@ const currentYear = new Date().getFullYear();
 
 		let startX = 0;
 		let startY = 0;
-		let tracking: 'sidebar' | 'burger' | null = null;
+		let tracking: 'sidebar' | 'menu' | null = null;
 
 		// Starlight drops the sidebar's `popover` attribute on desktop viewports, where the sidebar
 		// is always shown; `togglePopover()` throws on an element without it.
@@ -123,16 +113,24 @@ const currentYear = new Date().getFullYear();
 			return !!document.getElementById('starlight__sidebar')?.matches(':popover-open');
 		}
 
-		function isBurgerOpen() {
-			return document.querySelector('header.header')?.classList.contains('opened-burger') ?? false;
+		function isMenuOpen() {
+			return document.querySelector('header.header')?.hasAttribute('data-sm-open') ?? false;
 		}
 
 		function triggerSidebar() {
 			document.getElementById('starlight__sidebar')?.togglePopover();
 		}
 
-		function triggerBurger() {
-			(window as any).Burger?.();
+		// Clicks the Menu button instead of opening the sheet directly, so opening (and moving focus)
+		// is handled in one place.
+		function openMenu() {
+			document.querySelector<HTMLButtonElement>('header.header [data-sm-toggle]')?.click();
+		}
+
+		// Swiping back first leaves an open section, then closes the sheet. `SiteMenu` handles `sm-back`
+		// and decides which.
+		function stepBack() {
+			document.querySelector('[data-sm-sheet]')?.dispatchEvent(new CustomEvent('sm-back'));
 		}
 
 		document.addEventListener(
@@ -142,14 +140,21 @@ const currentYear = new Date().getFullYear();
 				startX = t.clientX;
 				startY = t.clientY;
 
-				// A modal dialog owns the page: a drawer toggled under it would fight it for the scroll lock.
-				if (document.querySelector('dialog[open]')) tracking = null;
-				else if (isSidebarOpen()) tracking = 'sidebar';
-				else if (isBurgerOpen()) tracking = 'burger';
+				// An open sidebar gets the swipe, which closes it. When anything else covers the page (a
+				// dialog, the search panel, a lightbox, a filter drawer; see `layerOver`), the swipe is left
+				// to it: a lightbox uses swipes to change images, and a menu opened under it would be hidden.
+				if (isSidebarOpen()) tracking = 'sidebar';
+				else if (layerOver('menu')) tracking = null;
+				else if (isMenuOpen()) tracking = 'menu';
 				else if (startX <= OPEN_EDGE && isSidebarDrawer()) tracking = 'sidebar';
-				// The minimal header has no burger, so no drawer to open.
-				else if (startX >= window.innerWidth - OPEN_EDGE && document.querySelector('header.header .burger'))
-					tracking = 'burger';
+				// The sheet is the phone and tablet menu. The right-edge swipe does nothing where the desktop
+				// menu row is shown, or on the minimal header, which has no Menu button.
+				else if (
+					startX >= window.innerWidth - OPEN_EDGE &&
+					!matchMedia(menuRowQuery()).matches &&
+					document.querySelector('header.header [data-sm-toggle]')
+				)
+					tracking = 'menu';
 				else tracking = null;
 			},
 			{ passive: true }
@@ -176,9 +181,9 @@ const currentYear = new Date().getFullYear();
 						triggerSidebar(); // swipe right → open
 					else if (isSidebarOpen() && dx < 0) triggerSidebar(); // swipe left → close
 				} else {
-					if (!isBurgerOpen() && dx < 0)
-						triggerBurger(); // swipe left from right edge → open
-					else if (isBurgerOpen() && dx > 0) triggerBurger(); // swipe right → close
+					if (!isMenuOpen() && dx < 0)
+						openMenu(); // swipe left from right edge → open
+					else if (isMenuOpen() && dx > 0) stepBack(); // swipe right → go back a level or close
 				}
 			},
 			{ passive: true }
@@ -188,22 +193,22 @@ const currentYear = new Date().getFullYear();
 
 <style lang="scss" is:global>
 	@use '../../styles/variables' as *;
+	@use '../../styles/button' as *;
 
-	// Wordmark, the page's icons and Menu; the account pair moves into the drawer.
+	// Compact header: logo, icon buttons and Menu. Sign in and Try for free move to the bottom of the
+	// mobile menu sheet.
 	@mixin compact-bar {
-		&:not(.opened-burger) .head-buttons {
-			.region-signin__trigger,
-			.n-button {
+		.head-buttons {
+			.signin,
+			.try {
 				display: none;
 			}
 		}
+	}
 
-		// It separated the icons from controls the compact bar no longer carries.
-		.divider {
-			display: none;
-		}
-
-		// Icon only: a square reads the same in both states, so nothing shifts.
+	// Menu button as an icon only. A square button looks the same in both states (Menu and Close), so
+	// nothing shifts when it toggles.
+	@mixin menu-square {
 		.burger {
 			width: 40px;
 			padding: 0;
@@ -213,56 +218,36 @@ const currentYear = new Date().getFullYear();
 				@include visually-hidden;
 			}
 		}
-
-		&.opened-burger {
-			.head-buttons {
-				position: static;
-				order: 0;
-				height: auto;
-				// 20px on the header's gutter lines this row up with the nav below.
-				padding: 10px 0 2px 20px;
-				// Hidden in the closed bar, so it arrives rather than travels.
-				transform: none;
-				transition: none;
-			}
-
-			.head-menu {
-				order: 1;
-			}
-
-			// The bar's row holds still; the icons clear Close's 40px square plus the gap.
-			.burger,
-			.icon-buttons {
-				position: absolute;
-				top: calc((#{$header-height} - 40px) / 2);
-				z-index: 1;
-			}
-
-			.burger {
-				right: var(--tb-bar-right);
-			}
-
-			.icon-buttons {
-				right: calc(var(--tb-bar-right) + 48px);
-				height: 40px;
-			}
-		}
 	}
 
 	header.header {
 		// The gutter the hero's text column uses, so the wordmark lines up with the headline.
 		--tb-bar-inset: #{$bar-inset};
-		// For absolute children: their padding box sees neither gutter nor scroll-lock.
-		--tb-bar-right: calc(var(--tb-bar-inset) + var(--tb-scrollbar-comp, 0px));
 		position: fixed;
 		// Sits below the promo banner; tracks the live offset so it slides to
 		// top:0 as the banner collapses on scroll (--promo-cur → 0).
 		top: var(--promo-cur, var(--promo-h, 0px));
 		left: 0;
+		// One duration for the header's background, border and shadow transitions, so they change
+		// together.
+		--tb-bar-swap: 0.2s;
+		// The header's text and icons don't fade with the background: they switch color in one jump,
+		// 0.06s into the 0.2s background fade. That is when the background reaches luminance 0.2, where
+		// white and dark text are equally readable on it (56ms into the `ease` curve going light, 61ms
+		// going dark). Fading both at once left gray text on a gray header (about 1.2:1 contrast) for
+		// four frames at the end of a dark hero banner.
+		--tb-ink-at: 0.06s;
+		// Background of the header, and of the desktop menu panel, when scrolled over a dark hero banner:
+		// the hero's own color (set by `HeaderHeroWatch`), so the header looks like part of the hero.
+		// Near-black when the hero has no background color. Opaque on purpose: at 92% opacity, content
+		// scrolling under it showed through as noise, and a backdrop blur to hide that had to re-blur
+		// every frame of the homepage's hero video, which cost too much.
+		--tb-bar-dark: var(--tb-hero-ground, rgb(8 9 14));
 		// No `filter`: it would become the containing block for the fixed promo banner.
 		transition:
-			background-color 0.3s ease,
-			box-shadow 0.3s ease;
+			background-color var(--tb-bar-swap) ease,
+			border-color var(--tb-bar-swap) ease,
+			box-shadow var(--tb-bar-swap) ease;
 		width: 100%;
 		height: $header-height;
 		z-index: 8888;
@@ -288,10 +273,16 @@ const currentYear = new Date().getFullYear();
 		}
 
 		.head-buttons {
-			// head-buttons is placed before <Navigation /> in DOM order to avoid
-			// the centred-nav layout shift on slow CPUs. `order: 1` keeps it
-			// visually after the nav (which keeps the default order: 0).
+			// Always the last item in the header, whatever comes before it in the DOM.
 			order: 1;
+			// Every button here uses `currentColor`, so the text and icon color is set once, on this
+			// container. It switches in one jump at `--tb-ink-at` instead of fading (see above).
+			transition: color 0s linear var(--tb-ink-at);
+			// These buttons never shrink to make room for the menu items: when squeezed, Try for free
+			// wrapped onto two lines. The widths where the search field and the star count change size
+			// are measured so the buttons always fit without shrinking.
+			flex-shrink: 0;
+			white-space: nowrap;
 			padding-right: calc(var(--tb-bar-inset) - 20px);
 			display: flex;
 			flex-direction: row;
@@ -303,413 +294,276 @@ const currentYear = new Date().getFullYear();
 				align-items: center;
 			}
 
-			.divider {
-				width: 1px;
-				height: 32px;
-				background-color: var(--sl-color-hairline-light);
-				flex-shrink: 0;
-
-				@media screen and (min-width: 1281px) and (max-width: 1499px) {
-					display: none;
-				}
-			}
-
-			.n-button {
-				min-width: 90px;
-				// Match the 40px sign-in control beside it; the `md` ramp is 47px.
-				height: 40px;
-				min-height: 40px;
-				padding: 0 18px;
-				font-size: 14px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
+			// Try for free has a minimum width larger than its label needs, so it keeps its size next to
+			// Sign in.
+			.try {
+				--btn-min-w: 90px;
 
 				@media screen and (min-width: 1500px) {
-					min-width: 110px;
-				}
-
-				// One fill everywhere; hover darkens via NButton's filled overlay.
-				&.try {
-					background-color: var(--color-brand);
-					color: var(--color-brand-contrast);
-					font-weight: $font-weight-bold;
-
-					&:hover {
-						color: var(--color-brand-contrast);
-					}
+					--btn-min-w: 110px;
 				}
 			}
-		}
 
-		// Centred on the cap height: a centred line box sets the capitals about 2px high.
-		.region-signin__trigger {
-			display: inline-block;
-			align-content: center;
-			height: 40px;
-			padding: 0 16px;
-			border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
-			border-radius: 4px;
-			color: inherit;
-			font-size: 14px;
-			line-height: 1;
-			white-space: nowrap;
-			text-box: trim-both cap alphabetic;
-			text-decoration: none;
-			transition:
-				background-color 0.15s ease,
-				border-color 0.15s ease;
-
-			&:hover,
-			&:focus-visible {
-				background-color: color-mix(in srgb, currentColor 12%, transparent);
-				border-color: color-mix(in srgb, currentColor 55%, transparent);
+			// UI kit buttons fade their colors over 0.15s. In the header, text and border colors switch in
+			// one jump at `--tb-ink-at` instead, like the rest of the header (see `--tb-ink-at` above).
+			// The background still fades, so hover keeps its usual transition.
+			:is(.signin, .try, .burger, .search-toggle-btn, .gh-button) {
+				transition:
+					color 0s linear var(--tb-ink-at),
+					border-color 0s linear var(--tb-ink-at),
+					background-color 0.15s ease;
 			}
 		}
 
 		.logo {
 			position: relative;
 			display: block;
-			// Only `width`: `contain` derives the height from the 168x44 wordmark.
-			width: 180px;
+			// Logo sizes. The image is 168x44 and `contain` keeps its aspect ratio, so the width sets the
+			// rendered size until the 50px height limits it (at 191px wide). 215px where the header has
+			// room, 160px from 1200px to 1600px where the menu items, the right-hand buttons and the star
+			// count all need space, and smaller sizes on phones.
+			width: 175px;
+			height: 50px;
 			// The SVG has a left margin; this puts the glyph, not the box, on the inset.
 			transform: translateX(-3.571%);
-			height: 60px;
 			background-image: url(../../assets/images/landings/thingsboard-logo.svg);
 			background-size: contain;
 			background-position: center center;
 			background-repeat: no-repeat;
+			transition: filter 0s linear var(--tb-ink-at);
 
 			[data-theme='dark'] & {
 				filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%);
 			}
 
-			@media screen and (max-width: 559px) {
+			@media screen and (min-width: 1025px) {
+				width: 215px;
+			}
+
+			@include width-from($menu-row-from) {
+				@include width-below(1600px) {
+					width: 160px;
+				}
+			}
+
+			@media screen and (max-width: 767px) {
+				width: 168px;
+				height: 48px;
+			}
+
+			@media screen and (max-width: 480px) {
 				width: 152px;
+				height: 44px;
 			}
 		}
 	}
 
-	// Same pill as the sign-in control beside it, so the cluster reads as one row.
-	.burger {
-		display: none;
-		align-items: center;
-		justify-content: center;
-		gap: 8px;
-		height: 40px;
-		padding: 0 14px;
-		border: 1px solid color-mix(in srgb, currentColor 35%, transparent);
-		border-radius: 4px;
-		background: none;
-		color: inherit;
-		font: inherit;
-		font-size: 14px;
-		line-height: 1;
-		white-space: nowrap;
-		cursor: pointer;
-		transition:
-			background-color 0.15s ease,
-			border-color 0.15s ease;
+	// --- Header buttons ---
+	// Every header button gets its base look from the UI kit (`_button.scss`), applied once here: Sign
+	// in, Try for free and Menu (this file), the search button (`SearchButton`), the GitHub star count
+	// (`GitHubButton`) and the buttons at the bottom of the mobile menu sheet (`SiteMenu`). All of them
+	// render only inside the header. Try for free is the primary button; the rest are secondary. The
+	// header's buttons are 40px tall; the mobile menu sheet's buttons keep the UI kit's default 44px.
+	// Each button's own rules (padding, width, when it shows) are nested under `.head-buttons` or the
+	// sheet's footer, so they are more specific than these and win in any stylesheet load order.
+	:is(.signin, .try, .burger, .search-toggle-btn, .gh-button, .sm__foot-signin, .sm__foot-try) {
+		@include ui-button-base;
+	}
 
-		&:hover,
-		&:focus-visible {
-			background-color: color-mix(in srgb, currentColor 12%, transparent);
-			border-color: color-mix(in srgb, currentColor 55%, transparent);
+	:is(.signin, .burger, .search-toggle-btn, .gh-button, .sm__foot-signin) {
+		@include ui-button-secondary;
+	}
+
+	:is(.try, .sm__foot-try) {
+		@include ui-button-primary;
+	}
+
+	:is(.signin, .try, .burger, .search-toggle-btn, .gh-button) {
+		@include ui-button-size(sm);
+	}
+
+	:is(.sm__foot-signin, .sm__foot-try) {
+		@include ui-button-size(md);
+	}
+
+	:is(.signin, .try, .burger, .search-toggle-btn, .gh-button, .sm__foot-signin, .sm__foot-try) {
+		@include ui-button-forced-colors;
+	}
+
+	.head-buttons {
+		// Regular-weight text, like Menu and the star count.
+		.signin {
+			font-weight: $font-weight-normal;
 		}
 
-		svg {
-			width: 20px;
-			height: 20px;
-		}
+		// Same button style as Sign in next to it: regular-weight text, with 14px side padding. Hidden
+		// while the desktop menu row is shown (from `$menu-row-from`).
+		.burger {
+			--btn-px: 14px;
 
-		.icon-close {
 			display: none;
-		}
+			font-weight: $font-weight-normal;
 
-		// One shared cell, so the box is as wide as the longer word in either state.
-		.burger__label {
-			display: grid;
+			svg {
+				width: 20px;
+				height: 20px;
+			}
 
-			> * {
-				grid-area: 1 / 1;
+			.icon-close {
+				display: none;
+			}
+
+			// Both labels share one grid cell, so the button is as wide as the longer word (Menu or Close)
+			// in both states.
+			.burger__label {
+				display: grid;
+
+				> * {
+					grid-area: 1 / 1;
+				}
+			}
+
+			.label-close {
+				visibility: hidden;
 			}
 		}
-
-		.label-close {
-			visibility: hidden;
-		}
 	}
 
-	.opened-burger .burger {
-		.icon-open {
-			display: none;
-		}
-
-		.icon-close {
-			display: block;
-		}
-
-		.label-open {
-			visibility: hidden;
-		}
-
-		.label-close {
-			visibility: visible;
-		}
-	}
-
-	// Responsive styles
-	@media screen and (max-width: 1280px) {
+	// Below 1200px the desktop menu row is hidden and the Menu button opens the mobile menu sheet. The
+	// logo area grows to fill the space the menu row used.
+	@include width-below($menu-row-from) {
 		header.header {
-			display: block; // stays position:fixed (base rule); block keeps it a proper box — `unset` would resolve to inline and break it
-			height: unset !important;
-			transition-property: height; // `top` follows --promo-cur; don't transition it here
-
 			.logo-burger {
-				height: $header-height;
-			}
-
-			&.opened-burger {
-				// Anchor the drawer where the bar already sits (top stays at --promo-cur,
-				// below the banner) and fill to the viewport bottom, so opening at the top
-				// shifts nothing. The banner stays visible above the drawer (when scrolled
-				// it has already collapsed off-screen, so the drawer reaches top:0).
-				bottom: 0;
-				z-index: 10000;
-				display: flex !important;
-				flex-direction: column;
-				align-items: stretch;
-
-				.logo-burger {
-					box-shadow: 0 1px 0 rgba(48, 86, 128, 0.07);
-					flex-shrink: 0;
-				}
-
-				.head-buttons {
-					display: flex;
-					flex-shrink: 0;
-					padding: 20px 0;
-				}
-
-				// Slide + fade the drawer content in on open. The bar (.logo-burger)
-				// stays put and top/height are pinned, so the menu glides down into
-				// place with no banner-height jump. Enter only; closing is instant.
-				.head-menu,
-				.head-buttons {
-					opacity: 1;
-					transform: translateY(0);
-					transition:
-						opacity 0.22s ease,
-						transform 0.22s ease,
-						display 0.22s allow-discrete;
-
-					@starting-style {
-						opacity: 0;
-						transform: translateY(-8px);
-					}
-				}
-
-				@media (prefers-reduced-motion: reduce) {
-					.head-menu,
-					.head-buttons {
-						transition: none;
-						transform: none;
-					}
-				}
+				flex: 1;
 			}
 
 			.burger {
 				display: flex;
 			}
-
-			&:not(.opened-burger) {
-				display: flex;
-				align-items: center;
-
-				// Scoped away from the open state, a column where this would grow downward.
-				.logo-burger {
-					flex: 1;
-				}
-			}
-
-			// The nav list flows down the drawer; the cluster stays pinned over the bar.
-			&.opened-burger .head-buttons {
-				position: absolute;
-				top: 0;
-				// Not `right: 0`: the padding box ignores the header's own 20px gutter.
-				right: var(--tb-bar-right);
-				z-index: 1;
-				height: $header-height;
-				padding: 0;
-				transform: none;
-				transition: none;
-			}
 		}
 	}
 
-	// These pages carry ~88px more, so the star and then the account pair give way.
-	header.header:has(> :where(.head-buttons) > .icon-buttons) {
-		@include media-down(2xl) {
-			.gh-button {
-				display: none;
-			}
-		}
-
-		@include media-down(md) {
-			@include compact-bar;
-		}
-	}
-
-	// 152 + 78 + 110 + 94, two 24px insets and three 8px gaps: 534 is the floor.
-	@media screen and (max-width: 559px) {
+	// The full header needs about 560px with the search icon (a page without search has 48px more
+	// room): the 168px logo, the 40px search icon, Sign in (about 76px), Try for free (110px), Menu
+	// (94px), three 8px gaps and two 24px side insets. Below 600px, Sign in and Try for free move to the
+	// bottom of the mobile menu sheet.
+	@include width-below($bar-compact-below) {
 		header.header {
 			@include compact-bar;
 		}
 	}
 
-	// ============================================
-	// PAGE-SPECIFIC HEADER STYLES
-	// ============================================
-	// `data-header-variant` sits on the header's direct children, so `:has(> …)` checks only those
-	// instead of searching the whole header (or `.page`) on every restyle.
-
-	// Solid marketing header with a drop shadow (no border). `services` is
-	// solid-border instead, per the design.
-	header.header:has(> [data-header-variant='solid-shadow']) {
-		// Same surface bg as solid-border so all marketing headers match.
-		background-color: var(--color-bg-surface);
-		box-shadow:
-			0 0 20px rgba(0, 0, 0, 0.1),
-			0 0 40px rgba(0, 0, 0, 0.1);
+	// The Menu button keeps its "Menu" label wherever the compact header has room for it. The labeled
+	// button is 54px wider than the icon-only square (94px vs 40px). With the 152px logo and the search
+	// icon it still fits at 360px wide, with about 19px to spare (measured with the system font); a page
+	// without search has 48px more. Below 360px (or 320px without search) the button is the icon-only
+	// square.
+	@include width-below(360px) {
+		header.header:has(> .head-buttons > .icon-buttons) {
+			@include menu-square;
+		}
 	}
 
-	// Transparent header over a hero (transparent variant).
-	header.header:has(> [data-header-variant='transparent']) {
-		background-color: transparent;
-		box-shadow: none;
+	@include width-below(320px) {
+		header.header {
+			@include menu-square;
+		}
+	}
 
+	// ============================================
+	// Header looks (docs, marketing) and their states
+	// ============================================
+
+	// `data-header-look` and `data-header-hero` are set on the header's direct children, so `:has(> …)`
+	// only checks those instead of searching the whole header (or `.page`) on every style recalculation.
+
+	// Docs header: the sidebar's background color and a 1px bottom border. It does not change on scroll.
+	header.header:has(> [data-header-look='docs']) {
+		border-bottom: 1px solid var(--sl-color-hairline-shade);
+	}
+
+	// Marketing header: the page background color and a 1px bottom border at the top of the page. Once
+	// the page scrolls, a shadow replaces the border.
+	header.header:has(> [data-header-look='marketing']) {
+		background-color: var(--color-bg-surface);
+		border-bottom: 1px solid var(--color-border);
+
+		// A page with its own sticky bar under the header (the installations page) sets
+		// `--tb-bar-shadow: none` while that bar is stuck, so the shadow shows under that bar instead.
+		&[data-header-scrolled] {
+			border-bottom-color: transparent;
+			box-shadow: var(--tb-bar-shadow, var(--shadow-header));
+		}
+	}
+
+	// Over a hero banner the header starts transparent, with no border or shadow. It gets its
+	// background back once the page scrolls or the mobile menu sheet opens.
+	header.header:not([data-sm-open]):not([data-header-scrolled]):has(> [data-header-hero]) {
+		background-color: transparent;
+		border-bottom-color: transparent;
+		box-shadow: none;
+	}
+
+	// Over a dark hero banner the header uses white text and icons: at the top of the page, and after
+	// scrolling while the hero is still under the header. Every button uses `currentColor`, so setting
+	// `color` once is enough. The logo is an image, so a filter inverts it.
+	@include bar-over-dark-hero {
 		.logo {
 			filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%);
 		}
 
-		// Only the unscrolled, unopened bar is over the hero. The star widget draws itself in
-		// `currentColor`, so it follows this line rather than carrying a second set of colours.
-		&:not(.opened-burger):not([data-header-scrolled]) {
-			.region-signin__trigger,
-			.burger,
-			.gh-button {
-				color: $color-white;
-			}
+		// This dark background comes from the header's state, not from a `data-surface` attribute, so
+		// the dark focus ring and the dark secondary button style are applied here directly.
+		.head-buttons {
+			--focus-ring: var(--focus-ring-dark);
 
-			// The promo banner takes the hero's black; it only shows before the page scrolls.
-			#promo-banner {
-				background-color: #000;
-				border-bottom-color: rgba(255, 255, 255, 0.1);
+			color: $color-white;
 
-				.promo-msg {
-					color: rgba(255, 255, 255, 0.88);
-				}
-
-				.promo-msg strong,
-				.promo-star,
-				.promo-chevron {
-					color: #b3c7ff;
-				}
+			:is(.signin, .burger, .search-toggle-btn, .gh-button) {
+				@include ui-button-secondary-dark;
 			}
 		}
 
-		.n-button {
-			min-width: 110px;
+		// The promo banner above a dark hero matches it: the hero's background, white text and the dark
+		// menu's accent color. It is only visible at the top of the page, before it slides away.
+		#promo-banner {
+			background-color: var(--tb-hero-ground, rgb(8 9 14));
+			border-bottom-color: rgba(255, 255, 255, 0.1);
+
+			.promo-msg {
+				color: rgba(255, 255, 255, 0.88);
+			}
+
+			.promo-msg strong,
+			.promo-star,
+			.promo-chevron {
+				color: #b3c7ff;
+			}
 		}
 	}
 
-	// Transparent header overlays the hero → no header clearance, BUT still
-	// reserve the promo-banner band so the hero starts below the banner (the
-	// transparent nav then floats over the hero as before). Without this the
-	// fixed banner would overlay the top of the hero / crowd the hero title.
-	.page > header.header:has(> [data-header-variant='transparent']) ~ .main-frame,
-	.page > header.header:has(> [data-header-variant='transparent-hover']) ~ .main-frame {
+	// Scrolled, with the dark hero still under the header: the hero's background color, a faint light
+	// bottom border, no shadow, and the text stays white. The border is hidden while the desktop menu
+	// panel is open below the header.
+	header.header:not([data-sm-open])[data-header-scrolled][data-header-over-hero]:has(> [data-header-hero='dark']) {
+		background-color: var(--tb-bar-dark);
+		border-bottom-color: rgba(255, 255, 255, 0.08);
+		box-shadow: none;
+
+		&[data-sm-desktop-open] {
+			border-bottom-color: transparent;
+		}
+	}
+
+	// On hero pages, Try for free keeps the wider 110px minimum width at every screen size.
+	header.header:has(> [data-header-hero]) .try {
+		--btn-min-w: 110px;
+	}
+
+	// On hero pages the content leaves no room for the header, which overlaps the hero. It still leaves
+	// room for the promo banner, so the hero starts below the banner.
+	.page > header.header:has(> [data-header-hero]) ~ .main-frame {
 		padding-top: var(--promo-h, 0px);
-	}
-
-	// Transparent, opaque on hover + scroll (transparent-hover — pricing, affiliate).
-	header.header:has(> [data-header-variant='transparent-hover']) {
-		background-color: transparent;
-		// Quick opaque flip synced with the banner.
-		transition:
-			background-color 0.15s ease,
-			box-shadow 0.15s ease;
-
-		&:hover {
-			background-color: var(--color-bg-surface);
-		}
-	}
-
-	// Scrolled transparent header: un-invert the logo/burger.
-	header.header[data-header-scrolled]:has(> [data-header-variant='transparent']) {
-		.logo {
-			filter: none;
-		}
-
-		.region-signin__trigger,
-		.burger {
-			color: var(--color-text);
-		}
-	}
-
-	// Scrolled state: solid surface for the transparent family.
-	header.header[data-header-scrolled]:has(> [data-header-variant='transparent']),
-	header.header[data-header-scrolled]:has(> [data-header-variant='transparent-hover']) {
-		// Quick flip synced with the banner.
-		transition: all 0.12s ease;
-		background-color: var(--color-bg-surface);
-		box-shadow: var(--shadow-header);
-	}
-
-	// Mobile burger drawer — identical on every page. `--color-bg-light` is the
-	// brightest surface per theme, so it sits above the page bg in dark too.
-	header.header.opened-burger {
-		// Don't reposition on open — the bar stays put (the mobile block fills the
-		// drawer downward from there), so there is no jump at the banner position.
-		// Only bg + shadow ease.
-		transition:
-			background-color $transition-base,
-			box-shadow $transition-base;
-		background-color: var(--color-bg-light);
-		box-shadow: var(--shadow-header);
-
-		.logo {
-			filter: none;
-		}
-
-		.head-menu ul {
-			a,
-			a:not([href]),
-			span.main-menu-link {
-				color: var(--color-text);
-			}
-
-			// Highlight the expanded section (`.open-sub`, toggled in listburg).
-			li:has(.open-sub) > a,
-			li:has(.open-sub) > span.main-menu-link {
-				color: $color-primary;
-			}
-
-			// Hover highlight for pointer devices only — touch `:hover` sticks
-			// after a tap, so touch relies on `.open-sub` above instead.
-			@media (hover: hover) {
-				li:hover > a,
-				li:hover > span.main-menu-link {
-					color: $color-primary;
-				}
-			}
-		}
-	}
-
-	// Docs / 404 default header — hairline bottom border.
-	header.header:has(> [data-header-variant='docs']),
-	header.header:has(> [data-header-variant='common']) {
-		border-bottom: 1px solid var(--sl-color-hairline-shade);
 	}
 
 	// Starlight mobile sidebar: 90% width, toggle button left when closed / right edge when open
@@ -739,44 +593,6 @@ const currentYear = new Date().getFullYear();
 		}
 	}
 
-	// Use-cases / case-studies / partners / blog / services etc.:
-	// surface background + bottom border (solid-border variant).
-	header.header:has(> [data-header-variant='solid-border']) {
-		background-color: var(--color-bg-surface);
-		border-bottom: 1px solid var(--color-border);
-	}
-
-	// Dark-mode dropdown tinting. `!important` beats Navigation's per-brand rules
-	// (light keeps its brand colours; only dark flattens to primary). Force-light
-	// pages are locked to light, so they never match — no exclusion needed.
-	html[data-theme='dark'] header.header {
-		.head-menu .sub-menu .group-name {
-			color: var(--color-primary) !important;
-		}
-
-		.head-menu .sub-menu a:hover .sub-text span.item-heading {
-			color: var(--color-primary) !important;
-		}
-
-		// Top-level link hover — pointer devices only (touch `:hover` sticks).
-		@media (hover: hover) {
-			.head-menu ul li:hover a,
-			.head-menu ul li:hover span.main-menu-link,
-			.head-menu ul li a:not([href]):hover,
-			.head-menu ul li span.main-menu-link:hover {
-				color: var(--color-primary) !important;
-			}
-		}
-
-		// Active-tab indicator (the underline + arrow under the hovered top item)
-		.head-menu .indicator .head-arrow {
-			border-bottom-color: var(--color-primary) !important;
-		}
-		.head-menu .indicator .line {
-			background-color: var(--color-primary) !important;
-		}
-	}
-
 	// Print: `position: fixed` above makes Chrome stamp this bar onto every sheet.
 	// `static` returns it to the flow, where it lands once as a masthead.
 	@media print {
@@ -787,13 +603,13 @@ const currentYear = new Date().getFullYear();
 			padding: 0 0 0.6rem;
 			margin: 0 0 1.5rem;
 
-			&,
-			&:has(> [data-header-variant]),
-			&[data-header-scrolled]:has(> [data-header-variant]),
-			&:has(> [data-header-variant]):hover {
-				border-bottom: 1px solid #d7d9e0;
-				background: none;
-				box-shadow: none;
+			// `!important` because the screen rules for the header over a hero are more specific (up to
+			// (0,5,1)) and would otherwise print it without its bottom border, or on the hero's dark
+			// background.
+			& {
+				border-bottom: 1px solid #d7d9e0 !important;
+				background: none !important;
+				box-shadow: none !important;
 			}
 
 			.logo-burger {

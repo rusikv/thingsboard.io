@@ -4,7 +4,7 @@ import UtmTracker from '@components/UtmTracker.astro';
 import { formatMarketingTitle, SITE_NAME } from '@root/consts.ts';
 import { getOgImageUrl } from '@util/getOgImageUrl';
 import { getSectionFromPath } from '@util/path-utils';
-import { resolveHeaderConfig, type HeaderVariant } from '@util/header-config';
+import { resolveHeaderConfig, type HeaderHero } from '@util/header-config';
 
 // BaseLayout — site-wide marketing layout backed by `<StarlightPage>`.
 // The body content is copied verbatim into the page's default slot
@@ -25,19 +25,25 @@ interface Props {
 	 */
 	gitHubPlatform?: import('@models/site.models').Products;
 	forceLightTheme?: boolean;
-	/** Marketing-header appearance. Defaults to the docs look. */
-	headerVariant?: HeaderVariant;
+	/**
+	 * The page starts with a hero banner, and the header is transparent over it at the top of the
+	 * page: `dark` gives the header white text, `light` keeps its normal text. When omitted, the
+	 * header has its normal background from the start. Every `BaseLayout` page uses the marketing
+	 * header look; docs pages use the docs look.
+	 */
+	hero?: HeaderHero;
+	/**
+	 * Site search in the header: the button, its dialog and its keyboard shortcuts. On by default.
+	 * Set `false` on pages where visitors come to pick a product rather than look something up: the
+	 * homepage and the product pages. They lead into the docs, which always have search.
+	 */
+	search?: boolean;
 	/**
 	 * Site chrome around the page. `minimal` — for campaign landings that take ad and social
-	 * traffic — renders the header as the logo and theme toggle, hides the promo banner and swaps
-	 * the landing footer for the compact docs footer, which keeps the legal links.
+	 * traffic — renders the header with only the logo, hides the promo banner and swaps the
+	 * landing footer for the compact docs footer, which keeps the legal links.
 	 */
 	chrome?: 'full' | 'minimal';
-	/** Pricing/Try button shape. Defaults per variant (solid-shadow → marketing). */
-	/** Override search-icon visibility (defaults to the variant default). */
-	showSearch?: boolean;
-	/** Override theme-toggle visibility (defaults to the variant default). */
-	showThemeToggle?: boolean;
 	/** The page's own region buttons carry the `TryItNow_Cloud_*` GTM ids, so the region dialog omits them. */
 	ownsCloudSignupIds?: boolean;
 	ogImage?: string;
@@ -70,10 +76,9 @@ const {
 	noCanonical = false,
 	gitHubPlatform,
 	forceLightTheme = false,
-	headerVariant,
+	hero,
+	search,
 	chrome = 'full',
-	showSearch,
-	showThemeToggle,
 	ownsCloudSignupIds = false,
 	ogImage: ogImageProp,
 	ogType = 'website',
@@ -120,13 +125,12 @@ if (gitHubPlatform !== undefined) locals.bslGitHubPlatform = gitHubPlatform;
 locals.bslMarkdownCss = markdownCss;
 locals.bslChrome = chrome;
 
-// Resolve the header appearance and bridge it to the Starlight Header override.
-// Unconfigured pages default to the `common` variant (docs chrome, search hidden).
+// Resolve the header's appearance and pass it to the Starlight Header override: always the marketing
+// look, over a hero banner when the page sets `hero`.
 const headerConfig = resolveHeaderConfig({
-	variant: headerVariant ?? 'common',
-	forceLight: forceLightTheme,
-	showSearch,
-	showThemeToggle,
+	look: 'marketing',
+	hero,
+	search,
 	cloudSignupIds: !ownsCloudSignupIds,
 	minimal: chrome === 'minimal',
 });

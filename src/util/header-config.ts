@@ -1,57 +1,52 @@
-// Resolves the marketing header's appearance from BaseLayout props, consumed by
-// the Starlight Header override.
+// The site header's appearance, resolved from `BaseLayout`'s props and read by the Starlight Header
+// override.
+//
+// There are two looks:
+// - `docs`, on documentation pages: the sidebar's background color with a thin bottom border. It
+//   doesn't change on scroll.
+// - `marketing`, on every other page: the page background color with a thin bottom border at the top
+//   of the page. Once the page scrolls, a shadow replaces the border.
+// A marketing page that starts with a hero banner sets `hero`. The header then starts out transparent
+// over the banner, with white text over a dark banner and normal text over a light one.
+//
+// Search is on by default in both looks; its button adapts to the available width (`SearchButton`).
+// Pages where visitors come to pick a product rather than look something up (the homepage, the
+// product pages) turn it off, which also removes the search dialog and its keyboard shortcuts.
+//
+// Neither look has a theme toggle in the header: the theme follows the system setting.
 
-export type HeaderVariant =
-	| 'base' // sidebar bg, no border, icons shown (id'd marketing pages, e.g. device library)
-	| 'docs' // hairline border, sidebar bg, both icons (real docs pages)
-	| 'common' // docs look but search hidden — 404 + unconfigured marketing pages (BaseLayout default)
-	| 'transparent' // over-hero, white text, flips to solid on scroll
-	| 'transparent-hover' // transparent, opaque on hover + scroll (pricing, affiliate)
-	| 'solid-shadow' // solid bg + drop shadow (product/marketing pages)
-	| 'solid-border'; // surface bg + bottom border (use-cases, blog, partners, …)
+export type HeaderLook = 'marketing' | 'docs';
+
+/** The hero banner the page starts with. Sets the header's text color while it is transparent. */
+export type HeaderHero = 'dark' | 'light';
 
 export interface HeaderConfig {
-	variant: HeaderVariant;
-	showSearch: boolean;
-	showThemeToggle: boolean;
+	look: HeaderLook;
+	hero?: HeaderHero;
+	/** Site search in the header: the button, its dialog and its keyboard shortcuts. */
+	search: boolean;
 	cloudSignupIds: boolean;
-	/** Logo and theme toggle only: no navigation, account controls or burger (campaign landings). */
+	/** Logo only: no menu, search or account buttons (for campaign landing pages). */
 	minimal: boolean;
 }
 
 export interface HeaderConfigInput {
-	variant?: HeaderVariant;
-	forceLight?: boolean;
-	showSearch?: boolean;
-	showThemeToggle?: boolean;
+	look?: HeaderLook;
+	hero?: HeaderHero;
+	search?: boolean;
 	cloudSignupIds?: boolean;
 	minimal?: boolean;
 }
 
-// Per-variant defaults for the two icons.
-const VARIANT_DEFAULTS: Record<HeaderVariant, { showSearch: boolean; showThemeToggle: boolean }> = {
-	base: { showSearch: true, showThemeToggle: true },
-	docs: { showSearch: true, showThemeToggle: true },
-	common: { showSearch: false, showThemeToggle: true },
-	transparent: { showSearch: false, showThemeToggle: false },
-	'transparent-hover': { showSearch: true, showThemeToggle: true },
-	'solid-shadow': { showSearch: false, showThemeToggle: false },
-	'solid-border': { showSearch: true, showThemeToggle: true },
-};
-
-// `forceLight` always wins over `showThemeToggle` — a locked-light page must
-// not offer a theme switch. `minimal` drops the search icon with the rest of the
-// navigation.
 export function resolveHeaderConfig(input: HeaderConfigInput = {}): HeaderConfig {
-	const variant = input.variant ?? 'docs';
-	const defaults = VARIANT_DEFAULTS[variant];
-	const forceLight = input.forceLight ?? false;
-	const showThemeToggle = forceLight ? false : (input.showThemeToggle ?? defaults.showThemeToggle);
+	const look = input.look ?? 'docs';
 	const minimal = input.minimal ?? false;
 	return {
-		variant,
-		showSearch: minimal ? false : (input.showSearch ?? defaults.showSearch),
-		showThemeToggle,
+		look,
+		// Only marketing pages can start with a hero banner.
+		hero: look === 'marketing' ? input.hero : undefined,
+		// A minimal header has no search, like it has no other buttons.
+		search: !minimal && (input.search ?? true),
 		cloudSignupIds: input.cloudSignupIds ?? true,
 		minimal,
 	};

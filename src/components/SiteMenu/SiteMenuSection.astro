@@ -1,0 +1,117 @@
+---
+import { Icon } from 'astro-icon/components';
+import NavIcon from '@components/Landing/NavIcon.astro';
+import SmartImage from '@components/SmartImage.astro';
+import { MENU_BADGES } from '@data/product-badges';
+import type { SubMenu, SubMenuGroup } from '@data/navigation';
+import { externalLinkAttrs, isExternalHref, newTabLinkLabel } from '@util/external-links';
+
+/**
+ * One menu section's link groups. Used by both the desktop menu panel and the mobile menu sheet.
+ * Each group's links are a single `<ul>`, even when shown in several columns, so a screen reader
+ * announces one list of ten use cases instead of two lists of five. The CSS splits the list into
+ * columns of `--rows` items (a grid that fills down, then across); each menu decides whether to use
+ * columns at all.
+ */
+interface Props {
+	submenu: SubMenu;
+	/**
+	 * The section's name. A group with the same name (the "Company" group in the Company section) gets
+	 * `data-sm-same`. The mobile menu sheet hides that group name, because the sheet's heading already
+	 * shows it. The desktop menu panel has no heading, so it keeps the group name.
+	 */
+	sectionName?: string;
+}
+
+const { submenu, sectionName } = Astro.props;
+// Icon size in px: 24 by default, 32 in Products and Docs, whose icons are product badges. The CSS
+// sets each icon box's height from `--sm-mark` (24px when not set).
+const iconSize = submenu.iconSize ?? 24;
+const repeatsSectionName = (groupName: string) => groupName.toLowerCase() === sectionName?.toLowerCase();
+
+/** The most columns a group's list can be split into. */
+const MAX_COLUMNS = 3;
+
+/**
+ * Rows per column for a group's list: `perColumn` from the nav data, or all items in one column when
+ * it is not set. Raised when needed so the list never takes more than `MAX_COLUMNS` columns.
+ */
+const rowsPerColumn = ({ items, perColumn }: SubMenuGroup) =>
+	Math.max(perColumn ?? items.length, Math.ceil(items.length / MAX_COLUMNS));
+
+// Links with a `badge` key (the products in Products and Docs) show that product badge; all other
+// links show their nav icon.
+const groups = submenu.groups.map((group) => ({
+	...group,
+	items: group.items.map((item) => ({
+		...item,
+		badgeInfo: item.badge ? MENU_BADGES[item.badge] : undefined,
+	})),
+}));
+---
+
+<div class="sm__groups" style={iconSize !== 24 ? `--sm-mark: ${iconSize}px` : undefined}>
+	{groups.map((group) => (
+		<div class="sm__group">
+			{group.name && (
+				<p class="sm__group-name" data-sm-same={repeatsSectionName(group.name) || undefined}>
+					{group.name}
+				</p>
+			)}
+			<ul class="sm__cols" style={`--rows: ${rowsPerColumn(group)}`}>
+				{group.items.map((item) => (
+					<li>
+						<a
+							class:list={['sm__link', item.linkClass]}
+							href={item.href}
+							aria-label={isExternalHref(item.href) ? newTabLinkLabel(item.heading, item.href) : undefined}
+							{...externalLinkAttrs(item.href)}
+						>
+							{item.logo ? (
+								<span class="sm__link-logo">
+									{/* Lazy-loaded (`SmartImage`'s default): the section is hidden until it opens, and
+									    then the logos are the only thing loading. `SmartImage` turns a repo path into the
+									    built file's URL. */}
+									<SmartImage
+										src={item.logo}
+										alt={item.heading}
+										style={item.logoHeight ? `--sm-logo-h: ${item.logoHeight}px` : undefined}
+									/>
+								</span>
+							) : (
+								<Fragment>
+									{item.badgeInfo ? (
+										<span class="sm__link-icon">
+											<span
+												class:list={['sm__badge', `sm__badge--${item.badgeInfo.fill}`]}
+												style={`--badge-hue: ${item.badgeInfo.hue}; --badge-glyph: ${item.badgeInfo.size}px`}
+											>
+												<NavIcon src={item.badgeInfo.glyph} size={item.badgeInfo.size} alt="" />
+											</span>
+										</span>
+									) : (
+										item.icon && (
+											<span class="sm__link-icon">
+												<NavIcon src={item.icon} size={iconSize} alt="" />
+											</span>
+										)
+									)}
+									<span class="sm__link-text">
+										<span class="sm__link-heading">{item.heading}</span>
+										{item.description && <span class="sm__link-desc">{item.description}</span>}
+									</span>
+								</Fragment>
+							)}
+						</a>
+					</li>
+				))}
+			</ul>
+			{group.more && (
+				<a class="sm__more" href={group.more.href}>
+					{group.more.label}
+					<Icon name="tabler:chevron-right" aria-hidden="true" />
+				</a>
+			)}
+		</div>
+	))}
+</div>
