@@ -133,6 +133,8 @@ $breakpoint-2xl: 1500px;
 
 // Layout
 $header-height: 64px;
+// The UI kit field's height, shared by `ui-field.scss` and the search dialog's input.
+$field-height: 48px;
 // The page gutter the fixed bar and the hero share: the wordmark, the headline and the CTA all
 // line up on it, so it lives here rather than being re-typed at each end of that alignment.
 $bar-inset: clamp(24px, calc(0.5rem + 2vw), 56px);
@@ -174,7 +176,7 @@ $bar-compact-below: 600px;
 // the header is transparent over the banner, and after scrolling while the banner is still under the
 // header (`HeaderHeroWatch` sets `data-header-over-hero`), where the header takes the banner's
 // background color. Not while the mobile menu sheet is open, since the sheet has its own background.
-// `data-header-hero` is set on the header's direct children, so `:has(> …)` only checks those.
+// `data-header-hero` sits on `.logo-burger`, a direct child of the header, so `:has(> …)` finds it.
 @mixin bar-over-dark-hero {
 	header.header:not([data-sm-open]):has(> [data-header-hero='dark']):is(
 			:not([data-header-scrolled]),

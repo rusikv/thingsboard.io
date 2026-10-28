@@ -25,18 +25,9 @@ interface Props {
 	 */
 	gitHubPlatform?: import('@models/site.models').Products;
 	forceLightTheme?: boolean;
-	/**
-	 * The page starts with a hero banner, and the header is transparent over it at the top of the
-	 * page: `dark` gives the header white text, `light` keeps its normal text. When omitted, the
-	 * header has its normal background from the start. Every `BaseLayout` page uses the marketing
-	 * header look; docs pages use the docs look.
-	 */
+	/** The page starts with a hero banner, and the header is see-through over it (`dark` gives it white text). */
 	hero?: HeaderHero;
-	/**
-	 * Site search in the header: the button, its dialog and its keyboard shortcuts. On by default.
-	 * Set `false` on pages where visitors come to pick a product rather than look something up: the
-	 * homepage and the product pages. They lead into the docs, which always have search.
-	 */
+	/** Search in the header. On by default; set `false` on the homepage and product pages. */
 	search?: boolean;
 	/**
 	 * Site chrome around the page. `minimal` — for campaign landings that take ad and social
@@ -114,8 +105,8 @@ const ogImageUrl = new URL(ogImage ?? DEFAULT_OG_IMAGE, Astro.url.origin).href;
 //     repo the page actually relates to.
 //   * bslMarkdownCss — the `markdownCss` prop; `starlight/Head.astro`
 //     inlines Starlight's markdown.css when it is set.
-//   * bslChrome — the `chrome` prop; `starlight/Header.astro` and
-//     `starlight/Footer.astro` render the compact chrome for `minimal`.
+//   * bslChrome — the `chrome` prop; `starlight/Footer.astro` renders the
+//     compact footer for `minimal`.
 const locals = Astro.locals as unknown as Record<string, unknown>;
 locals.bsl = true;
 locals.bslTitle = pageTitle;
@@ -125,8 +116,7 @@ if (gitHubPlatform !== undefined) locals.bslGitHubPlatform = gitHubPlatform;
 locals.bslMarkdownCss = markdownCss;
 locals.bslChrome = chrome;
 
-// Resolve the header's appearance and pass it to the Starlight Header override: always the marketing
-// look, over a hero banner when the page sets `hero`.
+// The header's settings, read by `starlight/Header.astro`.
 const headerConfig = resolveHeaderConfig({
 	look: 'marketing',
 	hero,

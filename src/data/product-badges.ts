@@ -1,24 +1,12 @@
 /**
- * Product badges for the menu's Products and Docs sections. The two platforms (ThingsBoard and
- * ThingsBoard Cloud) show the ThingsBoard logo on a tile filled with their color; the other products
- * show their glyph (Mobile uses the ThingsBoard logo) on a light tint of their color. A menu link
- * picks its badge by key (`SubMenuItem.badge` in `data/navigation`), so an unknown key fails the type
- * check. A link without a badge (the CLI) shows its nav icon instead.
- *
- * The tile is drawn in CSS (`.sm__badge` in `SiteMenu.astro`) and the glyph comes from the nav sprite
- * (`nav/badge-*.svg`), so each badge is a small `<use>` reference instead of inline artwork. This
- * matters because the menu has 14 badges on every page.
+ * Product badges for the Products and Docs menu sections, picked by `SubMenuItem.badge`. The tile is
+ * drawn in CSS (`.sm__badge` in `SiteMenu`); the glyph comes from the nav sprite, drawn at `size` px.
  */
 export interface MenuBadge {
 	/** `solid`: a tile filled with `hue` and a white glyph. `wash`: a light tint of `hue`. */
 	fill: 'solid' | 'wash';
 	hue: string;
-	/** The glyph's source file, looked up in the nav sprite. */
 	glyph: string;
-	/**
-	 * Glyph size in px inside the 32px tile: 20 for the ThingsBoard logo, 23 for other products, 26 for
-	 * TBMQ's wide logo.
-	 */
 	size: number;
 }
 

@@ -26,36 +26,19 @@ export interface SubMenuItem {
 	/** A second line under the heading, where it helps tell links apart: the products and their docs. */
 	description?: string;
 	linkClass?: string;
-	/**
-	 * A customer logo, shown instead of the heading; the heading becomes its alt text. Used for the case
-	 * studies, where a brand's logo is quicker to recognize than its name. Logos are drawn in the menu's
-	 * text color (as the case-study catalog draws them in white), so five brand colors don't compete with
-	 * the use-case icons.
-	 */
+	/** A customer logo shown instead of the heading, which becomes its alt text. */
 	logo?: string;
-	/**
-	 * The logo's height in px. Logos come in different shapes (a long wordmark, a stacked logo, a round
-	 * badge), and one shared height makes long logos look too big and stacked ones too small to read.
-	 * Each height is tuned so all logos look about the same size.
-	 */
+	/** The logo's height in px. */
 	logoHeight?: number;
 }
 
 export interface SubMenuGroup {
 	/** Column heading, shown above the first column only. Omit for an unlabelled group. */
 	name?: string;
-	/**
-	 * Items per column. The menu never splits a list into more than three columns: when there are too
-	 * many items for that, each column gets more rows (`SiteMenuSection`). Omit to put every item in a
-	 * single column.
-	 */
+	/** Items per column (a list takes at most 3 columns). Omit for one column. */
 	perColumn?: number;
 	items: SubMenuItem[];
-	/**
-	 * A link under the group's list, in the accent color: a "see all" page ("All use cases") or a next
-	 * step ("Talk to an expert"). Use this for a single extra link. A section's promo links
-	 * (`data/menu-featured`) are for when it has several extra links that are not part of its lists.
-	 */
+	/** A link under the list, in the accent color, such as "All use cases". */
 	more?: { label: string; href: string };
 }
 
@@ -64,18 +47,11 @@ export interface SubMenu {
 	/** Icon size in px: 32 where the icons are product badges (Products, Docs), otherwise 24 (the default). */
 	iconSize?: 24 | 32;
 	groups: SubMenuGroup[];
-	/**
-	 * Paths that belong to this section besides its links' pages. On one of these pages, or any page
-	 * below it, the menu marks this section's item as current, even when another section also links
-	 * to that page (`inSection` in `menu-model`). Solutions owns `/use-cases/` and `/case-studies/`, so
-	 * that their index pages and the use cases and case studies missing from its lists count too.
-	 * `inSection` does not check the "All use cases" and "All case studies" links (`SubMenuGroup.more`).
-	 */
+	/** Other paths (and the pages below them) that mark this section as current; see `inSection`. */
 	owns?: string[];
 }
 
-// Main navigation items. Solutions comes before Services (what you can build, then who can build it
-// for you), and Company comes near the end.
+// Main navigation items
 export const mainNavItems: NavItem[] = [
 	{ label: 'Products', submenuId: 'nav-products' },
 	{ label: 'Solutions', submenuId: 'nav-solutions' },
@@ -204,12 +180,8 @@ function caseStudy(slug: string, heading: string, logoHeight: number, logoFile?:
 	return { href: `/case-studies/${slug}/`, heading, logo, logoHeight };
 }
 
-// Solutions submenu: ten use cases, three SCADA use cases, and five case studies.
-// Three use cases are left out because each is a narrower version of one listed here (smart irrigation
-// of smart farming, water metering of smart metering, air quality of environment monitoring); they are
-// one click away under "All use cases". The case studies are customers a visitor may know by name,
-// starting with Schwarz Group, the featured study in the case-study catalog. Each list ends with a
-// link to its index page ("All use cases", "All case studies"), so this section has no promo links.
+// Solutions submenu. Smart irrigation, water metering and air quality are left out: each is a narrower
+// version of a listed use case (smart farming, smart metering, environment monitoring).
 export const solutionsSubmenu: SubMenu = {
 	id: 'nav-solutions',
 	owns: ['/use-cases/', '/case-studies/'],
@@ -292,8 +264,7 @@ export const solutionsSubmenu: SubMenu = {
 			],
 		},
 		{
-			// Each link shows the customer's logo, with the customer's name as its alt text. The case
-			// study's own title is a full sentence, and the group name already says what these are.
+			// Headings are customer names: a case study's own title is a full sentence.
 			name: 'Case studies',
 			items: [
 				caseStudy('schwarz', 'Schwarz Group', 15, 'schwarz-gruppe.svg'),
@@ -307,7 +278,7 @@ export const solutionsSubmenu: SubMenu = {
 	],
 };
 
-// Company submenu: pages about the company (including client feedback) and the partner programs.
+// Company submenu
 export const companySubmenu: SubMenu = {
 	id: 'nav-company',
 	owns: ['/partners/'],
@@ -388,8 +359,8 @@ export const companySubmenu: SubMenu = {
 	],
 };
 
-// Docs submenu: uses the same product badges as Products (`product-badges`). The CLI is a promo link
-// under the lists (`data/menu-featured`), not a list item.
+// Docs submenu: the same products as Products, with the same badges (`product-badges`). The CLI is
+// first in Product ecosystem, as in Products.
 export const docsSubmenu: SubMenu = {
 	id: 'nav-docs',
 	iconSize: 32,
@@ -419,6 +390,13 @@ export const docsSubmenu: SubMenu = {
 			name: 'Product ecosystem',
 			perColumn: 3,
 			items: [
+				{
+					href: '/docs/cli/',
+					icon: '/src/assets/images/landings/nav/cli-icon.svg',
+					heading: 'ThingsBoard CLI',
+					description: 'Build IoT solutions with AI agents',
+					linkClass: 'cli-lnk',
+				},
 				{
 					href: '/docs/edge/pe/',
 					badge: 'edge',

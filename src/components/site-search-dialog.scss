@@ -1,20 +1,14 @@
-// ============================================
-// Styles for the search dialog (`SiteSearch`). Its script adds them to the page the first time it
-// builds the dialog: nothing they style exists before that, and inlining them would put them in
-// every page's HTML.
-// ============================================
+// Styles for the search dialog, added by the `SiteSearch` script when it first builds the dialog.
 @use '../styles/variables' as *;
 @use '../styles/kbd' as *;
 @use '../styles/button' as *;
+@use '../styles/google-suggest';
 
-// The dialog: a full-screen fixed layer with the backdrop and the dialog box. The script builds it
-// and appends it to <body>, so none of these styles are scoped.
 #tb-search-modal {
 	display: none;
 	position: fixed;
 	inset: 0;
-	// Above the chat widget (9998) and the header while a menu is open (10000), since search can be
-	// opened from the menu.
+	// Above the chat widget (9998) and the header with a menu open (10000), as search opens from the menu.
 	z-index: 10001;
 	align-items: flex-start;
 	justify-content: center;
@@ -24,10 +18,6 @@
 		display: flex;
 	}
 
-	// Phones: the dialog fills the screen, with the input at the top. It does not slide up from the
-	// bottom: the on-screen keyboard covers the lower half of the screen, so an input there would sit
-	// right on the keyboard, and Google's suggestions, which open below the input, would be hidden
-	// behind it.
 	@media not all and (min-width: 560px) {
 		align-items: stretch;
 		padding: 0;
@@ -40,7 +30,6 @@
 	background: rgb(23 24 28 / 55%);
 }
 
-// The dialog box: same background, corners and shadow as the UI kit's Dialog.
 .tb-search-box {
 	position: relative;
 	z-index: 1;
@@ -57,10 +46,13 @@
 	scrollbar-color: color-mix(in srgb, currentColor 20%, transparent) transparent;
 
 	@media not all and (min-width: 560px) {
+		// The pinned top row's height on phones: 8px + the 40px Close button + 12px (`.tb-search-head`).
+		--tb-search-head-h: calc(60px + env(safe-area-inset-top, 0px));
+
 		width: 100vw;
 		height: 100dvh;
 		max-height: none;
-		padding: calc(8px + env(safe-area-inset-top, 0px)) 16px calc(24px + env(safe-area-inset-bottom, 0px));
+		padding: 0 16px calc(24px + env(safe-area-inset-bottom, 0px));
 		border-radius: 0;
 	}
 
@@ -76,6 +68,17 @@
 	justify-content: space-between;
 	gap: 12px;
 	margin: 0 0 12px;
+
+	@media not all and (min-width: 560px) {
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		box-sizing: border-box;
+		height: var(--tb-search-head-h);
+		margin: 0;
+		padding: calc(8px + env(safe-area-inset-top, 0px)) 0 12px;
+		background: var(--color-bg-surface);
+	}
 }
 
 .tb-search-eyebrow {
@@ -83,11 +86,7 @@
 	color: var(--color-text-secondary);
 }
 
-// Under the input: a hint on how to search (until results arrive) and Google's attribution with
-// Google's own logo. The free search requires the attribution (see the comment at the top of
-// `SiteSearch.astro`), so never hide it.
-// Both share one line where they fit. On a phone the hint takes the full width and the attribution
-// moves to the next line, aligned right.
+// The hint and Google's attribution. The free search requires the attribution: never hide it.
 .tb-search-meta {
 	display: flex;
 	flex-wrap: wrap;
@@ -108,7 +107,7 @@
 	color: var(--color-text-secondary);
 }
 
-// Hide the hint once Google has answered, with results or with "nothing found".
+// Hide the hint once Google answers; a "nothing found" message counts as a result too.
 .tb-search-box:has(.gsc-webResult.gsc-result) .tb-search-hint {
 	display: none;
 }
@@ -158,12 +157,11 @@
 	}
 }
 
-// Close button. On desktop it shows the Esc key hint next to the × icon. On phones, which have no
-// Esc key, it shows the word "Close" instead, which is easier to tap than a 20px × in the corner.
-// It is the UI kit's tertiary button at the header's 40px height, in the secondary text color, and
-// in the main text color on hover.
 .tb-search-close {
-	@include ui-button(tertiary, sm);
+	@include ui-button-base;
+	@include ui-button-size(sm);
+	@include ui-button-tertiary;
+	@include ui-button-forced-colors;
 
 	--btn-label: var(--color-text-secondary);
 	--btn-px: 10px;
@@ -179,8 +177,6 @@
 	}
 }
 
-// The UI kit's key hint. It uses the `ui-kbd` mixin because the `SiteSearch` script builds this
-// markup, so `ui/Kbd.astro` can't render it.
 .tb-search-close-key {
 	@include ui-kbd;
 }
@@ -208,7 +204,6 @@
 	}
 }
 
-// Loading bar along the top edge of the dialog box, in the brand color.
 .tb-loader-bar {
 	position: absolute;
 	top: 0;
@@ -253,12 +248,8 @@
 	}
 }
 
-// =============================================================================================
-// Google's search markup, restyled to match the UI kit. Google ships its own stylesheet and inline
-// styles, so most rules need `!important`. For the same reason they use the type scale's size
-// variables rather than its mixins, which can't add `!important`. Every rule is limited to
-// `.tb-search-box` (the dialog box) or `.gssb_c` (the suggestions dropdown).
-// =============================================================================================
+// Google's markup. Google's stylesheet and inline styles force `!important`, so these rules use the
+// type scale's size variables: its mixins can't add `!important`.
 .tb-search-box {
 	.gsc-control-cse {
 		padding: 0 !important;
@@ -271,25 +262,22 @@
 		box-sizing: border-box;
 	}
 
-	// Google's clearfix is a "." in a 0-height block, but its line is still 22px tall. That stuck out
-	// past the box's padding and gave the dialog 2px of scroll and a scrollbar. A 0-height line clears
-	// the floats just the same.
+	// Google's clearfix is a "." in a 0-height block whose line is still 22px tall, which gave the
+	// dialog 2px of scroll. A 0-height line clears the floats just the same.
 	.gsc-control-cse::after {
 		font-size: 0 !important;
 		line-height: 0 !important;
 	}
 
-	// Use the site's font in every part of Google's control: Google's stylesheet sets Arial on the
-	// individual parts.
+	// Google sets Arial on each part, so inheriting the font on the control alone isn't enough.
 	.gsc-control-cse :not(svg, path) {
 		font-family: inherit !important;
 	}
 
-	// On phones the input stays at the top of the screen while the results scroll under it.
 	@media not all and (min-width: 560px) {
 		form.gsc-search-box {
 			position: sticky !important;
-			top: calc(-8px - env(safe-area-inset-top, 0px));
+			top: var(--tb-search-head-h);
 			z-index: 2;
 			padding: 8px 0 !important;
 			background: var(--color-bg-surface);
@@ -311,12 +299,11 @@
 		padding-right: 8px !important;
 	}
 
-	// The UI kit's Field look around Google's input: 48px tall, a border with 3:1 contrast, 6px
-	// corners, and on focus a brand-color border with a soft outline around it.
+	// Same look as the UI kit's field (`ui-field.scss`): change the two together.
 	.gsc-input-box {
-		height: 48px !important;
+		height: $field-height !important;
 		padding: 0 14px !important;
-		border: 1px solid #868d9a !important;
+		border: 1px solid var(--field-border) !important;
 		border-radius: $radius-md !important;
 		background: var(--color-bg-surface) !important;
 		box-shadow: 0 1px 2px rgba(var(--color-shadow-ui-rgb), 0.04);
@@ -327,7 +314,7 @@
 			outline-color 0.15s ease;
 
 		&:hover {
-			border-color: #63656c !important;
+			border-color: var(--field-border-hover) !important;
 		}
 
 		&:focus-within {
@@ -349,11 +336,12 @@
 	}
 
 	input.gsc-input {
-		height: 46px !important;
+		// Fills the box inside its 1px top and bottom borders.
+		height: $field-height - 2px !important;
 		margin: 0 !important;
 		padding: 0 !important;
 		border: 0 !important;
-		// Google draws its logo into the input as a background image; the UI kit's Field has none.
+		// Removes the logo Google draws into the input as a background image.
 		background: transparent !important;
 		font: inherit !important;
 		font-size: $font-size-base !important;
@@ -366,22 +354,15 @@
 		}
 	}
 
-	// Google's clear button after the text. Its "×" character looks small and thin at 20px, so it is
-	// replaced by Tabler's `x` icon (the UI kit's icon set) at 20px, drawn as a mask in the secondary
-	// text color.
-	// The wrapper's own 2px padding on each side would push the icon away from the input's inner edge.
 	.gsst_b {
 		padding: 0 !important;
 	}
 
 	.gsst_a {
-		// Tabler `x` icon (MIT license): 24×24 viewBox, stroke width 2.
+		// Tabler's `x` icon (MIT license).
 		--tb-icon-x: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 6l-12 12'/%3E%3Cpath d='M6 6l12 12'/%3E%3C/svg%3E");
 
-		// `flex`, not inline: as an inline element the link sat on the text baseline, 2px above the
-		// input's center. As a block, its table cell (`vertical-align: middle`) centers it exactly.
-		// The icon sits at the right end of the cell, as far from the input's right edge as the text is
-		// from its left edge, and the whole cell is clickable.
+		// A block, so its table cell centers it: inline, it sat on the text baseline, 2px too high.
 		display: flex !important;
 		align-items: center;
 		justify-content: flex-end;
@@ -396,6 +377,7 @@
 			display: block;
 			width: 20px;
 			height: 20px;
+			// Hides Google's "×" character; the icon is drawn as a mask instead.
 			font-size: 0 !important;
 			background-color: currentColor;
 			-webkit-mask: var(--tb-icon-x) center / contain no-repeat;
@@ -403,15 +385,7 @@
 		}
 	}
 
-	// The submit button: the UI kit's primary button, as tall as the input, at every screen width.
-	// Google's own stylesheet hides it on narrow screens, which left phones with no visible way to
-	// search other than the keyboard's Go key. From 560px it shows "Search" next to the magnifier.
-	// The fill is the kit's `--accent-fill`, the same brand blue in both themes: `--color-primary` is
-	// a pale tint in the dark theme, and white text on it was hard to read. Written out by hand
-	// instead of with the `ui-button` mixin, because every value needs `!important` to beat Google's
-	// stylesheet.
-	// Its table cell adds the 8px gap between the input and the button (the shared `td` reset above
-	// removes Google's own padding).
+	// Google's stylesheet hides the submit button on narrow screens; phones need it too.
 	table.gsc-search-box td.gsc-search-button {
 		display: table-cell !important;
 		width: 1% !important;
@@ -419,19 +393,20 @@
 	}
 
 	.gsc-search-button-v2 {
-		// Tabler `search` icon (MIT license): 24×24 viewBox, stroke width 2.
+		// Tabler's `search` icon (MIT license).
 		--tb-icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0'/%3E%3Cpath d='M21 21l-6 -6'/%3E%3C/svg%3E");
 
 		display: inline-flex !important;
 		align-items: center;
 		justify-content: center;
 		gap: 8px;
-		height: 48px !important;
-		min-width: 48px !important;
+		height: $field-height !important;
+		min-width: $field-height !important;
 		margin: 0 !important;
 		padding: 0 16px !important;
 		border: 0 !important;
 		border-radius: $radius-md !important;
+		// `--accent-fill`, not `--color-primary`: white text on the pale dark-theme primary is hard to read.
 		background: var(--accent-fill) !important;
 		color: var(--accent-on-fill) !important;
 		cursor: pointer;
@@ -449,10 +424,6 @@
 			outline-offset: 3px !important;
 		}
 
-		// Google's own icon is hidden and replaced by Tabler's magnifier (the UI kit's icon set). The
-		// button markup is Google's, so the icon is a pseudo-element drawn as a mask filled with
-		// `currentColor`, in the label's color. It is 20px, the kit's icon size for this button, and a
-		// flex item next to the word, so the two are centered together.
 		svg {
 			display: none !important;
 		}
@@ -475,8 +446,6 @@
 		}
 	}
 
-	// Results: a plain list of titles in the site's type scale, in brand color on hover, without
-	// Google's extra elements.
 	.gsc-results-wrapper-nooverlay,
 	.gsc-resultsRoot,
 	.gsc-results,
@@ -518,7 +487,6 @@
 		display: block !important;
 		max-width: 100% !important;
 		overflow: hidden !important;
-		// Google sets Arial on the title itself, under the control's inherited family.
 		font-family: inherit !important;
 		font-size: $font-size-base !important;
 		line-height: $line-height-base !important;
@@ -534,9 +502,8 @@
 		font-weight: $font-weight-bold !important;
 	}
 
-	// Makes the whole result clickable: the title link's ::after is stretched over the result, so a
-	// tap anywhere on it opens the link. The result (`position: relative`) is the ::after's containing
-	// block, so the `overflow: hidden` wrappers in between don't clip it.
+	// Stretches the title link over the whole result. The result is its containing block, so the
+	// `overflow: hidden` wrappers in between don't clip it.
 	.gsc-table-cell-snippet-close a.gs-title::after {
 		content: '';
 		position: absolute;
@@ -544,7 +511,6 @@
 		border-radius: inherit;
 	}
 
-	// Where the result is, in the site's own names: Docs › ThingsBoard PE › User guide.
 	.tb-result-path {
 		margin: 1px 0 2px;
 		overflow: hidden;
@@ -554,7 +520,6 @@
 		white-space: nowrap;
 	}
 
-	// Google's snippet, cut to two lines, with the matched words in the main text color.
 	.gsc-result:not(.gs-no-results-result) .gs-snippet {
 		display: -webkit-box !important;
 		-webkit-box-orient: vertical;
@@ -592,10 +557,7 @@
 		overflow: hidden !important;
 	}
 
-	// Hide Google's extra elements: the URL lines (our path line replaces them), the thumbnail, the
-	// labels, the result count, the pager and "find more". Our own "Search more results" link leads to
-	// the full results page instead. Google's branding rows are hidden too, because the dialog always
-	// shows the attribution under the input.
+	// Google's extra parts, branding rows included: the dialog shows the attribution under the input.
 	.gsc-thumbnail-inside,
 	.gsc-url-top,
 	.gsc-url-bottom,
@@ -613,8 +575,6 @@
 		display: none !important;
 	}
 
-	// Nothing found: the message takes the place of a result, with a link to search elsewhere (added
-	// by `enhanceResults` in `SiteSearch.astro`).
 	.gs-no-results-result .gs-snippet {
 		display: block !important;
 		padding: 8px 12px !important;
@@ -626,7 +586,6 @@
 		color: var(--color-text-secondary) !important;
 	}
 
-	// Google's area below the results: only our "Search more results" link shows there.
 	.gcsc-more-maybe-branding-root {
 		display: flex !important;
 		justify-content: center !important;
@@ -657,33 +616,15 @@
 	}
 }
 
-[data-theme='dark'] .tb-search-box {
-	.gsc-input-box {
-		border-color: rgba(255, 255, 255, 0.4) !important;
-		background: transparent !important;
-		box-shadow: none;
-
-		&:hover {
-			border-color: rgba(255, 255, 255, 0.64) !important;
-		}
-
-		&:focus-within {
-			border-color: var(--color-primary) !important;
-		}
-	}
+[data-theme='dark'] .tb-search-box .gsc-input-box {
+	background: transparent !important;
+	box-shadow: none;
 }
 
-// Google's autocomplete dropdown, which Google adds directly to <body>: above the backdrop, with the
-// dialog box's background and font. The look applies only while the dialog is open (`tb-search-open`
-// on <html>). On the docs search pages the dropdown belongs to the page's own search field and is
-// styled with it (`google-cse.scss`).
-.gssb_c {
-	z-index: 50000 !important;
-}
+// Google's suggestions dropdown sits in <body>, outside the dialog. These styles apply only while the
+// dialog is open; the docs search pages style their own (`google-cse.scss`).
 html.tb-search-open .gssb_c {
-	// Fixed to the viewport while the dialog is open, so it sits above the backdrop. On the docs search
-	// pages Google's own `position: absolute` stays, so the dropdown moves with the input as the page
-	// scrolls.
+	// The dialog is fixed, so the dropdown is too. On the docs search pages it stays absolute and scrolls.
 	position: fixed !important;
 	font-family: inherit !important;
 
@@ -707,7 +648,6 @@ html.tb-search-open .gssb_c {
 		color: var(--color-text) !important;
 	}
 
-	// The row selected by hover or the arrow keys.
 	.gsc-completion-selected {
 		background: color-mix(in srgb, var(--color-primary) 6%, transparent) !important;
 	}
@@ -718,8 +658,7 @@ html.tb-search-open .gssb_c {
 }
 
 @media print {
-	#tb-search-modal,
-	.gssb_c {
+	#tb-search-modal {
 		display: none !important;
 	}
 }

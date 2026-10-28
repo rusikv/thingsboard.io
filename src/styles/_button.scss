@@ -1,17 +1,5 @@
-// ============================================
-// The UI kit's button styles, as mixins. `ui/Button.astro` uses them, and so do buttons that
-// component can't render: the header's controls (Sign in, Try for free, Menu, the search button, the
-// GitHub star count) and the buttons at the bottom of the mobile menu sheet. `HeaderContent` applies
-// the mixins to all of those in one place.
-//
-// Colors come from the accent tokens (`--accent-*`, in `_theme.scss`). The focus ring color comes
-// from `--focus-ring`, which `data-surface`, the dark theme, or the header over a dark hero banner
-// sets. The secondary button's dark style comes from `on-dark` (inside a dark section, or in the dark
-// theme) or, over a dark hero banner, from the header's own rules (`ui-button-secondary-dark`).
-//
-// Custom properties a caller may set: `--btn-min-w`, `--btn-px`, `--btn-label` (the tertiary
-// button's text color).
-// ============================================
+// The UI kit's button mixins, for `ui/Button.astro` and the buttons it can't render (the header's, the
+// search dialog's). Callers may set `--btn-min-w`, `--btn-px` and `--btn-label` (tertiary text color).
 @use 'sass:list';
 @use 'sass:map';
 @use 'variables' as *;
@@ -142,19 +130,4 @@ $ui-button-sizes: (
 	&:active {
 		background-color: color-mix(in srgb, currentColor 10%, transparent);
 	}
-}
-
-@mixin ui-button($variant: primary, $size: md) {
-	@include ui-button-base;
-	@include ui-button-size($size);
-
-	@if $variant == primary {
-		@include ui-button-primary;
-	} @else if $variant == secondary {
-		@include ui-button-secondary;
-	} @else if $variant == tertiary {
-		@include ui-button-tertiary;
-	}
-
-	@include ui-button-forced-colors;
 }

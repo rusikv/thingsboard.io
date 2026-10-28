@@ -59,8 +59,7 @@ const stars = GITHUB_STARS[repo];
 
 		// From 1200px, where the desktop menu row appears, up to 1360px, space is tight, so only the
 		// GitHub logo is shown. The star count needs about 56px; from 1360px the menu items and the
-		// search field leave room for it (measured with the system font stack, like the search field's
-		// width in `SearchButton`).
+		// search field leave room for it (measured with the system font stack).
 		@include width-from($menu-row-from) {
 			@include width-below(1360px) {
 				width: 40px;

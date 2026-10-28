@@ -1,25 +1,8 @@
 ---
-// Added only on pages with a dark hero banner (`hero="dark"`, see `HeaderContent`). Sets
-// `data-header-over-hero` on the header while the hero, or a dark section right after it (such as the
-// homepage's logo strip), is under the header's bottom edge. While it is set, the scrolled header keeps
-// white text and icons on the hero's own background color (`--tb-hero-ground`). The header switches
-// to its light background only when the page under it turns light, so its text color never flips while
-// it is still over the hero. `HeaderScrollWatch` sets the header's other attribute,
-// `data-header-scrolled`.
-//
-// How the dark area is found: start with the `#hero` element, then add each following sibling whose
-// background is opaque and dark: weighted RGB brightness under 64 of 255 (`darkBackgroundColor`
-// returns that color, or null).
-// Elements with no height (scripts, styles) are skipped. The hero's background color is stored in
-// `--tb-hero-ground`. A hero drawn with an image has no background color, so the header falls back to
-// near-black.
-//
-// The IntersectionObserver watches a 1px line at the header's bottom edge, so it is rebuilt after a
-// resize. That edge assumes the promo banner has already slid away on scroll. In browsers without
-// scroll-driven animations the banner never slides away, so the header stays below it and the line is
-// moved down by the header's `top` offset.
-//
-// Comments live here because comments inside `is:inline` would ship in every page's HTML.
+// Sets `data-header-over-hero` on the header while `#hero`, or a dark section right after it, is under
+// the header, and puts the hero's background color in `--tb-hero-ground`. Without scroll-driven
+// animations the promo banner stays in place, so the line watched at the header's bottom edge moves
+// down by the header's `top`.
 ---
 
 <script is:inline>

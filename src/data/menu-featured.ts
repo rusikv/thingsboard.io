@@ -1,22 +1,14 @@
 import { CLOUD_SIGNUP } from '@data/cta-destinations';
 
 /**
- * Promo links shown at the bottom of a menu section, under its link groups: a row of single-line
- * links, each an icon and a title. One can be `featured`, which shows it in the accent color.
- *
- * Use these only when a section has several extra links that are not part of its lists: Products
- * (pricing, installation options, and the Cloud sign-up, which goes to the same place as every other
- * Cloud sign-up button, see `cta-destinations`) and Docs (the CLI, and getting started). A single
- * extra link, or a list's "see all" link, goes at the end of its group instead (`SubMenuGroup.more`),
- * such as Services' "Talk to an expert" and Solutions' "All use cases" and "All case studies".
+ * Promo links at the bottom of a menu section; one can be `featured` (shown in the accent color).
+ * A link that belongs under one list, such as "All use cases", goes in `SubMenuGroup.more` instead.
  */
 export interface MenuPromo {
 	icon: string;
 	title: string;
 	href: string;
 	attrs?: Record<string, string>;
-	/** Tracking class: the same one the link to this page has in the lists (`cli-lnk`). */
-	linkClass?: string;
 	featured?: boolean;
 }
 
@@ -33,8 +25,5 @@ export const MENU_SECTION_PROMOS: Record<string, MenuPromo[]> = {
 			featured: true,
 		},
 	],
-	'nav-docs': [
-		{ icon: 'tabler:terminal-2', title: 'ThingsBoard CLI', href: '/docs/cli/', linkClass: 'cli-lnk' },
-		{ icon: 'tabler:rocket', title: 'Getting started', href: '/docs/pe/getting-started/', featured: true },
-	],
+	'nav-docs': [{ icon: 'tabler:rocket', title: 'Getting started', href: '/docs/pe/getting-started/', featured: true }],
 };

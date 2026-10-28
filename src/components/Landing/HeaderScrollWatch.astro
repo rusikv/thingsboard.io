@@ -1,18 +1,6 @@
 ---
-// The marketing header uses two attributes. Both are set by IntersectionObservers, not a scroll
-// listener:
-//
-// - `data-header-scrolled` (this file): set once the page content starts to slide under the header,
-//   that is, 8px past the promo banner's height (hero banners start below the promo banner), or 50px
-//   if that is more. The invisible marker element it watches is added to <body>, so it is positioned
-//   in the page even though this component renders inside the fixed header.
-// - `data-header-over-hero` (`HeaderHeroWatch`, added only on pages with a dark hero banner): set
-//   while the dark hero is still under the header's bottom edge.
-//
-// The header's styles in `HeaderContent` read both attributes. The `bar-over-dark-hero` mixin
-// (`_variables.scss`) combines them to decide when the header uses white text and dark-style buttons.
-//
-// Comments live here because comments inside `is:inline` would ship in every page's HTML.
+// Sets `data-header-scrolled` on the header once the page content slides under it. The marker it
+// watches goes on <body> because the header is fixed.
 ---
 
 <script is:inline>

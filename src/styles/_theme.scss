@@ -128,6 +128,10 @@
 	--focus-ring-light: #17181c;
 	--focus-ring-dark: #ffd43b;
 	--focus-ring: var(--focus-ring-light);
+	// Field borders, shared by the UI kit's field and the search dialog's input: at rest (3:1 against
+	// the field) and on hover. The dark theme's values are below.
+	--field-border: #868d9a;
+	--field-border-hover: var(--color-text-secondary);
 
 	// Transitions
 	--transition-fast: #{$transition-fast};
@@ -175,10 +179,8 @@
 	--brand-pe: #178649;
 }
 
-// The background decides the focus ring color. A dark section, or a light box inside one, declares its
-// background with `data-surface`. Nesting works: the closest ancestor's value is the one inherited.
-// (The header over a dark hero banner has no `data-surface`; `HeaderContent` sets the dark ring itself
-// in its `bar-over-dark-hero` rule.)
+// Focus ring color for a section marked with `data-surface`. Not used yet: the new footer will be the
+// first to set it.
 [data-surface='light'] {
 	--focus-ring: var(--focus-ring-light);
 }
@@ -239,6 +241,8 @@
 		// The dark theme uses the yellow focus ring. The accent colors need no override here: they
 		// follow `--color-brand` above.
 		--focus-ring: var(--focus-ring-dark);
+		--field-border: rgba(255, 255, 255, 0.4);
+		--field-border-hover: rgba(255, 255, 255, 0.64);
 
 		// Colors - Light-blue badge palette (dark mode)
 		--color-light-blue-low: #1d3739;

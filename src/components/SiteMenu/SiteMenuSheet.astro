@@ -5,42 +5,14 @@ import { MENU_ENTRIES, MENU_SECTIONS, inSection, isHere } from '@components/Site
 import { CLOUD_SIGNIN, CLOUD_SIGNUP } from '@data/cta-destinations';
 
 /**
- * The mobile menu sheet: the menu below 1200px. It opens under the header and fills the screen
- * height. The desktop menu row becomes a list here, with sections and plain links together. Opening
- * a section shows the same content as the desktop menu panel (`SiteMenuBody`: link groups and promo
- * links), under the section's name.
- *
- * Two layouts, chosen by `menuSplitQuery`:
- * - Phone: one view at a time. The list comes first; tapping a section slides in a separate view with
- *   a back button, so sections never expand inside one long scroll. Rows run edge to edge. The
- *   section view slides in over the list while the list slides away.
- * - Tablet (split): the list stays as a sidebar and the open section shows beside it. The sheet opens
- *   on the section the current page is in (or the first section), and tapping another section
- *   switches to it; there is no back button. At 768px a list on its own would leave half the screen
- *   empty.
- *
- * No search field. On pages with search, the header's search button stays visible at every width, so
- * a second field in the sheet would duplicate it. Pages without search (the homepage, the product
- * pages) don't get one in the menu either.
- *
- * Below 600px the header hides Sign in and Try for free, so the sheet shows them in its footer. They
- * use the same links and `gtm_button` class as the header's buttons. The analytics ids
- * (`Menu_TryItNow`, and `Menu_Pricing` in the list) are on whichever copy shows: `SiteMenu`'s script
- * moves each id between the header's copy and the sheet's copy (`data-analytics-id` marks both). The
- * buttons use the UI kit's button styles (`_button.scss`) at its 44px size, applied in
- * `HeaderContent`. There is no theme switch here: the theme follows the system setting, and the
- * switch is in the footer.
- *
- * `SiteMenu`'s script runs the sheet: switching views, focus, Escape (on a phone it goes back one
- * view, then closes; in the split layout it closes), and hiding the page underneath and keeping Tab
- * out of it while the sheet is open. Without JavaScript, the header's Menu button is a link to
- * `#sm-sheet`, and the sheet shows every section in one scroll (the `<noscript>` styles at the end).
+ * The mobile menu sheet: the site menu below 1200px, run by `SiteMenu`'s script. On a phone it shows
+ * one view at a time (the list, or a section with a back button). On a tablet (`menuSplitQuery`) the
+ * list stays as a sidebar beside the open section.
  */
 const pathname = Astro.url.pathname;
 ---
 
 <div class="sm__sheet" id="sm-sheet" data-sm-sheet data-view="root" hidden>
-	{/* All views sit in the same grid cell and slide sideways to switch; see `.sm__views` in `SiteMenu`. */}
 	<div class="sm__views">
 		<div class="sm__view sm__view--root" data-sm-view="root" data-pos="center">
 			<ul class="sm__list">
@@ -103,12 +75,9 @@ const pathname = Astro.url.pathname;
 		</a>
 	</div>
 
-	{/* Without JavaScript, the sheet is the target of the header's Menu link (`HeaderContent`) and
-	    shows all views stacked in one scroll. The section buttons and back buttons need the script, so
-	    they are hidden, and every section shows its heading (the split layout normally hides it). This
-	    link closes the sheet. */}
+	{/* Without JavaScript all views are stacked in one scroll; this link closes the sheet. */}
 	<noscript>
-		<a class="sm__sheet-row sm__nojs-close" href="#">
+		<a class="sm__sheet-row" href="#">
 			Close the menu
 		</a>
 	</noscript>
@@ -141,7 +110,7 @@ const pathname = Astro.url.pathname;
 			display: none;
 		}
 		#sm-sheet .sm__view--sec .sm__head {
-			display: flex !important;
+			display: block !important;
 		}
 		#sm-sheet > noscript {
 			display: block;

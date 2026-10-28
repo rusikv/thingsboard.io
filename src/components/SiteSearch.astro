@@ -4,48 +4,17 @@ import { Products, productDocsPrefix } from '@models/site.models.ts';
 import { productVersions } from '@util/path-utils';
 
 /**
- * The site search dialog. The header renders it once per page. It opens from any `<search-button>`
- * on the page (`SearchButton`, the header's search button) and from keyboard shortcuts: ⌘K or
- * Ctrl K anywhere, and `/` when focus is not in a text field.
- *
- * The search itself is Google Programmable Search, built inside the dialog the first time it opens.
- * Google's cse.js contacts Google's ad servers and sets google.com cookies, so it loads only when the
- * visitor opens search and has allowed External media in the cookie settings (`@util/site-search`).
- * Until then the dialog shows `SearchConsentNotice` instead. cse.js looks for `.gcse-search` elements
- * only once, when it runs, so the dialog markup is built before cse.js loads.
- *
- * This is deliberately not a `<dialog>` element. Google renders its autocomplete dropdown (`.gssb_c`)
- * directly in <body>, and a modal `<dialog>` sits in the browser's top layer, where it would cover
- * the dropdown whatever z-index the dropdown has. So the dialog is an ordinary fixed-position element,
- * and the script does by hand what `<dialog>` would do: the backdrop, the close button and Escape
- * close it, Tab cycles focus inside it, and focus returns to the button that opened it.
- *
- * Styling follows the UI kit: the box looks like the kit's Dialog (background, 16px corners,
- * `--elev-dialog` shadow, 55% dark backdrop, full screen on phones), Google's input looks like the
- * kit's Field, and its submit button is the kit's primary Button. Each result shows a title, a path
- * line with the site's section names, and Google's snippet in two lines, using the site's type scale,
- * with the title in brand color on hover.
- *
- * Google's attribution must stay visible. The free Programmable Search Engine requires Google's
- * branding to be shown with the search. We remove the logo Google draws inside the input (it clashes
- * with the Field style) and Google's branding rows in the results, so the dialog shows its own label
- * instead, in Google's wording: "Search enhanced by Google" with Google's logo, under the input, every
- * time the dialog opens, before and after results arrive, at every screen width. Do not hide it. The
- * label is created only once Google's search form exists, so the logo (served from google.com) loads
- * only after search is allowed.
+ * The site search dialog (Google Programmable Search). Not a `<dialog>`: the top layer would cover
+ * Google's suggestions dropdown, which Google adds to <body>. Never hide Google's attribution under
+ * the input: the free search requires it.
  */
 
-// Products without their own search page. TBMQ docs moved to another site, so there are no
-// `/docs/mqtt-broker/**` pages here any more (the prefixes stay in `productDocsPrefix` for links that
-// still point to the broker docs). The CLI docs have no search page either. Pages of these products
-// use the CE search page, `/docs/search/`.
+// Products with no search page on this site: TBMQ docs moved to another site, and the CLI docs have
+// none. Their pages use the CE search page.
 const noSearchPage: Products[] = [Products.TBMQ, Products.TBMQ_PE, Products.CLI];
 
-// The search page for each part of the site, as [path prefix, search page] pairs, checked in order.
-// Every docs product hosted here has its search page at `/docs/<prefix>search/`. Sorting by prefix
-// length, longest first, puts the more specific prefix first: a prefix that extends another is always
-// longer, so `paas/eu/` comes before `paas/`, and CE's empty prefix comes last and catches the rest of
-// `/docs/`. Routes outside the docs are listed by hand.
+// [path prefix, search page] pairs, checked in order. Longest prefix first, so `paas/eu/` wins over
+// `paas/` and CE's empty prefix catches the rest of `/docs/`.
 const searchRoutes: [string, string][] = [
 	['/iot-hub/', '/iot-hub/search/'],
 	...Object.entries(productDocsPrefix)
@@ -55,9 +24,7 @@ const searchRoutes: [string, string][] = [
 		.map((prefix): [string, string] => [`/docs/${prefix}`, `/docs/${prefix}search/`]),
 ];
 
-// The docs product names shown in a result's path line (`ThingsBoard PE`, `ThingsBoard Edge`), as
-// [prefix, name] pairs. Longest prefix first, so `edge/pe/` matches before `edge/`; CE's empty prefix
-// comes last.
+// [prefix, name] pairs for a result's path line ("ThingsBoard PE"), longest prefix first, as above.
 const docsProducts: [string, string][] = Object.values(productVersions)
 	.map((v): [string, string] => [v.prefix, v.titleName])
 	.sort((a, b) => b[0].length - a[0].length);
@@ -75,562 +42,461 @@ const docsProducts: [string, string][] = Object.values(productVersions)
 	import { dismissSidebar, layerOver } from '@util/layers';
 	import { lockScroll, unlockScroll } from '@util/scroll-lock';
 	import { googleSiteSearchUrl, hasSearchConsent, isCseLoaded, loadCse } from '@util/site-search';
-	// The dialog's styles. They are added to the page when the dialog is first built (`buildModal`),
-	// because nothing they style exists before that. Importing them here keeps them in this cached
-	// script instead of in every page's HTML.
+	// Added to <head> when the dialog is first built, so they stay out of every page's HTML.
 	import dialogStyles from '@components/site-search-dialog.scss?inline';
 
-	declare global {
-		interface Window {
-			/** Set when this script first runs on the page (`SiteSearch`). */
-			__tbSearch?: boolean;
-		}
-	}
+	let modal: HTMLElement | null = null;
+	let box: HTMLElement | null = null;
+	let loaderBar: HTMLElement | null = null;
+	let status: HTMLElement | null = null;
+	let opener: HTMLElement | null = null;
+	let pressing = false;
+	let mountObs: MutationObserver | null = null;
 
-	// The header renders SiteSearch once per page. The flag still makes sure the dialog and the
-	// shortcuts are set up only once if this script ends up on a page twice.
-	if (!window.__tbSearch) {
-		window.__tbSearch = true;
+	const isOpen = () => !!modal?.classList.contains('open');
 
-		// --- State ---
-		// The dialog (backdrop and box), built on first open by `buildModal`.
-		let modal: HTMLElement | null = null;
-		// The dialog box inside it, where Tab cycles.
-		let box: HTMLElement | null = null;
-		let loaderBar: HTMLElement | null = null;
-		// Screen-reader status line ("Loading search…").
-		let status: HTMLElement | null = null;
-		// The button that opened the dialog, to give focus back to on close.
-		let opener: HTMLElement | null = null;
-		// True while a mouse press inside the dialog moves focus; see the focusout handler in
-		// `startFocusRetention`.
-		let pressing = false;
-		// Waits for Google's input to appear after an open. It is stopped on close, so it never acts on
-		// a dialog that is no longer shown.
-		let mountObs: MutationObserver | null = null;
+	// Once cse.js is on the page, search keeps working there even if the visitor withdraws consent.
+	const searchAllowed = () => hasSearchConsent() || isCseLoaded();
 
-		const isOpen = () => !!modal?.classList.contains('open');
+	const showLoadingSearch = () => {
+		loaderBar?.classList.add('active');
+		if (status) status.textContent = 'Loading search…';
+	};
+	const hideLoadingSearch = () => {
+		loaderBar?.classList.remove('active');
+		if (status) status.textContent = '';
+	};
 
-		// Once cse.js is on the page, search keeps working there even if the visitor withdraws consent.
-		const searchAllowed = () => hasSearchConsent() || isCseLoaded();
+	// cse.js loads a second Google script, and a failure there fires no `error` event (see `loadCse`).
+	// So no input after MOUNT_TIMEOUT counts as a failure too; an input that turns up later clears it.
+	const MOUNT_TIMEOUT = 15000;
+	let cseFailed = false;
+	let mountTimer = 0;
+	const errorMessage = () => modal?.querySelector<HTMLElement>('[data-search-error]') ?? null;
+	const onCseError = () => {
+		window.clearTimeout(mountTimer);
+		cseFailed = true;
+		hideLoadingSearch();
+		const err = errorMessage();
+		if (!err) return;
+		err.hidden = false;
+		if (isOpen()) err.querySelector<HTMLElement>('a')?.focus();
+	};
+	const clearCseError = () => {
+		cseFailed = false;
+		const err = errorMessage();
+		if (err) err.hidden = true;
+	};
 
-		// The loader bar plus the "Loading search…" status, shown while Google's search loads on the
-		// first open.
-		const showLoadingSearch = () => {
-			loaderBar?.classList.add('active');
-			if (status) status.textContent = 'Loading search…';
-		};
-		const hideLoadingSearch = () => {
-			loaderBar?.classList.remove('active');
-			if (status) status.textContent = '';
-		};
+	// cse.js looks for `.gcse-search` only once, when it runs, so the dialog must be built first.
+	const init = () => {
+		const m = buildModal();
+		const allowed = searchAllowed();
+		m.querySelector<HTMLElement>('[data-search-consent]')!.hidden = allowed;
+		if (allowed) loadCse(onCseError);
+	};
 
-		// --- Load failure ---
-		// If search is blocked or the visitor is offline, the dialog shows an error with a link to Google's
-		// own site search, instead of a loader running over an empty dialog. (The site's search pages use
-		// the same Google script, so they would fail too.) Focus moves to that link, so the visitor is in
-		// the dialog and screen readers read the message.
-		// The failed script tag stays in <head>, so `loadCse()` does not retry it, and `cseFailed` makes a
-		// later open show the error again instead of waiting for an input that never comes.
-		// cse.js loads a second Google script by itself, and a failure there does not fire the script's
-		// `error` event. So Google's input not appearing within `MOUNT_TIMEOUT` counts as a failure too,
-		// and an input that appears later after all clears the error.
-		const MOUNT_TIMEOUT = 15000;
-		let cseFailed = false;
-		let mountTimer = 0;
-		const errorMessage = () => modal?.querySelector<HTMLElement>('[data-search-error]') ?? null;
-		const onCseError = () => {
-			window.clearTimeout(mountTimer);
-			cseFailed = true;
-			hideLoadingSearch();
-			const err = errorMessage();
-			if (!err) return;
-			err.hidden = false;
-			if (isOpen()) err.querySelector<HTMLElement>('a')?.focus();
-		};
-		const clearCseError = () => {
-			cseFailed = false;
-			const err = errorMessage();
-			if (err) err.hidden = true;
-		};
+	const routesAttr = document.querySelector('site-search')?.getAttribute('data-search-routes');
+	const searchRoutes: [string, string][] = routesAttr ? JSON.parse(routesAttr) : [];
 
-		// cse.js looks for `.gcse-search` only once, when it runs (Google's default `parsetags=onload`),
-		// so the dialog that contains that element must be in the DOM before cse.js runs. That is why
-		// `loadCse()` is called only here, after `buildModal()`.
-		const init = () => {
-			const m = buildModal();
-			const allowed = searchAllowed();
-			m.querySelector<HTMLElement>('[data-search-consent]')!.hidden = allowed;
-			if (allowed) loadCse(onCseError);
-		};
+	const getSearchPageUrl = (query: string) => {
+		const path = window.location.pathname;
+		const match = searchRoutes.find(([prefix]) => path.startsWith(prefix));
+		const searchPage = match ? match[1] : '/docs/pe/search/';
+		return query ? `${searchPage}?q=${encodeURIComponent(query)}` : searchPage;
+	};
 
-		// The full search page for the part of the site the visitor is on, used by the "Search more
-		// results" link and the "Nothing found" message. The routes come from the frontmatter; a page that
-		// matches none of them (outside the docs and the IoT Hub) uses the PE docs search page.
-		const routesAttr = document.querySelector('site-search')?.getAttribute('data-search-routes');
-		const searchRoutes: [string, string][] = routesAttr ? JSON.parse(routesAttr) : [];
+	const close = () => {
+		if (!modal || !isOpen()) return;
+		modal.classList.remove('open');
+		document.documentElement.classList.remove('tb-search-open');
+		unlockScroll('search');
+		mountObs?.disconnect();
+		mountObs = null;
+		window.clearTimeout(mountTimer);
+		hideLoadingSearch();
+		stopFocusRetention();
+		const back = opener;
+		opener = null;
+		if (back && back.isConnected) back.focus({ preventScroll: true });
+	};
 
-		const getSearchPageUrl = (query: string) => {
-			const path = window.location.pathname;
-			const match = searchRoutes.find(([prefix]) => path.startsWith(prefix));
-			const searchPage = match ? match[1] : '/docs/pe/search/';
-			return query ? `${searchPage}?q=${encodeURIComponent(query)}` : searchPage;
-		};
+	const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
-		const close = () => {
-			if (!modal || !isOpen()) return;
-			modal.classList.remove('open');
-			document.documentElement.classList.remove('tb-search-open');
-			unlockScroll('search');
-			mountObs?.disconnect();
-			mountObs = null;
-			window.clearTimeout(mountTimer);
-			hideLoadingSearch();
-			stopFocusRetention();
-			const back = opener;
-			opener = null;
-			if (back && back.isConnected) back.focus({ preventScroll: true });
-		};
-
-		// Elements Tab can reach, for the focus cycling in `buildModal`.
-		const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
-
-		// Builds the dialog on first use and sets up its events. Later calls return the same element.
-		const buildModal = (): HTMLElement => {
-			if (modal) return modal;
-			const sheet = document.createElement('style');
-			sheet.textContent = dialogStyles;
-			document.head.append(sheet);
-			modal = document.createElement('div');
-			modal.id = 'tb-search-modal';
-			modal.className = 'print:hidden';
-			modal.setAttribute('role', 'dialog');
-			modal.setAttribute('aria-modal', 'true');
-			modal.setAttribute('aria-labelledby', 'tb-search-title');
-			modal.innerHTML = `
-				<div class="tb-search-overlay" data-search-close></div>
-				<div class="tb-search-box">
-					<div class="tb-loader-bar"></div>
-					<div class="tb-search-head">
-						<span class="tb-search-eyebrow" id="tb-search-title">Search ThingsBoard</span>
-						<button type="button" class="tb-search-close" aria-label="Close search" data-search-close>
-							<kbd class="tb-search-close-key" aria-hidden="true">Esc</kbd>
-							<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-							<span class="tb-search-close-word" aria-hidden="true">Close</span>
-						</button>
-					</div>
-					<p class="tb-search-status" role="status"></p>
-					<div class="gcse-search" data-linkTarget="_self"></div>
-					<p class="tb-search-error" role="alert" data-search-error hidden>
-						Search couldn't load. Check your connection, or <a href="${googleSiteSearchUrl('')}" target="_blank" rel="noopener noreferrer">search on Google instead</a>.
-					</p>
+	const buildModal = (): HTMLElement => {
+		if (modal) return modal;
+		const sheet = document.createElement('style');
+		sheet.textContent = dialogStyles;
+		document.head.append(sheet);
+		modal = document.createElement('div');
+		modal.id = 'tb-search-modal';
+		modal.className = 'print:hidden';
+		modal.setAttribute('role', 'dialog');
+		modal.setAttribute('aria-modal', 'true');
+		modal.setAttribute('aria-labelledby', 'tb-search-title');
+		modal.innerHTML = `
+			<div class="tb-search-overlay" data-search-close></div>
+			<div class="tb-search-box">
+				<div class="tb-loader-bar"></div>
+				<div class="tb-search-head">
+					<span class="tb-search-eyebrow" id="tb-search-title">Search ThingsBoard</span>
+					<button type="button" class="tb-search-close" aria-label="Close search" data-search-close>
+						<kbd class="tb-search-close-key" aria-hidden="true">Esc</kbd>
+						<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+						<span class="tb-search-close-word" aria-hidden="true">Close</span>
+					</button>
 				</div>
-			`;
-			// The consent notice from the <template>, placed just before Google's search element.
-			const notice = document.querySelector<HTMLTemplateElement>('template[data-search-consent-template]')!;
-			modal.querySelector('.gcse-search')!.before(notice.content.cloneNode(true));
-			document.body.appendChild(modal);
+				<p class="tb-search-status" role="status"></p>
+				<div class="gcse-search" data-linkTarget="_self"></div>
+				<p class="tb-search-error" role="alert" data-search-error hidden>
+					Search couldn't load. Check your connection, or <a href="${googleSiteSearchUrl('')}" target="_blank" rel="noopener noreferrer">search on Google instead</a>.
+				</p>
+			</div>
+		`;
+		const notice = document.querySelector<HTMLTemplateElement>('template[data-search-consent-template]')!;
+		modal.querySelector('.gcse-search')!.before(notice.content.cloneNode(true));
+		document.body.appendChild(modal);
 
-			box = modal.querySelector<HTMLElement>('.tb-search-box');
-			loaderBar = modal.querySelector<HTMLElement>('.tb-loader-bar');
-			status = modal.querySelector<HTMLElement>('.tb-search-status');
-			// While a query runs, only the loader bar shows (no status text).
-			const showLoader = () => loaderBar?.classList.add('active');
-			const hideLoader = () => loaderBar?.classList.remove('active');
+		box = modal.querySelector<HTMLElement>('.tb-search-box');
+		loaderBar = modal.querySelector<HTMLElement>('.tb-loader-bar');
+		status = modal.querySelector<HTMLElement>('.tb-search-status');
+		const showLoader = () => loaderBar?.classList.add('active');
+		const hideLoader = () => loaderBar?.classList.remove('active');
 
-			// The backdrop and the close button close the dialog. Any other click inside belongs to Google's
-			// search.
-			modal.addEventListener('click', (e) => {
-				if ((e.target as Element).closest('[data-search-close]')) close();
-			});
-			// Sets `pressing` for the moment a mouse press moves focus. The browser moves focus right after
-			// mousedown, in the same task, so a zero-delay timeout clears the flag after that.
-			modal.addEventListener(
-				'mousedown',
-				() => {
-					pressing = true;
-					setTimeout(() => (pressing = false));
-				},
-				true
-			);
-
-			// Tab and Shift+Tab cycle inside the dialog box. This is not a `<dialog>` (see the comment at the
-			// top of the file), so nothing makes the page behind it inert.
-			modal.addEventListener('keydown', (e) => {
-				if (e.key !== 'Tab' || !box) return;
-				const items = [...box.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((el) => el.offsetParent !== null);
-				if (!items.length) return;
-				const first = items[0];
-				const last = items[items.length - 1];
-				if (e.shiftKey && document.activeElement === first) {
-					e.preventDefault();
-					last.focus();
-				} else if (!e.shiftKey && document.activeElement === last) {
-					e.preventDefault();
-					first.focus();
-				}
-			});
-
-			// --- Results ---
-			// Google's result markup is adjusted after it renders. Each result keeps its title, cut before
-			// the site's own suffix ("Device provisioning | Docs | ThingsBoard IoT Gateway" becomes "Device
-			// provisioning"). Under the title goes a path line built from the URL with the site's own names
-			// ("Docs › ThingsBoard IoT Gateway › Features"), then Google's snippet in two lines. The whole
-			// result is clickable.
-			const productsAttr = document.querySelector('site-search')?.getAttribute('data-search-products');
-			const docsProducts: [string, string][] = productsAttr ? JSON.parse(productsAttr) : [];
-			// Names for the top-level sections outside the docs.
-			const SECTIONS: Record<string, string> = {
-				blog: 'Blog',
-				'iot-hub': 'IoT Hub',
-				'use-cases': 'Use cases',
-				'case-studies': 'Case studies',
-				products: 'Products',
-				pricing: 'Pricing',
-				partners: 'Partners',
-				services: 'Services',
-				installations: 'Installations',
-			};
-			// Turns a URL segment into words: "device-profiles" becomes "Device profiles".
-			const slugToWords = (slug: string) => {
-				let words = slug;
-				try {
-					words = decodeURIComponent(slug);
-				} catch {
-					// A malformed escape (`%E9`, a stray `%`) throws; use the slug as it is.
-				}
-				words = words.replace(/[-_]+/g, ' ').trim();
-				return words.charAt(0).toUpperCase() + words.slice(1);
-			};
-			// The path line for a result URL, for example "Docs › ThingsBoard PE › User guide".
-			const pathLine = (href: string) => {
-				let url: URL;
-				try {
-					url = new URL(href, location.origin);
-				} catch {
-					return '';
-				}
-				const segments = url.pathname.split('/').filter(Boolean);
-				if (!segments.length) return 'ThingsBoard';
-				if (segments[0] !== 'docs') return SECTIONS[segments[0]] ?? slugToWords(segments[0]);
-				const rest = segments.slice(1).join('/') + '/';
-				const [prefix, name] = docsProducts.find(([p]) => rest.startsWith(p)) ?? ['', 'ThingsBoard'];
-				const area = rest.slice(prefix.length).split('/').filter(Boolean)[0];
-				return ['Docs', name, area && slugToWords(area)].filter(Boolean).join(' › ');
-			};
-			/**
-			 * Cuts a result title before the site's suffix (its first " | ", or a trailing " - ThingsBoard…"
-			 * with a hyphen, en dash or em dash), keeping Google's bold highlighting in the part that stays.
-			 */
-			const cutTitle = (link: HTMLElement) => {
-				const text = link.textContent ?? '';
-				let cutAt = text.indexOf(' | ');
-				if (cutAt <= 0) cutAt = /\s[-\u2013\u2014]\s+ThingsBoard\b.*$/.exec(text)?.index ?? -1;
-				if (cutAt <= 0) return;
-				// Trim text node by text node, so the <b> highlight elements around them survive.
-				const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
-				const textNodes: Text[] = [];
-				while (walker.nextNode()) textNodes.push(walker.currentNode as Text);
-				let offset = 0;
-				for (const node of textNodes) {
-					const len = node.data.length;
-					if (offset >= cutAt) node.remove();
-					else if (offset + len > cutAt) node.data = node.data.slice(0, cutAt - offset);
-					offset += len;
-				}
-				// Remove highlight elements the cut left empty.
-				link.querySelectorAll('b').forEach((b) => !b.textContent && b.remove());
-			};
-			// Runs after every change inside the dialog; `data-tb` marks what is already done.
-			const enhanceResults = () => {
-				for (const result of modal!.querySelectorAll<HTMLElement>('.gsc-webResult.gsc-result:not([data-tb])')) {
-					result.dataset.tb = '';
-					result.querySelectorAll<HTMLElement>('a.gs-title').forEach(cutTitle);
-					const title = result.querySelector<HTMLElement>('.gsc-table-cell-snippet-close .gs-title');
-					const href = title?.querySelector('a')?.getAttribute('href');
-					if (!title || !href) continue;
-					const line = document.createElement('div');
-					line.className = 'tb-result-path';
-					line.textContent = pathLine(href);
-					title.after(line);
-				}
-				// No results: say what was searched for and where else to look. A docs search page runs this
-				// same Google search and would find nothing either, so from the docs the link goes to Google's
-				// own search of the site. A section with its own search (the IoT Hub catalog) links to its
-				// search page instead.
-				const noResults = modal!.querySelector<HTMLElement>('.gs-no-results-result .gs-snippet:not([data-tb])');
-				if (noResults) {
-					noResults.dataset.tb = '';
-					const query = modal!.querySelector<HTMLInputElement>('input.gsc-input')?.value.trim() ?? '';
-					noResults.textContent = query ? `Nothing found for “${query}”. ` : 'Nothing found. ';
-					const nextStep = document.createElement('a');
-					const page = getSearchPageUrl(query);
-					if (page.startsWith('/docs/')) {
-						nextStep.href = googleSiteSearchUrl(query);
-						nextStep.target = '_blank';
-						nextStep.rel = 'noopener noreferrer';
-						nextStep.textContent = 'Search on Google instead';
-					} else {
-						nextStep.href = page;
-						nextStep.textContent = 'Try the full search page';
-					}
-					noResults.append(nextStep, '.');
-				}
-			};
-
-			// A short hint and Google's attribution, placed right after Google's form (the input and its
-			// button), above any results. The input also gets a placeholder that says what can be found.
-			// The block is created only once Google's form exists, because its Google logo loads from
-			// google.com, which may only be contacted once search is allowed. It is kept in a variable, so
-			// if Google rebuilds its form, the same block is put back instead of being lost. There is one
-			// logo per theme; both load lazily, so the one the current theme hides is never downloaded.
-			let meta: HTMLElement | null = null;
-			const placeMeta = () => {
-				const form = modal!.querySelector('.gsc-control-cse .gsc-search-box');
-				if (!form) return;
-				if (!meta) {
-					meta = document.createElement('div');
-					meta.className = 'tb-search-meta';
-					meta.innerHTML = `
-						<p class="tb-search-hint">Type a few words and press Search or Enter; suggestions appear as you type.</p>
-						<p class="tb-search-attrib">
-							<span>Search enhanced by</span>
-							<img class="tb-search-g tb-search-g--light" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" srcset="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png 2x" width="46" height="15" alt="Google" loading="lazy" />
-							<img class="tb-search-g tb-search-g--dark" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_92x30dp.png" srcset="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png 2x" width="46" height="15" alt="Google" loading="lazy" />
-						</p>
-					`;
-				}
-				if (form.nextElementSibling !== meta) form.after(meta);
-				const input = modal!.querySelector<HTMLInputElement>('input.gsc-input');
-				if (input && !input.placeholder) input.placeholder = 'Search the docs, guides and IoT Hub';
-			};
-
-			// Adds a "Search more results" link, to the site's full search page for the current section,
-			// in Google's area below the results.
-			const injectMoreLink = () => {
-				const branding = modal!.querySelector('.gcsc-more-maybe-branding-root');
-				if (!branding || branding.querySelector('.tb-more-link')) return;
-				const query = modal!.querySelector<HTMLInputElement>('input.gsc-input')?.value || '';
-				const link = document.createElement('a');
-				link.className = 'tb-more-link';
-				link.href = getSearchPageUrl(query);
-				link.textContent = 'Search more results';
-				branding.prepend(link);
-			};
-
-			// Show the loader bar when a query starts: the form is submitted, Google's search button is
-			// clicked, or Enter is pressed in the input.
-			modal.addEventListener('submit', showLoader, true);
-			modal.addEventListener(
-				'click',
-				(e) => {
-					if ((e.target as HTMLElement).closest('.gsc-search-button')) showLoader();
-				},
-				true
-			);
-			modal.addEventListener(
-				'keydown',
-				(e) => {
-					if ((e.target as HTMLElement).classList.contains('gsc-input') && e.key === 'Enter') showLoader();
-				},
-				true
-			);
-			// After every change Google makes inside the dialog: hide the loader once the results area has
-			// changed, then reapply our additions (hint and attribution, path lines, "more results" link).
-			new MutationObserver((mutations) => {
-				if (mutations.some((mutation) => (mutation.target as Element).closest?.('.gsc-results'))) hideLoader();
-				placeMeta();
-				enhanceResults();
-				injectMoreLink();
-			}).observe(modal, { childList: true, subtree: true });
-
-			return modal;
-		};
-
-		const focusInput = (m: HTMLElement, options?: FocusOptions) => {
-			const input = m.querySelector<HTMLInputElement>('input.gsc-input');
-			if (input && document.activeElement !== input) input.focus(options);
-		};
-
-		// --- Keeping focus in Google's input ---
-		// While the dialog is open, two things keep Google's input focused. Both stop on close.
-		// 1. Google replaces its input several times while it loads, so a single focus() on the first
-		//    input is lost. The input is focused again after every change inside the dialog.
-		// 2. If a late script moves focus to <body> or to nothing (not to an element the visitor chose),
-		//    the input gets focus back on the next frame. A real move, to the close button, a result or
-		//    outside the dialog, is left alone.
-		// Neither scrolls: focusing the input scrolls the results back to the top, which moves whatever
-		// the visitor is clicking out from under the pointer, so the click never happens.
-		let focusObs: MutationObserver | null = null;
-		let focusOutHandler: ((e: FocusEvent) => void) | null = null;
-
-		const startFocusRetention = (m: HTMLElement) => {
-			focusInput(m);
-
-			focusObs?.disconnect();
-			focusObs = new MutationObserver(() => {
-				// Only while the input has focus, or nothing does: a visitor on the close button or a result
-				// keeps their place while Google re-renders.
-				const active = document.activeElement;
-				if (!active || active === document.body || active.classList.contains('gsc-input')) {
-					focusInput(m, { preventScroll: true });
-				}
-			});
-			focusObs.observe(m, { childList: true, subtree: true });
-
-			if (focusOutHandler) m.removeEventListener('focusout', focusOutHandler);
-			focusOutHandler = (e: FocusEvent) => {
-				if (!isOpen()) return;
-				const input = m.querySelector<HTMLInputElement>('input.gsc-input');
-				if (!input || e.target !== input) return;
-				// Focus moved to a real element, inside the dialog or outside it: leave it there.
-				const next = e.relatedTarget as Node | null;
-				if (next && next !== document.body) return;
-				// A mouse press inside the dialog also sends focus to <body> or to nothing: on a spot that
-				// cannot take focus, and in Safari on a link or button, which Safari does not focus on
-				// click. That is the visitor's own action, so leave it.
-				if (pressing) return;
-				requestAnimationFrame(() => {
-					if (isOpen()) input.focus({ preventScroll: true });
-				});
-			};
-			m.addEventListener('focusout', focusOutHandler);
-		};
-
-		const stopFocusRetention = () => {
-			focusObs?.disconnect();
-			focusObs = null;
-			if (focusOutHandler && modal) modal.removeEventListener('focusout', focusOutHandler);
-			focusOutHandler = null;
-		};
-
-		// Shows the search, the consent notice or the error in the open dialog, and moves focus into it.
-		const showContent = (m: HTMLElement) => {
-			if (!searchAllowed()) {
-				m.querySelector<HTMLElement>('[data-search-consent] [data-cc]')?.focus();
-				return;
-			}
-			// Google's input is there, so search works, whatever an earlier timeout concluded.
-			if (m.querySelector('input.gsc-input')) {
-				clearCseError();
-				requestAnimationFrame(() => startFocusRetention(m));
-				return;
-			}
-			// Wait for Google's input, even after a failure: a load that timed out may still finish.
-			mountObs?.disconnect();
-			mountObs = new MutationObserver(() => {
-				if (!m.querySelector('input.gsc-input')) return;
-				window.clearTimeout(mountTimer);
-				clearCseError();
-				hideLoadingSearch();
-				mountObs?.disconnect();
-				mountObs = null;
-				startFocusRetention(m);
-			});
-			mountObs.observe(m, { childList: true, subtree: true });
-			if (cseFailed) {
-				errorMessage()?.querySelector<HTMLElement>('a')?.focus();
-				return;
-			}
-			// Show the loader until Google's input appears. This only happens on the first open, while
-			// cse.js loads.
-			showLoadingSearch();
-			window.clearTimeout(mountTimer);
-			mountTimer = window.setTimeout(onCseError, MOUNT_TIMEOUT);
-		};
-
-		const open = () => {
-			init();
-			const m = modal!;
-			if (isOpen()) return;
-			// On phones Starlight's sidebar is a popover in the browser's top layer, above the dialog, so
-			// close it as search opens.
-			dismissSidebar();
-			document.documentElement.classList.add('tb-search-open');
-			lockScroll('search');
-			m.classList.add('open');
-			showContent(m);
-		};
-
-		// The visitor allowed External media from the notice: replace the notice with the search.
-		onConsentChange(() => {
-			if (!modal || !hasSearchConsent()) return;
-			init();
-			if (isOpen()) showContent(modal);
+		modal.addEventListener('click', (e) => {
+			if ((e.target as Element).closest('[data-search-close]')) close();
 		});
-
-		// Escape closes the dialog. It is caught in the capture phase because Google's input handles the
-		// key itself and stops it from reaching the document, so with the cursor in the input Escape would
-		// otherwise do nothing. While Google's suggestions are open, the first Escape closes them and the
-		// next one closes the dialog.
-		document.addEventListener(
-			'keydown',
-			(e) => {
-				// Skip an Escape that ends IME input, or one meant for a <dialog> open over the search.
-				if (e.key !== 'Escape' || e.isComposing || !isOpen()) return;
-				if (document.querySelector('dialog[open]')) return;
-				// Check that the suggestions are shown with computed style, not `offsetParent`: the dropdown
-				// is `position: fixed` while the dialog is open, and a fixed element has no offsetParent
-				// whether it is shown or not.
-				const suggestions = document.querySelector<HTMLElement>('.gssb_c');
-				const suggestionsShown =
-					!!suggestions && getComputedStyle(suggestions).display !== 'none' && suggestions.getClientRects().length > 0;
-				if (suggestionsShown) return;
-				e.preventDefault();
-				close();
+		// Focus moves in the same task as mousedown, so a zero-delay timeout clears `pressing` after the move.
+		modal.addEventListener(
+			'mousedown',
+			() => {
+				pressing = true;
+				setTimeout(() => (pressing = false));
 			},
-			{ capture: true }
+			true
 		);
 
-		// Any search button on the page opens the dialog (one listener on the document). On close, focus
-		// returns to the trigger's own <button>, not to the active element: in Safari a click does not
-		// focus a button, so the active element would be <body>.
-		document.addEventListener('click', (e) => {
-			const trigger = (e.target as Element).closest('search-button');
-			if (!trigger || isOpen()) return;
-			opener = trigger.querySelector('button');
-			open();
-		});
-
-		// On Apple devices, the search button's key hint says "⌘K" instead of "Ctrl K".
-		const platform =
-			(navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform ||
-			navigator.userAgent;
-		if (/mac|iphone|ipad|ipod/i.test(platform)) {
-			document.querySelectorAll('.search-toggle-btn__kbd').forEach((k) => (k.textContent = '⌘K'));
-		}
-
-		const isTextField = (t: EventTarget | null) =>
-			t instanceof HTMLElement && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
-
-		// Keyboard shortcuts: ⌘K or Ctrl K anywhere, and `/` when focus is not in a text field. They click
-		// the visible search button, so focus has a button to return to when the dialog closes.
-		document.addEventListener('keydown', (e) => {
-			if (e.defaultPrevented || e.isComposing) return;
-			// Match K by its letter on a Latin layout (Colemak's K is not in QWERTY's place), and by its
-			// position on any other layout, where that key types 'л', 'κ' or 'ל' (Cyrillic, Greek,
-			// Hebrew). Some events have no `key` at all (Chrome's autofill sends some); treat it as empty.
-			const key = typeof e.key === 'string' ? e.key : '';
-			const isK = /^[a-z]$/i.test(key) ? key.toLowerCase() === 'k' : e.code === 'KeyK';
-			const isCtrlOrCmdK = (e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && isK;
-			const isSlash = key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !isTextField(e.target);
-			if (!isCtrlOrCmdK && !isSlash) return;
-			// Another layer already covers the page (a dialog, Starlight's sidebar, a lightbox, a filter
-			// drawer), and the search dialog would open under it, out of reach. The mobile menu sheet does
-			// not count: search opens over it, from the header.
-			if (layerOver('search', 'menu')) return;
-			// Already open: block the browser's own ⌘K / Ctrl K action, but do nothing else.
-			if (isOpen()) {
-				if (isCtrlOrCmdK) e.preventDefault();
-				return;
+		// Not a `<dialog>`, so nothing makes the page behind it inert: keep Tab inside the box.
+		modal.addEventListener('keydown', (e) => {
+			if (e.key !== 'Tab' || !box) return;
+			const items = [...box.querySelectorAll<HTMLElement>(FOCUSABLE)].filter((el) => el.offsetParent !== null);
+			if (!items.length) return;
+			const first = items[0];
+			const last = items[items.length - 1];
+			if (e.shiftKey && document.activeElement === first) {
+				e.preventDefault();
+				last.focus();
+			} else if (!e.shiftKey && document.activeElement === last) {
+				e.preventDefault();
+				first.focus();
 			}
-			// The visible search button, or the first one if none is visible.
-			const buttons = [...document.querySelectorAll<HTMLButtonElement>('search-button button')];
-			const btn = buttons.find((b) => b.offsetParent !== null) ?? buttons[0];
-			if (!btn) return;
-			e.preventDefault();
-			btn.focus({ preventScroll: true });
-			btn.click();
 		});
+
+		const productsAttr = document.querySelector('site-search')?.getAttribute('data-search-products');
+		const docsProducts: [string, string][] = productsAttr ? JSON.parse(productsAttr) : [];
+		const SECTIONS: Record<string, string> = {
+			blog: 'Blog',
+			'iot-hub': 'IoT Hub',
+			'use-cases': 'Use cases',
+			'case-studies': 'Case studies',
+			products: 'Products',
+			pricing: 'Pricing',
+			partners: 'Partners',
+			services: 'Services',
+			installations: 'Installations',
+		};
+		const slugToWords = (slug: string) => {
+			let words = slug;
+			try {
+				words = decodeURIComponent(slug);
+			} catch {
+				// A malformed escape (`%E9`, a stray `%`) throws; use the slug as it is.
+			}
+			words = words.replace(/[-_]+/g, ' ').trim();
+			return words.charAt(0).toUpperCase() + words.slice(1);
+		};
+		// For example "Docs › ThingsBoard PE › User guide".
+		const pathLine = (href: string) => {
+			let url: URL;
+			try {
+				url = new URL(href, location.origin);
+			} catch {
+				return '';
+			}
+			const segments = url.pathname.split('/').filter(Boolean);
+			if (!segments.length) return 'ThingsBoard';
+			if (segments[0] !== 'docs') return SECTIONS[segments[0]] ?? slugToWords(segments[0]);
+			const rest = segments.slice(1).join('/') + '/';
+			const [prefix, name] = docsProducts.find(([p]) => rest.startsWith(p)) ?? ['', 'ThingsBoard'];
+			const area = rest.slice(prefix.length).split('/').filter(Boolean)[0];
+			return ['Docs', name, area && slugToWords(area)].filter(Boolean).join(' › ');
+		};
+		// Cuts a title before the site's suffix (the first " | ", or " - ThingsBoard…" with any dash), text
+		// node by text node, so Google's <b> highlights survive.
+		const cutTitle = (link: HTMLElement) => {
+			const text = link.textContent ?? '';
+			let cutAt = text.indexOf(' | ');
+			if (cutAt <= 0) cutAt = /\s[-\u2013\u2014]\s+ThingsBoard\b.*$/.exec(text)?.index ?? -1;
+			if (cutAt <= 0) return;
+			const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
+			const textNodes: Text[] = [];
+			while (walker.nextNode()) textNodes.push(walker.currentNode as Text);
+			let offset = 0;
+			for (const node of textNodes) {
+				const len = node.data.length;
+				if (offset >= cutAt) node.remove();
+				else if (offset + len > cutAt) node.data = node.data.slice(0, cutAt - offset);
+				offset += len;
+			}
+			link.querySelectorAll('b').forEach((b) => !b.textContent && b.remove());
+		};
+		// Runs after every change inside the dialog; `data-tb` marks what is already done.
+		const enhanceResults = () => {
+			for (const result of modal!.querySelectorAll<HTMLElement>('.gsc-webResult.gsc-result:not([data-tb])')) {
+				result.dataset.tb = '';
+				result.querySelectorAll<HTMLElement>('a.gs-title').forEach(cutTitle);
+				const title = result.querySelector<HTMLElement>('.gsc-table-cell-snippet-close .gs-title');
+				const href = title?.querySelector('a')?.getAttribute('href');
+				if (!title || !href) continue;
+				const line = document.createElement('div');
+				line.className = 'tb-result-path';
+				line.textContent = pathLine(href);
+				title.after(line);
+			}
+			// A docs search page runs this same search, so offer Google's own site search instead. The IoT Hub
+			// has a search page of its own.
+			const noResults = modal!.querySelector<HTMLElement>('.gs-no-results-result .gs-snippet:not([data-tb])');
+			if (noResults) {
+				noResults.dataset.tb = '';
+				const query = modal!.querySelector<HTMLInputElement>('input.gsc-input')?.value.trim() ?? '';
+				noResults.textContent = query ? `Nothing found for “${query}”. ` : 'Nothing found. ';
+				const nextStep = document.createElement('a');
+				const page = getSearchPageUrl(query);
+				if (page.startsWith('/docs/')) {
+					nextStep.href = googleSiteSearchUrl(query);
+					nextStep.target = '_blank';
+					nextStep.rel = 'noopener noreferrer';
+					nextStep.textContent = 'Search on Google instead';
+				} else {
+					nextStep.href = page;
+					nextStep.textContent = 'Try the full search page';
+				}
+				noResults.append(nextStep, '.');
+			}
+		};
+
+		// The hint and Google's attribution. Built once Google's form exists, as the logo is on google.com
+		// (needs consent); kept so a rebuilt form gets it back. Both logos are lazy, so the hidden one never loads.
+		let meta: HTMLElement | null = null;
+		const placeMeta = () => {
+			const form = modal!.querySelector('.gsc-control-cse .gsc-search-box');
+			if (!form) return;
+			if (!meta) {
+				meta = document.createElement('div');
+				meta.className = 'tb-search-meta';
+				meta.innerHTML = `
+					<p class="tb-search-hint">Type a few words and press Search or Enter; suggestions appear as you type.</p>
+					<p class="tb-search-attrib">
+						<span>Search enhanced by</span>
+						<img class="tb-search-g tb-search-g--light" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png" srcset="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png 2x" width="46" height="15" alt="Google" loading="lazy" />
+						<img class="tb-search-g tb-search-g--dark" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_light_color_92x30dp.png" srcset="https://www.google.com/images/branding/googlelogo/2x/googlelogo_light_color_92x30dp.png 2x" width="46" height="15" alt="Google" loading="lazy" />
+					</p>
+				`;
+			}
+			if (form.nextElementSibling !== meta) form.after(meta);
+			const input = modal!.querySelector<HTMLInputElement>('input.gsc-input');
+			if (input && !input.placeholder) input.placeholder = 'Search the docs, guides and IoT Hub';
+		};
+
+		const injectMoreLink = () => {
+			const branding = modal!.querySelector('.gcsc-more-maybe-branding-root');
+			if (!branding || branding.querySelector('.tb-more-link')) return;
+			const query = modal!.querySelector<HTMLInputElement>('input.gsc-input')?.value || '';
+			const link = document.createElement('a');
+			link.className = 'tb-more-link';
+			link.href = getSearchPageUrl(query);
+			link.textContent = 'Search more results';
+			branding.prepend(link);
+		};
+
+		modal.addEventListener('submit', showLoader, true);
+		modal.addEventListener(
+			'click',
+			(e) => {
+				if ((e.target as HTMLElement).closest('.gsc-search-button')) showLoader();
+			},
+			true
+		);
+		modal.addEventListener(
+			'keydown',
+			(e) => {
+				if ((e.target as HTMLElement).classList.contains('gsc-input') && e.key === 'Enter') showLoader();
+			},
+			true
+		);
+		new MutationObserver((mutations) => {
+			if (mutations.some((mutation) => (mutation.target as Element).closest?.('.gsc-results'))) hideLoader();
+			placeMeta();
+			enhanceResults();
+			injectMoreLink();
+		}).observe(modal, { childList: true, subtree: true });
+
+		return modal;
+	};
+
+	const focusInput = (m: HTMLElement, options?: FocusOptions) => {
+		const input = m.querySelector<HTMLInputElement>('input.gsc-input');
+		if (input && document.activeElement !== input) input.focus(options);
+	};
+
+	// Keeps focus in Google's input, which Google replaces while it loads; a late script can also drop focus
+	// to <body>. Refocusing never scrolls: that would move a result out from under the pointer mid-click.
+	let focusObs: MutationObserver | null = null;
+	let focusOutHandler: ((e: FocusEvent) => void) | null = null;
+
+	const startFocusRetention = (m: HTMLElement) => {
+		focusInput(m);
+
+		focusObs?.disconnect();
+		focusObs = new MutationObserver(() => {
+			const active = document.activeElement;
+			if (!active || active === document.body || active.classList.contains('gsc-input')) {
+				focusInput(m, { preventScroll: true });
+			}
+		});
+		focusObs.observe(m, { childList: true, subtree: true });
+
+		if (focusOutHandler) m.removeEventListener('focusout', focusOutHandler);
+		focusOutHandler = (e: FocusEvent) => {
+			if (!isOpen()) return;
+			const input = m.querySelector<HTMLInputElement>('input.gsc-input');
+			if (!input || e.target !== input) return;
+			const next = e.relatedTarget as Node | null;
+			if (next && next !== document.body) return;
+			// A mouse press can also drop focus to <body>: on a spot that can't take focus, or in Safari on a
+			// link or button, which Safari doesn't focus on click. Leave that alone.
+			if (pressing) return;
+			requestAnimationFrame(() => {
+				if (isOpen()) input.focus({ preventScroll: true });
+			});
+		};
+		m.addEventListener('focusout', focusOutHandler);
+	};
+
+	const stopFocusRetention = () => {
+		focusObs?.disconnect();
+		focusObs = null;
+		if (focusOutHandler && modal) modal.removeEventListener('focusout', focusOutHandler);
+		focusOutHandler = null;
+	};
+
+	const showContent = (m: HTMLElement) => {
+		if (!searchAllowed()) {
+			m.querySelector<HTMLElement>('[data-search-consent] [data-cc]')?.focus();
+			return;
+		}
+		if (m.querySelector('input.gsc-input')) {
+			clearCseError();
+			requestAnimationFrame(() => startFocusRetention(m));
+			return;
+		}
+		// Wait for Google's input, even after a failure: a load that timed out may still finish.
+		mountObs?.disconnect();
+		mountObs = new MutationObserver(() => {
+			if (!m.querySelector('input.gsc-input')) return;
+			window.clearTimeout(mountTimer);
+			clearCseError();
+			hideLoadingSearch();
+			mountObs?.disconnect();
+			mountObs = null;
+			startFocusRetention(m);
+		});
+		mountObs.observe(m, { childList: true, subtree: true });
+		if (cseFailed) {
+			errorMessage()?.querySelector<HTMLElement>('a')?.focus();
+			return;
+		}
+		showLoadingSearch();
+		window.clearTimeout(mountTimer);
+		mountTimer = window.setTimeout(onCseError, MOUNT_TIMEOUT);
+	};
+
+	const open = () => {
+		init();
+		const m = modal!;
+		if (isOpen()) return;
+		dismissSidebar();
+		document.documentElement.classList.add('tb-search-open');
+		lockScroll('search');
+		m.classList.add('open');
+		showContent(m);
+	};
+
+	onConsentChange(() => {
+		if (!modal || !hasSearchConsent()) return;
+		init();
+		if (isOpen()) showContent(modal);
+	});
+
+	// Caught in the capture phase: Google's input stops Escape from reaching the document. With Google's
+	// suggestions open, the first Escape closes them and the next one the dialog.
+	document.addEventListener(
+		'keydown',
+		(e) => {
+			// Skip an Escape that ends IME input, or one meant for a <dialog> open over the search.
+			if (e.key !== 'Escape' || e.isComposing || !isOpen()) return;
+			if (document.querySelector('dialog[open]')) return;
+			// Not `offsetParent`: the dropdown is fixed while the dialog is open, and a fixed element has none.
+			const suggestions = document.querySelector<HTMLElement>('.gssb_c');
+			const suggestionsShown =
+				!!suggestions && getComputedStyle(suggestions).display !== 'none' && suggestions.getClientRects().length > 0;
+			if (suggestionsShown) return;
+			e.preventDefault();
+			close();
+		},
+		{ capture: true }
+	);
+
+	// On close, focus goes back to the trigger's <button>, not the active element: Safari doesn't focus
+	// a button on click.
+	document.addEventListener('click', (e) => {
+		const trigger = (e.target as Element).closest('search-button');
+		if (!trigger || isOpen()) return;
+		opener = trigger.querySelector('button');
+		open();
+	});
+
+	const platform =
+		(navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform || navigator.userAgent;
+	if (/mac|iphone|ipad|ipod/i.test(platform)) {
+		document.querySelectorAll('.search-toggle-btn__kbd').forEach((k) => (k.textContent = '⌘K'));
 	}
+
+	const isTextField = (t: EventTarget | null) =>
+		t instanceof HTMLElement && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName));
+
+	// The shortcuts click the visible search button, so focus has a button to return to on close.
+	document.addEventListener('keydown', (e) => {
+		if (e.defaultPrevented || e.isComposing) return;
+		// K by its letter on Latin layouts, by its key position on others (Cyrillic, Greek, Hebrew).
+		// Chrome's autofill sends keydown events with no `key`.
+		const key = typeof e.key === 'string' ? e.key : '';
+		const isK = /^[a-z]$/i.test(key) ? key.toLowerCase() === 'k' : e.code === 'KeyK';
+		const isCtrlOrCmdK = (e.metaKey || e.ctrlKey) && !e.altKey && !e.shiftKey && isK;
+		const isSlash = key === '/' && !e.metaKey && !e.ctrlKey && !e.altKey && !isTextField(e.target);
+		if (!isCtrlOrCmdK && !isSlash) return;
+		// Search may open over the mobile menu sheet, but not under any other layer.
+		if (layerOver('search', 'menu')) return;
+		// Already open: only keep the browser from acting on ⌘K / Ctrl K.
+		if (isOpen()) {
+			if (isCtrlOrCmdK) e.preventDefault();
+			return;
+		}
+		const buttons = [...document.querySelectorAll<HTMLButtonElement>('search-button button')];
+		const btn = buttons.find((b) => b.offsetParent !== null) ?? buttons[0];
+		if (!btn) return;
+		e.preventDefault();
+		btn.focus({ preventScroll: true });
+		btn.click();
+	});
 </script>

@@ -18,7 +18,6 @@ interface Props {
 const { title, subtitle, buttons, caption } = Astro.props;
 ---
 
-{/* `id="hero"` lets `HeaderHeroWatch` find a dark hero, so the header keeps the hero's background color while scrolled over it. */}
 <section id="hero" class="product-hero">
 	<span class="product-hero__mark" aria-hidden="true" set:html={mark} />
 	<h1>{title}</h1>

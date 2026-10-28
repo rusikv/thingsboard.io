@@ -5,12 +5,8 @@ import './scroll-lock.css';
 // scrollbar width on the document, the fixed promo banner, the fixed site
 // header, and the chat widget so none of them jump wider.
 //
-// Each caller locks under an owner name, and the page unlocks only when the
-// last owner releases. So opening the search dialog over the open mobile menu
-// sheet and then closing it keeps the sheet's lock. Callers that pass no owner
-// share the 'default' owner. Repeated lock/unlock calls by the same owner do
-// nothing. `@util/modal-dialog` tracks stacked dialogs itself, under the
-// 'dialog' owner.
+// Locks are per owner; the page unlocks when the last owner releases.
+// `@util/modal-dialog` uses owner `dialog`.
 
 const HTML_LOCK_CLASS = 'tb-scroll-locked';
 // Also added to <html> when the hidden scrollbar took up space (a classic scrollbar, not an overlay

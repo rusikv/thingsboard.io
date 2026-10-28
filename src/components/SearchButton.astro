@@ -3,36 +3,14 @@ import { Icon } from 'astro-icon/components';
 import Kbd from '@components/ui/Kbd.astro';
 
 /**
- * The header's search button. It has two sizes:
- * - Below `$search-field-from` (1300px): a 40px square with the magnifier icon and no label, the UI
- *   kit's secondary button at the header's 40px height, like Sign in next to it.
- * - From 1300px: a 152px wide button that looks like a search field, with the magnifier, "Search"
- *   and the "Ctrl K" key hint.
- *
- * The breakpoint depends on the room in the header, not on the page. The desktop menu row sits next
- * to the logo and the header's right-hand buttons keep their width, so the wide button (112px wider
- * than the square) is used only where the gap between the last menu item and the right-hand buttons
- * still stays at least 16px. Measured on a docs page with the system font stack (Noto Sans on Linux,
- * as wide as the Mac and Windows fonts or wider), seven menu items, the 160px logo, the GitHub button,
- * Sign in and Try for free: at 1300px the wide button leaves 30px to spare above that 16px, and it
- * still fits with DejaVu Sans, the widest common font. The desktop menu row appears earlier, from
- * 1200px (`$menu-row-from`); between 1200 and 1300px the square button is used.
- *
- * It opens the search dialog (`SiteSearch`, rendered once by the header). `SiteSearch` also handles
- * the shortcuts the key hint shows: ⌘K or Ctrl K anywhere, and `/` outside a text field. They work at
- * every width; only the wide button shows the hint.
- *
- * Its base look comes from the header's shared button styles (`HeaderContent`, built on
- * `_button.scss`). The button rules below are nested under `.head-buttons` (the header's right-hand
- * buttons), which makes them one class more specific than those shared styles, so they win whatever
- * order the stylesheets load in. The styles are global because `.head-buttons` is in `HeaderContent`,
- * and a scoped style here could not match it.
+ * The header's search button, which opens `SiteSearch`: a 40px icon square that widens into a 152px
+ * field-style button with the Ctrl K hint from `$search-field-from`. 1300px is where the wide button
+ * still fits next to the desktop menu; check it again if the menu gets longer.
  */
 ---
 
 <search-button>
 	<button type="button" class="search-toggle-btn" aria-label="Search" aria-keyshortcuts="Control+K Meta+K /">
-		{/* Tabler's magnifier, from the UI kit's icon set. */}
 		<Icon name="tabler:search" aria-hidden="true" />
 		<span class="search-toggle-btn__label" aria-hidden="true">
 			Search
@@ -47,9 +25,6 @@ import Kbd from '@components/ui/Kbd.astro';
 
 	$search-field-from: 1300px;
 
-	// The square button: 40px, regular font weight, like Sign in, Menu and the GitHub stars button.
-	// The shared button styles give it the same corners, border and hover as those buttons, and the
-	// same dark look over a dark hero banner.
 	.head-buttons .search-toggle-btn {
 		--btn-px: 0px;
 
@@ -68,10 +43,7 @@ import Kbd from '@components/ui/Kbd.astro';
 		display: none;
 	}
 
-	// The wide, field-like button, where the header has room for it (see the comment at the top).
 	@media screen and (min-width: $search-field-from) {
-		// 12px before the icon and 8px after the key hint, so it looks like a field with the hint near
-		// its right edge.
 		.head-buttons .search-toggle-btn {
 			width: 152px;
 			justify-content: flex-start;
