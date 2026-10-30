@@ -701,8 +701,10 @@ const pathname = Astro.url.pathname;
 		}
 	}
 
-	// The same for the open sheet, which also appears at full size at once.
+	// The same for the open sheet, which also appears at full size at once. The header's text and logo switch at
+	// once too: at the usual `--tb-ink-at`, the white ones from over a dark hero would sit on the white header.
 	header.header[data-sm-open] {
+		--tb-ink-at: 0s;
 		transition-duration: 0s;
 	}
 
