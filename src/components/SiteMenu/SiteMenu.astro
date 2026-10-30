@@ -1698,6 +1698,19 @@ const pathname = Astro.url.pathname;
 		.sm__sheet {
 			display: none !important;
 		}
+
+		// Up to 1440px the row and the header's buttons only just fit (the search field widens at 1300px,
+		// the star count comes back at 1360px), so each item gets 2px less padding on each side.
+		@include width-below(1440px) {
+			.sm__top {
+				padding-inline: 6px;
+
+				&::after {
+					right: 6px;
+					left: 6px;
+				}
+			}
+		}
 	}
 
 	@include width-from($bar-compact-below) {
