@@ -612,6 +612,7 @@ const pathname = Astro.url.pathname;
 
 <style is:global lang="scss">
 	@use '../../styles/variables' as *;
+	@use '../../styles/badge' as *;
 
 	// --- Design tokens ---
 	// The rules for other backgrounds below only reassign these.
@@ -650,17 +651,10 @@ const pathname = Astro.url.pathname;
 	html[data-theme='dark'] .sm {
 		--sm-logo-filter: brightness(0) invert(1);
 		--sm-logo-ink: 0.78;
-	}
 
-	@mixin badges-on-dark {
 		.sm__badge--wash {
-			background-color: color-mix(in srgb, var(--badge-hue) 14%, transparent);
-			color: var(--badge-hue);
+			@include badge-wash-dark;
 		}
-	}
-
-	html[data-theme='dark'] .sm {
-		@include badges-on-dark;
 	}
 
 	header.header:has(> [data-header-look='docs']) > .sm {
@@ -686,7 +680,9 @@ const pathname = Astro.url.pathname;
 			--sm-logo-filter: brightness(0) invert(1);
 			--sm-logo-ink: 0.78;
 
-			@include badges-on-dark;
+			.sm__badge--wash {
+				@include badge-wash-dark;
+			}
 		}
 	}
 
@@ -916,25 +912,12 @@ const pathname = Astro.url.pathname;
 		}
 	}
 
-	// A product badge: a tile in the product's color (`--badge-hue`, from `data/product-badges.ts`).
 	.sm__badge {
-		display: inline-grid;
-		flex: none;
-		place-items: center;
-		width: 32px;
-		height: 32px;
-		border-radius: 32%;
+		@include badge-tile(32px);
 	}
 
 	.sm__badge--solid {
-		background-color: var(--badge-hue);
-		background-image: linear-gradient(
-			155deg,
-			rgba(255, 255, 255, 0.22) 0%,
-			rgba(255, 255, 255, 0) 55%,
-			rgba(0, 0, 0, 0.06) 100%
-		);
-		color: #fff;
+		@include badge-solid;
 	}
 
 	// The product colors are picked for dark backgrounds, so on a light one the glyph is darkened.
