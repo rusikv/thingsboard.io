@@ -12,7 +12,7 @@ $color-primary-hover: #4f97f8;
 $color-primary-dark: #305680;
 $color-primary-darker: #0d2743;
 
-// Brand indigo — the single ThingsBoard brand accent (header/footer CTA + promo banner).
+// Brand indigo — the single ThingsBoard brand accent, and the default accent of the UI kit's buttons.
 // Source of truth for the indigo; the Cloud product token aliases this in _theme.scss.
 // Adapts per theme: vivid indigo in light, light lavender in dark.
 $color-brand: #3d50f5;
@@ -630,11 +630,11 @@ $z-tooltip: 1200;
 	text-transform: uppercase;
 }
 
-// ── Header text styles: the header, its menu and the search dialog ─────────────
+// ── Navigation text styles: the header, its menu, the search dialog and the footer ─────────────
 // Most header text is a little smaller than page text: menu link names at 15px, their descriptions
 // at 13px. The mobile menu sheet's section list is 20px (17px in the split sheet's sidebar). These
-// sizes are off the page's type scale on purpose. They are defined here so the header, the menu and
-// the search dialog share them.
+// sizes are off the page's type scale on purpose. They are defined here so the header, the menu, the
+// search dialog and the footer share them.
 
 // The items in the desktop menu row.
 @mixin type-nav {
@@ -643,15 +643,16 @@ $z-tooltip: 1200;
 	line-height: 1;
 }
 
-// A link's name in a menu section; the mobile menu sheet's rows and its Back row; the text labels of
-// the search dialog's close button.
+// A link's name in a menu section; a product's name in the footer; the mobile menu sheet's rows and its
+// Back row; the text labels of the search dialog's close button.
 @mixin type-nav-link {
 	font-size: 15px;
 	font-weight: $font-weight-medium;
 	line-height: 1.4;
 }
 
-// A link's one-line description under its name; the search dialog's hint text.
+// A link's one-line description under its name; the search dialog's hint text; the row every footer
+// ends with (`FooterBase`, `ThemeChoice`).
 @mixin type-nav-note {
 	font-size: 13px;
 	font-weight: $font-weight-normal;
@@ -681,7 +682,8 @@ $z-tooltip: 1200;
 	font-size: 17px;
 }
 
-// A search result's path line; the "Search enhanced by Google" line in the search dialog.
+// A search result's path line; the "Search enhanced by Google" line in the search dialog; the footer's
+// newsletter consent line.
 @mixin type-caption {
 	font-size: $font-size-xs;
 	font-weight: $font-weight-normal;
